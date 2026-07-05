@@ -217,7 +217,7 @@ function nomFR(n){
   const k = Object.keys(FR).find(x=>x.toLowerCase()===n.toLowerCase());
   return k ? FR[k] : n;
 }
-function estArmenien(n){ return /armen|urartu|syunik|artsakh|tashir|hayasa/i.test(n||""); }
+function estArmenien(n){ return /armen|arm[ée]n|armina|urartu|ourartou|syunik|artsakh|tashir|tachir|hayasa|cilicie/i.test(n||""); }
 
 /* ================= État global ================= */
 const canvas = document.getElementById("globe"), ctx = canvas.getContext("2d");
@@ -275,8 +275,13 @@ function render(){
   const feats = DATA.world[String(YEARS[idx])] || [];
   for(const f of feats){
     ctx.beginPath(); path({type:f.t, coordinates:f.c});
-    ctx.fillStyle = couleur(f.n); ctx.globalAlpha=.92; ctx.fill(); ctx.globalAlpha=1;
-    ctx.strokeStyle="rgba(15,10,8,.55)"; ctx.lineWidth=.6; ctx.stroke();
+    if(f.o){ // surcouche arménienne dérivée : or translucide, liseré doré
+      ctx.fillStyle="rgba(212,165,72,.50)"; ctx.fill();
+      ctx.setLineDash([4,3]); ctx.strokeStyle="rgba(232,196,122,.95)"; ctx.lineWidth=1.4; ctx.stroke(); ctx.setLineDash([]);
+    } else {
+      ctx.fillStyle = couleur(f.n); ctx.globalAlpha=.92; ctx.fill(); ctx.globalAlpha=1;
+      ctx.strokeStyle="rgba(15,10,8,.55)"; ctx.lineWidth=.6; ctx.stroke();
+    }
   }
   // Surbrillance sélection
   if(selection && selection.annee===YEARS[idx]){
@@ -296,13 +301,13 @@ function dessinerEtiquettes(feats){
   const boites = [];
   ctx.textAlign="center"; ctx.textBaseline="middle";
   // petits d'abord pour qu'ils gardent leur étiquette au zoom
-  const cand = feats.filter(f => f.a*k > 140 || estArmenien(f.n) && f.a*k>25 || (selection && selection.f===f))
+  const cand = feats.filter(f => f.a*k > 140 || (f.o||estArmenien(f.n)) && f.a*k>25 || (selection && selection.f===f))
                     .sort((a,b)=>a.a-b.a);
   for(const f of cand){
     if(d3.geoDistance(f.l, centre) > 1.35) continue;  // face cachée / trop au bord
     const p = projection(f.l); if(!p) continue;
     const nom = nomFR(f.n);
-    const arm = estArmenien(f.n);
+    const arm = f.o || estArmenien(f.n);
     const taille = Math.max(10, Math.min(17, 9 + Math.sqrt(f.a*k)/6));
     ctx.font = `${arm?"600":"400"} ${taille}px 'IBM Plex Sans',sans-serif`;
     const larg = ctx.measureText(nom).width;

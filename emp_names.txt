@@ -1,0 +1,5 @@
+1500: [('Emirate of the White Sheep Turks', 30.3), ('Ottoman Empire', 9.6), ('Mamluke Sultanate', 1.1), ('Georgia', 0.5), ('Golden Horde', 0.2)]
+1600: [('Ottoman Empire', 41.0), (None, 0.6)]
+1700: [('Ottoman Empire', 41.0), (None, 0.6)]
+1800: [('Ottoman Empire', 26.0), ('central Asian khanates', 9.3), ('Persia', 5.7), ('Russian Empire', 0.6)]
+1900: [('Ottoman Empire', 26.0), ('Persia', 15.0), ('Russian Empire', 0.6)]

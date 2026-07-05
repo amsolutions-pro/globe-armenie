@@ -42,3 +42,38 @@ Persarménie/Arménie byzantine 400–600 ; Arminiya 800 ; Bagratides 900 ; Cili
   risquent d'être masqués par « Arménie » byzantine — à vérifier visuellement.
 
 ---
+
+## Itération 2 — 2026-07-05
+
+**Fait** : `build_armenie_overlays.py` — 20 surcouches arméniennes dérivées par
+intersections shapely, injectées dans `globe_data.json` (champ `"o":1`, dessinées
+au-dessus, or translucide + liseré pointillé doré, étiquette prioritaire). L'Arménie
+est désormais visible et nommée à CHAQUE pas de temps de −1500 à 2000. Script
+rejouable (purge avant réinjection). Vérifié dans Chrome (500 : Persarménie +
+Arménie byzantine ; 1300 : Cilicie + Arménie ilkhanide).
+
+Découverte de justesse : le jeu de données diverge de l'histoire attendue —
+1500 : plateau sous Ak Koyunlu (pas Séfévides) ; 1600–1700 : tout ottoman (pas de
+partage de Zuhab) ; 1900 : Erevan sous « Perse » (pas la Russie !). Les surcouches
+suivent les polygones du dataset mais les libellés ont été adaptés (1900 est
+étiqueté « Arménie orientale (russe) » — voir Q6).
+
+**Q4. La Cilicie dérivée est-elle géographiquement juste ?**
+Non : découpée par une boîte rectangulaire (bords droits visibles au nord, déborde
+sur l'intérieur seldjoukide au lieu de s'arrêter aux monts Taurus).
+→ **Réponse pour l'itération 3** : remplacer la boîte par un polygone dessiné suivant
+la crête du Taurus.
+
+**Q5. Les surcouches expliquent-elles leur nature (frontières reconstituées) ?**
+Non : l'infobulle les présente comme n'importe quel État.
+→ **Réponse pour l'itération 3** : ajouter dans l'infobulle et le panneau la mention
+« Frontières reconstituées (intersection de cartes historiques) » quand `f.o`.
+
+**Q6. Que faire quand le dataset contredit l'histoire (Zuhab 1639, Turkmentchaï 1828) ?**
+Le dataset donne tout le plateau aux Ottomans en 1600–1700 et Erevan à la Perse en 1900.
+→ **Réponse pour l'itération 3** : scinder les surcouches 1600/1700 par une ligne
+approximative de la paix de Zuhab (méridien ~44,5°E infléchi vers l'Araxe), et pour
+1900 forcer la limite russe au sud d'Erevan (frontière de l'Araxe, Turkmentchaï) —
+en documentant l'écart à la source dans ce journal.
+
+---
