@@ -108,3 +108,34 @@ Non, aucune légende.
 État arménien attesté dans la source, or pointillé = présence arménienne reconstituée.
 
 ---
+
+## Itération 4 — 2026-07-05
+
+**Fait** (réponses à Q7–Q9) : 6 mini-notices embarquées dans globe.html (−2000 aube
+du plateau, −1500 Hayasa-Azzi/Nairi — avec avertissement d'anachronisme de la source
+sur « Ourartou », −1000 unification ourartéenne, 1400 Timour et les Turkmènes +
+restauration d'Etchmiadzin 1441, 1900 question arménienne et veille du génocide,
+2000 Troisième République et Artsakh) ; bouton lecture ⏵/⏸ (1 siècle / 2,5 s, arrêt
+au toucher du globe, du slider ou des flèches) ; légende bas-gauche (or plein =
+Arménie attestée, pointillé = présence reconstituée). Vérifié dans Chrome.
+
+**Q10. Le clic sur une capitale de notice fonctionne-t-il aussi pour les mini-notices ?**
+Non : les mini-notices n'ont pas de capitales cliquables, alors qu'Erevan (1900, 2000),
+Tabriz (1400) ou Tushpa (−1000) seraient pédagogiques.
+→ **Réponse pour l'itération 5** : ajouter un champ `capitales` aux mini-notices
+(réutiliser le rendu existant).
+
+**Q11. Un élève comprend-il POURQUOI la carte change entre deux siècles ?**
+Non : le saut est brutal, sans transition ni explication de l'événement charnière.
+→ **Réponse pour l'itération 5** : afficher sous l'année un bandeau d'une ligne
+« événement charnière » (ex. 1045→1100 : « chute d'Ani (1045), Manzikert (1071) »)
+tiré d'un petit dictionnaire embarqué des transitions siècle→siècle côté Arménie.
+
+**Q12. Le projet est-il consultable ailleurs que sur ce poste (iPhone de l'utilisateur) ?**
+Non : servi seulement en localhost.
+→ **Réponse pour l'itération 5+** : préparer le déploiement GitHub Pages
+(amsolutions-pro.github.io) — nécessite l'accord explicite de l'utilisateur pour
+publier ; en attendant, tout committer proprement et documenter la procédure dans
+un README.
+
+---

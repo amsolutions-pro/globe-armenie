@@ -85,6 +85,14 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
 #panel .fermer{position:absolute;top:8px;right:10px;width:40px;height:40px;border:none;background:none;
   color:var(--encre-2);font-size:20px;cursor:pointer;touch-action:manipulation}
 
+/* ---------- Légende ---------- */
+#legende{position:fixed;left:calc(10px + env(safe-area-inset-left));bottom:calc(96px + env(safe-area-inset-bottom));
+  z-index:5;display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--encre-2);
+  background:rgba(23,18,16,.72);border:1px solid var(--trait);border-radius:10px;padding:7px 10px;pointer-events:none}
+#legende .sw{display:inline-block;width:14px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
+#legende .plein{background:#d4a548}
+#legende .pointille{background:rgba(212,165,72,.45);border:1.5px dashed #e8c47a}
+
 /* ---------- Infobulle entité ---------- */
 #bulle{position:fixed;z-index:7;pointer-events:none;transform:translate(-50%,-130%);
   background:rgba(23,18,16,.94);border:1px solid var(--or);border-radius:10px;
@@ -116,7 +124,13 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
 <button class="flottant" id="btn-armenie" title="Centrer sur l'Arménie">֎</button>
 <button class="flottant" id="btn-notice" title="Notice de la période">✦</button>
 
+<div id="legende">
+  <span><i class="sw plein"></i> Arménie attestée</span>
+  <span><i class="sw pointille"></i> présence reconstituée</span>
+</div>
+
 <div id="temps">
+  <button id="lecture" aria-label="Lecture automatique">⏵</button>
   <button id="prec" aria-label="Siècle précédent">◀</button>
   <input type="range" id="slider" min="0" max="27" value="0" step="1">
   <button id="suiv" aria-label="Siècle suivant">▶</button>
@@ -409,9 +423,21 @@ function allerA(i){
   render();
   if(document.getElementById("panel").classList.contains("ouvert")) remplirPanneauPeriode();
 }
-slider.addEventListener("input", ()=>allerA(+slider.value));
-document.getElementById("prec").addEventListener("click", ()=>allerA(idx-1));
-document.getElementById("suiv").addEventListener("click", ()=>allerA(idx+1));
+slider.addEventListener("input", ()=>{ stopLecture(); allerA(+slider.value); });
+document.getElementById("prec").addEventListener("click", ()=>{ stopLecture(); allerA(idx-1); });
+document.getElementById("suiv").addEventListener("click", ()=>{ stopLecture(); allerA(idx+1); });
+
+/* Lecture automatique : 1 siècle toutes les 2,5 s */
+const btnLecture=document.getElementById("lecture");
+let lecture=null;
+function stopLecture(){ if(lecture){ clearInterval(lecture); lecture=null; btnLecture.textContent="⏵"; } }
+btnLecture.addEventListener("click", ()=>{
+  if(lecture){ stopLecture(); return; }
+  if(idx>=YEARS.length-1) allerA(0);
+  btnLecture.textContent="⏸";
+  lecture=setInterval(()=>{ if(idx<YEARS.length-1) allerA(idx+1); else stopLecture(); }, 2500);
+});
+canvas.addEventListener("pointerdown", stopLecture);
 window.addEventListener("keydown", e=>{
   if(e.key==="ArrowLeft") allerA(idx-1);
   else if(e.key==="ArrowRight") allerA(idx+1);
@@ -458,6 +484,21 @@ function indexPeriode(y){
   if(y>=1500 && y<=1800) return 9;       // Partages ottomano-persans
   return -1;
 }
+/* Mini-notices pour les siècles sans période dans periodes.json */
+const MINI = {
+  "-2000":{nom:"Aube du plateau arménien",dates:"v. 2000 av. J.-C.",pouvoir:"Cultures de l'âge du bronze (Kouro-Araxe tardif, Trialeti)",
+    apercu:["Le plateau arménien sort de la culture <strong>Kouro-Araxe</strong>, qui a rayonné mille ans du Caucase à la Palestine ; les kourganes princiers de <strong>Trialeti</strong> et les forteresses cyclopéennes du Sevan témoignent de sociétés hiérarchisées, maîtresses du bronze et de l'obsidienne.","Aucun État n'existe encore : les sources hittites mentionneront bientôt les pays de <strong>Hayasa-Azzi</strong>, dont le nom résonne avec « Hay », le nom que les Arméniens se donnent."]},
+  "-1500":{nom:"Hayasa-Azzi et les pays du Nairi",dates:"v. 1500 – 1200 av. J.-C.",pouvoir:"Confédérations tribales (sources hittites et assyriennes)",
+    apercu:["Les annales hittites décrivent les guerres de Suppiluliuma contre <strong>Hayasa-Azzi</strong>, confédération du haut Euphrate — pour beaucoup d'historiens arméniens, la racine du nom <em>Hay</em>. Les Assyriens, eux, nomment <strong>Nairi</strong> les « pays des fleuves » autour du lac de Van.","La carte montre déjà « Ourartou » : c'est un anachronisme de la source cartographique — le royaume n'émerge qu'au IXᵉ siècle av. J.-C. ; avant lui, une mosaïque de principautés."]},
+  "-1000":{nom:"Vers l'unification ourartéenne",dates:"v. 1000 – 860 av. J.-C.",pouvoir:"Principautés du Nairi en voie d'unification",
+    apercu:["Sous la pression des campagnes assyriennes, les principautés du <strong>Nairi</strong> se fédèrent : vers 860 av. J.-C., <strong>Arame</strong> — peut-être l'Ara le Bel de la légende — unit les pays de Van. Sarduri Iᵉʳ fonde Tushpa et le royaume d'Ourartou entre dans l'histoire.","L'étiquette « Ourartou » de la carte anticipe légèrement : à ce siècle, l'unification est en cours."]},
+  "1400":{nom:"Entre Timour et les Turkmènes",dates:"1387 – 1502",pouvoir:"Timourides, puis Kara Koyunlu et Ak Koyunlu",
+    apercu:["Les invasions de <strong>Tamerlan</strong> (1387–1403) ravagent le plateau : Van, Erzurum et le Syunik sont dévastés, des dizaines de milliers d'Arméniens déportés vers Samarcande. Après sa mort, les confédérations turkmènes du <strong>Mouton noir</strong> (Kara Koyunlu, capitale Tabriz) puis du <strong>Mouton blanc</strong> (Ak Koyunlu) se disputent le pays.","Sous Djihanshah, le catholicossat est restauré à <strong>Etchmiadzin</strong> (1441) — événement décisif : l'Église redevient l'institution nationale de substitution. Les mélikats du Karabagh et le Syunik conservent une autonomie montagnarde."]},
+  "1900":{nom:"La question arménienne",dates:"1878 – 1915",pouvoir:"Empire ottoman (ouest) · Empire russe (est)",
+    apercu:["Le traité de <strong>Berlin (1878)</strong> internationalise la « question arménienne » : l'article 61 promet des réformes dans les six vilayets — jamais appliquées. Les massacres hamidiens (1894–1896, ~200 000 morts) puis ceux d'Adana (1909) annoncent le pire : le <strong>génocide de 1915</strong>, planifié par le gouvernement jeune-turc, anéantira l'Arménie occidentale (1,5 million de victimes).","Côté russe, les gouvernorats d'<strong>Erevan</strong> et de <strong>Kars</strong> connaissent essor scolaire et renaissance culturelle (Toumanian, Komitas), malgré la russification. C'est ce réduit oriental qui portera la Première République (1918) après Sardarabad."]},
+  "2000":{nom:"Troisième République d'Arménie",dates:"1991 – aujourd'hui",pouvoir:"République indépendante (21 septembre 1991)",
+    apercu:["L'Arménie recouvre l'indépendance à la dissolution de l'URSS, dans les frontières de la RSS d'Arménie (29 743 km² — moins d'un dixième de l'Arménie historique). La première guerre du <strong>Haut-Karabagh</strong> (1988–1994) met la république autoproclamée d'<strong>Artsakh</strong> sous contrôle arménien jusqu'à la guerre de 2020 et l'exode de 2023.","La diaspora (~7 millions de personnes, contre ~3 millions en Arménie) demeure l'autre moitié de la nation : Erevan, plus vieille ville-capitale du monde avec ses 2 800 ans, en est le cœur symbolique."]}
+};
 function remplirPanneauPeriode(){
   const y=YEARS[idx], i=indexPeriode(y);
   let html="";
@@ -479,6 +520,10 @@ function remplirPanneauPeriode(){
         html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
       html += `</div>`;
     }
+  } else if(MINI[String(y)]){
+    const m=MINI[String(y)];
+    html += `<h2>${m.nom}</h2><div class="dates">${m.dates}</div><div class="pouvoir">${m.pouvoir}</div>`;
+    for(const par of m.apercu) html += `<p>${par}</p>`;
   } else if(!html){
     html = `<h2>${annee.textContent}</h2><p style="color:var(--encre-2)">Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.</p>`;
   }
