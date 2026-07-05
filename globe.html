@@ -87,6 +87,10 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
 #panel .entite-sujet{font-size:13px;color:var(--encre-2);margin-bottom:10px}
 #panel .fermer{position:absolute;top:8px;right:10px;width:40px;height:40px;border:none;background:none;
   color:var(--encre-2);font-size:20px;cursor:pointer;touch-action:manipulation}
+#panel .lien-atlas{display:block;margin-top:14px;text-align:center;padding:11px;border:1px solid var(--or);
+  border-radius:10px;color:var(--or);text-decoration:none;font-size:14px;background:rgba(212,165,72,.08)}
+#panel .lien-atlas:active{background:rgba(212,165,72,.18)}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--or);outline-offset:2px}
 
 /* ---------- Légende ---------- */
 #legende{position:fixed;left:calc(10px + env(safe-area-inset-left));bottom:calc(96px + env(safe-area-inset-bottom));
@@ -95,6 +99,10 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
 #legende .sw{display:inline-block;width:14px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
 #legende .plein{background:#d4a548}
 #legende .pointille{background:rgba(212,165,72,.45);border:1.5px dashed #e8c47a}
+#legende .etat{background:#3e6b8f}
+#legende .tribu{background:hsl(60,10%,24%)}
+#legende .pt{display:inline-block;width:7px;height:7px;border-radius:50%;background:#efe6d8;
+  border:1px solid #0d0907;margin:0 9px 0 4px;vertical-align:0}
 
 /* ---------- Infobulle entité ---------- */
 #bulle{position:fixed;z-index:7;pointer-events:none;transform:translate(-50%,-130%);
@@ -131,6 +139,9 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
 <div id="legende">
   <span><i class="sw plein"></i> Arménie attestée</span>
   <span><i class="sw pointille"></i> présence reconstituée</span>
+  <span><i class="sw etat"></i> État constitué</span>
+  <span><i class="sw tribu"></i> peuplement, tribus</span>
+  <span><i class="pt"></i> ville principale (zoomer)</span>
 </div>
 
 <div id="temps">
@@ -251,15 +262,39 @@ const projection = d3.geoOrthographic().clipAngle(90);
 const path = d3.geoPath(projection, ctx);
 const graticule = d3.geoGraticule10();
 
-/* Couleur stable par hash du nom */
+/* Rendu regroupé : un seul render par frame, même si plusieurs événements pointeur */
+let renderDemande=false;
+function demandeRender(){
+  if(renderDemande) return;
+  renderDemande=true;
+  requestAnimationFrame(()=>{ renderDemande=false; render(); });
+}
+
+/* Tribus, peuplements et cultures (par opposition aux États constitués) */
+function estTribu(n){
+  return !n || /hunter|gatherer|forag|fisher|ficher|nomad|pastoral|farmer|culture|tribes?\b|peoples|chiefdom|complex\b|focus\b|burial|pottery|neolithic|bronze age|aboriginal|indigenous|proto-|paleo-|cimerian|scythian culture|shellfish/i.test(n)
+    // longue traîne : ethnonymes sans appareil étatique (aire faible, nom court sans mot d'État)
+    || (!/empire|kingdom|caliphate|khanate|sultanate|republic|states?\b|dynasty|shogunate|principality|duchy|horde|confederac|commonwealth|city|union|emirate|khaganate|tsardom|vice|colony|raj\b|land\b/i.test(n) && /^[A-Z][a-z'ʻ-]+( [A-Z][a-z'-]+)?$/.test(n) && n.length<=14 && !FR[n] && !FRX[n]);
+}
+/* Palette d'États : 24 teintes riches et harmonieuses (charte or/tuf) */
+const PALETTE = ["#8c4a3c","#a33434","#7a2f3a","#b0762e","#c9a227","#8f7a3a","#7a8f4a","#3f7f4f",
+                 "#2e7f7a","#35607f","#3e6b8f","#3a6fb5","#4a5a9c","#6e3fa3","#7c4a8a","#8a5a7c",
+                 "#9c4a5c","#5c7a52","#4f7ba0","#75592f","#a8862e","#2f6e5f","#5e4a8a","#8a683c"];
 const cacheCouleur = new Map();
 function couleur(n){
-  if(estArmenien(n)) return /urartu/i.test(n) ? "#b0762e" : "#d4a548";
-  if(cacheCouleur.has(n)) return cacheCouleur.get(n);
-  let h=0; for(let i=0;i<n.length;i++){ h = (h*31 + n.charCodeAt(i)) >>> 0; }
-  const teinte = h % 360, sat = 26 + (h>>9)%16, lum = 26 + (h>>13)%14;
-  const c = `hsl(${teinte},${sat}%,${lum}%)`;
-  cacheCouleur.set(n,c); return c;
+  if(estArmenien(n)) return /urartu|ourartou/i.test(n) ? "#b0762e" : "#d4a548";
+  const cle=n||"~";
+  if(cacheCouleur.has(cle)) return cacheCouleur.get(cle);
+  let h=0; for(let i=0;i<cle.length;i++){ h = (h*31 + cle.charCodeAt(i)) >>> 0; }
+  let c;
+  if(estTribu(n)){ // peuplements : tons éteints gris-vert/brun, se fondent dans le fond
+    const teinte = 25 + (h % 95), sat = 7 + (h>>7)%7, lum = 20 + (h>>11)%7;
+    c = `hsl(${teinte},${sat}%,${lum}%)`;
+  } else {        // États constitués : couleurs franches de la palette
+    c = PALETTE[h % PALETTE.length];
+    if((h>>5)%3===1) c += "e6";   // légère variation pour voisins de même teinte
+  }
+  cacheCouleur.set(cle,c); return c;
 }
 
 /* ================= Redimensionnement ================= */
@@ -296,9 +331,12 @@ function render(){
     if(f.o){ // surcouche arménienne dérivée : or translucide, liseré doré
       ctx.fillStyle="rgba(212,165,72,.50)"; ctx.fill();
       ctx.setLineDash([4,3]); ctx.strokeStyle="rgba(232,196,122,.95)"; ctx.lineWidth=1.4; ctx.stroke(); ctx.setLineDash([]);
-    } else {
-      ctx.fillStyle = couleur(f.n); ctx.globalAlpha=.92; ctx.fill(); ctx.globalAlpha=1;
-      ctx.strokeStyle="rgba(15,10,8,.55)"; ctx.lineWidth=.6; ctx.stroke();
+    } else if(estTribu(f.n)){ // peuplements : aplat discret, liseré à peine visible
+      ctx.fillStyle = couleur(f.n); ctx.globalAlpha=.85; ctx.fill(); ctx.globalAlpha=1;
+      ctx.strokeStyle="rgba(15,10,8,.25)"; ctx.lineWidth=.4; ctx.stroke();
+    } else {                  // États constitués : couleur franche, frontière nette
+      ctx.fillStyle = couleur(f.n); ctx.globalAlpha=.95; ctx.fill(); ctx.globalAlpha=1;
+      ctx.strokeStyle="rgba(10,7,5,.7)"; ctx.lineWidth=.8; ctx.stroke();
     }
   }
   // Surbrillance sélection
@@ -310,7 +348,91 @@ function render(){
   ctx.beginPath(); path({type:"Sphere"});
   ctx.strokeStyle="rgba(212,165,72,.45)"; ctx.lineWidth=1.2; ctx.stroke();
 
-  dessinerEtiquettes(feats);
+  const boites = dessinerEtiquettes(feats);
+  dessinerVilles(boites);
+}
+
+/* Villes principales : {nom, lng, lat, de, à, z (zoom mini), arm} */
+const VILLES = [
+ {nom:"Erevan (Erebouni)",lng:44.51,lat:40.18,de:-782,z:3,arm:1},
+ {nom:"Tushpa (Van)",lng:43.34,lat:38.5,de:-860,a:1100,z:3,arm:1},
+ {nom:"Van",lng:43.38,lat:38.5,de:1100,z:4,arm:1},
+ {nom:"Armavir",lng:44.04,lat:40.06,de:-750,a:200,z:5,arm:1},
+ {nom:"Artashat",lng:44.55,lat:39.93,de:-176,a:500,z:5,arm:1},
+ {nom:"Tigranakert",lng:41.0,lat:38.14,de:-83,a:400,z:5,arm:1},
+ {nom:"Vagharshapat (Etchmiadzin)",lng:44.29,lat:40.16,de:150,z:5,arm:1},
+ {nom:"Dvin",lng:44.63,lat:40.0,de:335,a:1236,z:5,arm:1},
+ {nom:"Ani",lng:43.57,lat:40.51,de:961,a:1319,z:4,arm:1},
+ {nom:"Kars",lng:43.1,lat:40.61,de:928,z:6,arm:1},
+ {nom:"Sis",lng:35.82,lat:37.45,de:1080,a:1375,z:4,arm:1},
+ {nom:"Stepanakert",lng:46.75,lat:39.82,de:1923,z:6,arm:1},
+ {nom:"Babylone",lng:44.42,lat:32.54,de:-1900,a:-140,z:3},
+ {nom:"Ninive",lng:43.15,lat:36.36,de:-1800,a:-612,z:4},
+ {nom:"Ur",lng:46.1,lat:30.96,de:-2000,a:-500,z:4},
+ {nom:"Hattusa",lng:34.62,lat:40.02,de:-1650,a:-1180,z:4},
+ {nom:"Memphis",lng:31.25,lat:29.85,de:-2000,a:-300,z:4},
+ {nom:"Thèbes (Égypte)",lng:32.65,lat:25.7,de:-2000,a:-300,z:5},
+ {nom:"Alexandrie",lng:29.92,lat:31.2,de:-331,z:4},
+ {nom:"Athènes",lng:23.73,lat:37.98,de:-900,z:4},
+ {nom:"Rome",lng:12.48,lat:41.9,de:-753,z:3},
+ {nom:"Carthage",lng:10.32,lat:36.85,de:-814,a:-146,z:4},
+ {nom:"Jérusalem",lng:35.22,lat:31.78,de:-1800,z:4},
+ {nom:"Tyr",lng:35.2,lat:33.27,de:-2000,a:-300,z:5},
+ {nom:"Persépolis",lng:52.89,lat:29.93,de:-518,a:-330,z:4},
+ {nom:"Ctésiphon",lng:44.58,lat:33.09,de:-120,a:800,z:4},
+ {nom:"Byzance",lng:28.98,lat:41.01,de:-667,a:330,z:5},
+ {nom:"Constantinople",lng:28.98,lat:41.01,de:330,a:1453,z:3},
+ {nom:"Istanbul",lng:28.98,lat:41.01,de:1453,z:3},
+ {nom:"Bagdad",lng:44.36,lat:33.31,de:762,z:3},
+ {nom:"Damas",lng:36.29,lat:33.51,de:-2000,z:4},
+ {nom:"La Mecque",lng:39.82,lat:21.42,de:400,z:4},
+ {nom:"Le Caire",lng:31.24,lat:30.05,de:969,z:3},
+ {nom:"Cordoue",lng:-4.78,lat:37.88,de:711,a:1236,z:4},
+ {nom:"Tbilissi",lng:44.79,lat:41.72,de:479,z:5},
+ {nom:"Tabriz",lng:46.29,lat:38.08,de:800,z:5},
+ {nom:"Ispahan",lng:51.67,lat:32.65,de:1000,z:4},
+ {nom:"Samarcande",lng:66.97,lat:39.65,de:-700,z:4},
+ {nom:"Xi'an (Chang'an)",lng:108.94,lat:34.34,de:-1100,z:4},
+ {nom:"Pékin",lng:116.4,lat:39.9,de:1000,z:3},
+ {nom:"Kyoto",lng:135.77,lat:35.01,de:794,a:1868,z:4},
+ {nom:"Tokyo (Edo)",lng:139.69,lat:35.69,de:1600,z:3},
+ {nom:"Delhi",lng:77.21,lat:28.64,de:1000,z:4},
+ {nom:"Pataliputra",lng:85.14,lat:25.61,de:-490,a:600,z:4},
+ {nom:"Angkor",lng:103.87,lat:13.43,de:802,a:1431,z:4},
+ {nom:"Tenochtitlan",lng:-99.13,lat:19.43,de:1325,a:1521,z:4},
+ {nom:"Mexico",lng:-99.13,lat:19.43,de:1521,z:3},
+ {nom:"Cuzco",lng:-71.97,lat:-13.53,de:1200,a:1533,z:4},
+ {nom:"Tombouctou",lng:-3.01,lat:16.77,de:1100,z:4},
+ {nom:"Aksoum",lng:38.72,lat:14.13,de:-100,a:960,z:5},
+ {nom:"Paris",lng:2.35,lat:48.86,de:508,z:3},
+ {nom:"Londres",lng:-0.13,lat:51.51,de:43,z:3},
+ {nom:"Venise",lng:12.34,lat:45.44,de:697,z:5},
+ {nom:"Moscou",lng:37.62,lat:55.76,de:1147,z:3},
+ {nom:"Saint-Pétersbourg",lng:30.34,lat:59.93,de:1703,z:4},
+ {nom:"New York",lng:-74.01,lat:40.71,de:1624,z:3}
+];
+function dessinerVilles(boites){
+  const y=YEARS[idx], centre=[-rot[0],-rot[1]];
+  if(k<3) return;
+  ctx.textAlign="left"; ctx.textBaseline="middle";
+  for(const v of VILLES){
+    if(y<v.de || (v.a!==undefined && y>v.a)) continue;
+    if(k < (v.arm ? Math.min(v.z,4) : v.z)) continue;
+    if(d3.geoDistance([v.lng,v.lat], centre) > 1.35) continue;
+    const p=projection([v.lng,v.lat]); if(!p) continue;
+    const t = v.arm ? 10.5 : 9.5;
+    ctx.font = `500 ${t}px 'IBM Plex Sans',sans-serif`;
+    const larg = ctx.measureText(v.nom).width;
+    const boite = {x:p[0]-4, y:p[1]-t/2-2, w:larg+12, h:t+4};
+    if(boites.some(b => boite.x < b.x+b.w && boite.x+boite.w > b.x && boite.y < b.y+b.h && boite.y+boite.h > b.y)) continue;
+    boites.push(boite);
+    ctx.beginPath(); ctx.arc(p[0],p[1],v.arm?3:2.4,0,7);
+    ctx.fillStyle = v.arm ? "#ffd98a" : "#efe6d8"; ctx.fill();
+    ctx.lineWidth=1.2; ctx.strokeStyle="rgba(13,9,7,.9)"; ctx.stroke();
+    ctx.lineWidth=2.5; ctx.strokeStyle="rgba(13,9,7,.85)"; ctx.strokeText(v.nom,p[0]+6,p[1]);
+    ctx.fillStyle = v.arm ? "#ffd98a" : "rgba(239,230,216,.85)";
+    ctx.fillText(v.nom,p[0]+6,p[1]);
+  }
 }
 
 /* Étiquettes : seuil aire·zoom + anti-collision par boîtes */
@@ -319,23 +441,29 @@ function dessinerEtiquettes(feats){
   const boites = [];
   ctx.textAlign="center"; ctx.textBaseline="middle";
   // petits d'abord pour qu'ils gardent leur étiquette au zoom
-  const cand = feats.filter(f => f.a*k > 140 || (f.o||estArmenien(f.n)) && f.a*k>25 || (selection && selection.f===f))
-                    .sort((a,b)=>a.a-b.a);
+  const cand = feats.filter(f => {
+      if(selection && selection.f===f) return true;
+      if(f.o || estArmenien(f.n)) return f.a*k > 25;
+      return f.a*k > (estTribu(f.n) ? 300 : 110);   // tribus : seuil plus haut, États mis en avant
+    }).sort((a,b)=>a.a-b.a);
   for(const f of cand){
     if(d3.geoDistance(f.l, centre) > 1.35) continue;  // face cachée / trop au bord
     const p = projection(f.l); if(!p) continue;
     const nom = nomFR(f.n);
     const arm = f.o || estArmenien(f.n);
-    const taille = Math.max(10, Math.min(17, 9 + Math.sqrt(f.a*k)/6));
-    ctx.font = `${arm?"600":"400"} ${taille}px 'IBM Plex Sans',sans-serif`;
+    const tribu = !arm && estTribu(f.n);
+    const taille = tribu ? Math.max(9, Math.min(12, 8 + Math.sqrt(f.a*k)/9))
+                         : Math.max(10, Math.min(17, 9 + Math.sqrt(f.a*k)/6));
+    ctx.font = `${arm?"600":tribu?"italic 300":"500"} ${taille}px 'IBM Plex Sans',sans-serif`;
     const larg = ctx.measureText(nom).width;
     const boite = {x:p[0]-larg/2-3, y:p[1]-taille/2-2, w:larg+6, h:taille+4};
     if(boites.some(b => boite.x < b.x+b.w && boite.x+boite.w > b.x && boite.y < b.y+b.h && boite.y+boite.h > b.y)) continue;
     boites.push(boite);
     ctx.lineWidth=3; ctx.strokeStyle="rgba(13,9,7,.85)"; ctx.strokeText(nom,p[0],p[1]);
-    ctx.fillStyle = arm ? "#ffd98a" : "rgba(239,230,216,.92)";
+    ctx.fillStyle = arm ? "#ffd98a" : tribu ? "rgba(200,190,172,.62)" : "rgba(243,235,222,.95)";
     ctx.fillText(nom,p[0],p[1]);
   }
+  return boites;
 }
 
 /* ================= Interactions : drag, pinch, molette, clic ================= */
@@ -362,11 +490,11 @@ canvas.addEventListener("pointermove", e=>{
     rot[0] += (e.clientX-prev[0]) * s/250 * 60/Math.max(k,1)**.9;
     rot[1] -= (e.clientY-prev[1]) * s/250 * 60/Math.max(k,1)**.9;
     rot[1] = Math.max(-90, Math.min(90, rot[1]));
-    stopAnim(); render();
+    stopAnim(); demandeRender();
   } else if(pointeurs.size===2){
     const [a,b]=[...pointeurs.values()];
     const d=Math.hypot(a[0]-b[0],a[1]-b[1]);
-    if(distPincee>0){ k = Math.max(K_MIN, Math.min(K_MAX, kPincee*d/distPincee)); stopAnim(); render(); }
+    if(distPincee>0){ k = Math.max(K_MIN, Math.min(K_MAX, kPincee*d/distPincee)); stopAnim(); demandeRender(); }
   }
 });
 function finPointeur(e){
@@ -381,7 +509,7 @@ canvas.addEventListener("pointercancel", finPointeur);
 canvas.addEventListener("wheel", e=>{
   e.preventDefault();
   k = Math.max(K_MIN, Math.min(K_MAX, k * Math.pow(1.0015, -e.deltaY)));
-  stopAnim(); render();
+  stopAnim(); demandeRender();
 },{passive:false});
 
 /* Clic : invert + geoContains, petits candidats d'abord */
@@ -469,6 +597,7 @@ let lecture=null;
 function stopLecture(){ if(lecture){ clearInterval(lecture); lecture=null; btnLecture.textContent="⏵"; } }
 btnLecture.addEventListener("click", ()=>{
   if(lecture){ stopLecture(); return; }
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ allerA(idx+1); return; }
   if(idx>=YEARS.length-1) allerA(0);
   btnLecture.textContent="⏸";
   lecture=setInterval(()=>{ if(idx<YEARS.length-1) allerA(idx+1); else stopLecture(); }, 2500);
@@ -562,6 +691,7 @@ function remplirPanneauPeriode(){
         html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
       html += `</div>`;
     }
+    html += `<a class="lien-atlas" href="atlas_armenie_historique.html" target="_blank" rel="noopener">🗺 Ouvrir l'atlas détaillé de l'Arménie historique</a>`;
   } else if(MINI[String(y)]){
     const m=MINI[String(y)];
     html += `<h2>${m.nom}</h2><div class="dates">${m.dates}</div><div class="pouvoir">${m.pouvoir}</div>`;

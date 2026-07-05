@@ -168,3 +168,40 @@ lecture auto ignore prefers-reduced-motion.
 désactiver l'auto-lecture si prefers-reduced-motion.
 
 ---
+
+## Itération 6 — 2026-07-06 (+ directives utilisateur)
+
+**Fait (Q13–Q15)** : bouton « Ouvrir l'atlas détaillé » dans le panneau des périodes
+arméniennes ; render() regroupé dans requestAnimationFrame (drag/pincement/molette) ;
+accessibilité (:focus-visible or, prefers-reduced-motion ⇒ pas d'auto-lecture).
+
+**Directives utilisateur intégrées** (« travaille mieux les couleurs et les noms,
+accentue les États par rapport aux tribus et peuplements, situe les villes ») :
+1. **Couleurs** : palette curatée de 24 teintes riches pour les **États constitués**
+   (frontières nettes, alpha .95) ; **tribus/peuplements/cultures** détectés par
+   classifieur (regex chasseurs/nomades/cultures/ethnonymes courts non traduits) et
+   rendus en tons éteints gris-brun (sat 7–14 %) avec liseré à peine visible — les
+   États ressortent immédiatement.
+2. **Noms** : étiquettes d'États en 500, plus contrastées ; tribus en italique
+   maigre, plus petites, seuil d'affichage 3× plus haut (300 vs 110).
+3. **Villes principales** : 56 villes historiques datées (de/à) avec point + nom,
+   seuil de zoom par importance, anti-collision partagé avec les étiquettes d'États ;
+   12 villes arméniennes (Erebouni, Tushpa, Armavir, Artashat, Tigranakert, Dvin,
+   Ani, Kars, Sis, Etchmiadzin, Van, Stepanakert) en or clair, visibles plus tôt.
+4. Légende enrichie (État constitué / peuplement / ville).
+Vérifié dans Chrome (−100 : Artaxiades + Rome/Athènes/Damas/Erevan/Tushpa).
+
+**Q16. Les périodes de la ville sont-elles justes (Byzance→Constantinople→Istanbul) ?**
+Traité pour Constantinople ; vérifier les autres renommages (Edo→Tokyo fait,
+Tenochtitlan→Mexico fait). → Itération 7 : relire les dates des 56 villes.
+
+**Q17. Le classifieur tribu/État se trompe-t-il sur des cas importants ?**
+Risque : ethnonymes d'États réels courts (ex. « Chola », « Saba ») sont dans FR/FRX
+donc protégés, mais à auditer. → Itération 7 : échantillonner 30 noms classés tribu
+et corriger les faux positifs (liste blanche).
+
+**Q18. Les villes arméniennes disparues (Ani après 1319) racontent-elles leur fin ?**
+Non : le point disparaît sans explication. → Itération 7 : au clic sur une ville,
+mini-fiche (fondation, apogée, fin) dans l'infobulle.
+
+---
