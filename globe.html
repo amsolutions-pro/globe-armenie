@@ -271,7 +271,9 @@ function demandeRender(){
 }
 
 /* Tribus, peuplements et cultures (par opposition aux États constitués) */
+const ETATS_BLANCS = new Set(["Haripunjaya","Harapunchai","Lambakannas","Silia","Luva","Chelmia","Nayarit"]);
 function estTribu(n){
+  if(ETATS_BLANCS.has(n)) return false;
   return !n || /hunter|gatherer|forag|fisher|ficher|nomad|pastoral|farmer|culture|tribes?\b|peoples|chiefdom|complex\b|focus\b|burial|pottery|neolithic|bronze age|aboriginal|indigenous|proto-|paleo-|cimerian|scythian culture|shellfish/i.test(n)
     // longue traîne : ethnonymes sans appareil étatique (aire faible, nom court sans mot d'État)
     || (!/empire|kingdom|caliphate|khanate|sultanate|republic|states?\b|dynasty|shogunate|principality|duchy|horde|confederac|commonwealth|city|union|emirate|khaganate|tsardom|vice|colony|raj\b|land\b/i.test(n) && /^[A-Z][a-z'ʻ-]+( [A-Z][a-z'-]+)?$/.test(n) && n.length<=14 && !FR[n] && !FRX[n]);
@@ -354,17 +356,17 @@ function render(){
 
 /* Villes principales : {nom, lng, lat, de, à, z (zoom mini), arm} */
 const VILLES = [
- {nom:"Erevan (Erebouni)",lng:44.51,lat:40.18,de:-782,z:3,arm:1},
- {nom:"Tushpa (Van)",lng:43.34,lat:38.5,de:-860,a:1100,z:3,arm:1},
+ {nom:"Erevan (Erebouni)",lng:44.51,lat:40.18,de:-782,z:3,arm:1,note:"Fondée en 782 av. J.-C. par Argishti Iᵉʳ — 29 ans avant Rome. Capitale de l'Arménie depuis 1918."},
+ {nom:"Tushpa (Van)",lng:43.34,lat:38.5,de:-860,a:1100,z:3,arm:1,note:"Capitale d'Ourartou fondée par Sarduri Iᵉʳ sur le rocher de Van."},
  {nom:"Van",lng:43.38,lat:38.5,de:1100,z:4,arm:1},
- {nom:"Armavir",lng:44.04,lat:40.06,de:-750,a:200,z:5,arm:1},
+ {nom:"Armavir",lng:44.04,lat:40.06,de:-776,a:200,z:5,arm:1,note:"Argishtikhinili ourartéenne (776 av. J.-C.), première capitale du royaume d'Arménie."},
  {nom:"Artashat",lng:44.55,lat:39.93,de:-176,a:500,z:5,arm:1},
  {nom:"Tigranakert",lng:41.0,lat:38.14,de:-83,a:400,z:5,arm:1},
  {nom:"Vagharshapat (Etchmiadzin)",lng:44.29,lat:40.16,de:150,z:5,arm:1},
  {nom:"Dvin",lng:44.63,lat:40.0,de:335,a:1236,z:5,arm:1},
- {nom:"Ani",lng:43.57,lat:40.51,de:961,a:1319,z:4,arm:1},
+ {nom:"Ani",lng:43.57,lat:40.51,de:961,a:1319,z:4,arm:1,note:"« Ville aux mille et une églises », capitale bagratide (961), ~100 000 hab. ; ruinée par le séisme de 1319."},
  {nom:"Kars",lng:43.1,lat:40.61,de:928,z:6,arm:1},
- {nom:"Sis",lng:35.82,lat:37.45,de:1080,a:1375,z:4,arm:1},
+ {nom:"Sis",lng:35.82,lat:37.45,de:1080,a:1920,z:4,arm:1,note:"Capitale du royaume de Cilicie (prise en 1375) ; siège d'un catholicossat jusqu'en 1921."},
  {nom:"Stepanakert",lng:46.75,lat:39.82,de:1923,z:6,arm:1},
  {nom:"Babylone",lng:44.42,lat:32.54,de:-1900,a:-140,z:3},
  {nom:"Ninive",lng:43.15,lat:36.36,de:-1800,a:-612,z:4},
@@ -519,6 +521,26 @@ function clic(x,y){
   // vérifier qu'on est bien sur le disque
   const dx=x-W/2, dy=y-H/2;
   if(Math.hypot(dx,dy) > base*k+2){ fermerBulle(); return; }
+  // priorité aux villes visibles (rayon 12 px)
+  const yA=YEARS[idx], centre=[-rot[0],-rot[1]];
+  if(k>=3){
+    let meilleure=null, dmin=12;
+    for(const v of VILLES){
+      if(yA<v.de || (v.a!==undefined && yA>v.a)) continue;
+      if(k < (v.arm ? Math.min(v.z,4) : v.z)) continue;
+      if(d3.geoDistance([v.lng,v.lat], centre) > 1.35) continue;
+      const p=projection([v.lng,v.lat]); if(!p) continue;
+      const d=Math.hypot(p[0]-x,p[1]-y);
+      if(d<dmin){ dmin=d; meilleure=v; }
+    }
+    if(meilleure){
+      const v=meilleure;
+      const dates = `${v.de<0?(-v.de)+" av. J.-C.":v.de}${v.a!==undefined?" — "+(v.a<0?(-v.a)+" av. J.-C.":v.a):" — aujourd'hui"}`;
+      bulle.innerHTML = `<b>${v.nom}</b><span>${dates}</span>${v.note?`<span>${v.note}</span>`:""}`;
+      bulle.style.left=x+"px"; bulle.style.top=y+"px"; bulle.style.display="block";
+      return;
+    }
+  }
   const feats = (DATA.world[String(YEARS[idx])]||[]).slice().sort((a,b)=>a.a-b.a);
   for(const f of feats){
     if(d3.geoContains({type:"Feature",geometry:{type:f.t,coordinates:f.c}}, ll)){

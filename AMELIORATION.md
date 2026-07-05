@@ -205,3 +205,32 @@ Non : le point disparaît sans explication. → Itération 7 : au clic sur une v
 mini-fiche (fondation, apogée, fin) dans l'infobulle.
 
 ---
+
+## Itération 7 — 2026-07-06
+
+**Fait (Q16–Q18)** : audit du classifieur sur les 1 478 noms (382 classés
+peuplements — presque tous des ethnonymes légitimes) ; liste blanche d'États pour
+les faux positifs détectés (Haripunjaya, Lambakannas, Silia/Silla, Luva/Lavo…) ;
+dates de villes corrigées (Armavir 776 av. J.-C., Sis prolongée jusqu'au départ du
+catholicossat) ; **fiche ville au clic** (rayon 12 px, prioritaire sur les
+territoires) : nom, dates d'existence, notice pour les villes arméniennes majeures
+(Erevan, Tushpa, Ani, Armavir, Sis). Vérifié dans Chrome (clic sur Ani en l'an 1000).
+
+**Q19. L'apprenant peut-il tester ses connaissances (apprentissage actif) ?**
+Non, l'outil est purement contemplatif.
+→ **Réponse pour l'itération 8** : mode quiz léger — bouton « ? » : 5 questions
+tirées au hasard (année ↔ événement charnière, capitale ↔ période), réponses par
+choix multiples, score affiché ; tout côté client depuis CHARNIERE/periodes.json.
+
+**Q20. Le premier contact explique-t-il comment utiliser le globe ?**
+Non : aucun onboarding (rotation, zoom, clic, frise).
+→ **Réponse pour l'itération 8** : voile d'accueil au premier lancement
+(localStorage) : 3 gestes illustrés en une phrase chacun.
+
+**Q21. Les notices de periodes.json sont-elles reliées aux nouvelles villes ?**
+Partiellement : les capitales des notices volent vers le lieu, mais les fiches
+villes du globe ne pointent pas vers la notice de leur période.
+→ **Réponse pour l'itération 8** : dans la fiche ville, lien « Voir la période »
+qui cale la frise sur le siècle pertinent et ouvre le panneau.
+
+---
