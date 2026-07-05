@@ -44,7 +44,14 @@ def geom_of(world, pattern):
 
 # Emprise du plateau arménien historique + Cilicie, pour borner les intersections
 PLATEAU = box(37.0, 37.5, 47.5, 41.8)
-CILICIE = box(32.5, 36.0, 37.0, 38.4)
+# Cilicie : polygone suivant la crête des monts Taurus (nord) et le golfe d'Alexandrette (est)
+CILICIE = Polygon([(32.3,36.0),(32.3,36.7),(33.5,37.3),(34.6,37.9),(35.6,38.3),
+                   (36.6,38.2),(37.2,37.4),(36.6,35.8),(32.3,35.8)])
+# Partage de Zuhab (1639) : frontière approx. Arpatchaï–Araxe vers 43,7°E
+ZUHAB_OUEST = box(36.0, 35.5, 43.7, 42.5)
+ZUHAB_EST   = box(43.7, 35.5, 48.5, 42.5)
+# Transcaucasie russe vers 1900 (Kars 1878 + Erevan/Zanguezour, nord de l'Araxe)
+RUSSE_1900  = box(42.5, 38.8, 47.5, 41.8)
 
 # Gabarit "Arménie étendue" : Arménie arsacide (an 300, la plus large des couches sources)
 def gabarit_armenie():
@@ -69,12 +76,14 @@ SPECS = [
     (1400, "Arménie (domination timouride)", "Empire timouride", "gabarit", r"timurid", PLATEAU),
     (1500, "Arménie (Ak Koyunlu)", "Ak Koyunlu (Mouton blanc)", "gabarit", r"white sheep", PLATEAU),
     (1500, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
-    (1600, "Arménie sous l'Empire ottoman", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
-    (1700, "Arménie sous l'Empire ottoman", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
+    (1600, "Arménie occidentale (ottomane)", "Empire ottoman — paix de Zuhab (1639)", "gabarit", r"ottoman", PLATEAU.intersection(ZUHAB_OUEST)),
+    (1600, "Arménie orientale (persane)", "Perse séfévide — paix de Zuhab (1639)", "gabarit", r"ottoman|safavid|persia", PLATEAU.intersection(ZUHAB_EST)),
+    (1700, "Arménie occidentale (ottomane)", "Empire ottoman — paix de Zuhab (1639)", "gabarit", r"ottoman", PLATEAU.intersection(ZUHAB_OUEST)),
+    (1700, "Arménie orientale (persane)", "Perse séfévide — paix de Zuhab (1639)", "gabarit", r"ottoman|safavid|persia", PLATEAU.intersection(ZUHAB_EST)),
     (1800, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
     (1800, "Arménie orientale (khanats d'Erevan et du Karabagh)", "Perse kadjare", "gabarit", r"persia|qajar|central asian khanates|russia", PLATEAU),
-    (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
-    (1900, "Arménie orientale (russe)", "Empire russe", "gabarit", r"russia|persia", PLATEAU),
+    (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1900, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — traités de Turkmentchaï (1828) et Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
 ]
 
 def rnd(c):

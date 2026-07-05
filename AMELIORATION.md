@@ -77,3 +77,34 @@ approximative de la paix de Zuhab (méridien ~44,5°E infléchi vers l'Araxe), e
 en documentant l'écart à la source dans ce journal.
 
 ---
+
+## Itération 3 — 2026-07-05
+
+**Fait** (réponses à Q4–Q6) : Cilicie découpée par un polygone suivant la crête du
+Taurus (7,1 deg², plus de bords rectangulaires au nord) ; mention « Frontières
+reconstituées (intersection de cartes historiques) » dans l'infobulle et le panneau
+pour toute surcouche `o:1` ; surcouches 1600/1700 scindées selon la paix de Zuhab
+(frontière Arpatchaï–Araxe ~43,7°E : Arménie occidentale ottomane / orientale
+persane) ; 1900 corrigé : « Arménie russe (gouvernorats d'Erevan et de Kars) » au
+nord-est (boîte Transcaucasie 42,5–47,5°E / 38,8–41,8°N, conforme à Turkmentchaï
+1828 + Berlin 1878), Arménie ottomane amputée de Kars. **Écart au dataset documenté** :
+la source aourednik donne tout le plateau aux Ottomans en 1600–1700 et Erevan à la
+Perse en 1900 ; nos surcouches corrigent d'après les traités. Vérifié dans Chrome (1700).
+
+**Q7. Les siècles sans notice (−2000…−1000, 1400, 1900, 2000) privent-ils l'apprenant de contexte ?**
+Oui : le panneau affiche « pas de notice détaillée ».
+→ **Réponse pour l'itération 4** : rédiger des mini-notices embarquées dans globe.html
+(Hayasa/proto-arméniens −2000…−1000 ; Kara/Ak Koyunlu 1400 ; veille du génocide et
+question arménienne 1900 ; 3ᵉ République + Artsakh 2000), même gabarit que periodes.json.
+
+**Q8. La navigation temporelle est-elle un outil d'apprentissage ou un simple slider ?**
+Un simple slider : rien n'incite à observer l'évolution.
+→ **Réponse pour l'itération 4** : bouton « lecture » (▶ animé) qui avance d'un siècle
+toutes les 2,5 s avec pause au toucher, pour « feuilleter » les 4 millénaires.
+
+**Q9. L'apprenant sait-il ce que signifient l'or plein (États du dataset) et l'or pointillé (reconstitutions) ?**
+Non, aucune légende.
+→ **Réponse pour l'itération 4** : mini-légende discrète (coin bas-gauche) : or plein =
+État arménien attesté dans la source, or pointillé = présence arménienne reconstituée.
+
+---

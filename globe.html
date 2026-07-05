@@ -387,7 +387,8 @@ function clic(x,y){
 const bulle = document.getElementById("bulle");
 function montrerBulle(f,x,y){
   const suj = f.s && f.s!==f.n ? `<span>Sous suzeraineté : ${nomFR(f.s)}</span>` : "";
-  bulle.innerHTML = `<b>${nomFR(f.n)}</b>${suj}`;
+  const rec = f.o ? `<span style="font-style:italic;color:#d4a548">Frontières reconstituées (intersection de cartes historiques)</span>` : "";
+  bulle.innerHTML = `<b>${nomFR(f.n)}</b>${suj}${rec}`;
   bulle.style.left = x+"px"; bulle.style.top = y+"px"; bulle.style.display="block";
 }
 function fermerBulle(){ bulle.style.display="none"; }
@@ -464,6 +465,7 @@ function remplirPanneauPeriode(){
     const f=selection.f;
     html += `<h2>${nomFR(f.n)}</h2>`;
     if(f.s && f.s!==f.n) html += `<div class="entite-sujet">Sous suzeraineté : <b style="color:var(--or)">${nomFR(f.s)}</b></div>`;
+    if(f.o) html += `<div class="entite-sujet" style="font-style:italic">Frontières reconstituées par intersection de cartes historiques — tracé indicatif.</div>`;
   }
   if(i>=0 && PERIODES && PERIODES[i]){
     const p=PERIODES[i];
