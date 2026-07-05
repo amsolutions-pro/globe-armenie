@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Globe historique — 4 000 ans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+:root{
+  --or:#d4a548; --or-clair:#e8c47a; --tuf:#241b15; --obsidienne:#171210;
+  --encre:#efe6d8; --encre-2:#b8a98f; --trait:#3a2e22;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--encre);
+  font-family:'IBM Plex Sans',sans-serif;touch-action:none;-webkit-user-select:none;user-select:none}
+#globe{position:fixed;inset:0;display:block;cursor:grab;touch-action:none}
+#globe.drag{cursor:grabbing}
+
+/* ---------- En-tête ---------- */
+#entete{position:fixed;top:0;left:0;right:0;padding:calc(10px + env(safe-area-inset-top)) 16px 8px;
+  text-align:center;pointer-events:none;z-index:5;
+  background:linear-gradient(to bottom,rgba(23,18,16,.92),rgba(23,18,16,0))}
+#entete h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(17px,4.5vw,26px);
+  color:var(--or);letter-spacing:.04em}
+#entete .sous{font-size:clamp(10px,2.6vw,12px);color:var(--encre-2);letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+
+/* ---------- Année géante ---------- */
+#annee{position:fixed;top:calc(58px + env(safe-area-inset-top));left:0;right:0;text-align:center;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(26px,7vw,44px);font-weight:700;
+  color:var(--encre);pointer-events:none;z-index:5;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+#annee small{font-size:.45em;color:var(--encre-2);font-weight:500;letter-spacing:.08em}
+
+/* ---------- Commandes temps ---------- */
+#temps{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));
+  width:min(560px,calc(100% - 24px));z-index:6;
+  background:rgba(36,27,21,.92);border:1px solid var(--trait);border-radius:16px;
+  padding:10px 14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;gap:10px;transition:transform .3s ease}
+#temps button{flex:0 0 44px;height:44px;border-radius:12px;border:1px solid var(--trait);
+  background:var(--tuf);color:var(--or);font-size:18px;cursor:pointer;touch-action:manipulation}
+#temps button:active{background:#2f251c}
+#slider{flex:1;height:44px;-webkit-appearance:none;appearance:none;background:transparent;cursor:pointer;touch-action:pan-x}
+#slider::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--or) var(--pct,0%),#4a3b2a var(--pct,0%))}
+#slider::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--or);border:2px solid var(--obsidienne);margin-top:-9px;box-shadow:0 1px 6px rgba(0,0,0,.6)}
+#slider::-moz-range-track{height:4px;border-radius:2px;background:#4a3b2a}
+#slider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--or);border:2px solid var(--obsidienne)}
+
+/* ---------- Boutons flottants ---------- */
+.flottant{position:fixed;right:calc(10px + env(safe-area-inset-right));z-index:6;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--trait);
+  background:rgba(36,27,21,.92);color:var(--or);font-size:19px;cursor:pointer;
+  touch-action:manipulation;display:flex;align-items:center;justify-content:center;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#btn-armenie{bottom:calc(150px + env(safe-area-inset-bottom))}
+#btn-notice{bottom:calc(96px + env(safe-area-inset-bottom))}
+.flottant:active{background:#2f251c}
+
+/* ---------- Panneau (bottom sheet) ---------- */
+#panel{position:fixed;left:0;right:0;bottom:0;z-index:8;max-height:72dvh;
+  background:var(--tuf);border-top:1px solid var(--or);border-radius:18px 18px 0 0;
+  transform:translateY(105%);transition:transform .32s cubic-bezier(.3,.9,.3,1);
+  display:flex;flex-direction:column;box-shadow:0 -8px 40px rgba(0,0,0,.6)}
+#panel.ouvert{transform:translateY(0)}
+#panel .poignee{flex:0 0 auto;padding:10px 0 4px;cursor:pointer;touch-action:manipulation}
+#panel .poignee::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:#5a4a36;margin:0 auto}
+#panel .corps{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:6px 20px calc(20px + env(safe-area-inset-bottom));touch-action:pan-y}
+#panel h2{font-family:'Cormorant Garamond',serif;color:var(--or);font-size:24px;font-weight:600;line-height:1.15}
+#panel .dates{color:var(--encre-2);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;margin:3px 0 10px}
+#panel .pouvoir{display:inline-block;font-size:12px;color:var(--or-clair);border:1px solid var(--trait);
+  border-radius:8px;padding:3px 9px;margin-bottom:12px;background:rgba(212,165,72,.07)}
+#panel p{font-size:14.5px;line-height:1.62;color:var(--encre);margin-bottom:10px;font-weight:300}
+#panel p strong{color:var(--or-clair);font-weight:500}
+#panel .contexte{border-left:2px solid var(--or);padding:8px 12px;background:rgba(212,165,72,.06);
+  font-size:13.5px;line-height:1.55;color:var(--encre-2);margin:12px 0;border-radius:0 8px 8px 0}
+#panel .caps{margin-top:10px}
+#panel .caps h3{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--encre-2);margin-bottom:6px}
+#panel .cap{font-size:13.5px;padding:5px 0;border-bottom:1px solid var(--trait);cursor:pointer;touch-action:manipulation}
+#panel .cap b{color:var(--or);font-weight:500}
+#panel .cap span{color:var(--encre-2);font-weight:300}
+#panel .entite-sujet{font-size:13px;color:var(--encre-2);margin-bottom:10px}
+#panel .fermer{position:absolute;top:8px;right:10px;width:40px;height:40px;border:none;background:none;
+  color:var(--encre-2);font-size:20px;cursor:pointer;touch-action:manipulation}
+
+/* ---------- Infobulle entité ---------- */
+#bulle{position:fixed;z-index:7;pointer-events:none;transform:translate(-50%,-130%);
+  background:rgba(23,18,16,.94);border:1px solid var(--or);border-radius:10px;
+  padding:7px 12px;font-size:13px;max-width:240px;display:none;text-align:center}
+#bulle b{color:var(--or);font-family:'Cormorant Garamond',serif;font-size:16px;display:block}
+#bulle span{color:var(--encre-2);font-size:11.5px}
+
+/* ---------- Chargement ---------- */
+#charge{position:fixed;inset:0;z-index:20;background:var(--obsidienne);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  transition:opacity .5s;font-family:'Cormorant Garamond',serif}
+#charge.cache{opacity:0;pointer-events:none}
+#charge .titre{color:var(--or);font-size:26px}
+#charge .info{color:var(--encre-2);font-size:14px;font-family:'IBM Plex Sans',sans-serif;max-width:320px;text-align:center;line-height:1.5}
+#charge .anneau{width:44px;height:44px;border:3px solid var(--trait);border-top-color:var(--or);
+  border-radius:50%;animation:tour 1s linear infinite}
+@keyframes tour{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<canvas id="globe"></canvas>
+
+<div id="entete">
+  <h1>Le Monde à travers les siècles</h1>
+  <div class="sous">2000 av. J.-C. — 2000 apr. J.-C. · frontières historiques</div>
+</div>
+<div id="annee"></div>
+
+<button class="flottant" id="btn-armenie" title="Centrer sur l'Arménie">֎</button>
+<button class="flottant" id="btn-notice" title="Notice de la période">✦</button>
+
+<div id="temps">
+  <button id="prec" aria-label="Siècle précédent">◀</button>
+  <input type="range" id="slider" min="0" max="27" value="0" step="1">
+  <button id="suiv" aria-label="Siècle suivant">▶</button>
+</div>
+
+<div id="bulle"></div>
+
+<div id="panel">
+  <div class="poignee" id="poignee"></div>
+  <button class="fermer" id="panel-fermer">✕</button>
+  <div class="corps" id="panel-corps"></div>
+</div>
+
+<div id="charge">
+  <div class="titre">Globe historique</div>
+  <div class="anneau"></div>
+  <div class="info" id="charge-info">Chargement des frontières de 28 siècles…</div>
+</div>
+
+<script>
+"use strict";
+/* ================= Traductions FR des libellés (source anglaise) ================= */
+const FR = {
+"Armenia":"Arménie","Kingdom of Armenia":"Royaume d'Arménie","Armenian Kingdom of Cilicia":"Royaume arménien de Cilicie",
+"Cilician Armenia":"Arménie cilicienne","Urartu":"Ourartou","Great Armenia":"Grande Arménie",
+"Roman Empire":"Empire romain","Rome":"Rome","Roman Republic":"République romaine",
+"Byzantine Empire":"Empire byzantin","Eastern Roman Empire":"Empire romain d'Orient","Western Roman Empire":"Empire romain d'Occident",
+"Ottoman Empire":"Empire ottoman","Ottomans":"Ottomans","Seljuk Empire":"Empire seldjoukide","Seljuks":"Seldjoukides",
+"Sultanate of Rum":"Sultanat de Roum","Achaemenid Empire":"Empire achéménide","Persia":"Perse","Persian Empire":"Empire perse",
+"Parthia":"Parthie","Parthian Empire":"Empire parthe","Sasanian Empire":"Empire sassanide","Sassanid Empire":"Empire sassanide",
+"Safavid Empire":"Empire séfévide","Safavids":"Séfévides","Qajar":"Perse kadjare","Afsharid":"Afcharides",
+"Media":"Médie","Medes":"Mèdes","Elam":"Élam","Assyria":"Assyrie","Assyrian Empire":"Empire assyrien",
+"Babylonia":"Babylonie","Babylon":"Babylone","Neo-Babylonian Empire":"Empire néo-babylonien","Sumer":"Sumer","Akkad":"Akkad",
+"Hittites":"Hittites","Hittite Empire":"Empire hittite","Mitanni":"Mitanni","Phrygia":"Phrygie","Lydia":"Lydie",
+"Egypt":"Égypte","Ancient Egypt":"Égypte ancienne","Ptolemaic Empire":"Empire lagide","Ptolemies":"Lagides",
+"Seleucid Empire":"Empire séleucide","Macedonian Empire":"Empire de Macédoine","Macedonia":"Macédoine",
+"Greece":"Grèce","Greek city-states":"Cités grecques","Sparta":"Sparte","Athens":"Athènes","Pontus":"Pont",
+"Cappadocia":"Cappadoce","Galatia":"Galatie","Colchis":"Colchide","Iberia":"Ibérie","Georgia":"Géorgie",
+"Kingdom of Georgia":"Royaume de Géorgie","Albania":"Albanie","Caucasian Albania":"Albanie du Caucase",
+"Khazars":"Khazars","Khazar Khaganate":"Khaganat khazar","Golden Horde":"Horde d'Or","Mongol Empire":"Empire mongol",
+"Ilkhanate":"Ilkhanat","Il-Khanate":"Ilkhanat","Chagatai Khanate":"Khanat de Djaghataï","Timurid Empire":"Empire timouride",
+"Timurids":"Timourides","Ak Koyunlu":"Ak Koyunlu (Mouton blanc)","Kara Koyunlu":"Kara Koyunlu (Mouton noir)",
+"Umayyad Caliphate":"Califat omeyyade","Abbasid Caliphate":"Califat abbasside","Caliphate":"Califat",
+"Rashidun Caliphate":"Califat des Rachidoune","Fatimid Caliphate":"Califat fatimide","Mamluk Sultanate":"Sultanat mamelouk",
+"Mamluks":"Mamelouks","Ayyubid Sultanate":"Sultanat ayyoubide","Ayyubids":"Ayyoubides",
+"Arabia":"Arabie","Arabs":"Arabes","Bedouins":"Bédouins","Israel":"Israël","Judah":"Juda","Phoenicia":"Phénicie",
+"Kievan Rus":"Rus' de Kiev","Kievan Rus'":"Rus' de Kiev","Russia":"Russie","Russian Empire":"Empire russe",
+"Soviet Union":"Union soviétique","USSR":"URSS","Muscovy":"Moscovie","Grand Duchy of Moscow":"Grande-principauté de Moscou",
+"Poland":"Pologne","Poland-Lithuania":"Pologne-Lituanie","Lithuania":"Lituanie","Hungary":"Hongrie","Kingdom of Hungary":"Royaume de Hongrie",
+"Holy Roman Empire":"Saint-Empire romain germanique","Germany":"Allemagne","Prussia":"Prusse","Austria":"Autriche",
+"Austria-Hungary":"Autriche-Hongrie","Habsburg Empire":"Empire des Habsbourg","France":"France","Frankish Kingdom":"Royaume franc",
+"Franks":"Francs","Francia":"Francie","Carolingian Empire":"Empire carolingien","Spain":"Espagne","Castile":"Castille",
+"Aragon":"Aragon","Portugal":"Portugal","England":"Angleterre","Great Britain":"Grande-Bretagne","United Kingdom":"Royaume-Uni",
+"British Empire":"Empire britannique","Scotland":"Écosse","Ireland":"Irlande","Italy":"Italie","Venice":"Venise",
+"Republic of Venice":"République de Venise","Genoa":"Gênes","Papal States":"États pontificaux","Naples":"Naples",
+"Sicily":"Sicile","Norway":"Norvège","Sweden":"Suède","Denmark":"Danemark","Denmark-Norway":"Danemark-Norvège",
+"Netherlands":"Pays-Bas","Belgium":"Belgique","Switzerland":"Suisse","Byzantium":"Byzance",
+"Bulgaria":"Bulgarie","Bulgarian Empire":"Empire bulgare","Serbia":"Serbie","Croatia":"Croatie","Bosnia":"Bosnie",
+"Wallachia":"Valachie","Moldavia":"Moldavie","Romania":"Roumanie","Crimean Khanate":"Khanat de Crimée",
+"China":"Chine","Han Empire":"Empire han","Tang Empire":"Empire tang","Song Empire":"Empire song","Ming Empire":"Empire ming",
+"Qing Empire":"Empire qing","Yuan Empire":"Empire yuan","Tibet":"Tibet","Tibetan Empire":"Empire tibétain",
+"Japan":"Japon","Korea":"Corée","Mongolia":"Mongolie","Xiongnu":"Xiongnu","Gokturk Khaganate":"Khaganat göktürk",
+"Göktürk Khaganate":"Khaganat göktürk","Uyghur Khaganate":"Khaganat ouïghour","Kushan Empire":"Empire kouchan",
+"India":"Inde","Maurya Empire":"Empire maurya","Gupta Empire":"Empire gupta","Mughal Empire":"Empire moghol",
+"Delhi Sultanate":"Sultanat de Delhi","Chola":"Chola","Bactria":"Bactriane","Sogdiana":"Sogdiane",
+"Khwarezm":"Khwarezm","Khwarezmian Empire":"Empire khwarezmien","Samanids":"Samanides","Ghaznavids":"Ghaznévides",
+"Scythians":"Scythes","Scythia":"Scythie","Sarmatians":"Sarmates","Cimmerians":"Cimmériens","Huns":"Huns",
+"Hunnic Empire":"Empire hunnique","Avars":"Avars","Pechenegs":"Petchénègues","Cumans":"Coumans","Kipchaks":"Kiptchaks",
+"Alans":"Alains","Goths":"Goths","Visigoths":"Wisigoths","Ostrogoths":"Ostrogoths","Vandals":"Vandales",
+"Slavs":"Slaves","Vikings":"Vikings","Normans":"Normands","Celts":"Celtes","Gauls":"Gaulois","Germanic tribes":"Tribus germaniques",
+"Numidia":"Numidie","Carthage":"Carthage","Mauretania":"Maurétanie","Aksum":"Aksoum","Axum":"Aksoum",
+"Ethiopia":"Éthiopie","Nubia":"Nubie","Kush":"Koush","Mali Empire":"Empire du Mali","Songhai Empire":"Empire songhaï",
+"Ghana Empire":"Empire du Ghana","Morocco":"Maroc","Almohads":"Almohades","Almoravids":"Almoravides",
+"Al-Andalus":"Al-Andalus","Umayyads of Cordoba":"Omeyyades de Cordoue","Aztec Empire":"Empire aztèque",
+"Inca Empire":"Empire inca","Maya":"Mayas","United States":"États-Unis","United States of America":"États-Unis d'Amérique",
+"Canada":"Canada","Mexico":"Mexique","Brazil":"Brésil","Argentina":"Argentine","Colombia":"Colombie","Peru":"Pérou",
+"Chile":"Chili","Venezuela":"Venezuela","Bolivia":"Bolivie","Australia":"Australie","New Zealand":"Nouvelle-Zélande",
+"Indonesia":"Indonésie","Vietnam":"Viêt Nam","Thailand":"Thaïlande","Siam":"Siam","Burma":"Birmanie","Khmer Empire":"Empire khmer",
+"Persian Gulf states":"États du golfe Persique","Saudi Arabia":"Arabie saoudite","Iraq":"Irak","Iran":"Iran",
+"Syria":"Syrie","Lebanon":"Liban","Jordan":"Jordanie","Turkey":"Turquie","Azerbaijan":"Azerbaïdjan",
+"Kazakhstan":"Kazakhstan","Uzbekistan":"Ouzbékistan","Turkmenistan":"Turkménistan","Afghanistan":"Afghanistan",
+"Pakistan":"Pakistan","Ukraine":"Ukraine","Belarus":"Biélorussie","Finland":"Finlande","Estonia":"Estonie",
+"Latvia":"Lettonie","Greenland":"Groenland","Iceland":"Islande","Cuba":"Cuba","unclaimed":"Terres non revendiquées",
+"Antarctica":"Antarctique","Alaska":"Alaska","Siberia":"Sibérie","Siberian peoples":"Peuples de Sibérie",
+"indigenous peoples":"Peuples autochtones","native peoples":"Peuples autochtones","Crete":"Crète","Minoans":"Minoens",
+"Mycenaean Greece":"Grèce mycénienne","Trojans":"Troyens","Etruscans":"Étrusques","Illyria":"Illyrie","Thrace":"Thrace",
+"Dacia":"Dacie","Epirus":"Épire","Bosporan Kingdom":"Royaume du Bosphore","Nabataeans":"Nabatéens","Palmyra":"Palmyre",
+"Ghassanids":"Ghassanides","Lakhmids":"Lakhmides","Himyar":"Himyar","Saba":"Saba","Oman":"Oman","Yemen":"Yémen",
+"White Huns":"Huns blancs","Hephthalites":"Hephtalites","Tuvan":"Touvains","Jurchen":"Jürchen","Khitan":"Khitans",
+"Liao Empire":"Empire liao","Jin Empire":"Empire jin","Silla":"Silla","Goguryeo":"Koguryo","Baekje":"Paekche",
+"Nomads":"Nomades","nomads":"Nomades","Turkic nomads":"Nomades turcs","Mongol tribes":"Tribus mongoles"
+};
+function nomFR(n){
+  if(!n) return "Territoire sans nom";
+  if(FR[n]) return FR[n];
+  const k = Object.keys(FR).find(x=>x.toLowerCase()===n.toLowerCase());
+  return k ? FR[k] : n;
+}
+function estArmenien(n){ return /armen|urartu/i.test(n||""); }
+
+/* ================= État global ================= */
+const canvas = document.getElementById("globe"), ctx = canvas.getContext("2d");
+const DPR = Math.min(window.devicePixelRatio||1, 2);
+let W=0, H=0, base=0;
+let DATA=null, PERIODES=null, YEARS=[], idx=0;
+let k=1, rot=[-44.3,-39.7,0];         // départ centré Arménie
+const K_MIN=0.7, K_MAX=60;
+let selection=null;                    // entité cliquée
+let anim=null;
+
+const projection = d3.geoOrthographic().clipAngle(90);
+const path = d3.geoPath(projection, ctx);
+const graticule = d3.geoGraticule10();
+
+/* Couleur stable par hash du nom */
+const cacheCouleur = new Map();
+function couleur(n){
+  if(estArmenien(n)) return /urartu/i.test(n) ? "#b0762e" : "#d4a548";
+  if(cacheCouleur.has(n)) return cacheCouleur.get(n);
+  let h=0; for(let i=0;i<n.length;i++){ h = (h*31 + n.charCodeAt(i)) >>> 0; }
+  const teinte = h % 360, sat = 26 + (h>>9)%16, lum = 26 + (h>>13)%14;
+  const c = `hsl(${teinte},${sat}%,${lum}%)`;
+  cacheCouleur.set(n,c); return c;
+}
+
+/* ================= Redimensionnement ================= */
+function resize(){
+  W = window.innerWidth; H = window.innerHeight;
+  canvas.width = W*DPR; canvas.height = H*DPR;
+  canvas.style.width = W+"px"; canvas.style.height = H+"px";
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  base = Math.min(W,H)/2.1 - 10;
+  projection.translate([W/2, H/2]).scale(base*k).rotate(rot);
+  render();
+}
+window.addEventListener("resize", resize);
+
+/* ================= Rendu ================= */
+function render(){
+  if(!DATA) return;
+  projection.scale(base*k).rotate(rot);
+  ctx.clearRect(0,0,W,H);
+
+  // Océan
+  const g = ctx.createRadialGradient(W/2-base*k*.25, H/2-base*k*.25, base*k*.1, W/2, H/2, base*k);
+  g.addColorStop(0,"#20303c"); g.addColorStop(1,"#0d151c");
+  ctx.beginPath(); path({type:"Sphere"}); ctx.fillStyle=g; ctx.fill();
+
+  // Graticule
+  ctx.beginPath(); path(graticule);
+  ctx.strokeStyle="rgba(212,165,72,.10)"; ctx.lineWidth=.5; ctx.stroke();
+
+  // Entités (déjà triées grandes → petites)
+  const feats = DATA.world[String(YEARS[idx])] || [];
+  for(const f of feats){
+    ctx.beginPath(); path({type:f.t, coordinates:f.c});
+    ctx.fillStyle = couleur(f.n); ctx.globalAlpha=.92; ctx.fill(); ctx.globalAlpha=1;
+    ctx.strokeStyle="rgba(15,10,8,.55)"; ctx.lineWidth=.6; ctx.stroke();
+  }
+  // Surbrillance sélection
+  if(selection && selection.annee===YEARS[idx]){
+    ctx.beginPath(); path({type:selection.f.t, coordinates:selection.f.c});
+    ctx.strokeStyle="#e8c47a"; ctx.lineWidth=2; ctx.stroke();
+  }
+  // Limbe
+  ctx.beginPath(); path({type:"Sphere"});
+  ctx.strokeStyle="rgba(212,165,72,.45)"; ctx.lineWidth=1.2; ctx.stroke();
+
+  dessinerEtiquettes(feats);
+}
+
+/* Étiquettes : seuil aire·zoom + anti-collision par boîtes */
+function dessinerEtiquettes(feats){
+  const centre = [-rot[0], -rot[1]];
+  const boites = [];
+  ctx.textAlign="center"; ctx.textBaseline="middle";
+  // petits d'abord pour qu'ils gardent leur étiquette au zoom
+  const cand = feats.filter(f => f.a*k > 140 || estArmenien(f.n) && f.a*k>25 || (selection && selection.f===f))
+                    .sort((a,b)=>a.a-b.a);
+  for(const f of cand){
+    if(d3.geoDistance(f.l, centre) > 1.35) continue;  // face cachée / trop au bord
+    const p = projection(f.l); if(!p) continue;
+    const nom = nomFR(f.n);
+    const arm = estArmenien(f.n);
+    const taille = Math.max(10, Math.min(17, 9 + Math.sqrt(f.a*k)/6));
+    ctx.font = `${arm?"600":"400"} ${taille}px 'IBM Plex Sans',sans-serif`;
+    const larg = ctx.measureText(nom).width;
+    const boite = {x:p[0]-larg/2-3, y:p[1]-taille/2-2, w:larg+6, h:taille+4};
+    if(boites.some(b => boite.x < b.x+b.w && boite.x+boite.w > b.x && boite.y < b.y+b.h && boite.y+boite.h > b.y)) continue;
+    boites.push(boite);
+    ctx.lineWidth=3; ctx.strokeStyle="rgba(13,9,7,.85)"; ctx.strokeText(nom,p[0],p[1]);
+    ctx.fillStyle = arm ? "#ffd98a" : "rgba(239,230,216,.92)";
+    ctx.fillText(nom,p[0],p[1]);
+  }
+}
+
+/* ================= Interactions : drag, pinch, molette, clic ================= */
+const pointeurs = new Map();
+let distPincee=0, kPincee=1, bouge=false, dep=null;
+
+canvas.addEventListener("pointerdown", e=>{
+  canvas.setPointerCapture(e.pointerId);
+  pointeurs.set(e.pointerId,[e.clientX,e.clientY]);
+  bouge=false; dep=[e.clientX,e.clientY];
+  if(pointeurs.size===2){
+    const [a,b]=[...pointeurs.values()];
+    distPincee=Math.hypot(a[0]-b[0],a[1]-b[1]); kPincee=k;
+  }
+  canvas.classList.add("drag");
+});
+canvas.addEventListener("pointermove", e=>{
+  if(!pointeurs.has(e.pointerId)) return;
+  const prev = pointeurs.get(e.pointerId);
+  pointeurs.set(e.pointerId,[e.clientX,e.clientY]);
+  if(Math.hypot(e.clientX-dep[0], e.clientY-dep[1])>6) bouge=true;
+  if(pointeurs.size===1){
+    const s = 75/(base*k/250);   // sensibilité ≈ 75/scale normalisée
+    rot[0] += (e.clientX-prev[0]) * s/250 * 60/Math.max(k,1)**.9;
+    rot[1] -= (e.clientY-prev[1]) * s/250 * 60/Math.max(k,1)**.9;
+    rot[1] = Math.max(-90, Math.min(90, rot[1]));
+    stopAnim(); render();
+  } else if(pointeurs.size===2){
+    const [a,b]=[...pointeurs.values()];
+    const d=Math.hypot(a[0]-b[0],a[1]-b[1]);
+    if(distPincee>0){ k = Math.max(K_MIN, Math.min(K_MAX, kPincee*d/distPincee)); stopAnim(); render(); }
+  }
+});
+function finPointeur(e){
+  if(pointeurs.size===1 && !bouge && e.type==="pointerup") clic(e.clientX, e.clientY);
+  pointeurs.delete(e.pointerId);
+  if(pointeurs.size<2) distPincee=0;
+  if(pointeurs.size===0) canvas.classList.remove("drag");
+}
+canvas.addEventListener("pointerup", finPointeur);
+canvas.addEventListener("pointercancel", finPointeur);
+
+canvas.addEventListener("wheel", e=>{
+  e.preventDefault();
+  k = Math.max(K_MIN, Math.min(K_MAX, k * Math.pow(1.0015, -e.deltaY)));
+  stopAnim(); render();
+},{passive:false});
+
+/* Clic : invert + geoContains, petits candidats d'abord */
+function clic(x,y){
+  const ll = projection.invert([x,y]);
+  if(!ll || isNaN(ll[0])) { fermerBulle(); return; }
+  // vérifier qu'on est bien sur le disque
+  const dx=x-W/2, dy=y-H/2;
+  if(Math.hypot(dx,dy) > base*k+2){ fermerBulle(); return; }
+  const feats = (DATA.world[String(YEARS[idx])]||[]).slice().sort((a,b)=>a.a-b.a);
+  for(const f of feats){
+    if(d3.geoContains({type:"Feature",geometry:{type:f.t,coordinates:f.c}}, ll)){
+      selection = {f, annee:YEARS[idx]};
+      montrerBulle(f, x, y);
+      render();
+      return;
+    }
+  }
+  selection=null; fermerBulle(); render();
+}
+const bulle = document.getElementById("bulle");
+function montrerBulle(f,x,y){
+  const suj = f.s && f.s!==f.n ? `<span>Sous suzeraineté : ${nomFR(f.s)}</span>` : "";
+  bulle.innerHTML = `<b>${nomFR(f.n)}</b>${suj}`;
+  bulle.style.left = x+"px"; bulle.style.top = y+"px"; bulle.style.display="block";
+}
+function fermerBulle(){ bulle.style.display="none"; }
+
+/* ================= Temps : slider, boutons, clavier ================= */
+const slider=document.getElementById("slider"), annee=document.getElementById("annee");
+function libelleAnnee(y){
+  if(y<0) return `${-y} <small>AV. J.-C.</small>`;
+  if(y===1) return `An 1`;
+  return `${y} <small>APR. J.-C.</small>`;
+}
+function allerA(i){
+  idx = Math.max(0, Math.min(YEARS.length-1, i));
+  slider.value=idx;
+  slider.style.setProperty("--pct", (idx/(YEARS.length-1)*100)+"%");
+  annee.innerHTML = libelleAnnee(YEARS[idx]);
+  selection=null; fermerBulle();
+  render();
+  if(document.getElementById("panel").classList.contains("ouvert")) remplirPanneauPeriode();
+}
+slider.addEventListener("input", ()=>allerA(+slider.value));
+document.getElementById("prec").addEventListener("click", ()=>allerA(idx-1));
+document.getElementById("suiv").addEventListener("click", ()=>allerA(idx+1));
+window.addEventListener("keydown", e=>{
+  if(e.key==="ArrowLeft") allerA(idx-1);
+  else if(e.key==="ArrowRight") allerA(idx+1);
+  else if(e.key==="Escape"){ fermerPanneau(); selection=null; fermerBulle(); render(); }
+});
+
+/* ================= Recentrage Arménie (animation) ================= */
+function stopAnim(){ if(anim){ cancelAnimationFrame(anim); anim=null; } }
+document.getElementById("btn-armenie").addEventListener("click", ()=>{
+  const rotDep=[...rot], kDep=k, rotFin=[-44.3,-39.7,0], kFin=Math.max(k,7);
+  const t0=performance.now(), duree=900;
+  stopAnim();
+  const iRot=d3.interpolate(rotDep,rotFin), iK=d3.interpolate(kDep,kFin);
+  (function pas(t){
+    const u=Math.min(1,(t-t0)/duree), e=d3.easeCubicInOut(u);
+    rot=iRot(e); k=iK(e); render();
+    if(u<1) anim=requestAnimationFrame(pas); else anim=null;
+  })(t0);
+});
+
+/* ================= Panneau notices ================= */
+const panel=document.getElementById("panel"), corps=document.getElementById("panel-corps");
+function ouvrirPanneau(){ panel.classList.add("ouvert"); }
+function fermerPanneau(){ panel.classList.remove("ouvert"); }
+document.getElementById("panel-fermer").addEventListener("click", fermerPanneau);
+document.getElementById("poignee").addEventListener("click", fermerPanneau);
+document.getElementById("btn-notice").addEventListener("click", ()=>{
+  if(panel.classList.contains("ouvert")) fermerPanneau();
+  else { remplirPanneauPeriode(); ouvrirPanneau(); }
+});
+canvas.addEventListener("pointerdown", fermerPanneau);
+
+/* Correspondance année du globe → notice arménienne de periodes.json */
+function indexPeriode(y){
+  if(y===-700) return 0;                 // Ourartou
+  if(y===-500) return 1;                 // Satrapie
+  if(y===-300) return 2;                 // Orontides
+  if(y===-100) return 3;                 // Artaxiades
+  if(y>=1 && y<=400) return 4;           // Arsacides
+  if(y===500||y===600) return 5;         // Marzpanat / Byzance
+  if(y===700||y===800) return 6;         // Arminiya arabe
+  if(y===900||y===1000) return 7;        // Bagratides
+  if(y>=1100 && y<=1300) return 8;       // Cilicie & Zakarides
+  if(y>=1500 && y<=1800) return 9;       // Partages ottomano-persans
+  return -1;
+}
+function remplirPanneauPeriode(){
+  const y=YEARS[idx], i=indexPeriode(y);
+  let html="";
+  if(selection && selection.annee===y){
+    const f=selection.f;
+    html += `<h2>${nomFR(f.n)}</h2>`;
+    if(f.s && f.s!==f.n) html += `<div class="entite-sujet">Sous suzeraineté : <b style="color:var(--or)">${nomFR(f.s)}</b></div>`;
+  }
+  if(i>=0 && PERIODES && PERIODES[i]){
+    const p=PERIODES[i];
+    html += `<h2>${p.nom}</h2><div class="dates">${p.dates}</div>
+      <div class="pouvoir">${p.pouvoir}</div>`;
+    for(const par of p.apercu) html += `<p>${par}</p>`;
+    if(p.contexte) html += `<div class="contexte">${p.contexte}</div>`;
+    if(p.capitales && p.capitales.length){
+      html += `<div class="caps"><h3>Capitales</h3>`;
+      for(const c of p.capitales)
+        html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
+      html += `</div>`;
+    }
+  } else if(!html){
+    html = `<h2>${annee.textContent}</h2><p style="color:var(--encre-2)">Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.</p>`;
+  }
+  corps.innerHTML = html;
+  corps.querySelectorAll(".cap").forEach(el=>{
+    el.addEventListener("click", ()=>{
+      const lat=+el.dataset.lat, lng=+el.dataset.lng;
+      const rotDep=[...rot], kDep=k, t0=performance.now();
+      const iRot=d3.interpolate(rotDep,[-lng,-lat,0]), iK=d3.interpolate(kDep,Math.max(k,14));
+      stopAnim(); fermerPanneau();
+      (function pas(t){
+        const u=Math.min(1,(t-t0)/800), e=d3.easeCubicInOut(u);
+        rot=iRot(e); k=iK(e); render();
+        if(u<1) anim=requestAnimationFrame(pas); else anim=null;
+      })(t0);
+    });
+  });
+}
+
+/* ================= Chargement ================= */
+Promise.all([
+  fetch("globe_data.json").then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
+  fetch("periodes.json").then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([d,p])=>{
+  DATA=d; PERIODES=p; YEARS=d.years;
+  slider.max = YEARS.length-1;
+  idx = YEARS.indexOf(-700); if(idx<0) idx=0;   // départ : Ourartou
+  resize(); allerA(idx);
+  k=2.2; render();
+  document.getElementById("charge").classList.add("cache");
+}).catch(err=>{
+  document.querySelector("#charge .anneau").style.display="none";
+  document.getElementById("charge-info").innerHTML =
+    `Impossible de charger <b>globe_data.json</b> (${err.message}).<br><br>
+     Ce fichier doit être servi par HTTP : lancez par exemple<br>
+     <code style="color:var(--or)">python -m http.server</code><br>
+     dans le dossier, puis ouvrez <code style="color:var(--or)">http://localhost:8000/globe.html</code>.`;
+});
+</script>
+</body>
+</html>
