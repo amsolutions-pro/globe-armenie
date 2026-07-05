@@ -32,6 +32,9 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
   font-family:'Cormorant Garamond',serif;font-size:clamp(26px,7vw,44px);font-weight:700;
   color:var(--encre);pointer-events:none;z-index:5;text-shadow:0 2px 10px rgba(0,0,0,.7)}
 #annee small{font-size:.45em;color:var(--encre-2);font-weight:500;letter-spacing:.08em}
+#charniere{position:fixed;top:calc(112px + env(safe-area-inset-top));left:0;right:0;text-align:center;
+  pointer-events:none;z-index:5;font-size:clamp(11px,2.8vw,13px);color:var(--or-clair);
+  font-style:italic;text-shadow:0 1px 6px rgba(0,0,0,.8);padding:0 16px}
 
 /* ---------- Commandes temps ---------- */
 #temps{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));
@@ -120,6 +123,7 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
   <div class="sous">2000 av. J.-C. — 2000 apr. J.-C. · frontières historiques</div>
 </div>
 <div id="annee"></div>
+<div id="charniere"></div>
 
 <button class="flottant" id="btn-armenie" title="Centrer sur l'Arménie">֎</button>
 <button class="flottant" id="btn-notice" title="Notice de la période">✦</button>
@@ -409,6 +413,37 @@ function fermerBulle(){ bulle.style.display="none"; }
 
 /* ================= Temps : slider, boutons, clavier ================= */
 const slider=document.getElementById("slider"), annee=document.getElementById("annee");
+/* Événement charnière côté Arménie, affiché sous l'année */
+const CHARNIERE = {
+"-2000":"Cultures Kouro-Araxe et Trialeti sur le plateau",
+"-1500":"Hayasa-Azzi face aux Hittites · pays du Nairi",
+"-1000":"Vers 860 av. J.-C., Arame unifie le Nairi : naissance d'Ourartou",
+"-700":"Apogée d'Ourartou · raids cimmériens et scythes",
+"-500":"Chute d'Ourartou (v. 590) → satrapie perse ; « Armina » à Béhistoun (520)",
+"-300":"Gaugamèles (331) : les Orontides règnent en rois",
+"-100":"Tigrane II le Grand (95–55) : l'empire de la mer à la mer",
+"1":"Compromis de Rhandeia (63) : couronne parthe, investiture romaine",
+"100":"Trajan annexe brièvement l'Arménie (114–117)",
+"200":"Les Arsacides d'Arménie face aux Sassanides après 224",
+"300":"301 : le christianisme religion d'État — une première mondiale",
+"400":"405 : Machtots crée l'alphabet · 428 : fin de la monarchie",
+"500":"451 : Avarayr — la liberté religieuse arrachée à la Perse (Nvarsak, 484)",
+"600":"591 : nouveau partage romano-perse · premières razzias arabes (640)",
+"700":"Vers 700 : ostikanat d'Arminiya, Dvin capitale califale",
+"800":"774–775 : révolte écrasée à Bagrévand — l'ascension des Bagratides",
+"900":"884 : Achot Iᵉʳ couronné roi — la royauté restaurée après 456 ans",
+"1000":"961 : Ani capitale, « ville aux mille et une églises »",
+"1100":"1045 : Byzance prend Ani · 1071 : Manzikert ouvre l'Anatolie aux Turcs",
+"1200":"1198 : Léon Iᵉʳ roi de Cilicie · les Zakarian libèrent le nord",
+"1300":"1236 : vague mongole · la Cilicie s'allie à l'Ilkhan",
+"1400":"1375 : chute de Sis · Timour ravage le plateau · Etchmiadzin restauré (1441)",
+"1500":"1514 : Tchaldiran — Ottomans et Séfévides se partagent l'Arménie",
+"1600":"1604 : grande déportation de Chah Abbas vers Ispahan · Zuhab (1639)",
+"1700":"1722–1730 : Davit Bek au Syunik · mélikats du Karabagh",
+"1800":"1828 : Turkmentchaï — l'Arménie orientale devient russe",
+"1900":"1878 : question arménienne · 1915 : génocide · 1918 : Première République",
+"2000":"1991 : indépendance · guerres du Karabagh (1994, 2020) · exode d'Artsakh (2023)"
+};
 function libelleAnnee(y){
   if(y<0) return `${-y} <small>AV. J.-C.</small>`;
   if(y===1) return `An 1`;
@@ -419,6 +454,7 @@ function allerA(i){
   slider.value=idx;
   slider.style.setProperty("--pct", (idx/(YEARS.length-1)*100)+"%");
   annee.innerHTML = libelleAnnee(YEARS[idx]);
+  document.getElementById("charniere").textContent = CHARNIERE[String(YEARS[idx])] || "";
   selection=null; fermerBulle();
   render();
   if(document.getElementById("panel").classList.contains("ouvert")) remplirPanneauPeriode();
@@ -487,17 +523,23 @@ function indexPeriode(y){
 /* Mini-notices pour les siècles sans période dans periodes.json */
 const MINI = {
   "-2000":{nom:"Aube du plateau arménien",dates:"v. 2000 av. J.-C.",pouvoir:"Cultures de l'âge du bronze (Kouro-Araxe tardif, Trialeti)",
-    apercu:["Le plateau arménien sort de la culture <strong>Kouro-Araxe</strong>, qui a rayonné mille ans du Caucase à la Palestine ; les kourganes princiers de <strong>Trialeti</strong> et les forteresses cyclopéennes du Sevan témoignent de sociétés hiérarchisées, maîtresses du bronze et de l'obsidienne.","Aucun État n'existe encore : les sources hittites mentionneront bientôt les pays de <strong>Hayasa-Azzi</strong>, dont le nom résonne avec « Hay », le nom que les Arméniens se donnent."]},
+    apercu:["Le plateau arménien sort de la culture <strong>Kouro-Araxe</strong>, qui a rayonné mille ans du Caucase à la Palestine ; les kourganes princiers de <strong>Trialeti</strong> et les forteresses cyclopéennes du Sevan témoignent de sociétés hiérarchisées, maîtresses du bronze et de l'obsidienne.","Aucun État n'existe encore : les sources hittites mentionneront bientôt les pays de <strong>Hayasa-Azzi</strong>, dont le nom résonne avec « Hay », le nom que les Arméniens se donnent."],
+    capitales:[{nom:"Metsamor",lat:40.13,lng:44.18,principal:true,info:"Site métallurgique majeur de l'âge du bronze dans la plaine de l'Araxe, occupé dès le IIIᵉ millénaire, avec observatoire supposé et vastes ateliers de fonte."}]},
   "-1500":{nom:"Hayasa-Azzi et les pays du Nairi",dates:"v. 1500 – 1200 av. J.-C.",pouvoir:"Confédérations tribales (sources hittites et assyriennes)",
-    apercu:["Les annales hittites décrivent les guerres de Suppiluliuma contre <strong>Hayasa-Azzi</strong>, confédération du haut Euphrate — pour beaucoup d'historiens arméniens, la racine du nom <em>Hay</em>. Les Assyriens, eux, nomment <strong>Nairi</strong> les « pays des fleuves » autour du lac de Van.","La carte montre déjà « Ourartou » : c'est un anachronisme de la source cartographique — le royaume n'émerge qu'au IXᵉ siècle av. J.-C. ; avant lui, une mosaïque de principautés."]},
+    apercu:["Les annales hittites décrivent les guerres de Suppiluliuma contre <strong>Hayasa-Azzi</strong>, confédération du haut Euphrate — pour beaucoup d'historiens arméniens, la racine du nom <em>Hay</em>. Les Assyriens, eux, nomment <strong>Nairi</strong> les « pays des fleuves » autour du lac de Van.","La carte montre déjà « Ourartou » : c'est un anachronisme de la source cartographique — le royaume n'émerge qu'au IXᵉ siècle av. J.-C. ; avant lui, une mosaïque de principautés."],
+    capitales:[{nom:"Kummaha (Kemah)",lat:39.6,lng:39.03,principal:true,info:"Place forte du haut Euphrate souvent associée au pays de Hayasa ; la région restera sacrée — la nécropole des rois arsacides s'installera tout près, à Ani-Kamakh."}]},
   "-1000":{nom:"Vers l'unification ourartéenne",dates:"v. 1000 – 860 av. J.-C.",pouvoir:"Principautés du Nairi en voie d'unification",
-    apercu:["Sous la pression des campagnes assyriennes, les principautés du <strong>Nairi</strong> se fédèrent : vers 860 av. J.-C., <strong>Arame</strong> — peut-être l'Ara le Bel de la légende — unit les pays de Van. Sarduri Iᵉʳ fonde Tushpa et le royaume d'Ourartou entre dans l'histoire.","L'étiquette « Ourartou » de la carte anticipe légèrement : à ce siècle, l'unification est en cours."]},
+    apercu:["Sous la pression des campagnes assyriennes, les principautés du <strong>Nairi</strong> se fédèrent : vers 860 av. J.-C., <strong>Arame</strong> — peut-être l'Ara le Bel de la légende — unit les pays de Van. Sarduri Iᵉʳ fonde Tushpa et le royaume d'Ourartou entre dans l'histoire.","L'étiquette « Ourartou » de la carte anticipe légèrement : à ce siècle, l'unification est en cours."],
+    capitales:[{nom:"Tushpa (Van)",lat:38.5,lng:43.34,principal:true,info:"Le rocher de Van, bientôt choisi par Sarduri Iᵉʳ pour fonder la capitale d'Ourartou (v. 830 av. J.-C.)."},{nom:"Arzashkun",lat:38.9,lng:42.5,info:"Capitale présumée d'Arame, prise par Salmanazar III (858 av. J.-C.) — la première capitale « arménienne » mentionnée par les sources."}]},
   "1400":{nom:"Entre Timour et les Turkmènes",dates:"1387 – 1502",pouvoir:"Timourides, puis Kara Koyunlu et Ak Koyunlu",
-    apercu:["Les invasions de <strong>Tamerlan</strong> (1387–1403) ravagent le plateau : Van, Erzurum et le Syunik sont dévastés, des dizaines de milliers d'Arméniens déportés vers Samarcande. Après sa mort, les confédérations turkmènes du <strong>Mouton noir</strong> (Kara Koyunlu, capitale Tabriz) puis du <strong>Mouton blanc</strong> (Ak Koyunlu) se disputent le pays.","Sous Djihanshah, le catholicossat est restauré à <strong>Etchmiadzin</strong> (1441) — événement décisif : l'Église redevient l'institution nationale de substitution. Les mélikats du Karabagh et le Syunik conservent une autonomie montagnarde."]},
+    apercu:["Les invasions de <strong>Tamerlan</strong> (1387–1403) ravagent le plateau : Van, Erzurum et le Syunik sont dévastés, des dizaines de milliers d'Arméniens déportés vers Samarcande. Après sa mort, les confédérations turkmènes du <strong>Mouton noir</strong> (Kara Koyunlu, capitale Tabriz) puis du <strong>Mouton blanc</strong> (Ak Koyunlu) se disputent le pays.","Sous Djihanshah, le catholicossat est restauré à <strong>Etchmiadzin</strong> (1441) — événement décisif : l'Église redevient l'institution nationale de substitution. Les mélikats du Karabagh et le Syunik conservent une autonomie montagnarde."],
+    capitales:[{nom:"Etchmiadzin",lat:40.16,lng:44.29,principal:true,info:"Catholicossat restauré en 1441 sous les Kara Koyunlu : l'Église redevient le centre de gravité de la nation sans État."},{nom:"Tabriz",lat:38.08,lng:46.29,info:"Capitale des confédérations turkmènes du Mouton noir puis du Mouton blanc, où vit une importante colonie marchande arménienne."}]},
   "1900":{nom:"La question arménienne",dates:"1878 – 1915",pouvoir:"Empire ottoman (ouest) · Empire russe (est)",
-    apercu:["Le traité de <strong>Berlin (1878)</strong> internationalise la « question arménienne » : l'article 61 promet des réformes dans les six vilayets — jamais appliquées. Les massacres hamidiens (1894–1896, ~200 000 morts) puis ceux d'Adana (1909) annoncent le pire : le <strong>génocide de 1915</strong>, planifié par le gouvernement jeune-turc, anéantira l'Arménie occidentale (1,5 million de victimes).","Côté russe, les gouvernorats d'<strong>Erevan</strong> et de <strong>Kars</strong> connaissent essor scolaire et renaissance culturelle (Toumanian, Komitas), malgré la russification. C'est ce réduit oriental qui portera la Première République (1918) après Sardarabad."]},
+    apercu:["Le traité de <strong>Berlin (1878)</strong> internationalise la « question arménienne » : l'article 61 promet des réformes dans les six vilayets — jamais appliquées. Les massacres hamidiens (1894–1896, ~200 000 morts) puis ceux d'Adana (1909) annoncent le pire : le <strong>génocide de 1915</strong>, planifié par le gouvernement jeune-turc, anéantira l'Arménie occidentale (1,5 million de victimes).","Côté russe, les gouvernorats d'<strong>Erevan</strong> et de <strong>Kars</strong> connaissent essor scolaire et renaissance culturelle (Toumanian, Komitas), malgré la russification. C'est ce réduit oriental qui portera la Première République (1918) après Sardarabad."],
+    capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Chef-lieu du gouvernorat russe d'Erevan, ~30 000 habitants vers 1900 — future capitale de la Première République en 1918."},{nom:"Kars",lat:40.61,lng:43.1,info:"Russe de 1878 à 1918 (oblast de Kars) : forteresse et ville de garnison, perdue au traité de Kars (1921)."},{nom:"Van",lat:38.5,lng:43.38,info:"Cœur de l'Arménie ottomane et de la résistance de 1915 ; le vilayet de Van comptait la plus forte proportion d'Arméniens de l'Empire."}]},
   "2000":{nom:"Troisième République d'Arménie",dates:"1991 – aujourd'hui",pouvoir:"République indépendante (21 septembre 1991)",
-    apercu:["L'Arménie recouvre l'indépendance à la dissolution de l'URSS, dans les frontières de la RSS d'Arménie (29 743 km² — moins d'un dixième de l'Arménie historique). La première guerre du <strong>Haut-Karabagh</strong> (1988–1994) met la république autoproclamée d'<strong>Artsakh</strong> sous contrôle arménien jusqu'à la guerre de 2020 et l'exode de 2023.","La diaspora (~7 millions de personnes, contre ~3 millions en Arménie) demeure l'autre moitié de la nation : Erevan, plus vieille ville-capitale du monde avec ses 2 800 ans, en est le cœur symbolique."]}
+    apercu:["L'Arménie recouvre l'indépendance à la dissolution de l'URSS, dans les frontières de la RSS d'Arménie (29 743 km² — moins d'un dixième de l'Arménie historique). La première guerre du <strong>Haut-Karabagh</strong> (1988–1994) met la république autoproclamée d'<strong>Artsakh</strong> sous contrôle arménien jusqu'à la guerre de 2020 et l'exode de 2023.","La diaspora (~7 millions de personnes, contre ~3 millions en Arménie) demeure l'autre moitié de la nation : Erevan, plus vieille ville-capitale du monde avec ses 2 800 ans, en est le cœur symbolique."],
+    capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Capitale de la République d'Arménie, ~1,1 million d'habitants — fondée comme Erebouni en 782 av. J.-C."},{nom:"Stepanakert",lat:39.82,lng:46.75,info:"Capitale de la république autoproclamée d'Artsakh (1991–2023), vidée de sa population arménienne lors de l'exode de septembre 2023."}]}
 };
 function remplirPanneauPeriode(){
   const y=YEARS[idx], i=indexPeriode(y);
@@ -524,6 +566,12 @@ function remplirPanneauPeriode(){
     const m=MINI[String(y)];
     html += `<h2>${m.nom}</h2><div class="dates">${m.dates}</div><div class="pouvoir">${m.pouvoir}</div>`;
     for(const par of m.apercu) html += `<p>${par}</p>`;
+    if(m.capitales && m.capitales.length){
+      html += `<div class="caps"><h3>Lieux clés</h3>`;
+      for(const c of m.capitales)
+        html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
+      html += `</div>`;
+    }
   } else if(!html){
     html = `<h2>${annee.textContent}</h2><p style="color:var(--encre-2)">Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.</p>`;
   }

@@ -139,3 +139,32 @@ publier ; en attendant, tout committer proprement et documenter la procédure da
 un README.
 
 ---
+
+## Itération 5 — 2026-07-06
+
+**Fait** (réponses à Q10–Q12) : capitales/lieux clés cliquables ajoutés aux 6
+mini-notices (Metsamor, Kummaha, Tushpa+Arzashkun, Etchmiadzin+Tabriz,
+Erevan+Kars+Van, Erevan+Stepanakert — vol animé vers le lieu au clic) ; bandeau
+« événement charnière » sous l'année (28 entrées, d'« Arame unifie le Nairi » à
+« exode d'Artsakh 2023 ») ; README.md avec lancement local, régénération des données
+et procédure GitHub Pages (non exécutée — accord utilisateur requis pour publier).
+Vérifié dans Chrome (1100 : bandeau Ani/Manzikert, légende, Arménie dorée).
+
+**Q13. L'outil relie-t-il le globe (vue monde) et l'atlas (vue détaillée) ?**
+Non : deux fichiers sans lien entre eux, l'apprenant ne découvre pas l'atlas.
+→ **Réponse pour l'itération 6** : dans le panneau du globe, quand une période
+arménienne est affichée, bouton « Ouvrir l'atlas détaillé de cette période » →
+atlas_armenie_historique.html (même dossier).
+
+**Q14. Le rendu est-il fluide sur iPhone (cible déclarée) ?**
+Risque : render() complet à chaque pointermove (200+ tracés canvas), sans limitation.
+→ **Réponse pour l'itération 6** : regrouper les rendus dans requestAnimationFrame
+(un seul render par frame même si plusieurs événements pointeur).
+
+**Q15. L'outil est-il accessible (clavier, lecteurs d'écran, mouvement réduit) ?**
+Partiel : flèches clavier OK, mais boutons sans aria-pressed, pas de focus visible,
+lecture auto ignore prefers-reduced-motion.
+→ **Réponse pour l'itération 6** : styles :focus-visible, aria-label complétés,
+désactiver l'auto-lecture si prefers-reduced-motion.
+
+---
