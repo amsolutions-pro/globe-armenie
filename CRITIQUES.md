@@ -114,14 +114,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   faciliterait la relecture visuelle.
 
 ### Nouvelles critiques (it. 33)
-- 🟠 [UX] **Pas d'échappatoire pendant une question carte** : si l'utilisateur
-  ne trouve pas, aucun bouton « passer » — il doit toucher au hasard.
 - 🟡 [UX] La question carte ne surligne pas le bon territoire après une
   mauvaise réponse (le texte le nomme, mais un flash visuel aiderait).
 - 🟡 [DATA] Les cibles carte sont limitées aux surcouches arméniennes (o=1) :
   ajouter les grands empires du siècle varierait le quiz.
 
+### Nouvelles critiques (it. 34)
+- 🟡 [UX] Le bouton « Passer » compte faux sans confirmation : un appui
+  accidentel coûte un point.
+- 🟡 [UX] Pendant une question carte, la rotation auto/lecture reste
+  possible et peut dérouter (changer de siècle pendant la question).
+- 🟡 [DATA] `reponseCarte({n:"__passe__"})` est un objet factice : fragile si
+  reponseCarte évolue (préférer un paramètre explicite).
+
 ## Critiques traitées
+- ✅ (it. 34) [UX] 🟠 Pas d'échappatoire sur les questions carte → bouton
+  « Passer » dans le bandeau (compte faux, révèle la bonne réponse), 4 langues.
 - ✅ (it. 33) [UX] 🟠 Le quiz n'utilisait pas la carte → nouveau type de
   question « Trouvez sur la carte : X (année) » : le voile se ferme, le globe
   saute à l'année, bandeau « Touchez : X », clic intercepté et validé ;
