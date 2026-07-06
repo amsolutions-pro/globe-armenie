@@ -19,9 +19,9 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 **La zone Transcaucasie russe (1880/1900) reste une boîte rectangulaire**
   (reliquat it. 22 : RSS et Karabagh sont désormais en tracés réels, pas ce
   masque) ; un tracé des gouvernorats d'Erevan et de Kars serait plus juste.
-- 🔴 **Le gabarit unique « Arménie an 300 » sert à toutes les époques** : la
-  satrapie de −500 ou l'ostikanat de 800 n'avaient pas exactement cette
-  emprise ; chaque surcouche mériterait son propre masque documenté.
+- 🟠 **Certaines surcouches gardent le gabarit an 300** (400, 500/600, 800,
+  1400–1914) faute de tracé Armenia proche dans la source : acceptable pour
+  « terres arméniennes sous X », mais à documenter période par période.
 - 🟠 **Le classement niveau() repose sur le nom anglais** : des États sans
   mot-clé (« Persia », « Wu ») restent N3 quand certains furent des empires ;
   inversement « Empire of Ghana » à son déclin reste N4. Un tableau
@@ -100,7 +100,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   harmoniser le format des ères sur les 10 notices.
 - 🟡 [DATA] periodes_en.json n'a jamais eu de relecture équivalente.
 
+### Nouvelles critiques (it. 31)
+- 🟠 [DATA] **La satrapie −500 utilise le tracé Armenia de −300** (Orontides) :
+  plus proche que l'an 300, mais toujours anachronique d'un siècle et demi.
+- 🟡 [DATA] Le masque « Grande Arménie » −100 (Armenia bc1) est postérieur aux
+  conquêtes de Tigrane (95–66) : l'apogée impériale n'est pas représentée.
+- 🟡 [DATA] Le choix du masque par période (armenia:<an> vs gabarit) n'est
+  documenté que par des commentaires du script : un tableau dans README/REGLES
+  serait plus transparent.
+
 ## Critiques traitées
+- ✅ (it. 31) [DATA] 🔴 Gabarit unique « an 300 » pour toutes les époques →
+  mécanisme armenia:<année> : satrapie −500 sur Armenia(−300), Artaxiades −100
+  sur Armenia(−1), Ilkhanat 1300 sur Armenia(1200), Bagratides 900 et RSS
+  1945/60 déjà sur leurs années propres ; gabarit conservé (et justifié en
+  commentaire) pour l'ostikanat 800 et les périodes sans tracé proche.
 - ✅ (it. 30) [DATA] 🟠 Relecture des traductions hy (it. 26) → 8 corrections
   (կառավարում, Օմայյան, Ղաջարական, Չալդրան, Սեն-Դենի, լեռնաշխարհ×3),
   terminologie alignée sur les notices d'origine.

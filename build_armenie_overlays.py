@@ -71,16 +71,18 @@ SPECS = [
     (-4000, "Chalcolithique arménien (Areni, Sioni)", "Métallurgie du cuivre — plus vieille cave à vin du monde (Areni-1)", "tout", None, PLATEAU),
     (-3000, "Culture Kouro-Araxe", "Âge du bronze ancien — expansion du Caucase au Levant", "tout", None, PLATEAU),
     (-2000, "Cultures Trialeti et du Sevan", "Âge du bronze moyen — kourganes princiers", "tout", None, PLATEAU),
-    (-500, "Armina (satrapie d'Arménie)", "Empire achéménide", "gabarit", r"achaemenid|persian?\b|persia", PLATEAU),
-    (-100, "Grande Arménie (Artaxiades)", "Royaume indépendant — Tigrane II", "gabarit", None, PLATEAU),
+    (-500, "Armina (satrapie d'Arménie)", "Empire achéménide", "armenia:-300", r"achaemenid|persian?\b|persia", PLATEAU),
+    (-100, "Grande Arménie (Artaxiades)", "Royaume indépendant — Tigrane II", "armenia:-1", None, PLATEAU),
     (400,  "Arménie arsacide (partagée en 387)", "Rome / Perse sassanide", "gabarit", None, PLATEAU),
     (500,  "Persarménie (marzpanat)", "Empire sassanide", "gabarit", r"sasanian|sassanid", PLATEAU),
     (500,  "Arménie byzantine", "Empire byzantin", "gabarit", r"byzantine|eastern roman|roman empire", PLATEAU),
     (600,  "Persarménie (marzpanat)", "Empire sassanide", "gabarit", r"sasanian|sassanid", PLATEAU),
     (600,  "Arménie byzantine", "Empire byzantin", "gabarit", r"byzantine|eastern roman|roman empire", PLATEAU),
+    # 800 : gabarit conservé — l'Armenia de 700 (principauté autonome) est trop
+    # étroite pour représenter l'ostikanat (terres arméniennes sous califat)
     (800,  "Arminiya (ostikanat)", "Califat abbasside", "gabarit", r"abbasid|caliphate", PLATEAU),
-    (900,  "Royaume bagratide (Arménie)", "Dynastie bagratide", "armenia1000", None, PLATEAU),
-    (1300, "Arménie sous l'Ilkhanat", "Ilkhanat mongol", "gabarit", r"ilkhanate|il-?khan", PLATEAU),
+    (900,  "Royaume bagratide (Arménie)", "Dynastie bagratide", "armenia:1000", None, PLATEAU),
+    (1300, "Arménie sous l'Ilkhanat", "Ilkhanat mongol", "armenia:1200", r"ilkhanate|il-?khan", PLATEAU),
     (1300, "Royaume arménien de Cilicie", "Dynastie héthoumide", "tout", None, CILICIE),
     (1400, "Arménie (domination timouride)", "Empire timouride", "gabarit", r"timurid", PLATEAU),
     (1500, "Arménie (Ak Koyunlu)", "Ak Koyunlu (Mouton blanc)", "gabarit", r"white sheep", PLATEAU),
@@ -98,8 +100,8 @@ SPECS = [
     (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1900, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — traités de Turkmentchaï (1828) et Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1914, "Arménie occidentale (six vilayets)", "Empire ottoman — veille du génocide de 1915", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
-    (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia2000", None, PLATEAU),
-    (1960, "RSS d'Arménie", "Union soviétique", "armenia2000", None, PLATEAU),
+    (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia:2000", None, PLATEAU),
+    (1960, "RSS d'Arménie", "Union soviétique", "armenia:2000", None, PLATEAU),
     (1994, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
     (2010, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
 ]
@@ -115,19 +117,19 @@ def main():
         data["world"][y] = [f for f in data["world"][y] if not f.get("o")]
 
     gab = gabarit_armenie()
-    arm1000 = None; arm2000=[None]
+    # Masques par époque : "armenia:<année>" = géométrie Armenia de l'année source
+    # la plus proche documentée (au lieu du gabarit unique an 300 pour tout)
+    cache_arm = {}
+    def masque_armenia(an):
+        if an not in cache_arm:
+            cache_arm[an] = geom_of(load_world(an), r"^Armenia$")
+        return cache_arm[an] if cache_arm[an] is not None else gab
     ajouts = 0
     for (y, nom, suz, source, motif, emprise) in SPECS:
         if source == "gabarit":
             masque = gab
-        elif source == "armenia1000":
-            if arm1000 is None:
-                arm1000 = geom_of(load_world(1000), r"^Armenia$")
-            masque = arm1000 if arm1000 is not None else gab
-        elif source == "armenia2000":
-            if arm2000[0] is None:
-                arm2000[0] = geom_of(load_world(2000), r"^Armenia$")
-            masque = arm2000[0] if arm2000[0] is not None else gab
+        elif source.startswith("armenia:"):
+            masque = masque_armenia(int(source.split(":")[1]))
         elif source == "tout":
             masque = None  # emprise ∩ toutes les terres
         g = None
