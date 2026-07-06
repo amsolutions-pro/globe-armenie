@@ -31,9 +31,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
 
 ### Nouvelles critiques (it. 22)
-- 🔴 [DATA] **Le polygone NKAO du Karabagh est dessiné à main levée** (8 points
-  approximatifs) : mieux qu'une boîte, mais pas sourcé — le comparer à un tracé
-  documenté de l'oblast autonome (1923–1991) ou de la ligne de contact 1994.
 - 🟠 [DATA/PERF] **Le JSON reste monolithique (6,6 Mo)** : un découpage par
   tranches d'époques réduirait le temps d'affichage initial sur mobile.
 - 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
@@ -138,7 +135,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Le changement de niveau modifie la luminosité de gros pays (URSS,
   Chine…) : vérifier visuellement qu'aucun contraste ne casse la lecture.
 
+### Nouvelles critiques (it. 37)
+- 🟠 [DATA] **La part Mardakert de la NKAO reste approchée** (Tartar ∩ boîte
+  46.4–47.05 / 39.9–40.35) : le district d'Aghdara n'existe pas dans
+  geoBoundaries ; affiner quand une source ADM2 post-2023 sera disponible.
+- 🟡 [DATA] La surcouche 1994 « contrôle arménien » ≠ NKAO : la ligne de
+  contact 1994 incluait Latchine, Kelbadjar… (zone occupée plus large que
+  l'oblast) ; choisir explicitement ce qu'on représente.
+- 🟡 [DATA] Le fichier geo/aze_adm2.geojson est gitignoré : le build re-télécharge
+  depuis un commit épinglé (9469f09) — vérifier la pérennité du lien.
+
 ## Critiques traitées
+- ✅ (it. 37) [DATA] 🔴 Polygone NKAO à main levée → tracé documenté
+  geoBoundaries (gbOpen AZE ADM2, commit épinglé) : union Khankendi, Khojaly,
+  Choucha ville+district, Khojavend + partie montagneuse de Tartar
+  (Mardakert) ; aire ≈ 4 000 km² vs 4 400 km² officiels.
 - ✅ (it. 36) [DATA] 🟠 niveau() par mots-clés anglais → table de surcharges
   NIVEAU_FIXE (USSR, Persia kadjare, Ottoman Sultanate, Russia, China,
   United States, Chagatai Khanate → empires ; Siberians, Khoiasan,

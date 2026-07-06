@@ -58,9 +58,23 @@ RUSSE_1900 = Polygon([(42.5,41.8),(42.55,41.3),(42.7,40.9),(42.8,40.4),
                       (44.8,39.70),(45.4,39.56),(45.8,39.30),    # Araxe / Nakhitchevan
                       (46.2,38.95),(46.55,38.87),(47.1,39.15),   # Zanguezour → Karabagh
                       (47.5,39.35),(47.5,41.8)])
-# Haut-Karabagh : polygone approché de l'oblast autonome (NKAO)
-KARABAGH = Polygon([(46.45,40.20),(46.85,40.05),(47.05,39.85),(46.95,39.60),
-                    (46.75,39.35),(46.50,39.30),(46.30,39.45),(46.25,39.75)])
+# Haut-Karabagh : NKAO reconstituée depuis geoBoundaries (gbOpen AZE ADM2) —
+# union des districts Khankendi, Khojaly, Shusha (ville+district), Khojavend,
+# plus la partie montagneuse du district de Tartar (≈ Mardakert/Aghdara).
+# Aire ≈ 4 000 km², cohérente avec les 4 400 km² de l'oblast (1923–1991).
+def karabagh_nkao():
+    path = "geo/aze_adm2.geojson"
+    if not os.path.exists(path):
+        os.makedirs("geo", exist_ok=True)
+        urllib.request.urlretrieve(
+            "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AZE/ADM2/geoBoundaries-AZE-ADM2.geojson", path)
+    w = json.load(open(path, encoding="utf-8"))
+    cible = {"Khankendi City","Khojaly District","Shusha City","Shusha District","Khojavend District"}
+    gs = [shape(f["geometry"]) for f in w["features"] if f["properties"]["shapeName"] in cible]
+    tartar = [shape(f["geometry"]) for f in w["features"] if f["properties"]["shapeName"]=="Tartar District"]
+    mard = unary_union(tartar).intersection(box(46.4, 39.9, 47.05, 40.35))
+    return unary_union(gs + [mard])
+KARABAGH = karabagh_nkao()
 
 # Gabarit "Arménie étendue" : Arménie arsacide (an 300, la plus large des couches sources)
 def gabarit_armenie():
