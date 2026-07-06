@@ -268,23 +268,30 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   notice la décrivent.
 
 ### Nouvelles critiques (it. 61)
-- 🟡 [DATA] Les notices 1988/1991/2020/2023 restent sans version arménienne
-  dédiée (MINI_HY inexistant) : en hy elles retombent sur le FR.
 - 🟡 [DATA] La notice 1921 (Kars) reste aliasée vers 1920 (Première
   République) : une notice propre sur le traité serait plus précise.
 - 🟡 [UX] Beaucoup d'années récentes ont maintenant des notices riches : un
   fil chronologique déroulant du XXe–XXIe siècle serait un bon complément.
 
 ### Nouvelles critiques (it. 62)
-- 🟡 [DATA] MINI_HY toujours inexistant : les notices récentes dédiées
-  (1915, 1988, 1991, 2020, 2023) retombent en FR quand la langue est l'arménien
-  — c'est la lacune de fond la plus visible maintenant.
 - 🟡 [DATA] 1921 (Kars) reste la seule année arménienne récente sans notice
   propre (aliasée vers 1920).
 - 🟡 [UX] La densité de villes/capitales du XXe-XXIe (Deir ez-Zor, Musa Dagh…)
   n'apparaît qu'à fort zoom : un rappel dans la notice suffirait.
 
+### Nouvelles critiques (it. 63)
+- 🟡 [DATA] Seules les 5 notices récentes ont une version hy (MINI_HY) ; les
+  mini-notices anciennes (préhistoire, Timour…) restent FR/EN en mode hy.
+- 🟡 [DATA] Les noms de lieux/capitales (Deir ez-Zor, Spitak…) restent en
+  graphie latine même en arménien (pas de VILLES_HY pour ces lieux de notice).
+- 🟡 [UX] La traduction hy récente n'a pas été relue par un tiers (même risque
+  qu'it. 30) : à faire valider par un locuteur.
+
 ## Critiques traitées
+- ✅ (it. 63) [DATA] Dictionnaire MINI_HY créé et branché (remplirPanneauPeriode
+  sélectionne MINI_HY quand LANG=hy, comme MINI_EN pour l'anglais) : notices
+  1915, 1988, 1991, 2020, 2023 désormais en arménien — comble la lacune de la
+  langue par défaut.
 - ✅ (it. 62) [DATA] Notice dédiée 1915 (génocide : 24 avril, Talaat/Enver/
   Cemal, déportations vers Deir ez-Zor, ~1,5 M de victimes, résistances de Van
   et du Musa Dagh, négationnisme turc) en FR+EN, 3 capitales/lieux situés ;
