@@ -313,8 +313,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] 1918 et 2020 conservent des géométries « de Sèvres » / résiduelles
   approximées ; le contrôle réel de la Première République en 1918-1920 reste
   sans polygone sourcé.
-- 🟡 [DATA] Les notices 1918/2018 réutilisent des notices existantes (Première
-  et Troisième Républiques) : dédiées possibles plus tard.
 
 ### Nouvelles critiques (it. 68)
 - 🟡 [DATA] Les tracés NKAO et zone 1994 sont désormais manuels (documentés,
@@ -325,7 +323,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Vérifier en ligne (VDATA m) que le Karabagh redessiné reste cohérent
   visuellement au zoom.
 
+### Nouvelles critiques (it. 69)
+- 🟡 [DATA] 1918 réutilise encore la notice de la Première République (1920) :
+  une notice propre sur Sardarabad serait plus précise.
+- 🟡 [UX] Le rendu du Karabagh neutre vérifié en 1994 ; à vérifier aussi en
+  1923 (NKAO seul, plus petit) et 2020 (Artsakh résiduel).
+- 🟡 [DATA] La zone de contrôle 1994 manuelle englobe Fizouli/Agdam en entier
+  (occupation partielle) — même limite qu'avant, mais désormais sans source AZE.
+
 ## Critiques traitées
+- ✅ (it. 69) [DATA] Notice dédiée 2018 (Révolution de velours : printemps 2018,
+  Sargsian PM avorté, marche de Pachinian, démission 23 avril, élection 8 mai,
+  transition sans violence) en FR+EN+HY ; alias 2018→2018. Rendu du Karabagh
+  neutre vérifié cohérent en 1994 (Stepanakert, pas de débordement).
 - ✅ (it. 68, demande utilisateur) [DATA] 🟠 Dépendance geoBoundaries AZE ADM2
   (découpage administratif azerbaïdjanais) SUPPRIMÉE : NKAO et zone de contrôle
   1994 redéfinis en polygones manuels documentés (source neutre), fichier AZE
