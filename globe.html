@@ -1427,9 +1427,38 @@ quizSuite.addEventListener("click", ()=>{
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06e";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06f";   // à incrémenter quand les JSON changent (contourne le cache)
+
+// Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
+function fetchAvecProgression(url){
+  return fetch(url).then(r=>{
+    if(!r.ok) throw new Error(r.status);
+    // Si la réponse est compressée (gzip sur GitHub Pages), Content-Length est la
+    // taille compressée alors qu'on compte les octets décompressés : on l'ignore.
+    const total = r.headers.get("Content-Encoding") ? 0 : (+r.headers.get("Content-Length") || 0);
+    if(!r.body || !window.ReadableStream) return r.json();
+    const info = document.getElementById("charge-info");
+    const reader = r.body.getReader();
+    let recu = 0; const morceaux = [];
+    const lire = () => reader.read().then(({done, value})=>{
+      if(done) return;
+      morceaux.push(value); recu += value.length;
+      const mo = (recu/1048576).toFixed(1);
+      info.textContent = total
+        ? `Chargement des frontières de 28 siècles… ${Math.round(100*recu/total)} % (${mo} Mo)`
+        : `Chargement des frontières de 28 siècles… ${mo} Mo`;
+      return lire();
+    });
+    return lire().then(()=>{
+      const tout = new Uint8Array(recu);
+      let pos = 0; for(const m of morceaux){ tout.set(m, pos); pos += m.length; }
+      return JSON.parse(new TextDecoder().decode(tout));
+    });
+  });
+}
+
 Promise.all([
-  fetch("globe_data.json?v="+VDATA).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
+  fetchAvecProgression("globe_data.json?v="+VDATA),
   fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
   fetch("traductions_fr.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
   fetch("periodes_en.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),

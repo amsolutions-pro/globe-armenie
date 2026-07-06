@@ -46,17 +46,26 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🔴 [DATA] **Le polygone NKAO du Karabagh est dessiné à main levée** (8 points
   approximatifs) : mieux qu'une boîte, mais pas sourcé — le comparer à un tracé
   documenté de l'oblast autonome (1923–1991) ou de la ligne de contact 1994.
-- 🟠 [UX] **Le site publié (GitHub Pages) charge 6,6 Mo de JSON d'un bloc** :
-  sur iPhone en 4G, plusieurs secondes sans indicateur de progression — ajouter
-  une barre/spinner de chargement et envisager la compression (gzip est servi
-  par Pages, mais un découpage par tranches d'époques aiderait).
+- 🟠 [DATA/PERF] **Le JSON reste monolithique (6,6 Mo)** : un découpage par
+  tranches d'époques réduirait le temps d'affichage initial sur mobile.
 - 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
   ignore les micro-différences de frontières soviétiques (enclaves
   Artsvashen/Karki non représentées).
 
 ---
 
+### Nouvelles critiques (it. 23)
+- 🟠 [UX] **Pas de bouton « partager / copier le lien »** : l'URL publique
+  existe mais rien dans l'interface ne la mentionne ni ne facilite le partage.
+- 🟠 [DATA] **Aucun test automatisé de cohérence des données** (années triées,
+  polygones fermés, surcouches présentes aux 37 pas attendus) — un script
+  `verifie_donnees.py` lancé avant chaque push éviterait les régressions.
+- 🟡 [UX] Le texte de progression n'est pas traduit (français en dur) alors
+  que l'interface est quadrilingue.
+
 ## Critiques traitées
+- ✅ (it. 23) [UX] 🟠 Chargement des 6,6 Mo sans indicateur de progression
+  → téléchargement en streaming avec % et Mo reçus affichés sous l'anneau.
 - ✅ (it. 22) [DATA] 🔴 Boîtes rectangulaires des surcouches modernes → RSS
   d'Arménie 1945/1960 découpée sur la géométrie réelle « Armenia » (an 2000),
   Haut-Karabagh en polygone NKAO (la Transcaucasie russe reste ouverte, cf. 🟠).
