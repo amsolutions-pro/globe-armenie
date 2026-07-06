@@ -350,7 +350,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] verifie_donnees.py est un outil dev ; un récap visuel des surcouches
   par période aiderait la relecture humaine.
 
+### Nouvelles critiques (it. 74)
+- 🟠 [DATA] Relecture orthographique/terminologique native des notices hy
+  toujours en attente (vérif automatique ne couvre que les nombres) : idéalement
+  un locuteur arménien relit les 13 notices récentes.
+- 🟡 [DATA] La vérification de fidélité numérique n'est pas intégrée à
+  verifie_donnees.py (faite ponctuellement) : automatisable.
+- 🟡 [UX] Aucune notice hy pour les périodes anciennes (avant 1900) hors
+  periodes_hy.json : les mini-notices préhistoire→1815 restent FR/EN en hy.
+
 ## Critiques traitées
+- ✅ (it. 74) [DATA] Fidélité numérique des traductions hy VÉRIFIÉE : aucune
+  notice arménienne (1900→2023) ne contient de nombre absent du français ;
+  tous les chiffres-clés présents (1,5 M, 24 avril, 25 000, 7 déc., 21 sept.
+  1991, 44 j., 6 500, 100 000, 19 sept., 94 %, 7 juil. 1923, 13 oct. 1921,
+  28 mai, 1045). R3.2 respecté ; relecture native encore souhaitable.
 - ✅ (it. 73) [DATA] Audit de carte complet : 0 surcouche débordant du plateau/
   Cilicie/Karabagh, 0 anneau inversé (calcul sphérique), 0 écart aire
   déclarée/réelle. Contrôle d'enroulement sphérique AJOUTÉ à verifie_donnees.py
