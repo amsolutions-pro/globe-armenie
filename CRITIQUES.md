@@ -24,8 +24,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### [UX]
 - 🟠 **Pas encore testé sur iPhone réel** (Safari iOS) — le test Chrome
   desktop est passé (it. 42), reste la validation tactile sur l'appareil cible.
-- 🟡 La lecture auto ne montre pas visuellement la pause sur les siècles
-  majeurs (l'utilisateur croit à un blocage).
 
 ### Nouvelles critiques (it. 22)
 - 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
@@ -194,7 +192,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Un simple clic sur le bouton n'affiche plus le cycle rapide : les
   habitués du cycle FR→EN→HY→RU doivent maintenant viser dans le menu.
 
+### Nouvelles critiques (it. 48)
+- 🟡 [UX] Les siècles-tournants (MAJEURS = 300, 900, 1100, 1900) sont codés
+  en dur et distincts des « événements charnière » : deux notions de
+  « moment important » non unifiées.
+- 🟡 [UX] Le pulse d'année est ignoré si prefers-reduced-motion est actif —
+  cohérent, mais alors aucun signal de pause pour ces utilisateurs.
+- 🟡 [UX] La pause double (2 × 2,5 s) sur un tournant peut sembler longue :
+  vérifier le ressenti sur mobile pendant une lecture complète.
+
 ## Critiques traitées
+- ✅ (it. 48) [UX] 🟡 Pause de lecture auto invisible sur les siècles
+  majeurs → l'année pulse en or (animation 1,2 s) pendant la pause double,
+  signalant un temps d'arrêt volontaire et non un blocage.
 - ✅ (it. 47) [UX] 🟡 Bouton langue cyclique opaque → menu déroulant montrant
   les 4 choix (code · nom natif), langue active en or, ouvert à la demande
   et refermé au clic extérieur (R11).
