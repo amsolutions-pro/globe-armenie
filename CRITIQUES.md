@@ -33,8 +33,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 **Le panneau des périodes est dense** : pas de hiérarchie visuelle entre
   fiche territoire et notice de période quand les deux s'empilent ; un
   séparateur/onglets aideraient.
-- 🟠 **Le quiz n'utilise pas la carte** : des questions « montrez où… »
-  (cliquer le territoire) seraient bien plus pédagogiques.
 - 🟡 La lecture auto ne montre pas visuellement la pause sur les siècles
   majeurs (l'utilisateur croit à un blocage).
 - 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
@@ -115,7 +113,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   changement de frontières : ajouter un rendu de référence par époque
   faciliterait la relecture visuelle.
 
+### Nouvelles critiques (it. 33)
+- 🟠 [UX] **Pas d'échappatoire pendant une question carte** : si l'utilisateur
+  ne trouve pas, aucun bouton « passer » — il doit toucher au hasard.
+- 🟡 [UX] La question carte ne surligne pas le bon territoire après une
+  mauvaise réponse (le texte le nomme, mais un flash visuel aiderait).
+- 🟡 [DATA] Les cibles carte sont limitées aux surcouches arméniennes (o=1) :
+  ajouter les grands empires du siècle varierait le quiz.
+
 ## Critiques traitées
+- ✅ (it. 33) [UX] 🟠 Le quiz n'utilisait pas la carte → nouveau type de
+  question « Trouvez sur la carte : X (année) » : le voile se ferme, le globe
+  saute à l'année, bandeau « Touchez : X », clic intercepté et validé ;
+  libellés en 4 langues.
 - ✅ (it. 32) [DATA] 🟠 Boîte rectangulaire « Transcaucasie russe » →
   polygone suivant la frontière russo-ottomane de 1878 (Ardahan–Kars–Ararat)
   puis l'Araxe (Nakhitchevan, Zanguezour) ; l'Arménie occidentale 1880/1900/

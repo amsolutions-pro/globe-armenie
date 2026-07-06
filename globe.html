@@ -202,6 +202,12 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <button class="gros" id="quiz-suite" style="display:none">Question suivante</button>
 </div></div>
 
+<!-- Bandeau des questions carte : « Touchez : X » (R11 : une seule ligne discrète) -->
+<div id="quiz-cible" style="display:none;position:fixed;left:50%;transform:translateX(-50%);
+  top:calc(64px + env(safe-area-inset-top));z-index:8;background:rgba(23,18,16,.92);
+  border:1px solid var(--or);border-radius:12px;padding:8px 14px;font-size:14px;
+  color:var(--or);max-width:88vw;text-align:center"></div>
+
 <button id="btn-legende" aria-pressed="false" aria-label="Afficher la légende" title="Légende">🗺</button>
 <div id="legende">
   <span><i class="sw plein"></i> <em id="lg1" style="font-style:normal">Arménie attestée</em></span>
@@ -317,7 +323,7 @@ fr:{titre:"Le Monde à travers les siècles",sous:"10 000 av. J.-C. — 2000 apr
  wiki:"📖 Fiche historique (Wikipédia) →",wikiHy:"📖 Wikipédia arménienne →",
  atlas:"🗺 Ouvrir l'atlas détaillé de l'Arménie historique",
  sansNotice:"Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.",
- lgAtteste:"Arménie attestée",lgReconst:"présence reconstituée",lgNiveau:"luminosité = niveau d'organisation (tribus → empires)",nv0:"Chasseurs-cueilleurs",nv1:"Peuples et tribus",nv2:"Culture, chefferie",nv3:"Royaume, État",nv4:"Empire",siecle:"Situation au",chargeWiki:"Chargement de la fiche Wikipédia…",riennWiki:"Aucun article trouvé — utilisez les liens ci-dessous.",lgVille:"ville principale (zoomer)",lgDiaspora:"foyer de diaspora arménienne",lgBtn:"Légende",detTitre:"Afficher / masquer le titre et l'événement du siècle",
+ lgAtteste:"Arménie attestée",lgReconst:"présence reconstituée",lgNiveau:"luminosité = niveau d'organisation (tribus → empires)",nv0:"Chasseurs-cueilleurs",nv1:"Peuples et tribus",nv2:"Culture, chefferie",nv3:"Royaume, État",nv4:"Empire",siecle:"Situation au",chargeWiki:"Chargement de la fiche Wikipédia…",riennWiki:"Aucun article trouvé — utilisez les liens ci-dessous.",lgVille:"ville principale (zoomer)",lgDiaspora:"foyer de diaspora arménienne",lgBtn:"Légende",detTitre:"Afficher / masquer le titre et l'événement du siècle",q3:"Trouvez sur la carte : %",q3bandeau:"Touchez : %",q3ok:"Exact !",q3ko:"C'était le territoire en surbrillance — %",
  accTitre:"Bienvenue sur le globe historique",
  acc1:"<b>Tourner :</b> faites glisser le globe du doigt ou à la souris.",
  acc2:"<b>Explorer le temps :</b> la frise en bas feuillette 12 000 ans — ⏵ lance la lecture automatique.",
@@ -334,7 +340,7 @@ en:{titre:"The World Through the Centuries",sous:"10,000 BC — 2000 AD · histo
  wiki:"📖 Historical article (Wikipedia) →",wikiHy:"📖 Armenian Wikipedia →",
  atlas:"🗺 Open the detailed atlas of historical Armenia",
  sansNotice:"No detailed Armenian notice for this century. Tap a state on the globe to identify it, or browse the timeline.",
- lgAtteste:"Armenia attested",lgReconst:"reconstructed presence",lgNiveau:"brightness = level of organisation (tribes → empires)",nv0:"Hunter-gatherers",nv1:"Peoples and tribes",nv2:"Culture, chiefdom",nv3:"Kingdom, state",nv4:"Empire",siecle:"As of",chargeWiki:"Loading Wikipedia summary…",riennWiki:"No article found — use the links below.",lgVille:"major city (zoom in)",lgDiaspora:"Armenian diaspora centre",lgBtn:"Legend",detTitre:"Show / hide the title and the century's key event",
+ lgAtteste:"Armenia attested",lgReconst:"reconstructed presence",lgNiveau:"brightness = level of organisation (tribes → empires)",nv0:"Hunter-gatherers",nv1:"Peoples and tribes",nv2:"Culture, chiefdom",nv3:"Kingdom, state",nv4:"Empire",siecle:"As of",chargeWiki:"Loading Wikipedia summary…",riennWiki:"No article found — use the links below.",lgVille:"major city (zoom in)",lgDiaspora:"Armenian diaspora centre",lgBtn:"Legend",detTitre:"Show / hide the title and the century's key event",q3:"Find on the map: %",q3bandeau:"Tap: %",q3ok:"Correct!",q3ko:"It was the highlighted territory — %",
  accTitre:"Welcome to the historical globe",
  acc1:"<b>Rotate:</b> drag the globe with your finger or mouse.",
  acc2:"<b>Travel in time:</b> the timeline below spans 12,000 years — ⏵ starts auto-play.",
@@ -351,7 +357,7 @@ hy:{titre:"Աշխարհը դարերի միջով",sous:"Ք.ա. 10 000 — Ք.հ
  wiki:"📖 Պատմական հոդված (Վիքիպեդիա) →",wikiHy:"📖 Հայերեն Վիքիպեդիա →",
  atlas:"🗺 Բացել պատմական Հայաստանի մանրամասն ատլասը",
  sansNotice:"Այս դարի համար մանրամասն հայկական ծանոթություն չկա։ Հպեք պետությանը՝ ճանաչելու համար, կամ թերթեք ժամանակագիծը։",
- lgAtteste:"Վավերացված Հայաստան",lgReconst:"վերակազմված ներկայություն",lgNiveau:"պայծառություն = կազմակերպվածության մակարդակ (ցեղերից կայսրություններ)",nv0:"Որսորդ-հավաքիչներ",nv1:"Ժողովուրդներ և ցեղեր",nv2:"Մշակույթ, ցեղապետություն",nv3:"Թագավորություն, պետություն",nv4:"Կայսրություն",siecle:"Իրավիճակը՝",chargeWiki:"Վիքիպեդիայի ամփոփումը բեռնվում է…",riennWiki:"Հոդված չի գտնվել — օգտվեք ստորև հղումներից։",lgVille:"գլխավոր քաղաք (մոտեցնել)",lgDiaspora:"հայկական սփյուռքի կենտրոն",lgBtn:"Լեգենդ",detTitre:"Ցուցադրել / թաքցնել վերնագիրը և դարի գլխավոր իրադարձությունը",
+ lgAtteste:"Վավերացված Հայաստան",lgReconst:"վերակազմված ներկայություն",lgNiveau:"պայծառություն = կազմակերպվածության մակարդակ (ցեղերից կայսրություններ)",nv0:"Որսորդ-հավաքիչներ",nv1:"Ժողովուրդներ և ցեղեր",nv2:"Մշակույթ, ցեղապետություն",nv3:"Թագավորություն, պետություն",nv4:"Կայսրություն",siecle:"Իրավիճակը՝",chargeWiki:"Վիքիպեդիայի ամփոփումը բեռնվում է…",riennWiki:"Հոդված չի գտնվել — օգտվեք ստորև հղումներից։",lgVille:"գլխավոր քաղաք (մոտեցնել)",lgDiaspora:"հայկական սփյուռքի կենտրոն",lgBtn:"Լեգենդ",detTitre:"Ցուցադրել / թաքցնել վերնագիրը և դարի գլխավոր իրադարձությունը",q3:"Գտեք քարտեզի վրա՝ %",q3bandeau:"Հպեք՝ %",q3ok:"Ճիշտ է",q3ko:"Ճիշտ պատասխանը ընդգծված տարածքն էր — %",
  accTitre:"Բարի գալուստ պատմական գլոբուս",
  acc1:"<b>Պտտել՝</b> սահեցրեք գլոբուսը մատով կամ մկնիկով։",
  acc2:"<b>Ճամփորդել ժամանակի մեջ՝</b> ներքևի ժամանակագիծը թերթում է 12 000 տարի — ⏵ ավտոմատ ցուցադրում։",
@@ -368,7 +374,7 @@ ru:{titre:"Мир сквозь века",sous:"10 000 до н. э. — 2000 н. 
  wiki:"📖 Историческая статья (Википедия) →",wikiHy:"📖 Армянская Википедия →",
  atlas:"🗺 Открыть подробный атлас исторической Армении",
  sansNotice:"Для этого века нет подробной армянской справки. Коснитесь государства на глобусе или листайте шкалу времени.",
- lgAtteste:"Армения (источник)",lgReconst:"реконструированное присутствие",lgNiveau:"яркость = уровень организации (от племён к империям)",nv0:"Охотники-собиратели",nv1:"Народы и племена",nv2:"Культура, вождество",nv3:"Царство, государство",nv4:"Империя",siecle:"Состояние на",chargeWiki:"Загрузка справки из Википедии…",riennWiki:"Статья не найдена — используйте ссылки ниже.",lgVille:"главный город (приблизьте)",lgDiaspora:"центр армянской диаспоры",lgBtn:"Легенда",detTitre:"Показать / скрыть заголовок и главное событие века",
+ lgAtteste:"Армения (источник)",lgReconst:"реконструированное присутствие",lgNiveau:"яркость = уровень организации (от племён к империям)",nv0:"Охотники-собиратели",nv1:"Народы и племена",nv2:"Культура, вождество",nv3:"Царство, государство",nv4:"Империя",siecle:"Состояние на",chargeWiki:"Загрузка справки из Википедии…",riennWiki:"Статья не найдена — используйте ссылки ниже.",lgVille:"главный город (приблизьте)",lgDiaspora:"центр армянской диаспоры",lgBtn:"Легенда",detTitre:"Показать / скрыть заголовок и главное событие века",q3:"Найдите на карте: %",q3bandeau:"Коснитесь: %",q3ok:"Верно!",q3ko:"Правильный ответ — выделенная территория: %",
  accTitre:"Добро пожаловать на исторический глобус",
  acc1:"<b>Вращение:</b> перетаскивайте глобус пальцем или мышью.",
  acc2:"<b>Путешествие во времени:</b> шкала внизу листает 12 000 лет — ⏵ автопоказ.",
@@ -856,6 +862,7 @@ function clic(x,y){
   const feats = (DATA.world[String(YEARS[idx])]||[]).slice().sort((a,b)=>a.a-b.a);
   for(const f of feats){
     if(d3.geoContains({type:"Feature",geometry:{type:f.t,coordinates:f.c}}, ll)){
+      if(quizCarte){ reponseCarte(f); return; }
       selection = {f, annee:YEARS[idx]};
       montrerBulle(f, x, y);
       remplirPanneauPeriode(); ouvrirPanneau();
@@ -1410,7 +1417,40 @@ function genQuiz(){
     qs.push({q:T("q2").replace("%",nomVille(v)),
              reps:[v.de,...leurres].sort(()=>Math.random()-.5).map(d=>({t:libAn(d),ok:d===v.de}))});
   }
+  // T3 : « trouvez sur la carte » — surcouches arméniennes ou grands États
+  const cands3=[];
+  for(const y of YEARS){
+    for(const f of (DATA.world[String(y)]||[])){
+      if(f.o && f.a>=2) cands3.push({annee:y, nom:f.n});
+    }
+  }
+  for(const c of cands3.sort(()=>Math.random()-.5).slice(0,2)){
+    qs.push({type:"carte", annee:c.annee, nom:c.nom,
+             q:T("q3").replace("%", nomFR(c.nom)+" ("+libAn(c.annee)+")")});
+  }
   return qs.sort(()=>Math.random()-.5).slice(0,5);
+}
+/* Question carte : cible active pendant que le voile est fermé */
+let quizCarte=null;
+const quizCibleEl=document.getElementById("quiz-cible");
+function lancerQuestionCarte(q){
+  quizEl.classList.remove("ouvert");
+  allerA(YEARS.indexOf(q.annee));
+  quizCarte={nom:q.nom};
+  quizCibleEl.textContent=T("q3bandeau").replace("%", nomFR(q.nom));
+  quizCibleEl.style.display="block";
+}
+function reponseCarte(f){
+  const ok = f.n===quizCarte.nom;
+  quizCarte=null; quizCibleEl.style.display="none";
+  quizEtat.repondu=true; if(ok) quizEtat.score++;
+  quizEl.classList.add("ouvert");
+  quizProg.textContent=`${T("question")} ${quizEtat.i+1} / ${quizEtat.qs.length}`;
+  quizQ.textContent=quizEtat.qs[quizEtat.i].q;
+  quizReps.innerHTML=`<p style="text-align:center;color:${ok?"#7fc47f":"#d47f7f"}">${
+    ok?T("q3ok"):T("q3ko").replace("%", nomFR(quizEtat.qs[quizEtat.i].nom))}</p>`;
+  quizSuite.style.display="block";
+  quizSuite.textContent = quizEtat.i+1>=quizEtat.qs.length?T("voirRes"):T("suivante");
 }
 function montrerQuestion(){
   const {qs,i,score}=quizEtat;
@@ -1422,6 +1462,7 @@ function montrerQuestion(){
     return;
   }
   const q=qs[i];
+  if(q.type==="carte"){ lancerQuestionCarte(q); return; }
   quizProg.textContent=`${T("question")} ${i+1} / ${qs.length}`;
   quizQ.textContent=q.q;
   quizSuite.style.display="none";
@@ -1464,7 +1505,7 @@ btnLegende.addEventListener("click", ()=>{
 });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06j";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06k";   // à incrémenter quand les JSON changent (contourne le cache)
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
 function fetchAvecProgression(url){
