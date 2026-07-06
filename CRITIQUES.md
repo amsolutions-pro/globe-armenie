@@ -57,13 +57,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 23)
 - 🟠 [UX] **Pas de bouton « partager / copier le lien »** : l'URL publique
   existe mais rien dans l'interface ne la mentionne ni ne facilite le partage.
-- 🟠 [DATA] **Aucun test automatisé de cohérence des données** (années triées,
-  polygones fermés, surcouches présentes aux 37 pas attendus) — un script
-  `verifie_donnees.py` lancé avant chaque push éviterait les régressions.
 - 🟡 [UX] Le texte de progression n'est pas traduit (français en dur) alors
   que l'interface est quadrilingue.
 
+### Nouvelles critiques (it. 24)
+- 🟠 [DATA] **verifie_donnees.py ne contrôle pas les périodes JSON annexes**
+  (periodes*.json : chaque année du slider devrait avoir sa notice dans les
+  3 langues ; les trous passent inaperçus).
+- 🟡 [UX] **Rien n'indique la version des données sur le site** : afficher
+  discrètement VDATA/date du build aiderait à vérifier qu'on voit bien la
+  dernière version depuis l'iPhone.
+- 🟡 [DATA] Le seuil « 37 surcouches » est codé en dur dans verifie_donnees.py :
+  à synchroniser automatiquement avec SPECS de build_armenie_overlays.py.
+
 ## Critiques traitées
+- ✅ (it. 24) [DATA] 🟠 Aucun test automatisé de cohérence → verifie_donnees.py
+  (années triées, anneaux fermés ≥4 pts, coordonnées bornées, 37 surcouches,
+  présence d'Armenia aux périodes clés) ; à lancer avant chaque push.
 - ✅ (it. 23) [UX] 🟠 Chargement des 6,6 Mo sans indicateur de progression
   → téléchargement en streaming avec % et Mo reçus affichés sous l'anneau.
 - ✅ (it. 22) [DATA] 🔴 Boîtes rectangulaires des surcouches modernes → RSS
