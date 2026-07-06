@@ -91,16 +91,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] L'état ouvert/fermé de la légende n'est pas mémorisé entre visites
   (localStorage).
 
-### Nouvelles critiques (it. 28)
-- 🟠 [UX] **Rien n'indique que l'année est tactile** sur mobile (le repli
-  R11 du titre est invisible pour qui ne sait pas) : ajouter un indice discret
-  (chevron ⌄ ou pulsation au premier lancement).
-- 🟡 [UX] L'événement charnière n'est plus visible du tout par défaut sur
-  mobile : vérifier qu'il reste découvrable (il porte de la pédagogie R8).
-- 🟡 [DATA] Les aria-labels des nouveaux toggles (année, 🗺) ne sont pas
-  traduits dans les 4 langues.
+### Nouvelles critiques (it. 29)
+- 🟠 [DATA] **Relecture indépendante des traductions hy toujours en attente**
+  (it. 26) : lancer un agent de relecture (orthographe arménienne orientale,
+  terminologie historique).
+- 🟡 [UX] Le chevron ⌄ sous l'année est petit : vérifier sa visibilité sur
+  un vrai écran iPhone (peut nécessiter une taille supérieure).
+- 🟡 [UX] L'ouverture du détail-titre ne se replie pas automatiquement quand
+  on manipule le slider (il masque un peu la carte pendant la navigation).
 
 ## Critiques traitées
+- ✅ (it. 29) [UX] 🟠 Année tactile invisible → chevron ⌄/⌃ sous l'année sur
+  mobile ; [DATA] 🟡 aria-labels des toggles (année, 🗺) traduits en 4 langues
+  via applyLang. L'événement charnière reste accessible d'un toucher (28-🟡
+  couverte par le chevron).
 - ✅ (it. 28) [UX] 🟠 Bandeau-titre imposant sur iPhone → R11 appliqué :
   sur mobile seule l'année reste affichée en haut ; toucher l'année
   déplie/replie titre, sous-titre et événement charnière.
