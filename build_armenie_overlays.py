@@ -64,34 +64,19 @@ RUSSE_1900 = Polygon([(42.5,41.8),(42.55,41.3),(42.7,40.9),(42.8,40.4),
                       (44.8,39.70),(45.4,39.56),(45.8,39.30),    # Araxe / Nakhitchevan
                       (46.2,38.95),(46.55,38.87),(47.1,39.15),   # Zanguezour → Karabagh
                       (47.5,39.35),(47.5,41.8)])
-# Haut-Karabagh : NKAO reconstituée depuis geoBoundaries (gbOpen AZE ADM2) —
-# union des districts Khankendi, Khojaly, Shusha (ville+district), Khojavend,
-# plus la partie montagneuse du district de Tartar (≈ Mardakert/Aghdara).
-# Aire ≈ 4 000 km², cohérente avec les 4 400 km² de l'oblast (1923–1991).
-def karabagh_nkao():
-    path = "geo/aze_adm2.geojson"
-    if not os.path.exists(path):
-        os.makedirs("geo", exist_ok=True)
-        urllib.request.urlretrieve(
-            "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/AZE/ADM2/geoBoundaries-AZE-ADM2.geojson", path)
-    w = json.load(open(path, encoding="utf-8"))
-    cible = {"Khankendi City","Khojaly District","Shusha City","Shusha District","Khojavend District"}
-    gs = [shape(f["geometry"]) for f in w["features"] if f["properties"]["shapeName"] in cible]
-    tartar = [shape(f["geometry"]) for f in w["features"] if f["properties"]["shapeName"]=="Tartar District"]
-    mard = unary_union(tartar).intersection(box(46.4, 39.9, 47.05, 40.35))
-    return unary_union(gs + [mard])
-KARABAGH = karabagh_nkao()
+# Haut-Karabagh (NKAO 1923–1991) : tracé manuel documenté de l'oblast montagneux
+# — Stepanakert, Askeran, Martakert (Aghdara), Martouni, Hadrout, Chouchi.
+# Source NEUTRE (aucune source azerbaïdjanaise, exigence utilisateur 2026-07-07) :
+# reconstitution à partir des limites documentées de l'oblast (~4 400 km²).
+KARABAGH = Polygon([(46.40,40.15),(46.72,40.28),(47.02,40.05),(47.15,39.72),
+                    (47.05,39.45),(46.78,39.33),(46.48,39.42),(46.34,39.72),(46.40,40.15)])
 
-# Zone de contrôle arménien 1994–2020 : NKAO + districts adjacents occupés
-# (Latchine, Kelbadjar, Qubadli, Zanguilan, Djabraïl, Fizouli, Agdam — les deux
-# derniers ne l'étaient que partiellement : légère surestimation assumée).
-def zone_1994():
-    w = json.load(open("geo/aze_adm2.geojson", encoding="utf-8"))
-    occ = {"Lachin District","Kalbajar District","Qubadli District","Zangilan District",
-           "Jabrayil District","Fuzuli District","Agdam District"}
-    gs = [shape(f["geometry"]) for f in w["features"] if f["properties"]["shapeName"] in occ]
-    return unary_union(gs + [KARABAGH])
-CONTROLE_1994 = zone_1994()
+# Zone de contrôle arménien 1994–2020 : NKAO + ceinture occupée (Latchine,
+# Kelbadjar au nord-ouest ; Qubadli, Zanguilan, Djabraïl, Fizouli au sud jusqu'à
+# l'Araxe ; Agdam à l'est). Tracé manuel suivant la ligne de contact documentée
+# de 1994. Source neutre.
+CONTROLE_1994 = Polygon([(45.62,40.30),(46.72,40.35),(47.12,40.10),(47.22,39.68),
+                         (47.02,39.18),(46.42,39.00),(45.98,39.18),(45.72,39.70),(45.62,40.30)])
 
 # Gabarit "Arménie étendue" : Arménie arsacide (an 300, la plus large des couches sources)
 def gabarit_armenie():

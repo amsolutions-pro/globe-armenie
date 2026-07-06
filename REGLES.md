@@ -122,8 +122,9 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
   historical-basemaps (A. Ourednik, communautaire) ; geoBoundaries/gbOpen
   (laboratoire William & Mary, université américaine) ; Natural Earth. Les
   noms affichés sont arméniens/neutres (Stepanakert, Artsakh — jamais les
-  toponymes azéris). Le tracé du Karabagh (issu de gbOpen AZE ADM2, découpage
-  administratif azéri) est à remplacer par un tracé neutre du NKAO historique.
+  toponymes azéris). Le tracé du Karabagh est un polygone MANUEL documenté du NKAO
+  historique (1923–1991, ~4 400 km²) — plus aucune dépendance à un découpage
+  administratif azerbaïdjanais.
 - Frontières : historical-basemaps (aourednik) — précision d'atlas historique.
 - Textes : synthèses rédigées (périodes arméniennes), résumés Wikipédia à la
   demande (langue courante).

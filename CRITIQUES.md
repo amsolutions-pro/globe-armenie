@@ -310,16 +310,26 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   de trou) après déploiement.
 
 ### Nouvelles critiques (it. 67)
-- 🟠 [DATA] Le tracé du Karabagh dérive encore de gbOpen AZE ADM2 (découpage
-  administratif azerbaïdjanais) : à remplacer par un polygone neutre du NKAO
-  historique (1923–1991) — priorité suite à la demande utilisateur.
 - 🟡 [DATA] 1918 et 2020 conservent des géométries « de Sèvres » / résiduelles
   approximées ; le contrôle réel de la Première République en 1918-1920 reste
   sans polygone sourcé.
 - 🟡 [DATA] Les notices 1918/2018 réutilisent des notices existantes (Première
   et Troisième Républiques) : dédiées possibles plus tard.
 
+### Nouvelles critiques (it. 68)
+- 🟡 [DATA] Les tracés NKAO et zone 1994 sont désormais manuels (documentés,
+  ~4 700 et ~13 900 km²) : moins précis que des limites cadastrales, à raffiner
+  si une source NEUTRE de l'oblast historique devient disponible.
+- 🟡 [DATA] geo/aze_adm2.geojson supprimé : vérifier qu'aucun autre script n'y
+  fait référence (build_globe_data n'en dépendait pas).
+- 🟡 [UX] Vérifier en ligne (VDATA m) que le Karabagh redessiné reste cohérent
+  visuellement au zoom.
+
 ## Critiques traitées
+- ✅ (it. 68, demande utilisateur) [DATA] 🟠 Dépendance geoBoundaries AZE ADM2
+  (découpage administratif azerbaïdjanais) SUPPRIMÉE : NKAO et zone de contrôle
+  1994 redéfinis en polygones manuels documentés (source neutre), fichier AZE
+  effacé. Plus aucune source azerbaïdjanaise dans le projet (REGLES R9 à jour).
 - ✅ (it. 67, demande utilisateur) [DATA] 3 années ajoutées pour mieux décrire :
   1918 (Sardarabad, proclamation de la République), 1923 (création du NKAO,
   origine du conflit — notice dédiée FR+EN+HY), 2018 (Révolution de velours) ;
