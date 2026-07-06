@@ -77,10 +77,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Les avertissements de verifie_donnees.py ne sont visibles que du
   développeur : aucun signal côté site quand une traduction manque.
 
-### Nouvelles critiques (it. 26)
-- 🟠 [DATA] **Les traductions hy fraîchement écrites n'ont pas été relues par
-  un regard indépendant** : orthographe arménienne orientale et terminologie
-  historique à faire relire (agent ou locuteur).
 - 🟡 [DATA] Les notices hy n'ont pas de champ `provinces` (comme en) : au
   clic sur une province, le libellé retombe en français.
 - 🟡 [UX] Aucune indication dans l'UI que la notice affichée est une
@@ -92,15 +88,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   (localStorage).
 
 ### Nouvelles critiques (it. 29)
-- 🟠 [DATA] **Relecture indépendante des traductions hy toujours en attente**
-  (it. 26) : lancer un agent de relecture (orthographe arménienne orientale,
-  terminologie historique).
 - 🟡 [UX] Le chevron ⌄ sous l'année est petit : vérifier sa visibilité sur
   un vrai écran iPhone (peut nécessiter une taille supérieure).
 - 🟡 [UX] L'ouverture du détail-titre ne se replie pas automatiquement quand
   on manipule le slider (il masque un peu la carte pendant la navigation).
 
+### Nouvelles critiques (it. 30)
+- 🟡 [DATA] La relecture hy a été faite par le même modèle que la traduction :
+  une validation par un locuteur natif reste souhaitable à terme.
+- 🟡 [UX] Les dates des notices hy mélangent « Ք.ա. 189 – 1 » et « 66 – 428 թթ. » :
+  harmoniser le format des ères sur les 10 notices.
+- 🟡 [DATA] periodes_en.json n'a jamais eu de relecture équivalente.
+
 ## Critiques traitées
+- ✅ (it. 30) [DATA] 🟠 Relecture des traductions hy (it. 26) → 8 corrections
+  (կառավարում, Օմայյան, Ղաջարական, Չալդրան, Սեն-Դենի, լեռնաշխարհ×3),
+  terminologie alignée sur les notices d'origine.
 - ✅ (it. 29) [UX] 🟠 Année tactile invisible → chevron ⌄/⌃ sous l'année sur
   mobile ; [DATA] 🟡 aria-labels des toggles (année, 🗺) traduits en 4 langues
   via applyLang. L'événement charnière reste accessible d'un toucher (28-🟡
