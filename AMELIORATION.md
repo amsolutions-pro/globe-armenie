@@ -359,3 +359,29 @@ les surcouches du plateau restent lisibles à k=2 et abaisser leur seuil si beso
 - Q33 : noms de villes (VILLES/DIASPORA) : translittérations HY/RU des ~60 noms.
 
 ---
+
+## Itération 12 — 2026-07-06 (+ directive utilisateur : lacs)
+
+**Fait (Q31, Q33)** : les 33 **événements charnières traduits en EN / HY / RU**
+(CHARNIERE_EN/HY/RU + charniereDe(y), quiz compris, rafraîchi au changement de
+langue) ; **translittérations arméniennes et russes des villes** (36 noms : villes
+historiques, sites préhistoriques, foyers de diaspora) appliquées aux étiquettes
+canvas, fiches et quiz.
+
+**Directive utilisateur** : les **lacs** (anneaux intérieurs des polygones, qui
+laissaient voir le fond océan sombre) sont désormais remplis d'un **bleu clair**
+(#3a6478), peints avant les territoires pour ne pas masquer les enclaves — lacs de
+Van, Sevan et Ourmia bien visibles au cœur de l'Arménie.
+
+**Q34. Les notices longues (periodes.json, MINI) doivent-elles passer en 4 langues ?**
+Oui à terme — gros chantier éditorial. → Itération 13 : commencer par l'anglais
+(traduction des 10 notices periodes.json → periodes_en.json + MINI_EN).
+
+**Q35. La lecture auto s'arrête-t-elle sur les moments forts (301, 1915…) ?**
+Non, cadence uniforme 2,5 s. → Itération 13 : pause allongée (4 s) sur les siècles
+à notice arménienne majeure (301, 884, 1045, 1915).
+
+**Q36. Le bleu des lacs est-il assez distinct de la mer à faible zoom ?**
+À vérifier visuellement sur mobile ; ajuster vers #4a7c94 si trop proche.
+
+---
