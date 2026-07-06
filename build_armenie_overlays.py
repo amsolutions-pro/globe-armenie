@@ -52,9 +52,9 @@ ZUHAB_OUEST = box(36.0, 35.5, 43.7, 42.5)
 ZUHAB_EST   = box(43.7, 35.5, 48.5, 42.5)
 # Transcaucasie russe vers 1900 (Kars 1878 + Erevan/Zanguezour, nord de l'Araxe)
 RUSSE_1900  = box(42.5, 38.8, 47.5, 41.8)
-# RSS d'Arménie (frontières ≈ actuelles) et Haut-Karabagh
-ARM_SSR   = box(43.4, 38.83, 46.65, 41.3)
-KARABAGH  = box(46.0, 39.1, 47.1, 40.3)
+# Haut-Karabagh : polygone approché de l'oblast autonome (NKAO)
+KARABAGH = Polygon([(46.45,40.20),(46.85,40.05),(47.05,39.85),(46.95,39.60),
+                    (46.75,39.35),(46.50,39.30),(46.30,39.45),(46.25,39.75)])
 
 # Gabarit "Arménie étendue" : Arménie arsacide (an 300, la plus large des couches sources)
 def gabarit_armenie():
@@ -98,8 +98,8 @@ SPECS = [
     (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1900, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — traités de Turkmentchaï (1828) et Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1914, "Arménie occidentale (six vilayets)", "Empire ottoman — veille du génocide de 1915", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
-    (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "tout", r"ussr|soviet", ARM_SSR),
-    (1960, "RSS d'Arménie", "Union soviétique", "tout", r"ussr|soviet", ARM_SSR),
+    (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia2000", None, PLATEAU),
+    (1960, "RSS d'Arménie", "Union soviétique", "armenia2000", None, PLATEAU),
     (1994, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
     (2010, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
 ]
@@ -115,7 +115,7 @@ def main():
         data["world"][y] = [f for f in data["world"][y] if not f.get("o")]
 
     gab = gabarit_armenie()
-    arm1000 = None
+    arm1000 = None; arm2000=[None]
     ajouts = 0
     for (y, nom, suz, source, motif, emprise) in SPECS:
         if source == "gabarit":
@@ -124,6 +124,10 @@ def main():
             if arm1000 is None:
                 arm1000 = geom_of(load_world(1000), r"^Armenia$")
             masque = arm1000 if arm1000 is not None else gab
+        elif source == "armenia2000":
+            if arm2000[0] is None:
+                arm2000[0] = geom_of(load_world(2000), r"^Armenia$")
+            masque = arm2000[0] if arm2000[0] is not None else gab
         elif source == "tout":
             masque = None  # emprise ∩ toutes les terres
         g = None

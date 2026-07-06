@@ -1427,7 +1427,7 @@ quizSuite.addEventListener("click", ()=>{
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06d";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06e";   // à incrémenter quand les JSON changent (contourne le cache)
 Promise.all([
   fetch("globe_data.json?v="+VDATA).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
   fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),

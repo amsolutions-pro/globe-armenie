@@ -16,10 +16,9 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ## Critiques ouvertes
 
 ### [DATA]
-- 🔴 **Les surcouches modernes utilisent des boîtes rectangulaires** (RSS
-  d'Arménie, Haut-Karabagh, Transcaucasie russe) : bords droits visibles au zoom.
-  Il faudrait des tracés réels (Natural Earth admin-0 Armenia pour la RSS,
-  tracé de la ligne de contact 1994).
+- 🟠 **La zone Transcaucasie russe (1880/1900) reste une boîte rectangulaire**
+  (reliquat it. 22 : RSS et Karabagh sont désormais en tracés réels, pas ce
+  masque) ; un tracé des gouvernorats d'Erevan et de Kars serait plus juste.
 - 🔴 **Le gabarit unique « Arménie an 300 » sert à toutes les époques** : la
   satrapie de −500 ou l'ostikanat de 800 n'avaient pas exactement cette
   emprise ; chaque surcouche mériterait son propre masque documenté.
@@ -43,9 +42,24 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   majeurs (l'utilisateur croit à un blocage).
 - 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
 
+### Nouvelles critiques (it. 22)
+- 🔴 [DATA] **Le polygone NKAO du Karabagh est dessiné à main levée** (8 points
+  approximatifs) : mieux qu'une boîte, mais pas sourcé — le comparer à un tracé
+  documenté de l'oblast autonome (1923–1991) ou de la ligne de contact 1994.
+- 🟠 [UX] **Le site publié (GitHub Pages) charge 6,6 Mo de JSON d'un bloc** :
+  sur iPhone en 4G, plusieurs secondes sans indicateur de progression — ajouter
+  une barre/spinner de chargement et envisager la compression (gzip est servi
+  par Pages, mais un découpage par tranches d'époques aiderait).
+- 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
+  ignore les micro-différences de frontières soviétiques (enclaves
+  Artsvashen/Karki non représentées).
+
 ---
 
 ## Critiques traitées
+- ✅ (it. 22) [DATA] 🔴 Boîtes rectangulaires des surcouches modernes → RSS
+  d'Arménie 1945/1960 découpée sur la géométrie réelle « Armenia » (an 2000),
+  Haut-Karabagh en polygone NKAO (la Transcaucasie russe reste ouverte, cf. 🟠).
 - ✅ (it. 21) [UX] 🔴 Le bouton de langue était masqué par le volet PC ouvert
   → décalage des boutons flottants.
 - ✅ (it. 21) [DATA] 🔴 Les lacs disparaissaient selon les siècles (trous
