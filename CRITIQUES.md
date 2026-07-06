@@ -259,11 +259,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 [UX] Toujours pas de test tactile sur iPhone RÉEL (Safari iOS) : les
   vérifs se font en Chrome à fenêtre étroite (390 px), fidèle au layout mais
   pas au tactile ni au moteur WebKit.
-- 🟡 [DATA] Couverture arménienne complète de −500 à 2026 confirmée, mais les
-  nouvelles années récentes réutilisent des notices aliasées (thématiquement
-  correctes) plutôt que des notices dédiées.
+
+### Nouvelles critiques (it. 60)
+- 🟡 [DATA] Les notices 2020/2023 n'ont pas de version arménienne dédiée
+  (MINI_HY inexistant) : en hy elles retombent sur le FR — traduire.
+- 🟡 [DATA] 1991 (indépendance) et 1988 (Spitak) mériteraient aussi leurs
+  notices dédiées (encore aliasées vers 2000/1945).
+- 🟡 [UX] La carte 2020/2023 (fond world_2010) ne montre pas la perte
+  territoriale réelle : seule la surcouche 2020 (Artsakh résiduel) et la
+  notice la décrivent.
 
 ## Critiques traitées
+- ✅ (it. 60) [DATA] Notices dédiées pour 2020 (guerre des 44 jours : dates,
+  drones, Chouchi 8 nov., cessez-le-feu 10 nov., ~6 500 morts) et 2023 (exode :
+  blocus de Latchine, offensive du 19 sept., ~100 000 réfugiés, dissolution de
+  l'Artsakh au 1ᵉʳ janv. 2024) en FR + EN, avec capitales situées ; alias
+  2020→2020, 2023→2023.
 - ✅ (it. 59) [UX] 🟡 Vérifié en Chrome à 390×720 (type iPhone) : légende
   bornée (280 px large, 388→574 px, aucun débordement), 6 entrées lisibles en
   arménien dont « aire maximale (300) », contour du foyer visible. Couverture
