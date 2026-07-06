@@ -1400,12 +1400,34 @@ function applyLang(){
     if(document.getElementById("panel").classList.contains("ouvert")) remplirPanneauPeriode();
     fermerBulle(); render(); }
 }
-document.getElementById("btn-lang").addEventListener("click", ()=>{
-  LANG = CYCLE_LANG[(CYCLE_LANG.indexOf(LANG)+1)%CYCLE_LANG.length];
-  try{ localStorage.setItem("globe_lang",LANG); }catch(e){}
-  applyLang();
-  if(quizEl.classList.contains("ouvert")){ quizEtat={qs:genQuiz(),i:0,score:0,repondu:false}; montrerQuestion(); }
+/* Menu langue : les 4 choix visibles à la demande (R11) */
+const menuLang=document.createElement("div");
+menuLang.id="menu-lang";
+menuLang.style.cssText="display:none;position:fixed;z-index:9;background:rgba(23,18,16,.96);border:1px solid var(--trait);border-radius:12px;padding:4px;flex-direction:column;gap:2px";
+const NOMS_LANG={fr:"Français",en:"English",hy:"Հայերեն",ru:"Русский"};
+for(const l of CYCLE_LANG){
+  const b=document.createElement("button");
+  b.textContent=`${LIB_LANG[l]} · ${NOMS_LANG[l]}`;
+  b.style.cssText="border:none;background:transparent;color:var(--encre-2);padding:7px 14px;border-radius:8px;cursor:pointer;font-size:13px;text-align:left";
+  b.addEventListener("click", ()=>{
+    LANG=l;
+    try{ localStorage.setItem("globe_lang",LANG); }catch(e){}
+    applyLang(); menuLang.style.display="none";
+    if(quizEl.classList.contains("ouvert")){ quizEtat={qs:genQuiz(),i:0,score:0,repondu:false}; montrerQuestion(); }
+  });
+  menuLang.appendChild(b);
+}
+document.body.appendChild(menuLang);
+document.getElementById("btn-lang").addEventListener("click", e=>{
+  e.stopPropagation();
+  if(menuLang.style.display==="flex"){ menuLang.style.display="none"; return; }
+  const r=e.currentTarget.getBoundingClientRect();
+  menuLang.style.display="flex";
+  menuLang.style.right=(window.innerWidth-r.left+8)+"px";
+  menuLang.style.top=Math.max(8, r.top-60)+"px";
+  [...menuLang.children].forEach((c,i)=>{ c.style.color = CYCLE_LANG[i]===LANG?"var(--or)":"var(--encre-2)"; });
 });
+document.addEventListener("click", ()=>{ menuLang.style.display="none"; });
 applyLang();
 
 /* ================= Accueil (premier lancement) ================= */
@@ -1567,7 +1589,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06s";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06t";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)

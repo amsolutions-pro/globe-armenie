@@ -26,7 +26,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   desktop est passé (it. 42), reste la validation tactile sur l'appareil cible.
 - 🟡 La lecture auto ne montre pas visuellement la pause sur les siècles
   majeurs (l'utilisateur croit à un blocage).
-- 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
 
 ### Nouvelles critiques (it. 22)
 - 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
@@ -187,7 +186,18 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] afficheVerdictCarte relit quizEtat.qs[quizEtat.i].nom : si
   l'utilisateur enchaîne très vite, l'état peut avoir avancé (bord de course).
 
+### Nouvelles critiques (it. 47)
+- 🟡 [UX] Le menu langue s'ouvre vers la gauche du bouton : sur très petit
+  écran il peut sortir du cadre — vérifier le positionnement sur iPhone.
+- 🟡 [UX] Le menu n'est pas navigable au clavier (pas de focus/flèches) :
+  accessibilité perfectible.
+- 🟡 [UX] Un simple clic sur le bouton n'affiche plus le cycle rapide : les
+  habitués du cycle FR→EN→HY→RU doivent maintenant viser dans le menu.
+
 ## Critiques traitées
+- ✅ (it. 47) [UX] 🟡 Bouton langue cyclique opaque → menu déroulant montrant
+  les 4 choix (code · nom natif), langue active en or, ouvert à la demande
+  et refermé au clic extérieur (R11).
 - ✅ (it. 46) [UX] 🟡 Quiz carte : après une mauvaise réponse, le bon
   territoire est surligné 1,5 s sur le globe avant l'affichage du verdict.
 - ✅ (it. 45) 🟡×3 : texte de chargement traduit dès l'init de la langue ;
