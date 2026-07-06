@@ -466,7 +466,7 @@ const PALETTE_LUX = PALETTE.map(hex=>{
 function niveau(n){
   if(!n) return 1;
   if(ETATS_BLANCS.has(n)) return 3;
-  if(/empire|caliphate|khaganate|tsardom|imperial|great khanate|golden horde|soviet/i.test(n)) return 4;
+  if(/empire|caliphate|khaganate|tsardom|imperial|great khanate|golden horde|soviet|ilkhanate|il-khanate/i.test(n)) return 4;
   if(/hunter|gatherer|forag|fisher|ficher|shellfish|paleo-/i.test(n)) return 0;
   if(/culture|chiefdom|farmer|complex|focus|burial|pottery|neolithic|bronze age|civilization|city-states/i.test(n)) return 2;
   if(/nomad|pastoral|tribes?|peoples|aboriginal|indigenous|proto-|cimerian/i.test(n)) return 1;
@@ -1017,7 +1017,13 @@ btnLecture.addEventListener("click", ()=>{
   if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ allerA(idx+1); return; }
   if(idx>=YEARS.length-1) allerA(0);
   btnLecture.textContent="⏸";
-  lecture=setInterval(()=>{ if(idx<YEARS.length-1) allerA(idx+1); else stopLecture(); }, 2500);
+  const MAJEURS=new Set([300,900,1100,1900]);
+  let tic=0;
+  lecture=setInterval(()=>{
+    if(MAJEURS.has(YEARS[idx]) && tic<1){ tic++; return; }   // pause double sur les tournants
+    tic=0;
+    if(idx<YEARS.length-1) allerA(idx+1); else stopLecture();
+  }, 2500);
 });
 canvas.addEventListener("pointerdown", stopLecture);
 window.addEventListener("keydown", e=>{
@@ -1076,6 +1082,31 @@ function chargerWiki(terme){
     cacheWiki.set(cle,h); rendu(h);
   }).catch(()=>rendu(T("riennWiki")));
 }
+
+/* Titres anglais des périodes (le corps reste FR avec bandeau) */
+const PERIODES_EN = [
+ {nom:"Kingdom of Urartu",dates:"c. 860 – 590 BC",pouvoir:"Independent kingdom (Biainili)"},
+ {nom:"Satrapy of Armenia",dates:"590 – 331 BC",pouvoir:"Median then Achaemenid empire · Orontid dynasty"},
+ {nom:"Orontid Kingdom",dates:"331 – 200 BC",pouvoir:"Orontid (Yervanduni) dynasty, de facto independent"},
+ {nom:"Artaxiad Kingdom",dates:"189 – 1 BC",pouvoir:"Artaxiad dynasty · apogee under Tigranes II the Great"},
+ {nom:"Arsacid Kingdom",dates:"AD 66 – 428",pouvoir:"Arsacid dynasty, between Rome and Persia"},
+ {nom:"Marzpanate and Byzantine Armenia",dates:"428 – 640",pouvoir:"Partition: Sasanian Persia (east) · Byzantium (west)"},
+ {nom:"Arab Arminiya",dates:"640 – 884",pouvoir:"Umayyad then Abbasid caliphate (ostikanate)"},
+ {nom:"Bagratid Kingdoms",dates:"884 – 1045",pouvoir:"Bagratid dynasty and sister kingdoms"},
+ {nom:"Cilicia and the Zakarids",dates:"1080 – 1375",pouvoir:"Armenian Kingdom of Cilicia · Zakarid principality · Mongols"},
+ {nom:"Ottoman–Persian partitions",dates:"1514 – 1828",pouvoir:"Ottoman Empire (west) · Safavid then Qajar Persia (east)"}];
+const MINI_EN = {
+ "-10000":{nom:"First inhabitants of the highlands",dates:"c. 10,000 BC",pouvoir:"Epipalaeolithic hunter-gatherers"},
+ "-8000":{nom:"Neolithisation",dates:"c. 8000 BC",pouvoir:"First villages of the Fertile Crescent and its margins"},
+ "-5000":{nom:"Villages of the Araxes",dates:"7th–6th millennium BC",pouvoir:"Aratashen-Shulaveri Neolithic culture"},
+ "-4000":{nom:"Chalcolithic: copper and wine",dates:"5th–4th millennium BC",pouvoir:"Areni and Sioni cultures"},
+ "-3000":{nom:"The Kura-Araxes culture",dates:"c. 3400 – 2000 BC",pouvoir:"First pan-Caucasian culture"},
+ "-2000":{nom:"Dawn of the Armenian highlands",dates:"c. 2000 BC",pouvoir:"Bronze Age cultures (late Kura-Araxes, Trialeti)"},
+ "-1500":{nom:"Hayasa-Azzi and the Nairi lands",dates:"c. 1500 – 1200 BC",pouvoir:"Tribal confederations (Hittite and Assyrian sources)"},
+ "-1000":{nom:"Towards Urartian unification",dates:"c. 1000 – 860 BC",pouvoir:"Nairi principalities on the road to unity"},
+ "1400":{nom:"Between Timur and the Turkmens",dates:"1387 – 1502",pouvoir:"Timurids, then Kara Koyunlu and Ak Koyunlu"},
+ "1900":{nom:"The Armenian Question",dates:"1878 – 1915",pouvoir:"Ottoman Empire (west) · Russian Empire (east)"},
+ "2000":{nom:"Third Republic of Armenia",dates:"1991 – today",pouvoir:"Independent republic (21 September 1991)"}};
 
 /* Correspondance année du globe → notice arménienne de periodes.json */
 function indexPeriode(y){
@@ -1145,8 +1176,9 @@ function remplirPanneauPeriode(){
   if(i>=0 && PERIODES && PERIODES[i]){
     const p=PERIODES[i];
     if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
-    html += `<h2>${p.nom}</h2><div class="dates">${p.dates}</div>
-      <div class="pouvoir">${p.pouvoir}</div>`;
+    const pe = (LANG==="en" && PERIODES_EN[i]) ? PERIODES_EN[i] : p;
+    html += `<h2>${pe.nom}</h2><div class="dates">${pe.dates}</div>
+      <div class="pouvoir">${pe.pouvoir}</div>`;
     for(const par of p.apercu) html += `<p>${par}</p>`;
     if(p.contexte) html += `<div class="contexte">${p.contexte}</div>`;
     if(p.capitales && p.capitales.length){
@@ -1159,7 +1191,8 @@ function remplirPanneauPeriode(){
   } else if(MINI[String(y)]){
     const m=MINI[String(y)];
     if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
-    html += `<h2>${m.nom}</h2><div class="dates">${m.dates}</div><div class="pouvoir">${m.pouvoir}</div>`;
+    const me = (LANG==="en" && MINI_EN[String(y)]) ? MINI_EN[String(y)] : m;
+    html += `<h2>${me.nom}</h2><div class="dates">${me.dates}</div><div class="pouvoir">${me.pouvoir}</div>`;
     for(const par of m.apercu) html += `<p>${par}</p>`;
     if(m.capitales && m.capitales.length){
       html += `<div class="caps"><h3>${T("lieux")}</h3>`;

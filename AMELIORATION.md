@@ -438,3 +438,23 @@ informations sur lui :
 Vérifié dans Chrome (Empire byzantin en l'an 1000 : résumé FR + carte miniature).
 
 ---
+
+## Itération 16 — 2026-07-06
+
+**Fait** : audit de niveau() sur les 1 478 entités — les 73 entités de niveau 4
+sont toutes des empires/califats/khaganats légitimes ; seule correction :
+**Ilkhanat** (et il-khanate) promu au niveau 4. **Lecture auto** : pause doublée
+(5 s) sur les siècles charnières majeurs (300, 900, 1100, 1900). **Notices EN** :
+titres, dates et pouvoir des 10 périodes (PERIODES_EN) et des 11 mini-notices
+(MINI_EN) affichés en anglais quand LANG=en (corps FR conservé avec bandeau).
+Vérifié dans Chrome (EN : « Bagratid Kingdoms », niveau(Ilkhanate)=4).
+
+**Q37.** Corps des notices en EN/HY/RU ? → chantier éditorial long : traduire
+periodes.json (~60 paragraphes) — envisager fichiers periodes_{en,hy,ru}.json.
+**Q38.** Le quiz mélange-t-il les langues si on change en cours de partie ?
+→ vérifier : les questions générées avant le changement gardent l'ancienne langue
+(acceptable) ; regénérer le quiz au changement de langue si ouvert.
+**Q39.** Déploiement : le projet est mûr pour GitHub Pages — demander à
+l'utilisateur s'il veut publier (action externe, accord requis).
+
+---
