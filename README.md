@@ -50,5 +50,19 @@ python build_armenie_overlays.py  # réinjecte les 22 surcouches arméniennes
 4. L'URL sera `https://amsolutions-pro.github.io/globe-armenie/globe.html`
    (le fetch des JSON fonctionne tel quel, chemins relatifs).
 
-`globe_data.json` fait ~4,3 Mo : GitHub Pages le sert compressé (gzip ≈ 1 Mo),
-acceptable sur mobile.
+## Performance (ligne de base mesurée, it. 54)
+
+Mesures sur le site publié (Chrome desktop, cache vide) :
+
+| Ressource | Transfert (gzip) | Durée |
+|---|---|---|
+| `globe_data_init.json` (amorce, année −700) | 43 Ko | ~100 ms |
+| `globe_data.json` (complet, 6,6 Mo brut) | 2,28 Mo | ~80 ms |
+| notices + lacs + traductions | ~40 Ko | ~100 ms |
+| **DOMContentLoaded** | — | **286 ms** |
+
+Chargement en deux phases : l'amorce (`globe_data_init.json`) affiche le globe
+en < 300 ms, puis `globe_data.json` complet se charge en arrière-plan (barre de
+progression, slider verrouillé jusqu'au déblocage). GitHub Pages sert tout en
+gzip. **Conclusion : le poids brut de 6,6 Mo n'est plus un problème de
+chargement** — inutile de re-découper le JSON tant que ces chiffres tiennent.

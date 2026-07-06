@@ -119,9 +119,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   depuis un commit épinglé (9469f09) — vérifier la pérennité du lien.
 
 ### Nouvelles critiques (it. 38)
-- 🟡 [DATA] Fizouli et Agdam sont inclus en entier dans la zone 1994 alors
-  qu'ils n'étaient occupés que partiellement (~1/3 d'Agdam) : surestimation
-  à l'est, documentée mais améliorable.
 - 🟡 [UX] Le nouveau nom est long (« Haut-Karabagh et districts occupés… ») :
   vérifier qu'il ne déborde pas dans la bulle sur mobile.
 
@@ -215,10 +212,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 53)
 - 🟡 [A11Y] Le liseré intérieur du canvas (box-shadow inset) n'apparaît qu'au
   focus clavier : vérifier qu'il ne gêne pas visuellement pendant le rendu.
-- 🟡 [DATA] Fizouli et Agdam restent inclus en entier dans la zone 1994
-  (occupation partielle) : seule critique DATA de fond encore ouverte.
-- 🟡 [UX] Beaucoup de micro-itérations A11Y/UX : un audit Lighthouse
-  donnerait un score objectif et hiérarchiserait ce qui reste.
+
+### Nouvelles critiques (it. 54)
+- 🟡 [DATA] L'audit n'a porté que sur Chrome desktop : pas de mesure réelle
+  sur iPhone/4G (débit et rendu tactile peuvent différer).
+- 🟡 [UX] Le globe compte beaucoup de fonctionnalités peu découvrables
+  (partage, quiz carte, détail-titre) : un mini-tutoriel au 1er lancement
+  au-delà du voile actuel aiderait.
+- 🟡 [DATA] Fizouli/Agdam en entier dans la zone 1994 : ne peut être affiné
+  qu'avec un polygone d'occupation SOURCÉ (clipper sur une longitude inventée
+  violerait R3.2) — en attente d'une source, pas d'un correctif arbitraire.
+
+## Critiques invalidées
+- ❌ (it. 54) [UX] « 33 erreurs console » : ce ne sont PAS des erreurs de la
+  page — signature `:0:0` « message channel closed », émises par une extension
+  Chrome. La page globe.html a 0 erreur propre (vérifié à l'audit).
 
 ## Critiques invalidées
 - ❌ (it. 53) [DATA] « 2010 devrait différer de 1994 » : rejeté — la ligne de
@@ -232,6 +240,11 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   tournants les plus importants) ; tout unifier ferait pauser partout.
 
 ## Critiques traitées
+- ✅ (it. 54) [PERF/A11Y] 🟡 Audit objectif du site publié : DOMContentLoaded
+  286 ms, amorce 43 Ko/100 ms, complet 2,28 Mo gzip/80 ms, 0 erreur page,
+  canvas focusable+aria OK, aria-live OK, tous les boutons nommés. Ligne de
+  base de performance documentée dans README ; le poids brut 6,6 Mo n'est plus
+  un problème (2,28 Mo gzip) → pas de re-découpage nécessaire.
 - ✅ (it. 53) [A11Y] 🟡 Canvas sans focus visible net sur fond sombre →
   liseré intérieur doré (box-shadow inset) au focus clavier, l'outline externe
   étant invisible sur un canvas plein écran.
