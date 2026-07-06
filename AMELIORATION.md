@@ -420,3 +420,21 @@ remplacée par une barre de gradient « luminosité = organisation » (4 langues
 Éclat impérial tempéré (+16/+12 au lieu de +22/+16) pour rester dans la charte.
 
 ---
+
+## Itération 15 — 2026-07-06 (directive utilisateur : contenu des fiches)
+
+**Fait** : la fiche d'un territoire cliqué contient désormais de vraies
+informations sur lui :
+- en-tête : nom localisé + « Situation au <siècle> · <type> » (type déduit du
+  niveau d'organisation : Empire / Royaume, État / Culture, chefferie / Peuples
+  et tribus / Chasseurs-cueilleurs — traduit en 4 langues) ;
+- suzeraineté et mention de reconstitution le cas échéant ;
+- **résumé introductif de l'article Wikipédia dans la langue courante** (API
+  MediaWiki `generator=search`, CORS `origin=*`, 4 phrases + vignette), chargé en
+  direct dans la fiche avec cache mémoire par (langue, terme) et messages de
+  chargement/échec localisés ;
+- liens vers l'article complet + Wikipédia arménienne ;
+- notice arménienne de la période conservée en dessous quand elle existe.
+Vérifié dans Chrome (Empire byzantin en l'an 1000 : résumé FR + carte miniature).
+
+---
