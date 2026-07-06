@@ -60,6 +60,23 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
   backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 #btn-armenie{bottom:calc(150px + env(safe-area-inset-bottom))}
 #btn-notice{bottom:calc(96px + env(safe-area-inset-bottom))}
+#btn-quiz{bottom:calc(204px + env(safe-area-inset-bottom))}
+/* ---------- Quiz & accueil ---------- */
+.voile{position:fixed;inset:0;z-index:15;background:rgba(13,9,7,.88);display:none;
+  align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.voile.ouvert{display:flex}
+.voile .carte{background:var(--tuf);border:1px solid var(--or);border-radius:16px;
+  max-width:440px;width:100%;max-height:80dvh;overflow-y:auto;padding:22px 20px;text-align:center}
+.voile h2{font-family:'Cormorant Garamond',serif;color:var(--or);font-size:24px;margin-bottom:12px}
+.voile p{font-size:14px;line-height:1.6;color:var(--encre);margin-bottom:10px;text-align:left}
+.voile p b{color:var(--or-clair)}
+.voile .gros{display:block;width:100%;margin-top:12px;padding:12px;border-radius:10px;border:1px solid var(--or);
+  background:rgba(212,165,72,.12);color:var(--or);font-size:15px;cursor:pointer;touch-action:manipulation}
+.voile .rep{display:block;width:100%;margin-top:8px;padding:11px;border-radius:10px;border:1px solid var(--trait);
+  background:var(--obsidienne);color:var(--encre);font-size:14px;cursor:pointer;text-align:left;touch-action:manipulation}
+.voile .rep.bon{border-color:#4f9f5f;background:rgba(79,159,95,.18)}
+.voile .rep.faux{border-color:#a33434;background:rgba(163,52,52,.18)}
+.voile .prog{font-size:12px;color:var(--encre-2);letter-spacing:.12em;margin-bottom:8px}
 .flottant:active{background:#2f251c}
 
 /* ---------- Panneau (bottom sheet) ---------- */
@@ -135,6 +152,22 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 
 <button class="flottant" id="btn-armenie" title="Centrer sur l'Arménie">֎</button>
 <button class="flottant" id="btn-notice" title="Notice de la période">✦</button>
+<button class="flottant" id="btn-quiz" title="Quiz">?</button>
+
+<div class="voile" id="accueil"><div class="carte">
+  <h2>Bienvenue sur le globe historique</h2>
+  <p><b>Tourner :</b> faites glisser le globe du doigt ou à la souris.</p>
+  <p><b>Explorer le temps :</b> la frise en bas feuillette 4 000 ans, siècle par siècle — ⏵ lance la lecture automatique.</p>
+  <p><b>Comprendre :</b> touchez un État ou une ville pour l'identifier, ✦ ouvre la notice de la période, l'or suit l'Arménie à travers les siècles.</p>
+  <button class="gros" id="accueil-ok">Commencer</button>
+</div></div>
+
+<div class="voile" id="quiz"><div class="carte">
+  <div class="prog" id="quiz-prog"></div>
+  <h2 id="quiz-q"></h2>
+  <div id="quiz-reps"></div>
+  <button class="gros" id="quiz-suite" style="display:none">Question suivante</button>
+</div></div>
 
 <div id="legende">
   <span><i class="sw plein"></i> Arménie attestée</span>
@@ -536,8 +569,15 @@ function clic(x,y){
     if(meilleure){
       const v=meilleure;
       const dates = `${v.de<0?(-v.de)+" av. J.-C.":v.de}${v.a!==undefined?" — "+(v.a<0?(-v.a)+" av. J.-C.":v.a):" — aujourd'hui"}`;
-      bulle.innerHTML = `<b>${v.nom}</b><span>${dates}</span>${v.note?`<span>${v.note}</span>`:""}`;
+      bulle.innerHTML = `<b>${v.nom}</b><span>${dates}</span>${v.note?`<span>${v.note}</span>`:""}
+        <button style="pointer-events:auto;margin-top:5px;padding:4px 10px;border-radius:8px;border:1px solid var(--or);background:rgba(212,165,72,.12);color:var(--or);font-size:11.5px;cursor:pointer" id="bulle-periode">Voir la période →</button>`;
       bulle.style.left=x+"px"; bulle.style.top=y+"px"; bulle.style.display="block";
+      document.getElementById("bulle-periode").addEventListener("click", ()=>{
+        let best=0, bd=1e9;
+        YEARS.forEach((yy,ii)=>{ const d=Math.abs(yy-v.de); if(yy>=v.de && d<bd){ bd=d; best=ii; } });
+        if(bd===1e9) YEARS.forEach((yy,ii)=>{ const d=Math.abs(yy-v.de); if(d<bd){ bd=d; best=ii; } });
+        allerA(best); remplirPanneauPeriode(); ouvrirPanneau();
+      });
       return;
     }
   }
@@ -742,6 +782,80 @@ function remplirPanneauPeriode(){
     });
   });
 }
+
+/* ================= Accueil (premier lancement) ================= */
+(function(){
+  const a=document.getElementById("accueil");
+  try{ if(!localStorage.getItem("globe_accueil_vu")) a.classList.add("ouvert"); }catch(e){}
+  document.getElementById("accueil-ok").addEventListener("click", ()=>{
+    a.classList.remove("ouvert");
+    try{ localStorage.setItem("globe_accueil_vu","1"); }catch(e){}
+  });
+})();
+
+/* ================= Quiz ================= */
+const quizEl=document.getElementById("quiz"), quizQ=document.getElementById("quiz-q"),
+      quizReps=document.getElementById("quiz-reps"), quizProg=document.getElementById("quiz-prog"),
+      quizSuite=document.getElementById("quiz-suite");
+let quizEtat=null;
+function libAn(y){ return y<0 ? (-y)+" av. J.-C." : String(y); }
+function genQuiz(){
+  const qs=[];
+  const annees=Object.keys(CHARNIERE);
+  // T1 : événement → année
+  const melA=[...annees].sort(()=>Math.random()-.5).slice(0,3);
+  for(const a of melA){
+    const autres=annees.filter(x=>x!==a).sort(()=>Math.random()-.5).slice(0,3);
+    qs.push({q:"À quel siècle rattacher : « "+CHARNIERE[a]+" » ?",
+             reps:[a,...autres].sort(()=>Math.random()-.5).map(x=>({t:libAn(+x),ok:x===a}))});
+  }
+  // T2 : ville arménienne → date de fondation
+  const va=VILLES.filter(v=>v.arm&&v.note).sort(()=>Math.random()-.5).slice(0,2);
+  for(const v of va){
+    const leurres=VILLES.filter(x=>x!==v&&x.de!==v.de).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.de);
+    qs.push({q:"De quand date "+v.nom+" ?",
+             reps:[v.de,...leurres].sort(()=>Math.random()-.5).map(d=>({t:libAn(d),ok:d===v.de}))});
+  }
+  return qs.sort(()=>Math.random()-.5).slice(0,5);
+}
+function montrerQuestion(){
+  const {qs,i,score}=quizEtat;
+  if(i>=qs.length){
+    quizProg.textContent="RÉSULTAT";
+    quizQ.textContent=`${score} / ${qs.length}`;
+    quizReps.innerHTML=`<p style="text-align:center;color:var(--encre-2)">${score>=4?"Excellent ! Le plateau n'a plus de secret pour vous.":score>=2?"Bien — refeuilletez la frise et réessayez.":"Explorez les notices ✦ puis retentez votre chance."}</p>`;
+    quizSuite.style.display="block"; quizSuite.textContent="Rejouer";
+    return;
+  }
+  const q=qs[i];
+  quizProg.textContent=`QUESTION ${i+1} / ${qs.length}`;
+  quizQ.textContent=q.q;
+  quizSuite.style.display="none";
+  quizReps.innerHTML="";
+  for(const r of q.reps){
+    const b=document.createElement("button"); b.className="rep"; b.textContent=r.t;
+    b.addEventListener("click", ()=>{
+      if(quizEtat.repondu) return;
+      quizEtat.repondu=true;
+      if(r.ok){ b.classList.add("bon"); quizEtat.score++; }
+      else { b.classList.add("faux");
+        [...quizReps.children].forEach((c,j)=>{ if(q.reps[j].ok) c.classList.add("bon"); }); }
+      quizSuite.style.display="block"; quizSuite.textContent = quizEtat.i+1>=qs.length?"Voir le résultat":"Question suivante";
+    });
+    quizReps.appendChild(b);
+  }
+  quizEtat.repondu=false;
+}
+document.getElementById("btn-quiz").addEventListener("click", ()=>{
+  stopLecture();
+  quizEtat={qs:genQuiz(),i:0,score:0,repondu:false};
+  quizEl.classList.add("ouvert"); montrerQuestion();
+});
+quizSuite.addEventListener("click", ()=>{
+  if(quizEtat.i>=quizEtat.qs.length){ quizEtat={qs:genQuiz(),i:0,score:0,repondu:false}; montrerQuestion(); return; }
+  quizEtat.i++; montrerQuestion();
+});
+quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
 Promise.all([

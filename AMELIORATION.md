@@ -234,3 +234,30 @@ villes du globe ne pointent pas vers la notice de leur période.
 qui cale la frise sur le siècle pertinent et ouvre le panneau.
 
 ---
+
+## Itération 8 — 2026-07-06
+
+**Fait (Q19–Q21)** : mode **quiz** (bouton « ? » : 5 QCM générés depuis CHARNIERE
+— siècle d'un événement — et les villes arméniennes — date de fondation —, correction
+visuelle, score final avec commentaire, rejouable) ; **voile d'accueil** au premier
+lancement (localStorage `globe_accueil_vu`, 3 gestes expliqués : tourner, frise,
+identifier) ; **lien « Voir la période → »** dans la fiche ville (cale la frise sur
+le siècle de la ville et ouvre le panneau — testé : Ani → Royaumes bagratides).
+
+**Q22. Les leurres du quiz sont-ils crédibles (années proches) ?**
+Non : tirés au hasard sur 4 000 ans (« 1453 » proposé pour Tushpa).
+→ **Réponse pour l'itération 9** : leurres tirés préférentiellement à ±2–6 siècles
+de la bonne réponse.
+
+**Q23. Le globe montre-t-il la densité arménienne hors du plateau (diasporas) ?**
+Non : Nouvelle-Djoulfa (Ispahan, 1604), Constantinople, Tiflis, Lviv/Crimée,
+Madras/Calcutta, Venise (Mekhitaristes 1717) sont absentes.
+→ **Réponse pour l'itération 9** : ajouter ~8 « foyers de diaspora » (points violets
+distincts) datés, avec note (imprimerie 1512 à Venise, premier journal 1794 à Madras…).
+
+**Q24. La performance reste-t-elle bonne avec toutes ces couches (labels+villes+quiz) ?**
+À mesurer.
+→ **Réponse pour l'itération 9** : chronométrer render() sur le siècle le plus dense
+(1900 : ~260 entités) et optimiser si > 16 ms (cache Path2D par siècle).
+
+---
