@@ -30,9 +30,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### [UX]
 - 🔴 **Aucun retour visuel pendant le drag sur mobile bas de gamme** : pas
   testé sur iPhone réel (cible déclarée !) — tester Safari iOS dès que possible.
-- 🟠 **Le panneau des périodes est dense** : pas de hiérarchie visuelle entre
-  fiche territoire et notice de période quand les deux s'empilent ; un
-  séparateur/onglets aideraient.
 - 🟡 La lecture auto ne montre pas visuellement la pause sur les siècles
   majeurs (l'utilisateur croit à un blocage).
 - 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
@@ -127,7 +124,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] `reponseCarte({n:"__passe__"})` est un objet factice : fragile si
   reponseCarte évolue (préférer un paramètre explicite).
 
+### Nouvelles critiques (it. 35)
+- 🟡 [UX] Le séparateur « Notice de la période » n'apparaît que si une fiche
+  territoire précède : quand la notice est seule, aucun rappel qu'on peut
+  cliquer un territoire pour enrichir le panneau.
+- 🟡 [UX] La fiche territoire n'a pas de libellé de section symétrique
+  (« Territoire sélectionné ») — la hiérarchie reste implicite en haut.
+- 🟡 [DATA] L'extrait Wikipédia se charge même quand le panneau est fermé
+  aussitôt : petite requête inutile (annuler si panneau fermé).
+
 ## Critiques traitées
+- ✅ (it. 35) [UX] 🟠 Panneau dense sans hiérarchie → séparateur horizontal +
+  libellé de section « Notice de la période » (4 langues) entre la fiche
+  territoire cliquée et la notice, y compris pour les mini-notices.
 - ✅ (it. 34) [UX] 🟠 Pas d'échappatoire sur les questions carte → bouton
   « Passer » dans le bandeau (compte faux, révèle la bonne réponse), 4 langues.
 - ✅ (it. 33) [UX] 🟠 Le quiz n'utilisait pas la carte → nouveau type de

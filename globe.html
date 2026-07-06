@@ -153,6 +153,11 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 #legende .tri{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
   border-bottom:8px solid #b48be0;margin:0 7px 0 4px;vertical-align:0}
 
+/* ---------- Panneau : séparateur fiche/notice ---------- */
+.sep-panneau{border:none;border-top:1px solid var(--trait);margin:16px 0 8px}
+.sec-titre{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--encre-2);margin-bottom:6px}
+
 /* ---------- Infobulle entité ---------- */
 #bulle{position:fixed;z-index:7;pointer-events:none;transform:translate(-50%,-130%);
   background:rgba(23,18,16,.94);border:1px solid var(--or);border-radius:10px;
@@ -323,7 +328,7 @@ fr:{titre:"Le Monde à travers les siècles",sous:"10 000 av. J.-C. — 2000 apr
  wiki:"📖 Fiche historique (Wikipédia) →",wikiHy:"📖 Wikipédia arménienne →",
  atlas:"🗺 Ouvrir l'atlas détaillé de l'Arménie historique",
  sansNotice:"Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.",
- lgAtteste:"Arménie attestée",lgReconst:"présence reconstituée",lgNiveau:"luminosité = niveau d'organisation (tribus → empires)",nv0:"Chasseurs-cueilleurs",nv1:"Peuples et tribus",nv2:"Culture, chefferie",nv3:"Royaume, État",nv4:"Empire",siecle:"Situation au",chargeWiki:"Chargement de la fiche Wikipédia…",riennWiki:"Aucun article trouvé — utilisez les liens ci-dessous.",lgVille:"ville principale (zoomer)",lgDiaspora:"foyer de diaspora arménienne",lgBtn:"Légende",detTitre:"Afficher / masquer le titre et l'événement du siècle",q3:"Trouvez sur la carte : %",q3bandeau:"Touchez : %",q3ok:"Exact !",q3ko:"C'était le territoire en surbrillance — %",q3passer:"Passer",
+ lgAtteste:"Arménie attestée",lgReconst:"présence reconstituée",lgNiveau:"luminosité = niveau d'organisation (tribus → empires)",nv0:"Chasseurs-cueilleurs",nv1:"Peuples et tribus",nv2:"Culture, chefferie",nv3:"Royaume, État",nv4:"Empire",siecle:"Situation au",chargeWiki:"Chargement de la fiche Wikipédia…",riennWiki:"Aucun article trouvé — utilisez les liens ci-dessous.",lgVille:"ville principale (zoomer)",lgDiaspora:"foyer de diaspora arménienne",lgBtn:"Légende",detTitre:"Afficher / masquer le titre et l'événement du siècle",q3:"Trouvez sur la carte : %",q3bandeau:"Touchez : %",q3ok:"Exact !",q3ko:"C'était le territoire en surbrillance — %",q3passer:"Passer",secPeriode:"Notice de la période",
  accTitre:"Bienvenue sur le globe historique",
  acc1:"<b>Tourner :</b> faites glisser le globe du doigt ou à la souris.",
  acc2:"<b>Explorer le temps :</b> la frise en bas feuillette 12 000 ans — ⏵ lance la lecture automatique.",
@@ -340,7 +345,7 @@ en:{titre:"The World Through the Centuries",sous:"10,000 BC — 2000 AD · histo
  wiki:"📖 Historical article (Wikipedia) →",wikiHy:"📖 Armenian Wikipedia →",
  atlas:"🗺 Open the detailed atlas of historical Armenia",
  sansNotice:"No detailed Armenian notice for this century. Tap a state on the globe to identify it, or browse the timeline.",
- lgAtteste:"Armenia attested",lgReconst:"reconstructed presence",lgNiveau:"brightness = level of organisation (tribes → empires)",nv0:"Hunter-gatherers",nv1:"Peoples and tribes",nv2:"Culture, chiefdom",nv3:"Kingdom, state",nv4:"Empire",siecle:"As of",chargeWiki:"Loading Wikipedia summary…",riennWiki:"No article found — use the links below.",lgVille:"major city (zoom in)",lgDiaspora:"Armenian diaspora centre",lgBtn:"Legend",detTitre:"Show / hide the title and the century's key event",q3:"Find on the map: %",q3bandeau:"Tap: %",q3ok:"Correct!",q3ko:"It was the highlighted territory — %",q3passer:"Skip",
+ lgAtteste:"Armenia attested",lgReconst:"reconstructed presence",lgNiveau:"brightness = level of organisation (tribes → empires)",nv0:"Hunter-gatherers",nv1:"Peoples and tribes",nv2:"Culture, chiefdom",nv3:"Kingdom, state",nv4:"Empire",siecle:"As of",chargeWiki:"Loading Wikipedia summary…",riennWiki:"No article found — use the links below.",lgVille:"major city (zoom in)",lgDiaspora:"Armenian diaspora centre",lgBtn:"Legend",detTitre:"Show / hide the title and the century's key event",q3:"Find on the map: %",q3bandeau:"Tap: %",q3ok:"Correct!",q3ko:"It was the highlighted territory — %",q3passer:"Skip",secPeriode:"Period overview",
  accTitre:"Welcome to the historical globe",
  acc1:"<b>Rotate:</b> drag the globe with your finger or mouse.",
  acc2:"<b>Travel in time:</b> the timeline below spans 12,000 years — ⏵ starts auto-play.",
@@ -357,7 +362,7 @@ hy:{titre:"Աշխարհը դարերի միջով",sous:"Ք.ա. 10 000 — Ք.հ
  wiki:"📖 Պատմական հոդված (Վիքիպեդիա) →",wikiHy:"📖 Հայերեն Վիքիպեդիա →",
  atlas:"🗺 Բացել պատմական Հայաստանի մանրամասն ատլասը",
  sansNotice:"Այս դարի համար մանրամասն հայկական ծանոթություն չկա։ Հպեք պետությանը՝ ճանաչելու համար, կամ թերթեք ժամանակագիծը։",
- lgAtteste:"Վավերացված Հայաստան",lgReconst:"վերակազմված ներկայություն",lgNiveau:"պայծառություն = կազմակերպվածության մակարդակ (ցեղերից կայսրություններ)",nv0:"Որսորդ-հավաքիչներ",nv1:"Ժողովուրդներ և ցեղեր",nv2:"Մշակույթ, ցեղապետություն",nv3:"Թագավորություն, պետություն",nv4:"Կայսրություն",siecle:"Իրավիճակը՝",chargeWiki:"Վիքիպեդիայի ամփոփումը բեռնվում է…",riennWiki:"Հոդված չի գտնվել — օգտվեք ստորև հղումներից։",lgVille:"գլխավոր քաղաք (մոտեցնել)",lgDiaspora:"հայկական սփյուռքի կենտրոն",lgBtn:"Լեգենդ",detTitre:"Ցուցադրել / թաքցնել վերնագիրը և դարի գլխավոր իրադարձությունը",q3:"Գտեք քարտեզի վրա՝ %",q3bandeau:"Հպեք՝ %",q3ok:"Ճիշտ է",q3ko:"Ճիշտ պատասխանը ընդգծված տարածքն էր — %",q3passer:"Բաց թողնել",
+ lgAtteste:"Վավերացված Հայաստան",lgReconst:"վերակազմված ներկայություն",lgNiveau:"պայծառություն = կազմակերպվածության մակարդակ (ցեղերից կայսրություններ)",nv0:"Որսորդ-հավաքիչներ",nv1:"Ժողովուրդներ և ցեղեր",nv2:"Մշակույթ, ցեղապետություն",nv3:"Թագավորություն, պետություն",nv4:"Կայսրություն",siecle:"Իրավիճակը՝",chargeWiki:"Վիքիպեդիայի ամփոփումը բեռնվում է…",riennWiki:"Հոդված չի գտնվել — օգտվեք ստորև հղումներից։",lgVille:"գլխավոր քաղաք (մոտեցնել)",lgDiaspora:"հայկական սփյուռքի կենտրոն",lgBtn:"Լեգենդ",detTitre:"Ցուցադրել / թաքցնել վերնագիրը և դարի գլխավոր իրադարձությունը",q3:"Գտեք քարտեզի վրա՝ %",q3bandeau:"Հպեք՝ %",q3ok:"Ճիշտ է",q3ko:"Ճիշտ պատասխանը ընդգծված տարածքն էր — %",q3passer:"Բաց թողնել",secPeriode:"Ժամանակաշրջանի ակնարկ",
  accTitre:"Բարի գալուստ պատմական գլոբուս",
  acc1:"<b>Պտտել՝</b> սահեցրեք գլոբուսը մատով կամ մկնիկով։",
  acc2:"<b>Ճամփորդել ժամանակի մեջ՝</b> ներքևի ժամանակագիծը թերթում է 12 000 տարի — ⏵ ավտոմատ ցուցադրում։",
@@ -374,7 +379,7 @@ ru:{titre:"Мир сквозь века",sous:"10 000 до н. э. — 2000 н. 
  wiki:"📖 Историческая статья (Википедия) →",wikiHy:"📖 Армянская Википедия →",
  atlas:"🗺 Открыть подробный атлас исторической Армении",
  sansNotice:"Для этого века нет подробной армянской справки. Коснитесь государства на глобусе или листайте шкалу времени.",
- lgAtteste:"Армения (источник)",lgReconst:"реконструированное присутствие",lgNiveau:"яркость = уровень организации (от племён к империям)",nv0:"Охотники-собиратели",nv1:"Народы и племена",nv2:"Культура, вождество",nv3:"Царство, государство",nv4:"Империя",siecle:"Состояние на",chargeWiki:"Загрузка справки из Википедии…",riennWiki:"Статья не найдена — используйте ссылки ниже.",lgVille:"главный город (приблизьте)",lgDiaspora:"центр армянской диаспоры",lgBtn:"Легенда",detTitre:"Показать / скрыть заголовок и главное событие века",q3:"Найдите на карте: %",q3bandeau:"Коснитесь: %",q3ok:"Верно!",q3ko:"Правильный ответ — выделенная территория: %",q3passer:"Пропустить",
+ lgAtteste:"Армения (источник)",lgReconst:"реконструированное присутствие",lgNiveau:"яркость = уровень организации (от племён к империям)",nv0:"Охотники-собиратели",nv1:"Народы и племена",nv2:"Культура, вождество",nv3:"Царство, государство",nv4:"Империя",siecle:"Состояние на",chargeWiki:"Загрузка справки из Википедии…",riennWiki:"Статья не найдена — используйте ссылки ниже.",lgVille:"главный город (приблизьте)",lgDiaspora:"центр армянской диаспоры",lgBtn:"Легенда",detTitre:"Показать / скрыть заголовок и главное событие века",q3:"Найдите на карте: %",q3bandeau:"Коснитесь: %",q3ok:"Верно!",q3ko:"Правильный ответ — выделенная территория: %",q3passer:"Пропустить",secPeriode:"Обзор периода",
  accTitre:"Добро пожаловать на исторический глобус",
  acc1:"<b>Вращение:</b> перетаскивайте глобус пальцем или мышью.",
  acc2:"<b>Путешествие во времени:</b> шкала внизу листает 12 000 лет — ⏵ автопоказ.",
@@ -1299,7 +1304,10 @@ function remplirPanneauPeriode(){
       chargerWiki(decodeURIComponent(terme));
     }
   }
+  // Hiérarchie visuelle : séparateur libellé entre fiche territoire et notice
+  const sepPeriode = () => html ? `<hr class="sep-panneau"><div class="sec-titre">${T("secPeriode")}</div>` : "";
   if(i>=0 && PERIODES && PERIODES[i]){
+    html += sepPeriode();
     const p=PERIODES[i];
     const enFull = (LANG==="en" && PERIODES_EN_FULL && PERIODES_EN_FULL[i]) ? PERIODES_EN_FULL[i]
                  : (LANG==="hy" && PERIODES_HY_FULL && PERIODES_HY_FULL[i]) ? PERIODES_HY_FULL[i] : null;
@@ -1318,6 +1326,7 @@ function remplirPanneauPeriode(){
     }
     html += `<a class="lien-atlas" href="atlas_armenie_historique.html" target="_blank" rel="noopener">${T("atlas")}</a>`;
   } else if(MINI[ALIAS_MINI[String(y)] || String(y)]){
+    html += sepPeriode();
     const m=MINI[ALIAS_MINI[String(y)] || String(y)];
     const enOK = LANG==="en" && MINI_EN[ALIAS_MINI[String(y)] || String(y)] && MINI_EN[ALIAS_MINI[String(y)] || String(y)].apercu;
     if(LANG!=="fr" && !enOK) html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
