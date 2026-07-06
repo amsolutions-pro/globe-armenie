@@ -365,14 +365,24 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   « --strict » qui n'affiche que les erreurs aiderait en CI.
 
 ### Nouvelles critiques (it. 76)
-- 🟡 [DATA] Traduction hy des mini-notices anciennes entamée (3/~15) : reste
-  la préhistoire (-10000→-2000 partiel), l'Antiquité tardive et 1600-1815.
 - 🟡 [DATA] Les toponymes anciens hy (Խիրբեթ Քերաք, Յամնայա…) sont des
   translittérations à faire valider par un spécialiste.
 - 🟡 [UX] La couverture hy est désormais inégale (moderne complète, ancienne
   partielle) : un indicateur « traduction disponible » par langue aiderait.
 
+### Nouvelles critiques (it. 77)
+- 🟡 [DATA] MINI_HY couvre maintenant -10000→-1000, -3000, 1400 et 1900→2023 ;
+  restent en hy à faire : 1600/1700/1800/1815 (partages ottomano-persans).
+- 🟡 [DATA] Traduction des dates en chiffres romains (V–IV հազարամյակ, IX դար)
+  cohérente FR↔HY mais divergente de l'anglais (arabe) : sans gravité.
+- 🟡 [UX] La densité de notices anciennes en hy justifierait un test de rendu
+  arménien sur ces siècles préhistoriques.
+
 ## Critiques traitées
+- ✅ (it. 77) [DATA] MINI_HY étendu à 4 nouvelles mini-notices préhistoriques :
+  -10000 (premiers habitants, Nor Geghi, Portasar), -4000 (Chalcolithique,
+  vin d'Areni), -2000 (aube du plateau, Trialeti), -1000 (unification
+  ourartéenne, Aramé) ; fidèles au FR, contrôle numérique OK.
 - ✅ (it. 76) [DATA] Extension de MINI_HY aux mini-notices anciennes
   emblématiques : -3000 (culture Kouro-Araxe), -1500 (Hayasa-Azzi et Nairi),
   1400 (entre Timour et les Turkmènes) traduites en arménien, fidèles au FR ;
