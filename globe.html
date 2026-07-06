@@ -524,8 +524,17 @@ const PALETTE_LUX = PALETTE.map(hex=>{
 });
 /* Niveau d'organisation socio-politique : 0 chasseurs-cueilleurs · 1 nomades/tribus ·
    2 cultures & chefferies agricoles · 3 royaumes & États · 4 empires & califats */
+/* Surcharges (entité → niveau) : cas connus où le nom anglais ne porte pas
+   de mot-clé — empires sans « Empire » dans le nom, ethnonymes classés États */
+const NIVEAU_FIXE = new Map([
+  ["USSR",4],["White Russia",4],["Russia",4],["Persia",4],
+  ["Ottoman Sultanate",4],["China",4],["United States",4],
+  ["United States of America",4],["Chagatai Khanate",4],
+  ["Siberians",1],["Khoiasan",1],["Cuman-Kipchak confederation",1],
+]);
 function niveau(n){
   if(!n) return 1;
+  if(NIVEAU_FIXE.has(n)) return NIVEAU_FIXE.get(n);
   if(ETATS_BLANCS.has(n)) return 3;
   if(/empire|caliphate|khaganate|tsardom|imperial|great khanate|golden horde|soviet|ilkhanate|il-khanate/i.test(n)) return 4;
   if(/hunter|gatherer|forag|fisher|ficher|shellfish|paleo-/i.test(n)) return 0;

@@ -19,10 +19,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 **Certaines surcouches gardent le gabarit an 300** (400, 500/600, 800,
   1400–1914) faute de tracé Armenia proche dans la source : acceptable pour
   « terres arméniennes sous X », mais à documenter période par période.
-- 🟠 **Le classement niveau() repose sur le nom anglais** : des États sans
-  mot-clé (« Persia », « Wu ») restent N3 quand certains furent des empires ;
-  inversement « Empire of Ghana » à son déclin reste N4. Un tableau
-  (entité, période) → niveau serait plus juste.
 - 🟠 **Les lacs-ellipses sont approximatifs** (Caspienne surtout) et peuvent
   jurer avec les trous réels du dataset à fort zoom.
 - 🟡 Les dates des villes (de/à) n'ont pas été systématiquement sourcées.
@@ -133,7 +129,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] L'extrait Wikipédia se charge même quand le panneau est fermé
   aussitôt : petite requête inutile (annuler si panneau fermé).
 
+### Nouvelles critiques (it. 36)
+- 🟠 [DATA] **NIVEAU_FIXE est global, pas daté** : « Russia » de 1994 et de
+  l'époque tsariste reçoivent le même niveau ; la table devrait accepter
+  (entité, plage d'années).
+- 🟡 [DATA] La liste NIVEAU_FIXE a été constituée par un scan des aires >300
+  deg² : les empires plus petits sans mot-clé (Wu…) restent non couverts.
+- 🟡 [UX] Le changement de niveau modifie la luminosité de gros pays (URSS,
+  Chine…) : vérifier visuellement qu'aucun contraste ne casse la lecture.
+
 ## Critiques traitées
+- ✅ (it. 36) [DATA] 🟠 niveau() par mots-clés anglais → table de surcharges
+  NIVEAU_FIXE (USSR, Persia kadjare, Ottoman Sultanate, Russia, China,
+  United States, Chagatai Khanate → empires ; Siberians, Khoiasan,
+  Cuman-Kipchak → peuples), constituée par scan des grandes entités sans
+  mot-clé du dataset.
 - ✅ (it. 35) [UX] 🟠 Panneau dense sans hiérarchie → séparateur horizontal +
   libellé de section « Notice de la période » (4 langues) entre la fiche
   territoire cliquée et la notice, y compris pour les mini-notices.
