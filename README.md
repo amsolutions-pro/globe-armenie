@@ -1,4 +1,4 @@
-# Globe historique — 4 000 ans (pivot : histoire de l'Arménie)
+# Globe historique — 12 000 ans (pivot : histoire de l'Arménie)
 
 Outil d'apprentissage de l'histoire : un globe 3D feuilletable de la préhistoire à nos jours
 (−10 000 → 2010, 43 pas de temps, cadence resserrée à l'époque contemporaine),
