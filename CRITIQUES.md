@@ -284,15 +284,25 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   qu'it. 30) : à faire valider par un locuteur.
 
 ### Nouvelles critiques (it. 64)
-- 🟡 [DATA] Toutes les années arméniennes du XXe-XXIe ont désormais une notice
-  dédiée trilingue (FR/EN/HY) SAUF les mini-notices FR des années récentes qui
-  n'ont pas encore de HY hors 1915/1988/1991/2020/2023/1921.
 - 🟡 [DATA] Les notices FR anciennes (préhistoire→1400) restent sans HY :
   gros volume, à traduire progressivement.
 - 🟡 [UX] Un fil chronologique récapitulatif (1915→2026) donnerait une vue
   d'ensemble des notices désormais riches.
 
+### Nouvelles critiques (it. 65)
+- 🟡 [DATA] Le parcours XIXe-XXIe est intégralement en hy ; restent sans hy les
+  mini-notices antérieures à 1878 (préhistoire → 1400) et les notices longues
+  de periodes_hy.json (déjà traduites en it.26).
+- 🟡 [DATA] Volume de traduction hy important cumulé sans relecture native :
+  planifier une passe de relecture globale.
+- 🟡 [UX] Le panneau notice devient long sur ces siècles riches ; un repli
+  « aperçu / détail » (R11) allègerait la lecture mobile.
+
 ## Critiques traitées
+- ✅ (it. 65) [DATA] MINI_HY complété : notices 1900 (question arménienne),
+  1920 (Première République), 1945 (Arménie soviétique), 2000 (Troisième
+  République) traduites en arménien → tout le parcours 1878→2026 est désormais
+  lisible en arménien (langue par défaut).
 - ✅ (it. 64) [DATA] Notice dédiée 1921 (traité de Kars : 13 oct. 1921,
   frontière turco-arménienne, Kars/Ardahan/Ararat côté turc, Nakhitchevan et
   Karabagh sous tutelle azérie) en FR+EN+HY, lieux situés ; alias 1921→1921.
