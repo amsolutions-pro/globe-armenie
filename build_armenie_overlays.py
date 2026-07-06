@@ -196,6 +196,12 @@ def main():
     s = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     open("globe_data.json", "w", encoding="utf-8").write(s)
     print(f"\n{ajouts} surcouches injectées — globe_data.json : {round(len(s)/1024/1024,2)} Mo")
+    # Amorce : l'année de départ seule (-700, Ourartou) pour un premier rendu
+    # immédiat sur mobile ; le fichier complet est chargé en arrière-plan.
+    init = {"years": data["years"], "world": {"-700": data["world"]["-700"]}}
+    si = json.dumps(init, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    open("globe_data_init.json", "w", encoding="utf-8").write(si)
+    print(f"globe_data_init.json : {round(len(si)/1024,1)} Ko")
 
 if __name__ == "__main__":
     main()

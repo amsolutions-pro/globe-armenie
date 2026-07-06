@@ -29,8 +29,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
 
 ### Nouvelles critiques (it. 22)
-- 🟠 [DATA/PERF] **Le JSON reste monolithique (6,6 Mo)** : un découpage par
-  tranches d'époques réduirait le temps d'affichage initial sur mobile.
 - 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
   ignore les micro-différences de frontières soviétiques (enclaves
   Artsvashen/Karki non représentées).
@@ -161,7 +159,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] navigator.share reçoit l'URL sans paramètres : partager aussi
   l'année affichée (…?an=1918) permettrait des liens ciblés.
 
+### Nouvelles critiques (it. 41)
+- 🟠 [UX] **Le chargement en 2 phases n'a pas été testé dans un vrai
+  navigateur** (uniquement vérification syntaxique) : tester le flux complet
+  (amorce → verrou slider → badge → déblocage) sur le site publié.
+- 🟡 [UX] Pendant la phase 2, la lecture auto et le quiz sont accessibles
+  mais dépendent des années non chargées : à verrouiller aussi (seul #temps
+  est neutralisé).
+- 🟡 [DATA] globe_data_init.json duplique l'année -700 (124 Ko) : le
+  chargement complet pourrait la sauter (micro-optimisation).
+
 ## Critiques traitées
+- ✅ (it. 41) [DATA/PERF] 🟠 JSON monolithique → analyse : gzip de Pages
+  ramène déjà le transfert à 2,26 Mo ; ajout d'une amorce
+  globe_data_init.json (124 Ko, année -700) : le globe s'affiche
+  immédiatement, le fichier complet se charge en arrière-plan (badge de
+  progression discret, slider verrouillé puis débloqué).
 - ✅ (it. 40) [UX] 🟠 Pas de bouton partager → bouton flottant ↗ : feuille
   de partage native iOS/Android (navigator.share), copie du lien en repli
   desktop, libellés 4 langues ; [DATA] 🟡 lacs.json contrôlé par
