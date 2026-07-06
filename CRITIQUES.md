@@ -239,7 +239,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   MAJEURS est un sous-ensemble volontairement restreint (double-pause sur les
   tournants les plus importants) ; tout unifier ferait pauser partout.
 
+### Nouvelles critiques (it. 56)
+- 🟡 [DATA] Le contour « foyer arménien » est l'aire MAXIMALE (Arménie an 300 +
+  Cilicie) : il ne varie pas dans le temps, alors que le peuplement s'est réduit
+  après 1915/1923 — un second contour « aire résiduelle moderne » serait juste.
+- 🟡 [UX] La couche présence n'est pas expliquée dans la légende ni l'aide :
+  l'utilisateur peut ne pas comprendre ce que trace le pointillé.
+- 🟡 [UX] 6 boutons flottants empilés + bouton présence = colonne haute sur
+  petit écran ; regroupement à envisager.
+
 ## Critiques traitées
+- ✅ (it. 56, demande utilisateur) [DATA/UX] Couche « foyer arménien historique »
+  (plateau + Cilicie, aire maximale sourcée = Arménie an 300 ∪ Cilicie) :
+  contour pointillé or permanent, activable à la demande (bouton ֍, R11),
+  distinct des entités politiques. Vérifié en ligne (VDATA b) : s'affiche à
+  travers les siècles, langue arménienne par défaut confirmée, carte 1938
+  corrigée (2 deg²), nouvelles années présentes.
 - ✅ (it. 55, demandes utilisateur) [DATA] XXe–XXIe siècles densifiés : ajout
   des années 1915 (génocide), 1921 (Kars), 1988 (Spitak), 1991 (indépendance),
   2020 (guerre 44 j.), 2023 (exode d'Artsakh), 2026 (aujourd'hui) — 50 pas de
