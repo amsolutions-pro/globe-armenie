@@ -139,13 +139,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 [DATA] **La part Mardakert de la NKAO reste approchée** (Tartar ∩ boîte
   46.4–47.05 / 39.9–40.35) : le district d'Aghdara n'existe pas dans
   geoBoundaries ; affiner quand une source ADM2 post-2023 sera disponible.
-- 🟡 [DATA] La surcouche 1994 « contrôle arménien » ≠ NKAO : la ligne de
-  contact 1994 incluait Latchine, Kelbadjar… (zone occupée plus large que
-  l'oblast) ; choisir explicitement ce qu'on représente.
 - 🟡 [DATA] Le fichier geo/aze_adm2.geojson est gitignoré : le build re-télécharge
   depuis un commit épinglé (9469f09) — vérifier la pérennité du lien.
 
+### Nouvelles critiques (it. 38)
+- 🟡 [DATA] Fizouli et Agdam sont inclus en entier dans la zone 1994 alors
+  qu'ils n'étaient occupés que partiellement (~1/3 d'Agdam) : surestimation
+  à l'est, documentée mais améliorable.
+- 🟡 [DATA] La surcouche 2010 devrait différer de 1994 (ajustements mineurs
+  de la ligne de contact) — actuellement identiques.
+- 🟡 [UX] Le nouveau nom est long (« Haut-Karabagh et districts occupés… ») :
+  vérifier qu'il ne déborde pas dans la bulle sur mobile.
+
 ## Critiques traitées
+- ✅ (it. 38) [DATA] 🟡 1994 : la surcouche représente désormais la ligne de
+  contact réelle — NKAO + 7 districts occupés (geoBoundaries), aire 1,2 deg²
+  (~12 000 km²), nom et traductions (en/hy/ru) mis à jour.
 - ✅ (it. 37) [DATA] 🔴 Polygone NKAO à main levée → tracé documenté
   geoBoundaries (gbOpen AZE ADM2, commit épinglé) : union Khankendi, Khojaly,
   Choucha ville+district, Khojavend + partie montagneuse de Tartar

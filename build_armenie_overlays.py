@@ -76,6 +76,17 @@ def karabagh_nkao():
     return unary_union(gs + [mard])
 KARABAGH = karabagh_nkao()
 
+# Zone de contrôle arménien 1994–2020 : NKAO + districts adjacents occupés
+# (Latchine, Kelbadjar, Qubadli, Zanguilan, Djabraïl, Fizouli, Agdam — les deux
+# derniers ne l'étaient que partiellement : légère surestimation assumée).
+def zone_1994():
+    w = json.load(open("geo/aze_adm2.geojson", encoding="utf-8"))
+    occ = {"Lachin District","Kalbajar District","Qubadli District","Zangilan District",
+           "Jabrayil District","Fuzuli District","Agdam District"}
+    gs = [shape(f["geometry"]) for f in w["features"] if f["properties"]["shapeName"] in occ]
+    return unary_union(gs + [KARABAGH])
+CONTROLE_1994 = zone_1994()
+
 # Gabarit "Arménie étendue" : Arménie arsacide (an 300, la plus large des couches sources)
 def gabarit_armenie():
     w = load_world(300)
@@ -122,8 +133,8 @@ SPECS = [
     (1914, "Arménie occidentale (six vilayets)", "Empire ottoman — veille du génocide de 1915", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia:2000", None, PLATEAU),
     (1960, "RSS d'Arménie", "Union soviétique", "armenia:2000", None, PLATEAU),
-    (1994, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
-    (2010, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
+    (1994, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
+    (2010, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
 ]
 
 def rnd(c):
