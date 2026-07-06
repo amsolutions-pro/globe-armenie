@@ -40,13 +40,24 @@ def process(fname, annee=None):
         os.makedirs("geo", exist_ok=True)
         urllib.request.urlretrieve(BASE.format(fname), path)
     d = json.load(open(path, encoding="utf-8"))
-    # Correction : en 1930 et 1938 la source dessine une « Grande Arménie »
-    # anachronique (Anatolie orientale comprise). La ramener à la RSS réelle.
-    if annee in (1930, 1938):
+    # Corrections cartographiques de la source (erreurs sur le Caucase 1900–1940).
+    # (a) 1930/1938 et 1921 : la source dessine une « Grande Arménie » anachronique
+    #     (jusqu'en Anatolie orientale, tracé de Sèvres) alors que seule la petite
+    #     RSS d'Arménie existe (1921 : déjà soviétisée après Kars). → clip à la RSS.
+    if annee in (1921, 1930, 1938):
         for f in d["features"]:
             if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
                 g = shape(f["geometry"]).buffer(0).intersection(SSR_BOX)
                 f["geometry"] = mapping(g) if not g.is_empty else None
+    # (b) 1914/1915 : la source montre Arménie, Azerbaïdjan et Géorgie INDÉPENDANTES,
+    #     or en 1914 tout le Caucase du Sud appartient à l'Empire russe (ces États
+    #     n'existent qu'à partir de 1918). → fusionner leurs polygones dans
+    #     « Russian Empire » et supprimer les libellés séparés.
+    if annee in (1914, 1915):
+        for f in d["features"]:
+            if (f["properties"].get("NAME") or "") in ("Armenia", "Azerbaijan", "Georgia"):
+                f["properties"]["NAME"] = "Russian Empire"   # territoire russe en 1914
+                f["properties"]["SUBJECTO"] = "Russian Empire"
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue

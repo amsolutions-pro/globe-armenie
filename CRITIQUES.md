@@ -298,7 +298,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Le panneau notice devient long sur ces siècles riches ; un repli
   « aperçu / détail » (R11) allègerait la lecture mobile.
 
+### Nouvelles critiques (it. 66)
+- 🟡 [DATA] 1920 conserve l'Arménie « de Sèvres » (17 deg²) : les 3 républiques
+  caucasiennes existaient bien en 1920, mais la République n'a jamais contrôlé
+  l'attribution wilsonienne — choix assumé (la notice l'explique), faute d'un
+  polygone sourcé du contrôle réel de 1920.
+- 🟡 [DATA] En 1914/1915 les territoires caucasiens sont désormais « Empire
+  russe » (correct) mais sans sous-libellé « gouvernorats d'Erevan/Kars » :
+  la granularité impériale est perdue.
+- 🟡 [UX] Vérifier en ligne le rendu corrigé de 1914–1921 (couleurs, absence
+  de trou) après déploiement.
+
 ## Critiques traitées
+- ✅ (it. 66, signalement utilisateur) [DATA] 🔴 Erreurs de carte 1900–1940 :
+  (1) 1914/1915 montraient Arménie/Azerbaïdjan/Géorgie indépendantes alors que
+  le Caucase était russe → reclassées « Empire russe » (couvre Erevan/Bakou/
+  Tbilissi) ; (2) 1921 dessinait une Arménie de Sèvres (17 deg²) déjà soviétisée
+  → clippée à la RSS (2,3 deg²). 1938 vérifié OK (l'URSS couvre le Caucase).
 - ✅ (it. 65) [DATA] MINI_HY complété : notices 1900 (question arménienne),
   1920 (Première République), 1945 (Arménie soviétique), 2000 (Troisième
   République) traduites en arménien → tout le parcours 1878→2026 est désormais
