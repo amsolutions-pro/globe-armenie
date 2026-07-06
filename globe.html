@@ -1524,7 +1524,7 @@ quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.rem
 
 /* Partage : feuille native (iOS/Android) sinon copie du lien */
 document.getElementById("btn-partage").addEventListener("click", async ()=>{
-  const url=location.origin+location.pathname;
+  const url=location.origin+location.pathname+(YEARS.length?"?an="+YEARS[idx]:"");
   const btn=document.getElementById("btn-partage");
   try{
     if(navigator.share){ await navigator.share({title:T("titre"), url}); return; }
@@ -1541,13 +1541,18 @@ document.getElementById("annee").addEventListener("click", ()=>{
 
 /* Légende repliée par défaut, affichée à la demande */
 const btnLegende = document.getElementById("btn-legende");
-btnLegende.addEventListener("click", ()=>{
-  const ouverte = document.getElementById("legende").classList.toggle("ouvert");
+function poseLegende(ouverte){
+  document.getElementById("legende").classList.toggle("ouvert", ouverte);
   btnLegende.setAttribute("aria-pressed", ouverte ? "true" : "false");
+  try{ localStorage.setItem("legende", ouverte ? "1" : "0"); }catch(e){}
+}
+btnLegende.addEventListener("click", ()=>{
+  poseLegende(!document.getElementById("legende").classList.contains("ouvert"));
 });
+try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06o";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06p";   // à incrémenter quand les JSON changent (contourne le cache)
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
 function fetchAvecProgression(url){
@@ -1597,7 +1602,10 @@ function chargerComplet(){
     slider.max=YEARS.length-1; slider.disabled=false;
     document.getElementById("temps").style.opacity="";
     document.getElementById("temps").style.pointerEvents="";
+    const bq=document.getElementById("btn-quiz"); bq.disabled=false; bq.style.opacity="";
     if(badge) badge.remove();
+    const anP=+new URLSearchParams(location.search).get("an");
+    if(anP && YEARS.includes(anP)) allerA(YEARS.indexOf(anP));
     render();
   }).catch(()=>{ if(badge) badge.textContent="⚠ chargement incomplet — rechargez la page"; });
 }
@@ -1632,6 +1640,7 @@ Promise.all([
   slider.disabled=true;
   document.getElementById("temps").style.opacity=".55";
   document.getElementById("temps").style.pointerEvents="none";
+  const bq=document.getElementById("btn-quiz"); bq.disabled=true; bq.style.opacity=".45";
   const badge=document.createElement("div");
   badge.id="charge-fond";
   badge.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom));z-index:6;font-size:11px;color:var(--encre-2);background:rgba(23,18,16,.75);border-radius:8px;padding:3px 10px;pointer-events:none";

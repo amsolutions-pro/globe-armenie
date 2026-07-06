@@ -63,8 +63,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 
 ### Nouvelles critiques (it. 27)
 - 🟡 [UX] Le bouton 🗺 n'a pas de libellé traduit (aria-label français en dur).
-- 🟡 [UX] L'état ouvert/fermé de la légende n'est pas mémorisé entre visites
-  (localStorage).
 
 ### Nouvelles critiques (it. 29)
 - 🟡 [UX] Le chevron ⌄ sous l'année est petit : vérifier sa visibilité sur
@@ -156,13 +154,8 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   la colonne devient haute sur petits écrans — envisager un regroupement.
 - 🟡 [UX] La copie de lien (fallback desktop) n'affiche qu'un ✓ furtif :
   un toast « Lien copié » serait plus explicite.
-- 🟡 [DATA] navigator.share reçoit l'URL sans paramètres : partager aussi
-  l'année affichée (…?an=1918) permettrait des liens ciblés.
 
 ### Nouvelles critiques (it. 41)
-- 🟡 [UX] Pendant la phase 2, la lecture auto et le quiz sont accessibles
-  mais dépendent des années non chargées : à verrouiller aussi (seul #temps
-  est neutralisé).
 - 🟡 [DATA] globe_data_init.json duplique l'année -700 (124 Ko) : le
   chargement complet pourrait la sauter (micro-optimisation).
 
@@ -174,7 +167,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] La vue 1994 montre les frontières modernes très simplifiées
   (dataset world_1994 grossier) : contraste avec les lacs désormais précis.
 
+### Nouvelles critiques (it. 43)
+- 🟡 [UX] Le paramètre ?an= n'est appliqué qu'après le chargement complet :
+  sur 4G, l'utilisateur voit -700 quelques secondes avant de sauter à
+  l'année partagée (afficher une note ou charger cette année dans l'amorce).
+- 🟡 [UX] Aucun retour visuel si l'an du lien est invalide (silencieusement
+  ignoré).
+- 🟡 [DATA] localStorage peut être indisponible (navigation privée iOS) :
+  try/catch posés, mais non testés.
+
 ## Critiques traitées
+- ✅ (it. 43) [UX/DATA] 🟡×3 : lien de partage avec ?an=<année> + saut à
+  l'année au chargement ; bouton quiz verrouillé pendant la phase 2 ;
+  état de la légende mémorisé (localStorage).
 - ✅ (it. 42) [UX] 🟠 Test navigateur réel (Chrome/site publié) : amorce
   rendue, slider débloqué, 43 années, badge retiré, 0 erreur console ;
   vue 1994 vérifiée visuellement (zone Karabagh pointillée, Stepanakert,
