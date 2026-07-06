@@ -61,6 +61,33 @@ def main():
             if not any("rmeni" in n for n in noms):
                 err(f"pas d'entité 'Armenia' en {y} alors qu'attendue")
 
+    # 5. Notices de périodes : les 3 langues alignées, champs essentiels, capitales valides
+    per = {}
+    for fn in ("periodes.json", "periodes_en.json", "periodes_hy.json"):
+        try:
+            per[fn] = json.load(open(fn, encoding="utf-8"))
+        except Exception as e:
+            err(f"{fn} : illisible ({e})")
+    if len(per) == 3:
+        n0 = len(per["periodes.json"])
+        for fn, lst in per.items():
+            if len(lst) != n0:
+                err(f"{fn} : {len(lst)} notices au lieu de {n0} (langues désalignées)")
+            for i, p in enumerate(lst):
+                if p is None:
+                    warn(f"{fn}[{i}] : notice null (traduction manquante, repli sur une autre langue)")
+                    continue
+                for champ in ("nom", "dates", "pouvoir", "apercu"):
+                    if not p.get(champ):
+                        err(f"{fn}[{i}] : champ '{champ}' vide ou absent")
+                for cap in p.get("capitales", []):
+                    if not (-90 <= cap.get("lat", 999) <= 90 and -180 <= cap.get("lng", 999) <= 180):
+                        err(f"{fn}[{i}] : capitale {cap.get('nom','?')} hors bornes")
+        # provinces : présentes en FR, tolérées absentes ailleurs mais signalées
+        for i, p in enumerate(per["periodes.json"]):
+            if not p.get("provinces"):
+                warn(f"periodes.json[{i}] ({p.get('nom','?')}) : pas de provinces")
+
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)
     if ERREURS:

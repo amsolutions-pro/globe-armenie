@@ -70,7 +70,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Le seuil « 37 surcouches » est codé en dur dans verifie_donnees.py :
   à synchroniser automatiquement avec SPECS de build_armenie_overlays.py.
 
+### Nouvelles critiques (it. 25)
+- 🔴 [DATA] **7 notices sur 10 manquent en arménien** (periodes_hy.json[3..9]
+  = null, découvert par verifie_donnees.py) : l'interface hy retombe sur
+  l'anglais pour les Orontides → partages ottomano-persans. À traduire.
+- 🟡 [DATA] La correspondance année→notice (indexPeriode + MINI) vit dans
+  globe.html et n'est pas contrôlée par verifie_donnees.py : un siècle sans
+  notice passerait inaperçu.
+- 🟡 [UX] Les avertissements de verifie_donnees.py ne sont visibles que du
+  développeur : aucun signal côté site quand une traduction manque.
+
 ## Critiques traitées
+- ✅ (it. 25) [DATA] 🟠 verifie_donnees.py ne contrôlait pas les periodes*.json
+  → alignement des 3 langues, champs essentiels, capitales bornées ; a
+  immédiatement révélé les 7 notices hy manquantes.
 - ✅ (it. 24) [DATA] 🟠 Aucun test automatisé de cohérence → verifie_donnees.py
   (années triées, anneaux fermés ≥4 pts, coordonnées bornées, 37 surcouches,
   présence d'Armenia aux périodes clés) ; à lancer avant chaque push.
