@@ -12,7 +12,7 @@ from shapely.validation import make_valid
 YEARS = [(-10000,"bc10000"),(-8000,"bc8000"),(-5000,"bc5000"),(-4000,"bc4000"),(-3000,"bc3000"),
          (-2000,"bc2000"),(-1500,"bc1500"),(-1000,"bc1000"),(-700,"bc700"),
          (-500,"bc500"),(-300,"bc300"),(-100,"bc100"),(1,"bc1")] + \
-        [(y,str(y)) for y in range(100,2001,100)]
+        [(y,str(y)) for y in range(100,1801,100)] +         [(y,str(y)) for y in (1815,1880,1900,1914,1920,1930,1938,1945,1960,1994,2000,2010)]
 BASE = "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_{}.geojson"
 SIMPLIFY, ROUND, AIRE_MIN = 0.1, 2, 0.5
 

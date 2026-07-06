@@ -458,3 +458,25 @@ periodes.json (~60 paragraphes) — envisager fichiers periodes_{en,hy,ru}.json.
 l'utilisateur s'il veut publier (action externe, accord requis).
 
 ---
+
+## Itération 17 — 2026-07-06 (directives utilisateur ×3)
+
+**Cadence contemporaine** : 10 millésimes fins ajoutés (1815, 1880, 1914, 1920,
+1930, 1938, 1945, 1960, 1994, 2010) → **43 pas de temps**. Le dataset contient
+déjà l'Arménie en 1914 (russe), 1920 (Première République avec Kars !), 1930-38
+(RSS) et 1994 ; surcouches ajoutées pour les manques : six vilayets 1914, RSS
+d'Arménie 1945/1960, Haut-Karabagh 1994/2010. Charnières des 10 millésimes en
+4 langues ; nouvelles mini-notices « Première République » (1920) et « Arménie
+soviétique » (1945) ; alias des millésimes intermédiaires vers la notice
+pertinente.
+
+**Nomades plus gris** : niveaux 0–1 désaturés (3 %/5 % au lieu de 6 %/11 %) —
+les peuples nomades se lisent maintenant comme des zones grises, contraste
+renforcé avec les États.
+
+**Spécification des règles** : création de **REGLES.md** — les 9 familles de
+règles implémentées (frise R1, niveaux R2, pivot arménien R3, villes R4, fiches
+R5, i18n R6, rendu R7, pédagogie R8, sources R9). Toute nouvelle règle devra y
+être consignée.
+
+---

@@ -374,7 +374,7 @@ const NOMS_HY = {"Armenia":"Հայաստան","Urartu":"Ուրարտու","Syuni
 "Arménie sous l'Ilkhanat":"Հայաստանը Իլխանության ներքո","Royaume arménien de Cilicie":"Կիլիկյան Հայաստան","Arménie (domination timouride)":"Հայաստանը Թիմուրյանների ներքո",
 "Arménie (Ak Koyunlu)":"Հայաստանը Ակ-Կոյունլուի ներքո","Arménie occidentale (ottomane)":"Արևմտյան Հայաստան (օսմանյան)","Arménie orientale (persane)":"Արևելյան Հայաստան (պարսկական)",
 "Arménie orientale (khanats d'Erevan et du Karabagh)":"Արևելյան Հայաստան (Երևանի և Ղարաբաղի խանություններ)","Arménie russe (gouvernorats d'Erevan et de Kars)":"Ռուսական Հայաստան (Երևանի և Կարսի նահանգներ)",
-"Chasseurs-cueilleurs du plateau arménien":"Հայկական լեռնաշխարհի որսորդ-հավաքիչներ","Premiers villages du plateau arménien":"Լեռնաշխարհի առաջին գյուղերը",
+"Arménie occidentale (six vilayets)":"Արևմտյան Հայաստան (վեց վիլայեթներ)","RSS d'Arménie":"Հայկական ԽՍՀ","Haut-Karabagh (contrôle arménien)":"Լեռնային Ղարաբաղ (հայկական վերահսկողություն)","Chasseurs-cueilleurs du plateau arménien":"Հայկական լեռնաշխարհի որսորդ-հավաքիչներ","Premiers villages du plateau arménien":"Լեռնաշխարհի առաջին գյուղերը",
 "Néolithique arménien (Aratashen, Aknashen)":"Հայկական նեոլիթ (Առատաշեն, Ակնաշեն)","Chalcolithique arménien (Areni, Sioni)":"Քալկոլիթ (Արենի)",
 "Culture Kouro-Araxe":"Կուր-Արաքսյան մշակույթ","Cultures Trialeti et du Sevan":"Թրիալեթի և Սևանի մշակույթներ"};
 const NOMS_EN = {"Grande Arménie (Artaxiades)":"Greater Armenia (Artaxiads)","Armina (satrapie d'Arménie)":"Armina (Armenian satrapy)",
@@ -383,7 +383,7 @@ const NOMS_EN = {"Grande Arménie (Artaxiades)":"Greater Armenia (Artaxiads)","A
 "Arménie sous l'Ilkhanat":"Armenia under the Ilkhanate","Royaume arménien de Cilicie":"Armenian Kingdom of Cilicia","Arménie (domination timouride)":"Armenia (Timurid rule)",
 "Arménie (Ak Koyunlu)":"Armenia (Ak Koyunlu)","Arménie occidentale (ottomane)":"Western Armenia (Ottoman)","Arménie orientale (persane)":"Eastern Armenia (Persian)",
 "Arménie orientale (khanats d'Erevan et du Karabagh)":"Eastern Armenia (Erivan & Karabakh khanates)","Arménie russe (gouvernorats d'Erevan et de Kars)":"Russian Armenia (Erivan & Kars governorates)",
-"Chasseurs-cueilleurs du plateau arménien":"Hunter-gatherers of the Armenian Highlands","Premiers villages du plateau arménien":"First villages of the Highlands",
+"Arménie occidentale (six vilayets)":"Western Armenia (six vilayets)","RSS d'Arménie":"Armenian SSR","Haut-Karabagh (contrôle arménien)":"Nagorno-Karabakh (Armenian control)","Chasseurs-cueilleurs du plateau arménien":"Hunter-gatherers of the Armenian Highlands","Premiers villages du plateau arménien":"First villages of the Highlands",
 "Néolithique arménien (Aratashen, Aknashen)":"Armenian Neolithic (Aratashen, Aknashen)","Chalcolithique arménien (Areni, Sioni)":"Armenian Chalcolithic (Areni)",
 "Culture Kouro-Araxe":"Kura-Araxes culture","Cultures Trialeti et du Sevan":"Trialeti and Sevan cultures"};
 const NOMS_RU = {"Armenia":"Армения","Urartu":"Урарту","Syunik":"Сюник","Tashir":"Ташир","Artsakh":"Арцах",
@@ -402,7 +402,7 @@ const NOMS_RU = {"Armenia":"Армения","Urartu":"Урарту","Syunik":"С
 "Arménie sous l'Ilkhanat":"Армения под Ильханатом","Royaume arménien de Cilicie":"Киликийская Армения","Arménie (domination timouride)":"Армения под Тимуридами",
 "Arménie (Ak Koyunlu)":"Армения под Ак-Коюнлу","Arménie occidentale (ottomane)":"Западная Армения (османская)","Arménie orientale (persane)":"Восточная Армения (персидская)",
 "Arménie orientale (khanats d'Erevan et du Karabagh)":"Восточная Армения (Эриванское и Карабахское ханства)","Arménie russe (gouvernorats d'Erevan et de Kars)":"Русская Армения (Эриванская и Карсская губернии)",
-"Chasseurs-cueilleurs du plateau arménien":"Охотники-собиратели Армянского нагорья","Premiers villages du plateau arménien":"Первые сёла нагорья",
+"Arménie occidentale (six vilayets)":"Западная Армения (шесть вилайетов)","RSS d'Arménie":"Армянская ССР","Haut-Karabagh (contrôle arménien)":"Нагорный Карабах (армянский контроль)","Chasseurs-cueilleurs du plateau arménien":"Охотники-собиратели Армянского нагорья","Premiers villages du plateau arménien":"Первые сёла нагорья",
 "Néolithique arménien (Aratashen, Aknashen)":"Армянский неолит (Араташен, Акнашен)","Chalcolithique arménien (Areni, Sioni)":"Халколит (Арени)",
 "Culture Kouro-Araxe":"Куро-аракская культура","Cultures Trialeti et du Sevan":"Триалетская и севанская культуры"};
 
@@ -481,8 +481,8 @@ function couleur(n){
   let h=0; for(let i=0;i<cle.length;i++){ h = (h*31 + cle.charCodeAt(i)) >>> 0; }
   const nv = niveau(n);
   let c;
-  if(nv===0){ const t=25+(h%95);            c=`hsl(${t},6%,17%)`; }        // pénombre
-  else if(nv===1){ const t=25+(h%95);       c=`hsl(${t},11%,23%)`; }       // terne
+  if(nv===0){ const t=25+(h%95);            c=`hsl(${t},3%,17%)`; }        // gris sombre
+  else if(nv===1){ const t=25+(h%95);       c=`hsl(${t},5%,23%)`; }        // gris
   else if(nv===2){ const t=(h%360);         c=`hsl(${t},20%,31%)`; }       // sourd
   else if(nv===3){ c=PALETTE[h%PALETTE.length]; if((h>>5)%3===1) c+="e6"; } // franc
   else { c=PALETTE_LUX[h%PALETTE_LUX.length]; }                            // lumineux
@@ -852,7 +852,17 @@ const CHARNIERE = {
 "1600":"1604 : grande déportation de Chah Abbas vers Ispahan · Zuhab (1639)",
 "1700":"1722–1730 : Davit Bek au Syunik · mélikats du Karabagh",
 "1800":"1828 : Turkmentchaï — l'Arménie orientale devient russe",
+"1815":"Après Gulistan (1813) : la Russie aux portes des khanats d'Erevan",
+"1880":"Traité de Berlin (1878) : la question arménienne devient internationale",
 "1900":"1878 : question arménienne · 1915 : génocide · 1918 : Première République",
+"1914":"Veille du génocide : 2 millions d'Arméniens dans l'Empire ottoman",
+"1920":"Première République (1918–1920) : Sardarabad, Sèvres, puis soviétisation",
+"1930":"RSS d'Arménie dans l'URSS · reconstruction et exode des rescapés",
+"1938":"Purges staliniennes · Erevan se reconstruit selon le plan Tamanian",
+"1945":"L'Arménie soviétique dans la victoire · rapatriements de la diaspora",
+"1960":"Renaissance culturelle soviétique · mémorial du génocide (1965–1967)",
+"1994":"Cessez-le-feu au Karabagh : victoire arménienne, indépendance consolidée",
+"2010":"Diaspora mondiale · protocoles arméno-turcs avortés · avant 2020",
 "2000":"1991 : indépendance · guerres du Karabagh (1994, 2020) · exode d'Artsakh (2023)"
 };
 const CHARNIERE_EN = {
@@ -887,7 +897,17 @@ const CHARNIERE_EN = {
 "1600":"1604: Shah Abbas’ great deportation to Isfahan · Zuhab (1639)",
 "1700":"1722–1730: Davit Bek in Syunik · meliks of Karabakh",
 "1800":"1828: Turkmenchay — Eastern Armenia becomes Russian",
+"1815":"After Gulistan (1813): Russia at the gates of the Erivan khanates",
+"1880":"Treaty of Berlin (1878): the Armenian question goes international",
 "1900":"1878: Armenian question · 1915: genocide · 1918: First Republic",
+"1914":"Eve of the genocide: 2 million Armenians in the Ottoman Empire",
+"1920":"First Republic (1918–1920): Sardarabad, Sèvres, then sovietisation",
+"1930":"Armenian SSR within the USSR · reconstruction and survivor influx",
+"1938":"Stalinist purges · Yerevan rebuilt to Tamanian's plan",
+"1945":"Soviet Armenia in the victory · diaspora repatriations",
+"1960":"Soviet cultural renaissance · genocide memorial (1965–1967)",
+"1994":"Karabakh ceasefire: Armenian victory, independence consolidated",
+"2010":"Worldwide diaspora · failed Armenian-Turkish protocols · before 2020",
 "2000":"1991: independence · Karabakh wars (1994, 2020) · Artsakh exodus (2023)"
 };
 const CHARNIERE_HY = {
@@ -922,7 +942,17 @@ const CHARNIERE_HY = {
 "1600":"1604․ Շահ Աբասի մեծ բռնագաղթ Սպահան · Զուհաբ (1639)",
 "1700":"1722–1730․ Դավիթ Բեկը Սյունիքում · Ղարաբաղի մելիքություններ",
 "1800":"1828․ Թուրքմենչայ — Արևելյան Հայաստանը դառնում է ռուսական",
+"1815":"Գյուլիստանից հետո (1813)․ Ռուսաստանը Երևանի խանության դռներին",
+"1880":"Բեռլինի պայմանագիր (1878)․ Հայկական հարցը դառնում է միջազգային",
 "1900":"1878․ Հայկական հարց · 1915․ Ցեղասպանություն · 1918․ Առաջին Հանրապետություն",
+"1914":"Ցեղասպանության նախօրե․ 2 միլիոն հայ Օսմանյան կայսրությունում",
+"1920":"Առաջին Հանրապետություն (1918–1920)․ Սարդարապատ, Սևր, ապա խորհրդայնացում",
+"1930":"Հայկական ԽՍՀ․ վերականգնում և վերապրածների հոսք",
+"1938":"Ստալինյան բռնաճնշումներ · Երևանը կառուցվում է Թամանյանի հատակագծով",
+"1945":"Խորհրդային Հայաստանը հաղթանակի մեջ · սփյուռքի հայրենադարձություն",
+"1960":"Մշակութային վերածնունդ · Ցեղասպանության հուշահամալիր (1965–1967)",
+"1994":"Ղարաբաղյան զինադադար․ հայկական հաղթանակ, ամրապնդված անկախություն",
+"2010":"Համաշխարհային սփյուռք · ձախողված հայ-թուրքական արձանագրություններ",
 "2000":"1991․ անկախություն · Ղարաբաղյան պատերազմներ (1994, 2020) · Արցախի արտագաղթ (2023)"
 };
 const CHARNIERE_RU = {
@@ -957,7 +987,17 @@ const CHARNIERE_RU = {
 "1600":"1604: великий сгон шаха Аббаса в Исфахан · Зухаб (1639)",
 "1700":"1722–1730: Давид-Бек в Сюнике · карабахские мелики",
 "1800":"1828: Туркманчай — Восточная Армения становится русской",
+"1815":"После Гюлистана (1813): Россия у ворот Эриванского ханства",
+"1880":"Берлинский трактат (1878): армянский вопрос становится международным",
 "1900":"1878: армянский вопрос · 1915: геноцид · 1918: Первая Республика",
+"1914":"Канун геноцида: 2 миллиона армян в Османской империи",
+"1920":"Первая Республика (1918–1920): Сардарапат, Севр, затем советизация",
+"1930":"Армянская ССР: восстановление и приток выживших",
+"1938":"Сталинские чистки · Ереван строится по плану Таманяна",
+"1945":"Советская Армения в победе · репатриация диаспоры",
+"1960":"Культурное возрождение · мемориал геноцида (1965–1967)",
+"1994":"Перемирие в Карабахе: армянская победа, укреплённая независимость",
+"2010":"Всемирная диаспора · несостоявшиеся армяно-турецкие протоколы",
 "2000":"1991: независимость · карабахские войны (1994, 2020) · исход Арцаха (2023)"
 };
 function charniereDe(y){
@@ -1105,6 +1145,8 @@ const MINI_EN = {
  "-1500":{nom:"Hayasa-Azzi and the Nairi lands",dates:"c. 1500 – 1200 BC",pouvoir:"Tribal confederations (Hittite and Assyrian sources)"},
  "-1000":{nom:"Towards Urartian unification",dates:"c. 1000 – 860 BC",pouvoir:"Nairi principalities on the road to unity"},
  "1400":{nom:"Between Timur and the Turkmens",dates:"1387 – 1502",pouvoir:"Timurids, then Kara Koyunlu and Ak Koyunlu"},
+ "1920":{nom:"The First Republic",dates:"28 May 1918 – 2 December 1920",pouvoir:"Republic of Armenia (Dashnaktsutyun)"},
+ "1945":{nom:"Soviet Armenia",dates:"1920 – 1991",pouvoir:"Armenian SSR (USSR)"},
  "1900":{nom:"The Armenian Question",dates:"1878 – 1915",pouvoir:"Ottoman Empire (west) · Russian Empire (east)"},
  "2000":{nom:"Third Republic of Armenia",dates:"1991 – today",pouvoir:"Independent republic (21 September 1991)"}};
 
@@ -1119,7 +1161,7 @@ function indexPeriode(y){
   if(y===700||y===800) return 6;         // Arminiya arabe
   if(y===900||y===1000) return 7;        // Bagratides
   if(y>=1100 && y<=1300) return 8;       // Cilicie & Zakarides
-  if(y>=1500 && y<=1800) return 9;       // Partages ottomano-persans
+  if(y>=1500 && y<=1815) return 9;       // Partages ottomano-persans
   return -1;
 }
 /* Mini-notices pour les siècles sans période dans periodes.json */
@@ -1148,6 +1190,12 @@ const MINI = {
   "1400":{nom:"Entre Timour et les Turkmènes",dates:"1387 – 1502",pouvoir:"Timourides, puis Kara Koyunlu et Ak Koyunlu",
     apercu:["Les invasions de <strong>Tamerlan</strong> (1387–1403) ravagent le plateau : Van, Erzurum et le Syunik sont dévastés, des dizaines de milliers d'Arméniens déportés vers Samarcande. Après sa mort, les confédérations turkmènes du <strong>Mouton noir</strong> (Kara Koyunlu, capitale Tabriz) puis du <strong>Mouton blanc</strong> (Ak Koyunlu) se disputent le pays.","Sous Djihanshah, le catholicossat est restauré à <strong>Etchmiadzin</strong> (1441) — événement décisif : l'Église redevient l'institution nationale de substitution. Les mélikats du Karabagh et le Syunik conservent une autonomie montagnarde."],
     capitales:[{nom:"Etchmiadzin",lat:40.16,lng:44.29,principal:true,info:"Catholicossat restauré en 1441 sous les Kara Koyunlu : l'Église redevient le centre de gravité de la nation sans État."},{nom:"Tabriz",lat:38.08,lng:46.29,info:"Capitale des confédérations turkmènes du Mouton noir puis du Mouton blanc, où vit une importante colonie marchande arménienne."}]},
+  "1920":{nom:"La Première République",dates:"28 mai 1918 – 2 décembre 1920",pouvoir:"République d'Arménie (Dachnaktsoutioun)",
+    apercu:["Née de la victoire désespérée de <strong>Sardarabad</strong> (mai 1918) face à l'offensive ottomane, la Première République rassemble les rescapés du génocide autour d'Erevan. Le traité de <strong>Sèvres</strong> (1920) lui promet la « Grande Arménie » wilsonienne — jamais appliquée.","Prise en tenaille entre la Turquie kémaliste et l'Armée rouge, la république est soviétisée en décembre 1920 ; le traité de <strong>Kars</strong> (1921) fixe la frontière actuelle, laissant l'Ararat côté turc."],
+    capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Capitale de la Première République (1918-1920), submergée de réfugiés — puis de la RSS d'Arménie."},{nom:"Sardarabad",lat:40.11,lng:44.03,info:"La bataille fondatrice (22–29 mai 1918) : paysans, poètes et clergé arrêtent l'armée ottomane à 40 km d'Erevan."}]},
+  "1945":{nom:"L'Arménie soviétique",dates:"1920 – 1991",pouvoir:"RSS d'Arménie (URSS)",
+    apercu:["Petite république de 29 800 km², la <strong>RSS d'Arménie</strong> connaît industrialisation, alphabétisation totale et essor démographique (de 880 000 à 3,3 millions d'habitants). Erevan, reconstruite selon le plan circulaire d'<strong>Alexandre Tamanian</strong> en tuf rose, devient une vraie capitale.","Après la terreur stalinienne (purges de 1936–1938), le dégel permet le <strong>mémorial de Tsitsernakaberd</strong> (1967) — première reconnaissance soviétique du génocide — et une renaissance scientifique (Byurakan, Matenadaran)."],
+    capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Un million d'habitants dans les années 1970 ; l'une des capitales scientifiques de l'URSS."}]},
   "1900":{nom:"La question arménienne",dates:"1878 – 1915",pouvoir:"Empire ottoman (ouest) · Empire russe (est)",
     apercu:["Le traité de <strong>Berlin (1878)</strong> internationalise la « question arménienne » : l'article 61 promet des réformes dans les six vilayets — jamais appliquées. Les massacres hamidiens (1894–1896, ~200 000 morts) puis ceux d'Adana (1909) annoncent le pire : le <strong>génocide de 1915</strong>, planifié par le gouvernement jeune-turc, anéantira l'Arménie occidentale (1,5 million de victimes).","Côté russe, les gouvernorats d'<strong>Erevan</strong> et de <strong>Kars</strong> connaissent essor scolaire et renaissance culturelle (Toumanian, Komitas), malgré la russification. C'est ce réduit oriental qui portera la Première République (1918) après Sardarabad."],
     capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Chef-lieu du gouvernorat russe d'Erevan, ~30 000 habitants vers 1900 — future capitale de la Première République en 1918."},{nom:"Kars",lat:40.61,lng:43.1,info:"Russe de 1878 à 1918 (oblast de Kars) : forteresse et ville de garnison, perdue au traité de Kars (1921)."},{nom:"Van",lat:38.5,lng:43.38,info:"Cœur de l'Arménie ottomane et de la résistance de 1915 ; le vilayet de Van comptait la plus forte proportion d'Arméniens de l'Empire."}]},
@@ -1155,6 +1203,7 @@ const MINI = {
     apercu:["L'Arménie recouvre l'indépendance à la dissolution de l'URSS, dans les frontières de la RSS d'Arménie (29 743 km² — moins d'un dixième de l'Arménie historique). La première guerre du <strong>Haut-Karabagh</strong> (1988–1994) met la république autoproclamée d'<strong>Artsakh</strong> sous contrôle arménien jusqu'à la guerre de 2020 et l'exode de 2023.","La diaspora (~7 millions de personnes, contre ~3 millions en Arménie) demeure l'autre moitié de la nation : Erevan, plus vieille ville-capitale du monde avec ses 2 800 ans, en est le cœur symbolique."],
     capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Capitale de la République d'Arménie, ~1,1 million d'habitants — fondée comme Erebouni en 782 av. J.-C."},{nom:"Stepanakert",lat:39.82,lng:46.75,info:"Capitale de la république autoproclamée d'Artsakh (1991–2023), vidée de sa population arménienne lors de l'exode de septembre 2023."}]}
 };
+const ALIAS_MINI = {"1880":"1900","1914":"1900","1930":"1945","1938":"1945","1960":"1945","1994":"2000","2010":"2000"};
 function remplirPanneauPeriode(){
   const y=YEARS[idx], i=indexPeriode(y);
   let html="";
@@ -1188,10 +1237,10 @@ function remplirPanneauPeriode(){
       html += `</div>`;
     }
     html += `<a class="lien-atlas" href="atlas_armenie_historique.html" target="_blank" rel="noopener">${T("atlas")}</a>`;
-  } else if(MINI[String(y)]){
-    const m=MINI[String(y)];
+  } else if(MINI[ALIAS_MINI[String(y)] || String(y)]){
+    const m=MINI[ALIAS_MINI[String(y)] || String(y)];
     if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
-    const me = (LANG==="en" && MINI_EN[String(y)]) ? MINI_EN[String(y)] : m;
+    const me = (LANG==="en" && MINI_EN[ALIAS_MINI[String(y)] || String(y)]) ? MINI_EN[ALIAS_MINI[String(y)] || String(y)] : m;
     html += `<h2>${me.nom}</h2><div class="dates">${me.dates}</div><div class="pouvoir">${me.pouvoir}</div>`;
     for(const par of m.apercu) html += `<p>${par}</p>`;
     if(m.capitales && m.capitales.length){
@@ -1324,7 +1373,7 @@ quizSuite.addEventListener("click", ()=>{
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06a";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06b";   // à incrémenter quand les JSON changent (contourne le cache)
 Promise.all([
   fetch("globe_data.json?v="+VDATA).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
   fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),

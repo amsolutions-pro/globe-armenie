@@ -52,6 +52,9 @@ ZUHAB_OUEST = box(36.0, 35.5, 43.7, 42.5)
 ZUHAB_EST   = box(43.7, 35.5, 48.5, 42.5)
 # Transcaucasie russe vers 1900 (Kars 1878 + Erevan/Zanguezour, nord de l'Araxe)
 RUSSE_1900  = box(42.5, 38.8, 47.5, 41.8)
+# RSS d'Arménie (frontières ≈ actuelles) et Haut-Karabagh
+ARM_SSR   = box(43.4, 38.83, 46.65, 41.3)
+KARABAGH  = box(46.0, 39.1, 47.1, 40.3)
 
 # Gabarit "Arménie étendue" : Arménie arsacide (an 300, la plus large des couches sources)
 def gabarit_armenie():
@@ -88,8 +91,17 @@ SPECS = [
     (1700, "Arménie orientale (persane)", "Perse séfévide — paix de Zuhab (1639)", "gabarit", r"ottoman|safavid|persia", PLATEAU.intersection(ZUHAB_EST)),
     (1800, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
     (1800, "Arménie orientale (khanats d'Erevan et du Karabagh)", "Perse kadjare", "gabarit", r"persia|qajar|central asian khanates|russia", PLATEAU),
+    (1815, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
+    (1815, "Arménie orientale (khanats d'Erevan et du Karabagh)", "Perse kadjare", "gabarit", r"persia|qajar|central asian khanates|russia", PLATEAU),
+    (1880, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1880, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — Turkmentchaï (1828), Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1900, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — traités de Turkmentchaï (1828) et Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
+    (1914, "Arménie occidentale (six vilayets)", "Empire ottoman — veille du génocide de 1915", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "tout", r"ussr|soviet", ARM_SSR),
+    (1960, "RSS d'Arménie", "Union soviétique", "tout", r"ussr|soviet", ARM_SSR),
+    (1994, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
+    (2010, "Haut-Karabagh (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023)", "tout", r"azerbaijan", KARABAGH),
 ]
 
 def rnd(c):
