@@ -86,7 +86,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Aucune indication dans l'UI que la notice affichée est une
   traduction (vs texte original français).
 
+### Nouvelles critiques (it. 27)
+- 🟠 [UX] **Le bandeau-titre reste imposant sur iPhone** (titre + sous-titre +
+  année + événement charnière ≈ 1/4 d'écran) : candidat au repli R11 (garder
+  l'année seule, le reste à la demande).
+- 🟡 [UX] Le bouton 🗺 n'a pas de libellé traduit (aria-label français en dur).
+- 🟡 [UX] L'état ouvert/fermé de la légende n'est pas mémorisé entre visites
+  (localStorage).
+
 ## Critiques traitées
+- ✅ (it. 27) [UX] 🔴 (décision utilisateur, capture iPhone) La légende
+  occupait la moitié de l'écran mobile → repliée par défaut, bouton 🗺 pour
+  l'afficher ; règle générale R11 « affichage à la demande » ajoutée à
+  REGLES.md (amendement de R8 « légende permanente » par l'utilisateur).
 - ✅ (it. 26) [DATA] 🔴 7 notices sur 10 manquaient en arménien
   (periodes_hy.json[3..9] = null) → traduites (Artaxiades → partages
   ottomano-persans), verifie_donnees.py repasse à 0 avertissement.

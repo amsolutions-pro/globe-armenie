@@ -120,9 +120,15 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 }
 
 /* ---------- Légende ---------- */
-#legende{position:fixed;left:calc(10px + env(safe-area-inset-left));bottom:calc(96px + env(safe-area-inset-bottom));
-  z-index:5;display:flex;flex-direction:column;gap:4px;font-size:11px;color:var(--encre-2);
-  background:rgba(23,18,16,.72);border:1px solid var(--trait);border-radius:10px;padding:7px 10px;pointer-events:none}
+/* Masquée par défaut (règle : les infos complémentaires s'affichent à la demande) */
+#legende{position:fixed;left:calc(10px + env(safe-area-inset-left));bottom:calc(140px + env(safe-area-inset-bottom));
+  z-index:5;display:none;flex-direction:column;gap:4px;font-size:11px;color:var(--encre-2);
+  background:rgba(23,18,16,.88);border:1px solid var(--trait);border-radius:10px;padding:7px 10px;pointer-events:none}
+#legende.ouvert{display:flex}
+#btn-legende{position:fixed;left:calc(10px + env(safe-area-inset-left));bottom:calc(96px + env(safe-area-inset-bottom));
+  z-index:6;width:36px;height:36px;border-radius:50%;border:1px solid var(--trait);
+  background:rgba(23,18,16,.8);color:var(--or);font-size:17px;cursor:pointer;line-height:1}
+#btn-legende[aria-pressed="true"]{border-color:var(--or)}
 #legende .sw{display:inline-block;width:14px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
 #legende .plein{background:#d4a548}
 #legende .pointille{background:rgba(212,165,72,.45);border:1.5px dashed #e8c47a}
@@ -182,6 +188,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <button class="gros" id="quiz-suite" style="display:none">Question suivante</button>
 </div></div>
 
+<button id="btn-legende" aria-pressed="false" aria-label="Afficher la légende" title="Légende">🗺</button>
 <div id="legende">
   <span><i class="sw plein"></i> <em id="lg1" style="font-style:normal">Arménie attestée</em></span>
   <span><i class="sw pointille"></i> <em id="lg2" style="font-style:normal">présence reconstituée</em></span>
@@ -1425,6 +1432,13 @@ quizSuite.addEventListener("click", ()=>{
   quizEtat.i++; montrerQuestion();
 });
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
+
+/* Légende repliée par défaut, affichée à la demande */
+const btnLegende = document.getElementById("btn-legende");
+btnLegende.addEventListener("click", ()=>{
+  const ouverte = document.getElementById("legende").classList.toggle("ouvert");
+  btnLegende.setAttribute("aria-pressed", ouverte ? "true" : "false");
+});
 
 /* ================= Chargement ================= */
 const VDATA = "2026-07-06g";   // à incrémenter quand les JSON changent (contourne le cache)

@@ -108,7 +108,8 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
   pertinente (1914→1900, 1938→1945, 2010→2000…).
 - Quiz : 5 QCM (siècle d'un événement, date de fondation d'une ville), leurres
   à ±600 ans / ±700 ans de la bonne réponse, score commenté.
-- Légende permanente ; voile d'accueil au premier lancement.
+- Légende repliée par défaut, affichée à la demande (bouton 🗺) ; voile
+  d'accueil au premier lancement.
 
 ## R10 — Autocritique
 - CRITIQUES.md : lu en début d'itération (priorité à la critique 🔴 la plus
@@ -120,3 +121,8 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
 - Textes : synthèses rédigées (périodes arméniennes), résumés Wikipédia à la
   demande (langue courante).
 - Aucune donnée inventée : toute reconstitution est marquée comme telle (R3.2).
+
+## R11 — Affichage à la demande (décision utilisateur, 2026-07-06)
+- Les informations complémentaires (légende, aides, notices non essentielles)
+  ne s'affichent JAMAIS automatiquement : masquées par défaut, un bouton
+  discret les ouvre/ferme. Motif : lisibilité sur iPhone, la carte d'abord.
