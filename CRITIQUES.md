@@ -268,14 +268,10 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   notice la décrivent.
 
 ### Nouvelles critiques (it. 61)
-- 🟡 [DATA] La notice 1921 (Kars) reste aliasée vers 1920 (Première
-  République) : une notice propre sur le traité serait plus précise.
 - 🟡 [UX] Beaucoup d'années récentes ont maintenant des notices riches : un
   fil chronologique déroulant du XXe–XXIe siècle serait un bon complément.
 
 ### Nouvelles critiques (it. 62)
-- 🟡 [DATA] 1921 (Kars) reste la seule année arménienne récente sans notice
-  propre (aliasée vers 1920).
 - 🟡 [UX] La densité de villes/capitales du XXe-XXIe (Deir ez-Zor, Musa Dagh…)
   n'apparaît qu'à fort zoom : un rappel dans la notice suffirait.
 
@@ -287,7 +283,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] La traduction hy récente n'a pas été relue par un tiers (même risque
   qu'it. 30) : à faire valider par un locuteur.
 
+### Nouvelles critiques (it. 64)
+- 🟡 [DATA] Toutes les années arméniennes du XXe-XXIe ont désormais une notice
+  dédiée trilingue (FR/EN/HY) SAUF les mini-notices FR des années récentes qui
+  n'ont pas encore de HY hors 1915/1988/1991/2020/2023/1921.
+- 🟡 [DATA] Les notices FR anciennes (préhistoire→1400) restent sans HY :
+  gros volume, à traduire progressivement.
+- 🟡 [UX] Un fil chronologique récapitulatif (1915→2026) donnerait une vue
+  d'ensemble des notices désormais riches.
+
 ## Critiques traitées
+- ✅ (it. 64) [DATA] Notice dédiée 1921 (traité de Kars : 13 oct. 1921,
+  frontière turco-arménienne, Kars/Ardahan/Ararat côté turc, Nakhitchevan et
+  Karabagh sous tutelle azérie) en FR+EN+HY, lieux situés ; alias 1921→1921.
+  Vérifié en ligne (it.63) : MINI_HY déployé, notice 2023 s'affiche en arménien.
 - ✅ (it. 63) [DATA] Dictionnaire MINI_HY créé et branché (remplirPanneauPeriode
   sélectionne MINI_HY quand LANG=hy, comme MINI_EN pour l'anglais) : notices
   1915, 1988, 1991, 2020, 2023 désormais en arménien — comble la lacune de la
