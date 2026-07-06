@@ -16,9 +16,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ## Critiques ouvertes
 
 ### [DATA]
-- 🟠 **La zone Transcaucasie russe (1880/1900) reste une boîte rectangulaire**
-  (reliquat it. 22 : RSS et Karabagh sont désormais en tracés réels, pas ce
-  masque) ; un tracé des gouvernorats d'Erevan et de Kars serait plus juste.
 - 🟠 **Certaines surcouches gardent le gabarit an 300** (400, 500/600, 800,
   1400–1914) faute de tracé Armenia proche dans la source : acceptable pour
   « terres arméniennes sous X », mais à documenter période par période.
@@ -109,7 +106,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   documenté que par des commentaires du script : un tableau dans README/REGLES
   serait plus transparent.
 
+### Nouvelles critiques (it. 32)
+- 🟡 [DATA] Le tracé 1878 est dessiné à main levée (15 points) : le comparer
+  aux limites réelles de l'oblast de Kars et du gouvernorat d'Erevan.
+- 🟡 [DATA] La ligne « Zanguezour → Karabagh » du polygone russe traverse un
+  angle du Karabakh persan : vérifier au zoom en 1880.
+- 🟡 [UX] Aucune capture d'écran de contrôle n'est archivée après un
+  changement de frontières : ajouter un rendu de référence par époque
+  faciliterait la relecture visuelle.
+
 ## Critiques traitées
+- ✅ (it. 32) [DATA] 🟠 Boîte rectangulaire « Transcaucasie russe » →
+  polygone suivant la frontière russo-ottomane de 1878 (Ardahan–Kars–Ararat)
+  puis l'Araxe (Nakhitchevan, Zanguezour) ; l'Arménie occidentale 1880/1900/
+  1914 suit désormais la même ligne par différence.
 - ✅ (it. 31) [DATA] 🔴 Gabarit unique « an 300 » pour toutes les époques →
   mécanisme armenia:<année> : satrapie −500 sur Armenia(−300), Artaxiades −100
   sur Armenia(−1), Ilkhanat 1300 sur Armenia(1200), Bagratides 900 et RSS

@@ -50,8 +50,14 @@ CILICIE = Polygon([(32.3,36.0),(32.3,36.7),(33.5,37.3),(34.6,37.9),(35.6,38.3),
 # Partage de Zuhab (1639) : frontière approx. Arpatchaï–Araxe vers 43,7°E
 ZUHAB_OUEST = box(36.0, 35.5, 43.7, 42.5)
 ZUHAB_EST   = box(43.7, 35.5, 48.5, 42.5)
-# Transcaucasie russe vers 1900 (Kars 1878 + Erevan/Zanguezour, nord de l'Araxe)
-RUSSE_1900  = box(42.5, 38.8, 47.5, 41.8)
+# Transcaucasie russe vers 1900 : polygone approchant la frontière russo-ottomane
+# de 1878 (ouest d'Ardahan-Kars-mont Ararat) puis la frontière persane le long de
+# l'Araxe (Erevan, Nakhitchevan, Zanguezour) — remplace l'ancienne boîte.
+RUSSE_1900 = Polygon([(42.5,41.8),(42.55,41.3),(42.7,40.9),(42.8,40.4),
+                      (43.4,40.05),(44.0,39.85),(44.32,39.72),   # tripoint vers l'Ararat
+                      (44.8,39.70),(45.4,39.56),(45.8,39.30),    # Araxe / Nakhitchevan
+                      (46.2,38.95),(46.55,38.87),(47.1,39.15),   # Zanguezour → Karabagh
+                      (47.5,39.35),(47.5,41.8)])
 # Haut-Karabagh : polygone approché de l'oblast autonome (NKAO)
 KARABAGH = Polygon([(46.45,40.20),(46.85,40.05),(47.05,39.85),(46.95,39.60),
                     (46.75,39.35),(46.50,39.30),(46.30,39.45),(46.25,39.75)])
