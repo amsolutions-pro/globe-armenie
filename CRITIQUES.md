@@ -275,7 +275,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Beaucoup d'années récentes ont maintenant des notices riches : un
   fil chronologique déroulant du XXe–XXIe siècle serait un bon complément.
 
+### Nouvelles critiques (it. 62)
+- 🟡 [DATA] MINI_HY toujours inexistant : les notices récentes dédiées
+  (1915, 1988, 1991, 2020, 2023) retombent en FR quand la langue est l'arménien
+  — c'est la lacune de fond la plus visible maintenant.
+- 🟡 [DATA] 1921 (Kars) reste la seule année arménienne récente sans notice
+  propre (aliasée vers 1920).
+- 🟡 [UX] La densité de villes/capitales du XXe-XXIe (Deir ez-Zor, Musa Dagh…)
+  n'apparaît qu'à fort zoom : un rappel dans la notice suffirait.
+
 ## Critiques traitées
+- ✅ (it. 62) [DATA] Notice dédiée 1915 (génocide : 24 avril, Talaat/Enver/
+  Cemal, déportations vers Deir ez-Zor, ~1,5 M de victimes, résistances de Van
+  et du Musa Dagh, négationnisme turc) en FR+EN, 3 capitales/lieux situés ;
+  alias 1915→1915. Vérifié en ligne : notices 1988/1991/2020/2023 s'affichent.
 - ✅ (it. 61) [DATA] Notices dédiées 1988 (séisme de Spitak : 7 déc. 1988,
   M6,8, ~25 000 morts, Spitak rasée, Gyumri/Leninakan ; mouvement du Karabagh,
   Soumgaït) et 1991 (indépendance : référendum 21 sept., Ter-Petrossian,
