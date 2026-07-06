@@ -203,8 +203,13 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Deux critiques auto-générées se sont révélées fausses (provinces
   cliquables dans globe.html, unification MAJEURS) : signe qu'il faut vérifier
   le code avant d'inscrire une critique DATA/UX.
-- 🟡 [A11Y] Le globe (canvas) n'a pas d'alternative textuelle ni de résumé
-  lisible par lecteur d'écran de l'état courant (année, entités visibles).
+
+### Nouvelles critiques (it. 51)
+- 🟡 [A11Y] L'annonce aria-live ne liste pas les entités visibles à l'écran
+  (seulement année + charnière) : un lecteur d'écran ne « voit » pas la carte.
+- 🟡 [A11Y] Le canvas n'est pas focusable au clavier : impossible de
+  naviguer dans le temps sans passer par le slider.
+- 🟡 [UX] L'aria-label du canvas est en français en dur (pas via T()).
 
 ## Critiques invalidées (vérification du code)
 - ❌ [DATA] « Notices hy sans provinces → libellé français au clic » : faux,
@@ -215,6 +220,9 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   tournants les plus importants) ; tout unifier ferait pauser partout.
 
 ## Critiques traitées
+- ✅ (it. 51) [A11Y] 🟡 Canvas sans alternative textuelle → role=img +
+  aria-label, et région aria-live annonçant « <année> — <événement> » à
+  chaque changement de siècle (classe .sr-only ajoutée).
 - ✅ (it. 50) [UX] 🟡 Lien partagé ?an= appliqué seulement après chargement
   complet → l'écran de chargement annonce désormais la destination
   (« → 1920 ») pour que l'utilisateur en 4G sache où il va atterrir.

@@ -176,13 +176,15 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 #charge.cache{opacity:0;pointer-events:none}
 #charge .titre{color:var(--or);font-size:26px}
 #charge .info{color:var(--encre-2);font-size:14px;font-family:'IBM Plex Sans',sans-serif;max-width:320px;text-align:center;line-height:1.5}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 #charge .anneau{width:44px;height:44px;border:3px solid var(--trait);border-top-color:var(--or);
   border-radius:50%;animation:tour 1s linear infinite}
 @keyframes tour{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
-<canvas id="globe"></canvas>
+<canvas id="globe" role="img" aria-label="Globe historique interactif"></canvas>
+<div id="a11y-annee" aria-live="polite" class="sr-only"></div>
 
 <div id="entete">
   <h1 id="t-titre">Le Monde à travers les siècles</h1>
@@ -1137,6 +1139,10 @@ function allerA(i){
   slider.style.setProperty("--pct", (idx/(YEARS.length-1)*100)+"%");
   annee.innerHTML = libelleAnnee(YEARS[idx]);
   document.getElementById("charniere").textContent = charniereDe(YEARS[idx]);
+  // Annonce vocale (lecteur d'écran) : année + événement charnière
+  const a11y=document.getElementById("a11y-annee");
+  if(a11y){ const ch=charniereDe(YEARS[idx]);
+    a11y.textContent = libelleAnnee(YEARS[idx]).replace(/<[^>]+>/g," ").trim() + (ch?" — "+ch:""); }
   selection=null; fermerBulle();
   render();
   if(document.getElementById("panel").classList.contains("ouvert")) remplirPanneauPeriode();
@@ -1624,7 +1630,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06w";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06x";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
