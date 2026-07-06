@@ -261,3 +261,40 @@ distincts) datés, avec note (imprimerie 1512 à Venise, premier journal 1794 à
 (1900 : ~260 entités) et optimiser si > 16 ms (cache Path2D par siècle).
 
 ---
+
+## Itération 9 — 2026-07-06 (+ directives utilisateur)
+
+**Fait (Q22–Q24)** : leurres du quiz désormais tirés à ±1–6 siècles de la bonne
+réponse (années) et ±7 siècles (villes) ; **8 foyers de diaspora arménienne**
+(triangles violets datés, cliquables : Nouvelle-Djoulfa 1604, San Lazzaro/Venise
+1717, Madras/Azdarar 1794, Constantinople 1461, Tiflis, Lviv, Caffa 1300–1475,
+Amsterdam 1660–1800) + entrée de légende ; **performance** : render() sur 1900
+mesuré à 33 ms → écrémage des entités hors champ (test geoDistance + rayon de vue)
+→ **8 ms** (fluide).
+
+**Directives utilisateur intégrées** :
+1. **Zoom molette adouci** : facteur 1,0007^Δ (moitié moins rapide) et Δ borné à
+   ±180 — le globe ne « saute » plus.
+2. **« Couleur des océans » stabilisée** : le fond qui changeait de couleur d'un
+   siècle à l'autre (vert en 1100, brun en 1700…) venait de polygones de la source
+   au sens d'enroulement inversé, que D3 remplissait sur toute la sphère. Correction
+   au chargement : tout polygone couvrant plus d'une demi-sphère est retourné
+   (0 inversé restant sur les 28 siècles). L'océan garde son dégradé bleu nuit
+   constant. Attention piège rencontré : le cache navigateur masquait la correction —
+   vérifié avec cache-buster.
+
+**Q25. Les traductions FR couvrent-elles les noms encore anglais visibles (Xia occidentaux OK, mais « Terres non revendiquées » multiples…) ?**
+À échantillonner sur 5 siècles zoomés. → Itération 10 : capture de tous les libellés
+affichés à k=2,2 sur 6 siècles et complément du dictionnaire.
+
+**Q26. L'étiquette « Arménie » cache-t-elle Syunik/Tashir/Artsakh en 1100 ?**
+Oui probablement (anti-collision premier arrivé). → Itération 10 : prioriser les
+entités arméniennes par aire croissante dans l'anti-collision et vérifier à k≥8.
+
+**Q27. Le fichier globe.html devient-il trop gros / dur à maintenir (~1 000 lignes) ?**
+Pas critique pour un artefact autonome, mais les données pédagogiques (MINI,
+CHARNIERE, VILLES, DIASPORA) gagneraient à vivre dans un JSON séparé.
+→ Itération 10+ : extraire vers `pedagogie_fr.json` chargé par fetch (comme
+traductions_fr.json).
+
+---

@@ -120,6 +120,8 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 #legende .tribu{background:hsl(60,10%,24%)}
 #legende .pt{display:inline-block;width:7px;height:7px;border-radius:50%;background:#efe6d8;
   border:1px solid #0d0907;margin:0 9px 0 4px;vertical-align:0}
+#legende .tri{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
+  border-bottom:8px solid #b48be0;margin:0 7px 0 4px;vertical-align:0}
 
 /* ---------- Infobulle entité ---------- */
 #bulle{position:fixed;z-index:7;pointer-events:none;transform:translate(-50%,-130%);
@@ -175,6 +177,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <span><i class="sw etat"></i> État constitué</span>
   <span><i class="sw tribu"></i> peuplement, tribus</span>
   <span><i class="pt"></i> ville principale (zoomer)</span>
+  <span><i class="tri"></i> foyer de diaspora arménienne</span>
 </div>
 
 <div id="temps">
@@ -359,9 +362,12 @@ function render(){
   ctx.beginPath(); path(graticule);
   ctx.strokeStyle="rgba(212,165,72,.10)"; ctx.lineWidth=.5; ctx.stroke();
 
-  // Entités (déjà triées grandes → petites)
+  // Entités (déjà triées grandes → petites) — écrémage hors champ
   const feats = DATA.world[String(YEARS[idx])] || [];
+  const centreVue = [-rot[0], -rot[1]];
+  const rayonVue = Math.min(1.5708, Math.asin(Math.min(1, (Math.hypot(W,H)/2)/(base*k))));
   for(const f of feats){
+    if(d3.geoDistance(f.l, centreVue) > rayonVue + 0.035*Math.sqrt(f.a) + 0.15) continue;
     ctx.beginPath(); path({type:f.t, coordinates:f.c});
     if(f.o){ // surcouche arménienne dérivée : or translucide, liseré doré
       ctx.fillStyle="rgba(212,165,72,.50)"; ctx.fill();
@@ -385,6 +391,7 @@ function render(){
 
   const boites = dessinerEtiquettes(feats);
   dessinerVilles(boites);
+  dessinerDiaspora(boites);
 }
 
 /* Villes principales : {nom, lng, lat, de, à, z (zoom mini), arm} */
@@ -446,6 +453,36 @@ const VILLES = [
  {nom:"Saint-Pétersbourg",lng:30.34,lat:59.93,de:1703,z:4},
  {nom:"New York",lng:-74.01,lat:40.71,de:1624,z:3}
 ];
+/* Foyers de la diaspora arménienne : points violets datés */
+const DIASPORA = [
+ {nom:"Nouvelle-Djoulfa (Ispahan)",lng:51.66,lat:32.63,de:1604,note:"Quartier fondé par les Arméniens déportés de Djoulfa par Chah Abbas (1604) ; ses marchands dominent la route de la soie jusqu'en Inde."},
+ {nom:"San Lazzaro (Venise)",lng:12.36,lat:45.41,de:1717,note:"Île des pères Mekhitaristes (1717), grand foyer d'érudition ; l'imprimerie arménienne de Venise date de 1512 — premier livre arménien imprimé."},
+ {nom:"Madras",lng:80.27,lat:13.08,de:1666,note:"Comptoir marchand ; le premier journal arménien du monde, Azdarar, y paraît en 1794."},
+ {nom:"Constantinople (communauté)",lng:28.95,lat:41.05,de:1461,note:"Patriarcat arménien fondé en 1461 ; au XIXᵉ siècle, premier foyer intellectuel arménien (jusqu'à 250 000 Arméniens)."},
+ {nom:"Tiflis (communauté)",lng:44.82,lat:41.69,de:1400,note:"Longtemps la plus grande ville « arménienne » du monde : majorité arménienne au XIXᵉ siècle, berceau de la presse et du théâtre modernes."},
+ {nom:"Lviv (communauté)",lng:24.03,lat:49.84,de:1300,note:"Colonie arménienne dès le XIIIᵉ siècle, cathédrale arménienne (1363), droit propre reconnu par les rois de Pologne."},
+ {nom:"Caffa (Crimée)",lng:35.38,lat:45.03,de:1300,a:1475,note:"La « Armenia Maritima » génoise : jusqu'à 2/3 d'Arméniens ; leur exode après 1475 fonde les communautés de Pologne-Moldavie."},
+ {nom:"Amsterdam (imprimerie)",lng:4.9,lat:52.37,de:1660,a:1800,note:"L'imprimerie Sourb Etchmiadzin y publie la première Bible arménienne imprimée (1666)."}
+];
+function dessinerDiaspora(boites){
+  const y=YEARS[idx], centre=[-rot[0],-rot[1]];
+  if(k<3.5) return;
+  ctx.textAlign="left"; ctx.textBaseline="middle";
+  for(const v of DIASPORA){
+    if(y<v.de || (v.a!==undefined && y>v.a)) continue;
+    if(d3.geoDistance([v.lng,v.lat], centre) > 1.35) continue;
+    const p=projection([v.lng,v.lat]); if(!p) continue;
+    ctx.font = "italic 500 9.5px 'IBM Plex Sans',sans-serif";
+    const larg = ctx.measureText(v.nom).width;
+    const boite = {x:p[0]-4, y:p[1]-7, w:larg+12, h:14};
+    if(boites.some(b => boite.x < b.x+b.w && boite.x+boite.w > b.x && boite.y < b.y+b.h && boite.y+boite.h > b.y)) continue;
+    boites.push(boite);
+    ctx.beginPath(); ctx.moveTo(p[0],p[1]-3.4); ctx.lineTo(p[0]+3.2,p[1]+2.2); ctx.lineTo(p[0]-3.2,p[1]+2.2); ctx.closePath();
+    ctx.fillStyle="#b48be0"; ctx.fill(); ctx.lineWidth=1; ctx.strokeStyle="rgba(13,9,7,.9)"; ctx.stroke();
+    ctx.lineWidth=2.5; ctx.strokeStyle="rgba(13,9,7,.85)"; ctx.strokeText(v.nom,p[0]+6,p[1]);
+    ctx.fillStyle="#cfaef0"; ctx.fillText(v.nom,p[0]+6,p[1]);
+  }
+}
 function dessinerVilles(boites){
   const y=YEARS[idx], centre=[-rot[0],-rot[1]];
   if(k<3) return;
@@ -543,7 +580,8 @@ canvas.addEventListener("pointercancel", finPointeur);
 
 canvas.addEventListener("wheel", e=>{
   e.preventDefault();
-  k = Math.max(K_MIN, Math.min(K_MAX, k * Math.pow(1.0015, -e.deltaY)));
+  const dY = Math.max(-180, Math.min(180, e.deltaY));   // zoom doux et borné
+  k = Math.max(K_MIN, Math.min(K_MAX, k * Math.pow(1.0007, -dY)));
   stopAnim(); demandeRender();
 },{passive:false});
 
@@ -558,9 +596,9 @@ function clic(x,y){
   const yA=YEARS[idx], centre=[-rot[0],-rot[1]];
   if(k>=3){
     let meilleure=null, dmin=12;
-    for(const v of VILLES){
+    for(const v of [...VILLES, ...(k>=3.5?DIASPORA:[])]){
       if(yA<v.de || (v.a!==undefined && yA>v.a)) continue;
-      if(k < (v.arm ? Math.min(v.z,4) : v.z)) continue;
+      if(v.z!==undefined && k < (v.arm ? Math.min(v.z,4) : v.z)) continue;
       if(d3.geoDistance([v.lng,v.lat], centre) > 1.35) continue;
       const p=projection([v.lng,v.lat]); if(!p) continue;
       const d=Math.hypot(p[0]-x,p[1]-y);
@@ -805,14 +843,16 @@ function genQuiz(){
   // T1 : événement → année
   const melA=[...annees].sort(()=>Math.random()-.5).slice(0,3);
   for(const a of melA){
-    const autres=annees.filter(x=>x!==a).sort(()=>Math.random()-.5).slice(0,3);
+    const proches=annees.filter(x=>x!==a && Math.abs(+x - +a)<=600 && Math.abs(+x - +a)>=100);
+    const autres=(proches.length>=3?proches:annees.filter(x=>x!==a)).sort(()=>Math.random()-.5).slice(0,3);
     qs.push({q:"À quel siècle rattacher : « "+CHARNIERE[a]+" » ?",
              reps:[a,...autres].sort(()=>Math.random()-.5).map(x=>({t:libAn(+x),ok:x===a}))});
   }
   // T2 : ville arménienne → date de fondation
   const va=VILLES.filter(v=>v.arm&&v.note).sort(()=>Math.random()-.5).slice(0,2);
   for(const v of va){
-    const leurres=VILLES.filter(x=>x!==v&&x.de!==v.de).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.de);
+    const cands=VILLES.filter(x=>x!==v&&x.de!==v.de&&Math.abs(x.de-v.de)<=700);
+    const leurres=(cands.length>=3?cands:VILLES.filter(x=>x!==v&&x.de!==v.de)).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.de);
     qs.push({q:"De quand date "+v.nom+" ?",
              reps:[v.de,...leurres].sort(()=>Math.random()-.5).map(d=>({t:libAn(d),ok:d===v.de}))});
   }
@@ -865,6 +905,16 @@ Promise.all([
 ]).then(([d,p,tr])=>{
   DATA=d; PERIODES=p; YEARS=d.years;
   if(tr) FRX=tr;
+  // Corrige le sens d'enroulement des anneaux (sinon D3 remplit toute la sphère :
+  // « océans » qui changent de couleur d'un siècle à l'autre)
+  const DEMI = 2*Math.PI;
+  for(const y in DATA.world) for(const f of DATA.world[y]){
+    const polys = f.t==="Polygon" ? [f.c] : f.c;
+    for(const poly of polys){
+      if(d3.geoArea({type:"Polygon",coordinates:poly}) > DEMI)
+        for(const ring of poly) ring.reverse();   // polygone inversé : on retourne tous ses anneaux
+    }
+  }
   slider.max = YEARS.length-1;
   idx = YEARS.indexOf(-700); if(idx<0) idx=0;   // départ : Ourartou
   resize(); allerA(idx);
