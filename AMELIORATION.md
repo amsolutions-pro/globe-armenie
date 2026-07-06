@@ -402,3 +402,21 @@ globe intact à gauche).
 à la demande utilisateur.)
 
 ---
+
+## Itération 14 — 2026-07-06 (directive utilisateur : code couleur évolutif)
+
+**Fait** : **code couleur par niveau d'organisation socio-politique**, lisible
+d'un coup d'œil — la teinte identifie l'entité, la **luminosité dit son niveau
+d'évolution** :
+- niveau 0 · chasseurs-cueilleurs : pénombre (sat 6 %, lum 17 %) ;
+- niveau 1 · nomades, pasteurs, tribus : terne (11 %/23 %) ;
+- niveau 2 · cultures agricoles, chefferies, cités-États : sourd (20 %/31 %) ;
+- niveau 3 · royaumes, États : palette riche actuelle ;
+- niveau 4 · empires, califats, khaganats : palette « impériale » (mêmes teintes
+  +16 pts de saturation, +12 pts de lumière) avec liseré clair.
+Classement par regex (empire/caliphate/khaganate/tsardom → 4 ; hunter/gatherer → 0 ;
+culture/chiefdom/civilization → 2 ; nomad/tribes → 1 ; défaut → 3). Légende
+remplacée par une barre de gradient « luminosité = organisation » (4 langues).
+Éclat impérial tempéré (+16/+12 au lieu de +22/+16) pour rester dans la charte.
+
+---
