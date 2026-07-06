@@ -207,9 +207,14 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 51)
 - 🟡 [A11Y] L'annonce aria-live ne liste pas les entités visibles à l'écran
   (seulement année + charnière) : un lecteur d'écran ne « voit » pas la carte.
-- 🟡 [A11Y] Le canvas n'est pas focusable au clavier : impossible de
-  naviguer dans le temps sans passer par le slider.
-- 🟡 [UX] L'aria-label du canvas est en français en dur (pas via T()).
+
+### Nouvelles critiques (it. 52)
+- 🟡 [A11Y] Le canvas focusable n'a pas de style :focus-visible spécifique
+  (l'outline global s'applique mais peut être discret sur fond sombre).
+- 🟡 [A11Y] Les flèches ←→ déplacent le temps même quand le focus est sur un
+  bouton : comportement global pratique mais surprenant au clavier.
+- 🟡 [DATA] L'annonce aria-live pourrait mentionner le niveau de zoom / la
+  région centrée, pas seulement l'année.
 
 ## Critiques invalidées (vérification du code)
 - ❌ [DATA] « Notices hy sans provinces → libellé français au clic » : faux,
@@ -220,6 +225,10 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   tournants les plus importants) ; tout unifier ferait pauser partout.
 
 ## Critiques traitées
+- ✅ (it. 52) [A11Y] 🟡 Canvas non focusable / aria-label figé → tabindex=0 +
+  aria-label instructif traduit (canvasAria, 4 langues, mis à jour au
+  changement de langue) ; la navigation temporelle au clavier (←→) existait
+  déjà globalement.
 - ✅ (it. 51) [A11Y] 🟡 Canvas sans alternative textuelle → role=img +
   aria-label, et région aria-live annonçant « <année> — <événement> » à
   chaque changement de siècle (classe .sr-only ajoutée).
