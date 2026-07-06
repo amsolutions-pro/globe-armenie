@@ -247,6 +247,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <div class="titre">Globe historique</div>
   <div class="anneau"></div>
   <div class="info" id="charge-info">Chargement des frontières de 28 siècles…</div>
+  <div class="info" id="charge-cible" style="color:var(--or);font-size:1.2em;margin-top:2px"></div>
 </div>
 
 <script>
@@ -397,6 +398,14 @@ ru:{titre:"Мир сквозь века",sous:"10 000 до н. э. — 2000 н. 
 };
 function T(k){ return (UI[LANG]&&UI[LANG][k]!==undefined)?UI[LANG][k]:UI.fr[k]; }
 document.getElementById("charge-info").textContent=T("chargeTxt");
+// Lien partagé ?an=<année> : annoncer la destination dès l'écran de chargement
+(function(){
+  const an=+new URLSearchParams(location.search).get("an");
+  if(an){
+    const el=document.getElementById("charge-cible");
+    if(el){ const s=an<0?(-an)+" "+T("avjc"):String(an); el.textContent="→ "+s; }
+  }
+})();
 /* Noms d'entités clés en arménien et russe (repli : anglais) */
 const NOMS_HY = {"Armenia":"Հայաստան","Urartu":"Ուրարտու","Syunik":"Սյունիք","Tashir":"Տաշիր","Artsakh":"Արցախ",
 "Byzantine Empire":"Բյուզանդական կայսրություն","Roman Empire":"Հռոմեական կայսրություն","Roman Republic":"Հռոմեական հանրապետություն",
@@ -1615,7 +1624,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06v";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06w";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)

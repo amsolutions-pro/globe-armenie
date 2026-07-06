@@ -46,8 +46,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Les avertissements de verifie_donnees.py ne sont visibles que du
   développeur : aucun signal côté site quand une traduction manque.
 
-- 🟡 [DATA] Les notices hy n'ont pas de champ `provinces` (comme en) : au
-  clic sur une province, le libellé retombe en français.
 - 🟡 [UX] Aucune indication dans l'UI que la notice affichée est une
   traduction (vs texte original français).
 
@@ -154,9 +152,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   (dataset world_1994 grossier) : contraste avec les lacs désormais précis.
 
 ### Nouvelles critiques (it. 43)
-- 🟡 [UX] Le paramètre ?an= n'est appliqué qu'après le chargement complet :
-  sur 4G, l'utilisateur voit -700 quelques secondes avant de sauter à
-  l'année partagée (afficher une note ou charger cette année dans l'amorce).
 - 🟡 [UX] Aucun retour visuel si l'an du lien est invalide (silencieusement
   ignoré).
 - 🟡 [DATA] localStorage peut être indisponible (navigation privée iOS) :
@@ -191,9 +186,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   habitués du cycle FR→EN→HY→RU doivent maintenant viser dans le menu.
 
 ### Nouvelles critiques (it. 48)
-- 🟡 [UX] Les siècles-tournants (MAJEURS = 300, 900, 1100, 1900) sont codés
-  en dur et distincts des « événements charnière » : deux notions de
-  « moment important » non unifiées.
 - 🟡 [UX] Le pulse d'année est ignoré si prefers-reduced-motion est actif —
   cohérent, mais alors aucun signal de pause pour ces utilisateurs.
 - 🟡 [UX] La pause double (2 × 2,5 s) sur un tournant peut sembler longue :
@@ -204,10 +196,28 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   peut sortir du menu ouvert) : suffisant pour l'usage mais imparfait.
 - 🟡 [A11Y] Les boutons flottants (֎, ✦, ?, ↗, 🗺) n'ont pas tous d'états
   focus visibles au clavier : passe d'accessibilité globale à prévoir.
-- 🟡 [DATA] Les notices hy restent sans champ provinces : au clic sur une
-  province arménienne, le libellé retombe en français (critique reportée).
+
+### Nouvelles critiques (it. 50)
+- 🟡 [UX] L'écran de chargement affiche « → 1920 » mais pas l'événement de
+  cette année : un aperçu (charnière) donnerait envie d'attendre.
+- 🟡 [DATA] Deux critiques auto-générées se sont révélées fausses (provinces
+  cliquables dans globe.html, unification MAJEURS) : signe qu'il faut vérifier
+  le code avant d'inscrire une critique DATA/UX.
+- 🟡 [A11Y] Le globe (canvas) n'a pas d'alternative textuelle ni de résumé
+  lisible par lecteur d'écran de l'état courant (année, entités visibles).
+
+## Critiques invalidées (vérification du code)
+- ❌ [DATA] « Notices hy sans provinces → libellé français au clic » : faux,
+  globe.html n'affiche pas les provinces au clic (champ utilisé seulement
+  dans atlas_armenie_historique.html, page francophone séparée).
+- ❌ [UX] « Unifier MAJEURS avec les événements charnière » : rejeté —
+  MAJEURS est un sous-ensemble volontairement restreint (double-pause sur les
+  tournants les plus importants) ; tout unifier ferait pauser partout.
 
 ## Critiques traitées
+- ✅ (it. 50) [UX] 🟡 Lien partagé ?an= appliqué seulement après chargement
+  complet → l'écran de chargement annonce désormais la destination
+  (« → 1920 ») pour que l'utilisateur en 4G sache où il va atterrir.
 - ✅ (it. 49) [A11Y] 🟡 Menu langue navigable au clavier : rôles ARIA
   menu/menuitem, flèches ↑↓ pour circuler, Entrée pour choisir, Échap pour
   fermer, focus posé sur la langue active à l'ouverture et rendu au bouton
