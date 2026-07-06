@@ -146,8 +146,8 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <canvas id="globe"></canvas>
 
 <div id="entete">
-  <h1>Le Monde à travers les siècles</h1>
-  <div class="sous">10 000 av. J.-C. — 2000 apr. J.-C. · frontières historiques</div>
+  <h1 id="t-titre">Le Monde à travers les siècles</h1>
+  <div class="sous" id="t-sous">10 000 av. J.-C. — 2000 apr. J.-C. · frontières historiques</div>
 </div>
 <div id="annee"></div>
 <div id="charniere"></div>
@@ -155,12 +155,13 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 <button class="flottant" id="btn-armenie" title="Centrer sur l'Arménie">֎</button>
 <button class="flottant" id="btn-notice" title="Notice de la période">✦</button>
 <button class="flottant" id="btn-quiz" title="Quiz">?</button>
+<button class="flottant" id="btn-lang" title="Langue / Language / Լեզու / Язык" style="bottom:calc(258px + env(safe-area-inset-bottom));font-size:12.5px;font-weight:600">FR</button>
 
 <div class="voile" id="accueil"><div class="carte">
-  <h2>Bienvenue sur le globe historique</h2>
-  <p><b>Tourner :</b> faites glisser le globe du doigt ou à la souris.</p>
-  <p><b>Explorer le temps :</b> la frise en bas feuillette 4 000 ans, siècle par siècle — ⏵ lance la lecture automatique.</p>
-  <p><b>Comprendre :</b> touchez un État ou une ville pour l'identifier, ✦ ouvre la notice de la période, l'or suit l'Arménie à travers les siècles.</p>
+  <h2 id="acc-t">Bienvenue sur le globe historique</h2>
+  <p id="acc-1"></p>
+  <p id="acc-2"></p>
+  <p id="acc-3"></p>
   <button class="gros" id="accueil-ok">Commencer</button>
 </div></div>
 
@@ -172,12 +173,12 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 </div></div>
 
 <div id="legende">
-  <span><i class="sw plein"></i> Arménie attestée</span>
-  <span><i class="sw pointille"></i> présence reconstituée</span>
-  <span><i class="sw etat"></i> État constitué</span>
-  <span><i class="sw tribu"></i> peuplement, tribus</span>
-  <span><i class="pt"></i> ville principale (zoomer)</span>
-  <span><i class="tri"></i> foyer de diaspora arménienne</span>
+  <span><i class="sw plein"></i> <em id="lg1" style="font-style:normal">Arménie attestée</em></span>
+  <span><i class="sw pointille"></i> <em id="lg2" style="font-style:normal">présence reconstituée</em></span>
+  <span><i class="sw etat"></i> <em id="lg3" style="font-style:normal">État constitué</em></span>
+  <span><i class="sw tribu"></i> <em id="lg4" style="font-style:normal">peuplement, tribus</em></span>
+  <span><i class="pt"></i> <em id="lg5" style="font-style:normal">ville principale (zoomer)</em></span>
+  <span><i class="tri"></i> <em id="lg6" style="font-style:normal">foyer de diaspora arménienne</em></span>
 </div>
 
 <div id="temps">
@@ -274,9 +275,135 @@ const FR = {
 "Liao Empire":"Empire liao","Jin Empire":"Empire jin","Silla":"Silla","Goguryeo":"Koguryo","Baekje":"Paekche",
 "Nomads":"Nomades","nomads":"Nomades","Turkic nomads":"Nomades turcs","Mongol tribes":"Tribus mongoles"
 };
+/* ================= I18N — fr / en / hy / ru ================= */
+let LANG = "fr";
+try{ LANG = localStorage.getItem("globe_lang") || "fr"; }catch(e){}
+const UI = {
+fr:{titre:"Le Monde à travers les siècles",sous:"10 000 av. J.-C. — 2000 apr. J.-C. · frontières historiques",
+ avjc:"AV. J.-C.",apjc:"APR. J.-C.",an1:"An 1",auj:"aujourd'hui",
+ suzer:"Sous suzeraineté :",reconst:"Frontières reconstituées (intersection de cartes historiques)",
+ reconstLong:"Frontières reconstituées par intersection de cartes historiques — tracé indicatif.",
+ capitales:"Capitales",lieux:"Lieux clés",voirPeriode:"Voir la période →",
+ wiki:"📖 Fiche historique (Wikipédia) →",wikiHy:"📖 Wikipédia arménienne →",
+ atlas:"🗺 Ouvrir l'atlas détaillé de l'Arménie historique",
+ sansNotice:"Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.",
+ lgAtteste:"Arménie attestée",lgReconst:"présence reconstituée",lgEtat:"État constitué",lgTribu:"peuplement, tribus",lgVille:"ville principale (zoomer)",lgDiaspora:"foyer de diaspora arménienne",
+ accTitre:"Bienvenue sur le globe historique",
+ acc1:"<b>Tourner :</b> faites glisser le globe du doigt ou à la souris.",
+ acc2:"<b>Explorer le temps :</b> la frise en bas feuillette 12 000 ans — ⏵ lance la lecture automatique.",
+ acc3:"<b>Comprendre :</b> touchez un État ou une ville pour l'identifier, ✦ ouvre la notice de la période, l'or suit l'Arménie à travers les siècles.",
+ accOk:"Commencer",question:"QUESTION",resultat:"RÉSULTAT",suivante:"Question suivante",voirRes:"Voir le résultat",rejouer:"Rejouer",
+ q1:"À quel siècle rattacher : « % » ?",q2:"De quand date % ?",
+ s3:"Excellent ! Le plateau n'a plus de secret pour vous.",s2:"Bien — refeuilletez la frise et réessayez.",s1:"Explorez les notices ✦ puis retentez votre chance.",
+ noticeFrSeulement:""},
+en:{titre:"The World Through the Centuries",sous:"10,000 BC — 2000 AD · historical borders",
+ avjc:"BC",apjc:"AD",an1:"Year 1",auj:"today",
+ suzer:"Under suzerainty of:",reconst:"Reconstructed borders (intersection of historical maps)",
+ reconstLong:"Borders reconstructed by intersecting historical maps — indicative outline.",
+ capitales:"Capitals",lieux:"Key sites",voirPeriode:"View period →",
+ wiki:"📖 Historical article (Wikipedia) →",wikiHy:"📖 Armenian Wikipedia →",
+ atlas:"🗺 Open the detailed atlas of historical Armenia",
+ sansNotice:"No detailed Armenian notice for this century. Tap a state on the globe to identify it, or browse the timeline.",
+ lgAtteste:"Armenia attested",lgReconst:"reconstructed presence",lgEtat:"organised state",lgTribu:"peoples, tribes",lgVille:"major city (zoom in)",lgDiaspora:"Armenian diaspora centre",
+ accTitre:"Welcome to the historical globe",
+ acc1:"<b>Rotate:</b> drag the globe with your finger or mouse.",
+ acc2:"<b>Travel in time:</b> the timeline below spans 12,000 years — ⏵ starts auto-play.",
+ acc3:"<b>Understand:</b> tap a state or city to identify it, ✦ opens the period notice, gold follows Armenia through the centuries.",
+ accOk:"Start",question:"QUESTION",resultat:"RESULT",suivante:"Next question",voirRes:"See result",rejouer:"Play again",
+ q1:"Which century matches: “%”?",q2:"When was % founded?",
+ s3:"Excellent! The plateau holds no more secrets for you.",s2:"Good — browse the timeline again and retry.",s1:"Explore the notices ✦ and try again.",
+ noticeFrSeulement:"(notice available in French for now)"},
+hy:{titre:"Աշխարհը դարերի միջով",sous:"Ք.ա. 10 000 — Ք.հ. 2000 · պատմական սահմաններ",
+ avjc:"Ք.Ա.",apjc:"Ք.Հ.",an1:"1 թվական",auj:"մինչ օրս",
+ suzer:"Գերիշխանության ներքո՝",reconst:"Վերակազմված սահմաններ (պատմական քարտեզների հատում)",
+ reconstLong:"Սահմանները վերակազմված են պատմական քարտեզների հատմամբ — մոտավոր ուրվագիծ։",
+ capitales:"Մայրաքաղաքներ",lieux:"Կարևոր վայրեր",voirPeriode:"Տեսնել ժամանակաշրջանը →",
+ wiki:"📖 Պատմական հոդված (Վիքիպեդիա) →",wikiHy:"📖 Հայերեն Վիքիպեդիա →",
+ atlas:"🗺 Բացել պատմական Հայաստանի մանրամասն ատլասը",
+ sansNotice:"Այս դարի համար մանրամասն հայկական ծանոթություն չկա։ Հպեք պետությանը՝ ճանաչելու համար, կամ թերթեք ժամանակագիծը։",
+ lgAtteste:"Վավերացված Հայաստան",lgReconst:"վերակազմված ներկայություն",lgEtat:"կազմավորված պետություն",lgTribu:"ցեղեր, բնակեցում",lgVille:"գլխավոր քաղաք (մոտեցնել)",lgDiaspora:"հայկական սփյուռքի կենտրոն",
+ accTitre:"Բարի գալուստ պատմական գլոբուս",
+ acc1:"<b>Պտտել՝</b> սահեցրեք գլոբուսը մատով կամ մկնիկով։",
+ acc2:"<b>Ճամփորդել ժամանակի մեջ՝</b> ներքևի ժամանակագիծը թերթում է 12 000 տարի — ⏵ ավտոմատ ցուցադրում։",
+ acc3:"<b>Հասկանալ՝</b> հպեք պետությանը կամ քաղաքին, ✦ բացում է ժամանակաշրջանի ծանոթությունը, ոսկեգույնը հետևում է Հայաստանին դարերի միջով։",
+ accOk:"Սկսել",question:"ՀԱՐՑ",resultat:"ԱՐԴՅՈՒՆՔ",suivante:"Հաջորդ հարցը",voirRes:"Տեսնել արդյունքը",rejouer:"Խաղալ նորից",
+ q1:"Ո՞ր դարին վերագրել՝ «%»",q2:"Ե՞րբ է հիմնադրվել %-ը",
+ s3:"Գերազանց․ բարձրավանդակն այլևս գաղտնիք չունի ձեզ համար։",s2:"Լավ է — կրկին թերթեք ժամանակագիծը և փորձեք։",s1:"Ուսումնասիրեք ծանոթությունները ✦ և կրկին փորձեք։",
+ noticeFrSeulement:"(ծանոթությունն առայժմ ֆրանսերեն է)"},
+ru:{titre:"Мир сквозь века",sous:"10 000 до н. э. — 2000 н. э. · исторические границы",
+ avjc:"ДО Н. Э.",apjc:"Н. Э.",an1:"1 год",auj:"наши дни",
+ suzer:"Под сюзеренитетом:",reconst:"Реконструированные границы (пересечение исторических карт)",
+ reconstLong:"Границы реконструированы пересечением исторических карт — контур приблизительный.",
+ capitales:"Столицы",lieux:"Ключевые места",voirPeriode:"Показать период →",
+ wiki:"📖 Историческая статья (Википедия) →",wikiHy:"📖 Армянская Википедия →",
+ atlas:"🗺 Открыть подробный атлас исторической Армении",
+ sansNotice:"Для этого века нет подробной армянской справки. Коснитесь государства на глобусе или листайте шкалу времени.",
+ lgAtteste:"Армения (источник)",lgReconst:"реконструированное присутствие",lgEtat:"государство",lgTribu:"племена, население",lgVille:"главный город (приблизьте)",lgDiaspora:"центр армянской диаспоры",
+ accTitre:"Добро пожаловать на исторический глобус",
+ acc1:"<b>Вращение:</b> перетаскивайте глобус пальцем или мышью.",
+ acc2:"<b>Путешествие во времени:</b> шкала внизу листает 12 000 лет — ⏵ автопоказ.",
+ acc3:"<b>Понимание:</b> коснитесь государства или города, ✦ открывает справку периода, золото следует за Арменией сквозь века.",
+ accOk:"Начать",question:"ВОПРОС",resultat:"РЕЗУЛЬТАТ",suivante:"Следующий вопрос",voirRes:"Результат",rejouer:"Сыграть ещё",
+ q1:"К какому веку отнести: «%»?",q2:"Когда возник(ла) %?",
+ s3:"Отлично! Нагорье больше не хранит от вас тайн.",s2:"Хорошо — полистайте шкалу и попробуйте снова.",s1:"Изучите справки ✦ и попробуйте ещё раз.",
+ noticeFrSeulement:"(справка пока на французском)"}
+};
+function T(k){ return (UI[LANG]&&UI[LANG][k]!==undefined)?UI[LANG][k]:UI.fr[k]; }
+/* Noms d'entités clés en arménien et russe (repli : anglais) */
+const NOMS_HY = {"Armenia":"Հայաստան","Urartu":"Ուրարտու","Syunik":"Սյունիք","Tashir":"Տաշիր","Artsakh":"Արցախ",
+"Byzantine Empire":"Բյուզանդական կայսրություն","Roman Empire":"Հռոմեական կայսրություն","Roman Republic":"Հռոմեական հանրապետություն",
+"Ottoman Empire":"Օսմանյան կայսրություն","Achaemenid Empire":"Աքեմենյան տերություն","Sasanian Empire":"Սասանյան Պարսկաստան",
+"Parthian Empire":"Պարթևական թագավորություն","Parthia":"Պարթևստան","Seleucid Kingdom":"Սելևկյան թագավորություն","Seleucid Empire":"Սելևկյան տերություն",
+"Abbasid Caliphate":"Աբբասյան խալիֆայություն","Umayyad Caliphate":"Օմայանների խալիֆայություն","Seljuk Empire":"Սելջուկյան կայսրություն","Seljuk Caliphate":"Սելջուկյան կայսրություն",
+"Mongol Empire":"Մոնղոլական կայսրություն","Ilkhanate":"Իլխանություն","Timurid Empire":"Թիմուրյան կայսրություն","Safavid Empire":"Սեֆյան Պարսկաստան",
+"Russian Empire":"Ռուսական կայսրություն","Russia":"Ռուսաստան","Soviet Union":"Խորհրդային Միություն","Georgia":"Վրաստան","Kingdom of Georgia":"Վրաց թագավորություն",
+"Persia":"Պարսկաստան","Iran":"Իրան","Turkey":"Թուրքիա","Azerbaijan":"Ադրբեջան","Egypt":"Եգիպտոս","Greece":"Հունաստան","France":"Ֆրանսիա",
+"Hittites":"Խեթեր","Assyria":"Ասորեստան","Media":"Մարաստան","Cimerians":"Կիմերացիներ","Scythians":"Սկյութներ",
+"Emirate of the White Sheep Turks":"Ակ-Կոյունլու","Golden Horde":"Ոսկե Հորդա","Mamluke Sultanate":"Մամլուքների սուլթանություն","Khazars":"Խազարներ",
+"Grande Arménie (Artaxiades)":"Մեծ Հայք (Արտաշեսյաններ)","Armina (satrapie d'Arménie)":"Արմինա (Հայկական սատրապություն)",
+"Arménie arsacide (partagée en 387)":"Արշակունյաց Հայաստան (բաժանված 387-ին)","Persarménie (marzpanat)":"Պարսկահայաստան (մարզպանություն)",
+"Arménie byzantine":"Բյուզանդական Հայաստան","Arminiya (ostikanat)":"Արմինիա (ոստիկանություն)","Royaume bagratide (Arménie)":"Բագրատունյաց թագավորություն",
+"Arménie sous l'Ilkhanat":"Հայաստանը Իլխանության ներքո","Royaume arménien de Cilicie":"Կիլիկյան Հայաստան","Arménie (domination timouride)":"Հայաստանը Թիմուրյանների ներքո",
+"Arménie (Ak Koyunlu)":"Հայաստանը Ակ-Կոյունլուի ներքո","Arménie occidentale (ottomane)":"Արևմտյան Հայաստան (օսմանյան)","Arménie orientale (persane)":"Արևելյան Հայաստան (պարսկական)",
+"Arménie orientale (khanats d'Erevan et du Karabagh)":"Արևելյան Հայաստան (Երևանի և Ղարաբաղի խանություններ)","Arménie russe (gouvernorats d'Erevan et de Kars)":"Ռուսական Հայաստան (Երևանի և Կարսի նահանգներ)",
+"Chasseurs-cueilleurs du plateau arménien":"Հայկական լեռնաշխարհի որսորդ-հավաքիչներ","Premiers villages du plateau arménien":"Լեռնաշխարհի առաջին գյուղերը",
+"Néolithique arménien (Aratashen, Aknashen)":"Հայկական նեոլիթ (Առատաշեն, Ակնաշեն)","Chalcolithique arménien (Areni, Sioni)":"Քալկոլիթ (Արենի)",
+"Culture Kouro-Araxe":"Կուր-Արաքսյան մշակույթ","Cultures Trialeti et du Sevan":"Թրիալեթի և Սևանի մշակույթներ"};
+const NOMS_EN = {"Grande Arménie (Artaxiades)":"Greater Armenia (Artaxiads)","Armina (satrapie d'Arménie)":"Armina (Armenian satrapy)",
+"Arménie arsacide (partagée en 387)":"Arsacid Armenia (partitioned 387)","Persarménie (marzpanat)":"Persarmenia (marzpanate)",
+"Arménie byzantine":"Byzantine Armenia","Arminiya (ostikanat)":"Arminiya (ostikanate)","Royaume bagratide (Arménie)":"Bagratid Kingdom of Armenia",
+"Arménie sous l'Ilkhanat":"Armenia under the Ilkhanate","Royaume arménien de Cilicie":"Armenian Kingdom of Cilicia","Arménie (domination timouride)":"Armenia (Timurid rule)",
+"Arménie (Ak Koyunlu)":"Armenia (Ak Koyunlu)","Arménie occidentale (ottomane)":"Western Armenia (Ottoman)","Arménie orientale (persane)":"Eastern Armenia (Persian)",
+"Arménie orientale (khanats d'Erevan et du Karabagh)":"Eastern Armenia (Erivan & Karabakh khanates)","Arménie russe (gouvernorats d'Erevan et de Kars)":"Russian Armenia (Erivan & Kars governorates)",
+"Chasseurs-cueilleurs du plateau arménien":"Hunter-gatherers of the Armenian Highlands","Premiers villages du plateau arménien":"First villages of the Highlands",
+"Néolithique arménien (Aratashen, Aknashen)":"Armenian Neolithic (Aratashen, Aknashen)","Chalcolithique arménien (Areni, Sioni)":"Armenian Chalcolithic (Areni)",
+"Culture Kouro-Araxe":"Kura-Araxes culture","Cultures Trialeti et du Sevan":"Trialeti and Sevan cultures"};
+const NOMS_RU = {"Armenia":"Армения","Urartu":"Урарту","Syunik":"Сюник","Tashir":"Ташир","Artsakh":"Арцах",
+"Byzantine Empire":"Византийская империя","Roman Empire":"Римская империя","Roman Republic":"Римская республика",
+"Ottoman Empire":"Османская империя","Achaemenid Empire":"Держава Ахеменидов","Sasanian Empire":"Сасанидская Персия",
+"Parthian Empire":"Парфянское царство","Parthia":"Парфия","Seleucid Kingdom":"Царство Селевкидов","Seleucid Empire":"Держава Селевкидов",
+"Abbasid Caliphate":"Аббасидский халифат","Umayyad Caliphate":"Омейядский халифат","Seljuk Empire":"Сельджукская империя","Seljuk Caliphate":"Сельджукская империя",
+"Mongol Empire":"Монгольская империя","Ilkhanate":"Ильханат","Timurid Empire":"Империя Тимуридов","Safavid Empire":"Сефевидская Персия",
+"Russian Empire":"Российская империя","Russia":"Россия","Soviet Union":"Советский Союз","Georgia":"Грузия","Kingdom of Georgia":"Грузинское царство",
+"Persia":"Персия","Iran":"Иран","Turkey":"Турция","Azerbaijan":"Азербайджан","Egypt":"Египет","Greece":"Греция","France":"Франция",
+"Hittites":"Хетты","Assyria":"Ассирия","Media":"Мидия","Cimerians":"Киммерийцы","Scythians":"Скифы",
+"Emirate of the White Sheep Turks":"Ак-Коюнлу","Golden Horde":"Золотая Орда","Mamluke Sultanate":"Мамлюкский султанат","Khazars":"Хазары",
+"Grande Arménie (Artaxiades)":"Великая Армения (Арташесиды)","Armina (satrapie d'Arménie)":"Армина (армянская сатрапия)",
+"Arménie arsacide (partagée en 387)":"Аршакидская Армения (раздел 387 г.)","Persarménie (marzpanat)":"Персармения (марзпанство)",
+"Arménie byzantine":"Византийская Армения","Arminiya (ostikanat)":"Арминия (остиканат)","Royaume bagratide (Arménie)":"Багратидская Армения",
+"Arménie sous l'Ilkhanat":"Армения под Ильханатом","Royaume arménien de Cilicie":"Киликийская Армения","Arménie (domination timouride)":"Армения под Тимуридами",
+"Arménie (Ak Koyunlu)":"Армения под Ак-Коюнлу","Arménie occidentale (ottomane)":"Западная Армения (османская)","Arménie orientale (persane)":"Восточная Армения (персидская)",
+"Arménie orientale (khanats d'Erevan et du Karabagh)":"Восточная Армения (Эриванское и Карабахское ханства)","Arménie russe (gouvernorats d'Erevan et de Kars)":"Русская Армения (Эриванская и Карсская губернии)",
+"Chasseurs-cueilleurs du plateau arménien":"Охотники-собиратели Армянского нагорья","Premiers villages du plateau arménien":"Первые сёла нагорья",
+"Néolithique arménien (Aratashen, Aknashen)":"Армянский неолит (Араташен, Акнашен)","Chalcolithique arménien (Areni, Sioni)":"Халколит (Арени)",
+"Culture Kouro-Araxe":"Куро-аракская культура","Cultures Trialeti et du Sevan":"Триалетская и севанская культуры"};
+
 let FRX = {};   // dictionnaire complémentaire chargé depuis traductions_fr.json
 function nomFR(n){
-  if(!n) return "Terres non revendiquées";
+  if(!n) return LANG==="en"?"Unclaimed lands":LANG==="hy"?"Չնշված տարածքներ":LANG==="ru"?"Непритязаемые земли":"Terres non revendiquées";
+  if(LANG==="hy" && NOMS_HY[n]) return NOMS_HY[n];
+  if(LANG==="ru" && NOMS_RU[n]) return NOMS_RU[n];
+  if(LANG==="en" || LANG==="hy" || LANG==="ru") return NOMS_EN[n] || n;   // repli : libellé source (anglais)
   if(FR[n]) return FR[n];
   if(FRX[n]) return FRX[n];
   const k = Object.keys(FR).find(x=>x.toLowerCase()===n.toLowerCase());
@@ -612,9 +739,10 @@ function clic(x,y){
     }
     if(meilleure){
       const v=meilleure;
-      const dates = `${v.de<0?(-v.de)+" av. J.-C.":v.de}${v.a!==undefined?" — "+(v.a<0?(-v.a)+" av. J.-C.":v.a):" — aujourd'hui"}`;
+      const fmt=(yy)=>yy<0?(-yy)+" "+T("avjc"):String(yy);
+      const dates = `${fmt(v.de)}${v.a!==undefined?" — "+fmt(v.a):" — "+T("auj")}`;
       bulle.innerHTML = `<b>${v.nom}</b><span>${dates}</span>${v.note?`<span>${v.note}</span>`:""}
-        <button style="pointer-events:auto;margin-top:5px;padding:4px 10px;border-radius:8px;border:1px solid var(--or);background:rgba(212,165,72,.12);color:var(--or);font-size:11.5px;cursor:pointer" id="bulle-periode">Voir la période →</button>`;
+        <button style="pointer-events:auto;margin-top:5px;padding:4px 10px;border-radius:8px;border:1px solid var(--or);background:rgba(212,165,72,.12);color:var(--or);font-size:11.5px;cursor:pointer" id="bulle-periode">${T("voirPeriode")}</button>`;
       bulle.style.left=x+"px"; bulle.style.top=y+"px"; bulle.style.display="block";
       document.getElementById("bulle-periode").addEventListener("click", ()=>{
         let best=0, bd=1e9;
@@ -639,8 +767,8 @@ function clic(x,y){
 }
 const bulle = document.getElementById("bulle");
 function montrerBulle(f,x,y){
-  const suj = f.s && f.s!==f.n ? `<span>Sous suzeraineté : ${nomFR(f.s)}</span>` : "";
-  const rec = f.o ? `<span style="font-style:italic;color:#d4a548">Frontières reconstituées (intersection de cartes historiques)</span>` : "";
+  const suj = f.s && f.s!==f.n ? `<span>${T("suzer")} ${nomFR(f.s)}</span>` : "";
+  const rec = f.o ? `<span style="font-style:italic;color:#d4a548">${T("reconst")}</span>` : "";
   bulle.innerHTML = `<b>${nomFR(f.n)}</b>${suj}${rec}`;
   bulle.style.left = x+"px"; bulle.style.top = y+"px"; bulle.style.display="block";
 }
@@ -685,9 +813,9 @@ const CHARNIERE = {
 "2000":"1991 : indépendance · guerres du Karabagh (1994, 2020) · exode d'Artsakh (2023)"
 };
 function libelleAnnee(y){
-  if(y<0) return `${-y} <small>AV. J.-C.</small>`;
-  if(y===1) return `An 1`;
-  return `${y} <small>APR. J.-C.</small>`;
+  if(y<0) return `${-y} <small>${T("avjc")}</small>`;
+  if(y===1) return T("an1");
+  return `${y} <small>${T("apjc")}</small>`;
 }
 function allerA(i){
   idx = Math.max(0, Math.min(YEARS.length-1, i));
@@ -800,35 +928,42 @@ function remplirPanneauPeriode(){
   if(selection && selection.annee===y){
     const f=selection.f;
     html += `<h2>${nomFR(f.n)}</h2>`;
-    if(f.s && f.s!==f.n) html += `<div class="entite-sujet">Sous suzeraineté : <b style="color:var(--or)">${nomFR(f.s)}</b></div>`;
-    if(f.o) html += `<div class="entite-sujet" style="font-style:italic">Frontières reconstituées par intersection de cartes historiques — tracé indicatif.</div>`;
-    html += `<a class="lien-atlas" style="margin-bottom:6px" href="https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(nomFR(f.n).replace(/\s*\(.*\)$/,''))}" target="_blank" rel="noopener">📖 Fiche historique (Wikipédia) →</a>`;
+    if(f.s && f.s!==f.n) html += `<div class="entite-sujet">${T("suzer")} <b style="color:var(--or)">${nomFR(f.s)}</b></div>`;
+    if(f.o) html += `<div class="entite-sujet" style="font-style:italic">${T("reconstLong")}</div>`;
+    {
+      const terme = encodeURIComponent(nomFR(f.n).replace(/\s*\(.*\)$/,""));
+      const termeEn = encodeURIComponent((f.n||"").replace(/\s*\(.*\)$/,""));
+      html += `<a class="lien-atlas" style="margin-bottom:6px" href="https://${LANG}.wikipedia.org/w/index.php?search=${terme}" target="_blank" rel="noopener">${T("wiki")}</a>`;
+      if(LANG!=="hy") html += `<a class="lien-atlas" style="margin-bottom:6px" href="https://hy.wikipedia.org/w/index.php?search=${termeEn}" target="_blank" rel="noopener">${T("wikiHy")}</a>`;
+    }
   }
   if(i>=0 && PERIODES && PERIODES[i]){
     const p=PERIODES[i];
+    if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
     html += `<h2>${p.nom}</h2><div class="dates">${p.dates}</div>
       <div class="pouvoir">${p.pouvoir}</div>`;
     for(const par of p.apercu) html += `<p>${par}</p>`;
     if(p.contexte) html += `<div class="contexte">${p.contexte}</div>`;
     if(p.capitales && p.capitales.length){
-      html += `<div class="caps"><h3>Capitales</h3>`;
+      html += `<div class="caps"><h3>${T("capitales")}</h3>`;
       for(const c of p.capitales)
         html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
       html += `</div>`;
     }
-    html += `<a class="lien-atlas" href="atlas_armenie_historique.html" target="_blank" rel="noopener">🗺 Ouvrir l'atlas détaillé de l'Arménie historique</a>`;
+    html += `<a class="lien-atlas" href="atlas_armenie_historique.html" target="_blank" rel="noopener">${T("atlas")}</a>`;
   } else if(MINI[String(y)]){
     const m=MINI[String(y)];
+    if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
     html += `<h2>${m.nom}</h2><div class="dates">${m.dates}</div><div class="pouvoir">${m.pouvoir}</div>`;
     for(const par of m.apercu) html += `<p>${par}</p>`;
     if(m.capitales && m.capitales.length){
-      html += `<div class="caps"><h3>Lieux clés</h3>`;
+      html += `<div class="caps"><h3>${T("lieux")}</h3>`;
       for(const c of m.capitales)
         html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
       html += `</div>`;
     }
   } else if(!html){
-    html = `<h2>${annee.textContent}</h2><p style="color:var(--encre-2)">Pas de notice arménienne détaillée pour ce siècle. Touchez un État sur le globe pour l'identifier, ou naviguez avec la frise.</p>`;
+    html = `<h2>${annee.textContent}</h2><p style="color:var(--encre-2)">${T("sansNotice")}</p>`;
   }
   corps.innerHTML = html;
   corps.querySelectorAll(".cap").forEach(el=>{
@@ -845,6 +980,33 @@ function remplirPanneauPeriode(){
     });
   });
 }
+
+/* ================= Langue ================= */
+const CYCLE_LANG=["fr","en","hy","ru"], LIB_LANG={fr:"FR",en:"EN",hy:"ՀՅ",ru:"РУ"};
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.getElementById("btn-lang").textContent=LIB_LANG[LANG];
+  document.getElementById("t-titre").textContent=T("titre");
+  document.getElementById("t-sous").textContent=T("sous");
+  document.title=T("titre");
+  [T("lgAtteste"),T("lgReconst"),T("lgEtat"),T("lgTribu"),T("lgVille"),T("lgDiaspora")].forEach((tx,i)=>{
+    document.getElementById("lg"+(i+1)).textContent=tx;
+  });
+  document.getElementById("acc-t").textContent=T("accTitre");
+  document.getElementById("acc-1").innerHTML=T("acc1");
+  document.getElementById("acc-2").innerHTML=T("acc2");
+  document.getElementById("acc-3").innerHTML=T("acc3");
+  document.getElementById("accueil-ok").textContent=T("accOk");
+  if(YEARS.length){ annee.innerHTML=libelleAnnee(YEARS[idx]);
+    if(document.getElementById("panel").classList.contains("ouvert")) remplirPanneauPeriode();
+    fermerBulle(); render(); }
+}
+document.getElementById("btn-lang").addEventListener("click", ()=>{
+  LANG = CYCLE_LANG[(CYCLE_LANG.indexOf(LANG)+1)%CYCLE_LANG.length];
+  try{ localStorage.setItem("globe_lang",LANG); }catch(e){}
+  applyLang();
+});
+applyLang();
 
 /* ================= Accueil (premier lancement) ================= */
 (function(){
@@ -870,7 +1032,7 @@ function genQuiz(){
   for(const a of melA){
     const proches=annees.filter(x=>x!==a && Math.abs(+x - +a)<=600 && Math.abs(+x - +a)>=100);
     const autres=(proches.length>=3?proches:annees.filter(x=>x!==a)).sort(()=>Math.random()-.5).slice(0,3);
-    qs.push({q:"À quel siècle rattacher : « "+CHARNIERE[a]+" » ?",
+    qs.push({q:T("q1").replace("%",CHARNIERE[a]),
              reps:[a,...autres].sort(()=>Math.random()-.5).map(x=>({t:libAn(+x),ok:x===a}))});
   }
   // T2 : ville arménienne → date de fondation
@@ -878,7 +1040,7 @@ function genQuiz(){
   for(const v of va){
     const cands=VILLES.filter(x=>x!==v&&x.de!==v.de&&Math.abs(x.de-v.de)<=700);
     const leurres=(cands.length>=3?cands:VILLES.filter(x=>x!==v&&x.de!==v.de)).sort(()=>Math.random()-.5).slice(0,3).map(x=>x.de);
-    qs.push({q:"De quand date "+v.nom+" ?",
+    qs.push({q:T("q2").replace("%",v.nom),
              reps:[v.de,...leurres].sort(()=>Math.random()-.5).map(d=>({t:libAn(d),ok:d===v.de}))});
   }
   return qs.sort(()=>Math.random()-.5).slice(0,5);
@@ -886,14 +1048,14 @@ function genQuiz(){
 function montrerQuestion(){
   const {qs,i,score}=quizEtat;
   if(i>=qs.length){
-    quizProg.textContent="RÉSULTAT";
+    quizProg.textContent=T("resultat");
     quizQ.textContent=`${score} / ${qs.length}`;
-    quizReps.innerHTML=`<p style="text-align:center;color:var(--encre-2)">${score>=4?"Excellent ! Le plateau n'a plus de secret pour vous.":score>=2?"Bien — refeuilletez la frise et réessayez.":"Explorez les notices ✦ puis retentez votre chance."}</p>`;
-    quizSuite.style.display="block"; quizSuite.textContent="Rejouer";
+    quizReps.innerHTML=`<p style="text-align:center;color:var(--encre-2)">${score>=4?T("s3"):score>=2?T("s2"):T("s1")}</p>`;
+    quizSuite.style.display="block"; quizSuite.textContent=T("rejouer");
     return;
   }
   const q=qs[i];
-  quizProg.textContent=`QUESTION ${i+1} / ${qs.length}`;
+  quizProg.textContent=`${T("question")} ${i+1} / ${qs.length}`;
   quizQ.textContent=q.q;
   quizSuite.style.display="none";
   quizReps.innerHTML="";
@@ -905,7 +1067,7 @@ function montrerQuestion(){
       if(r.ok){ b.classList.add("bon"); quizEtat.score++; }
       else { b.classList.add("faux");
         [...quizReps.children].forEach((c,j)=>{ if(q.reps[j].ok) c.classList.add("bon"); }); }
-      quizSuite.style.display="block"; quizSuite.textContent = quizEtat.i+1>=qs.length?"Voir le résultat":"Question suivante";
+      quizSuite.style.display="block"; quizSuite.textContent = quizEtat.i+1>=qs.length?T("voirRes"):T("suivante");
     });
     quizReps.appendChild(b);
   }

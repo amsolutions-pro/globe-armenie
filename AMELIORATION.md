@@ -337,3 +337,25 @@ Les aires immenses (chasseurs-cueilleurs) dominent. → Itération 11 : vérifie
 les surcouches du plateau restent lisibles à k=2 et abaisser leur seuil si besoin.
 
 ---
+
+## Itération 11 — 2026-07-06 (directive utilisateur : multilingue)
+
+**Fait** : infrastructure **i18n 4 langues (FR / EN / ՀՅ / РУ)** dans globe.html :
+- bouton flottant 🌐 (cycle FR→EN→ՀՅ→РУ, mémorisé en localStorage) ;
+- interface entièrement traduite (titre, sous-titre, années Ք.Ա./до н. э./BC,
+  légende, voile d'accueil, quiz, panneau, infobulles) ;
+- noms d'entités : dictionnaires arménien et russe (~70 entités clés + les 28
+  surcouches arméniennes traduites), anglais natif de la source, repli propre ;
+- **liens Wikipédia dans la langue choisie + lien systématique vers la Wikipédia
+  arménienne (hy.wikipedia.org)** dans chaque fiche de territoire — réponse à la
+  demande « ressource-toi du Wikipédia arménien » ;
+- notices longues : FR avec bandeau « (notice en français pour l'instant) » dans
+  les autres langues.
+
+**Reste à approfondir (prochaines itérations)** :
+- Q31 : traduire CHARNIERE (33 événements) en EN/HY/RU — affiché en FR partout.
+- Q32 : traduire les notices MINI et periodes.json en EN d'abord, puis HY/RU
+  (extraction vers pedagogie_fr.json → pedagogie_{lang}.json).
+- Q33 : noms de villes (VILLES/DIASPORA) : translittérations HY/RU des ~60 noms.
+
+---
