@@ -263,13 +263,24 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 60)
 - 🟡 [DATA] Les notices 2020/2023 n'ont pas de version arménienne dédiée
   (MINI_HY inexistant) : en hy elles retombent sur le FR — traduire.
-- 🟡 [DATA] 1991 (indépendance) et 1988 (Spitak) mériteraient aussi leurs
-  notices dédiées (encore aliasées vers 2000/1945).
 - 🟡 [UX] La carte 2020/2023 (fond world_2010) ne montre pas la perte
   territoriale réelle : seule la surcouche 2020 (Artsakh résiduel) et la
   notice la décrivent.
 
+### Nouvelles critiques (it. 61)
+- 🟡 [DATA] Les notices 1988/1991/2020/2023 restent sans version arménienne
+  dédiée (MINI_HY inexistant) : en hy elles retombent sur le FR.
+- 🟡 [DATA] La notice 1921 (Kars) reste aliasée vers 1920 (Première
+  République) : une notice propre sur le traité serait plus précise.
+- 🟡 [UX] Beaucoup d'années récentes ont maintenant des notices riches : un
+  fil chronologique déroulant du XXe–XXIe siècle serait un bon complément.
+
 ## Critiques traitées
+- ✅ (it. 61) [DATA] Notices dédiées 1988 (séisme de Spitak : 7 déc. 1988,
+  M6,8, ~25 000 morts, Spitak rasée, Gyumri/Leninakan ; mouvement du Karabagh,
+  Soumgaït) et 1991 (indépendance : référendum 21 sept., Ter-Petrossian,
+  guerre du Karabagh, années noires) en FR+EN, capitales situées ; alias
+  1988→1988, 1991→1991.
 - ✅ (it. 60) [DATA] Notices dédiées pour 2020 (guerre des 44 jours : dates,
   drones, Chouchi 8 nov., cessez-le-feu 10 nov., ~6 500 morts) et 2023 (exode :
   blocus de Latchine, offensive du 19 sept., ~100 000 réfugiés, dissolution de
