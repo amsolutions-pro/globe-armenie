@@ -243,12 +243,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Le contour « foyer arménien » est l'aire MAXIMALE (Arménie an 300 +
   Cilicie) : il ne varie pas dans le temps, alors que le peuplement s'est réduit
   après 1915/1923 — un second contour « aire résiduelle moderne » serait juste.
-- 🟡 [UX] La couche présence n'est pas expliquée dans la légende ni l'aide :
-  l'utilisateur peut ne pas comprendre ce que trace le pointillé.
 - 🟡 [UX] 6 boutons flottants empilés + bouton présence = colonne haute sur
   petit écran ; regroupement à envisager.
 
+### Nouvelles critiques (it. 57)
+- 🟡 [UX] La légende compte maintenant 6 lignes + version : elle grandit ;
+  vérifier qu'elle ne déborde pas verticalement sur petit écran iPhone.
+- 🟡 [DATA] La légende « foyer arménien historique » ne dit pas que c'est
+  l'aire MAXIMALE (an 300) : un utilisateur pourrait la croire valable à toutes
+  les époques exactement.
+- 🟡 [UX] Le pictogramme de légende (rectangle pointillé) diffère un peu du
+  rendu réel (contour libre) : cohérence graphique perfectible.
+
 ## Critiques traitées
+- ✅ (it. 57) [UX] 🟡 Couche « foyer arménien » inexpliquée → entrée de légende
+  dédiée (pictogramme pointillé or + libellé 4 langues via T("presence")).
 - ✅ (it. 56, demande utilisateur) [DATA/UX] Couche « foyer arménien historique »
   (plateau + Cilicie, aire maximale sourcée = Arménie an 300 ∪ Cilicie) :
   contour pointillé or permanent, activable à la demande (bouton ֍, R11),

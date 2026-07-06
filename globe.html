@@ -159,6 +159,8 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   border:1px solid #0d0907;margin:0 9px 0 4px;vertical-align:0}
 #legende .tri{display:inline-block;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
   border-bottom:8px solid #b48be0;margin:0 7px 0 4px;vertical-align:0}
+#legende .lg-presence{display:inline-block;width:14px;height:9px;border-radius:2px;vertical-align:-1px;margin-right:5px;
+  border:1.5px dashed #e8c47a;background:transparent}
 
 /* ---------- Panneau : séparateur fiche/notice ---------- */
 .sep-panneau{border:none;border-top:1px solid var(--trait);margin:16px 0 8px}
@@ -231,6 +233,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   <span><i class="grad"></i> <em id="lg3" style="font-style:normal">luminosité = organisation (tribus → empires)</em></span>
   <span><i class="pt"></i> <em id="lg5" style="font-style:normal">ville principale (zoomer)</em></span>
   <span><i class="tri"></i> <em id="lg6" style="font-style:normal">foyer de diaspora arménienne</em></span>
+  <span><i class="lg-presence"></i> <em id="lg7" style="font-style:normal">foyer arménien historique (bouton ֍)</em></span>
   <span id="lg-version" style="opacity:.5;font-size:9.5px;letter-spacing:.06em"></span>
 </div>
 
@@ -1451,7 +1454,7 @@ function applyLang(){
   if(cv) cv.setAttribute("aria-label",T("canvasAria"));
   const bpr=document.getElementById("btn-presence");
   if(bpr){ bpr.setAttribute("aria-label",T("presence")); bpr.title=T("presence"); }
-  [["lg1",T("lgAtteste")],["lg2",T("lgReconst")],["lg3",T("lgNiveau")],["lg5",T("lgVille")],["lg6",T("lgDiaspora")]].forEach(([id,tx])=>{
+  [["lg1",T("lgAtteste")],["lg2",T("lgReconst")],["lg3",T("lgNiveau")],["lg5",T("lgVille")],["lg6",T("lgDiaspora")],["lg7",T("presence")]].forEach(([id,tx])=>{
     const el=document.getElementById(id); if(el) el.textContent=tx;
   });
   document.getElementById("acc-t").textContent=T("accTitre");
@@ -1678,7 +1681,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-07b";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-07c";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
