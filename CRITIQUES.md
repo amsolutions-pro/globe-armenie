@@ -36,8 +36,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ---
 
 ### Nouvelles critiques (it. 23)
-- 🟡 [UX] Le texte de progression n'est pas traduit (français en dur) alors
-  que l'interface est quadrilingue.
 
 ### Nouvelles critiques (it. 24)
 - 🟠 [DATA] **verifie_donnees.py ne contrôle pas les périodes JSON annexes**
@@ -73,8 +71,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 30)
 - 🟡 [DATA] La relecture hy a été faite par le même modèle que la traduction :
   une validation par un locuteur natif reste souhaitable à terme.
-- 🟡 [UX] Les dates des notices hy mélangent « Ք.ա. 189 – 1 » et « 66 – 428 թթ. » :
-  harmoniser le format des ères sur les 10 notices.
 - 🟡 [DATA] periodes_en.json n'a jamais eu de relecture équivalente.
 
 ### Nouvelles critiques (it. 31)
@@ -176,7 +172,18 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] localStorage peut être indisponible (navigation privée iOS) :
   try/catch posés, mais non testés.
 
+### Nouvelles critiques (it. 44)
+- 🟡 [UX] Le texte statique initial de #charge-info (HTML) reste français
+  jusqu'au premier octet reçu — le traduire dès l'init de LANG.
+- 🟡 [DATA] La notice hy[4] (Arsacides) indique « 66 – 428 » sans précision
+  d'ère : ambigu pour un lecteur non averti (contrairement à « Ք.ա. … »).
+- 🟡 [UX] Le lien ?an= validé en desktop uniquement ; à tester sur iPhone
+  (Safari gère parfois différemment location.search avec l'écran d'accueil).
+
 ## Critiques traitées
+- ✅ (it. 44) 🟡×2 : dates hy harmonisées (suppression du « թթ. » isolé) ;
+  texte de progression du chargement traduit en 4 langues (chargeTxt).
+  Vérifié en ligne : ?an=1920 saute bien à 1920 (VDATA p).
 - ✅ (it. 43) [UX/DATA] 🟡×3 : lien de partage avec ?an=<année> + saut à
   l'année au chargement ; bouton quiz verrouillé pendant la phase 2 ;
   état de la légende mémorisé (localStorage).
