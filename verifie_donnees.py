@@ -123,6 +123,35 @@ def main():
     except FileNotFoundError:
         warn("lacs.json absent (les ellipses de repli seront utilisées)")
 
+    # 7. Fidélité numérique des notices traduites : aucun nombre d'une notice
+    # EN ou HY ne doit être absent de la notice FR (garde-fou anti-erreur de
+    # date/chiffre lors des traductions — cf. it. 74).
+    import re as _re2
+    try:
+        html = open("globe.html", encoding="utf-8").read()
+        def _bloc(nom):
+            i = html.index("const " + nom + " = {")
+            return html[i:html.index("};", i)]
+        def _apercu(bl, key):
+            m = _re2.search(r'"' + _re2.escape(key) + r'":\{.*?apercu:\[(.*?)\](?:,capitales|\})', bl, _re2.S)
+            return m.group(1) if m else None
+        def _nums(t):
+            for _ in range(3):
+                t = _re2.sub(u"([0-9])[    ,.]([0-9])", lambda m: m.group(1)+m.group(2), t)
+            return set(_re2.findall(r"\d{3,}|\d{1,2}(?!\d)", t))
+        fr_b = _bloc("MINI")
+        for lang in ("MINI_EN", "MINI_HY"):
+            tr_b = _bloc(lang)
+            for key in _re2.findall(r'"(-?\d+)":\{', tr_b):
+                af, at = _apercu(fr_b, key), _apercu(tr_b, key)
+                if af is None or at is None:
+                    continue
+                surplus = _nums(at) - _nums(af)
+                if surplus:
+                    warn(f"{lang}[{key}] : nombre(s) absent(s) du FR : {sorted(surplus)} (format ?)")
+    except (FileNotFoundError, ValueError):
+        warn("globe.html : contrôle de fidélité numérique des notices ignoré")
+
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)
     if ERREURS:

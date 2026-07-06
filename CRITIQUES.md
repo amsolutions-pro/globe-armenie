@@ -354,12 +354,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 [DATA] Relecture orthographique/terminologique native des notices hy
   toujours en attente (vérif automatique ne couvre que les nombres) : idéalement
   un locuteur arménien relit les 13 notices récentes.
-- 🟡 [DATA] La vérification de fidélité numérique n'est pas intégrée à
-  verifie_donnees.py (faite ponctuellement) : automatisable.
 - 🟡 [UX] Aucune notice hy pour les périodes anciennes (avant 1900) hors
   periodes_hy.json : les mini-notices préhistoire→1815 restent FR/EN en hy.
 
+### Nouvelles critiques (it. 75)
+- 🟡 [DATA] Le contrôle de fidélité numérique génère un faux positif bénin sur
+  les mini-notices anciennes (chiffres romains FR « IXe » vs arabes EN « 9th »)
+  — en avertissement, sans gravité.
+- 🟡 [DATA] Le contrôle ne compare que MINI/MINI_EN/MINI_HY ; les notices
+  longues (periodes*.json) ne sont pas croisées numériquement.
+- 🟡 [UX] Les avertissements de verifie_donnees.py s'accumulent ; un mode
+  « --strict » qui n'affiche que les erreurs aiderait en CI.
+
 ## Critiques traitées
+- ✅ (it. 75) [DATA] Contrôle de fidélité numérique des notices AUTOMATISÉ dans
+  verifie_donnees.py : compare les nombres des aperçus EN/HY à ceux du FR
+  (séparateurs de milliers et décimaux normalisés), alerte si un chiffre de la
+  traduction est absent de l'original. 0 erreur sur les notices modernes.
 - ✅ (it. 74) [DATA] Fidélité numérique des traductions hy VÉRIFIÉE : aucune
   notice arménienne (1900→2023) ne contient de nombre absent du français ;
   tous les chiffres-clés présents (1,5 M, 24 avril, 25 000, 7 déc., 21 sept.
