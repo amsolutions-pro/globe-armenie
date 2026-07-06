@@ -3,13 +3,22 @@
 
 Usage : python verifie_donnees.py   (code retour 0 = OK, 1 = erreurs)
 """
-import json, sys
+import json, sys, math
 
 ERREURS = []
 AVERTS  = []
 
 def err(msg):  ERREURS.append(msg)
 def warn(msg): AVERTS.append(msg)
+
+def aire_spherique(ring):
+    """Aire de l'anneau sur la sphère unité, en stéradians (valeur absolue)."""
+    s = 0.0; n = len(ring)
+    for i in range(n):
+        lo1, la1 = math.radians(ring[i][0]), math.radians(ring[i][1])
+        lo2, la2 = math.radians(ring[(i + 1) % n][0]), math.radians(ring[(i + 1) % n][1])
+        s += (lo2 - lo1) * (2 + math.sin(la1) + math.sin(la2))
+    return abs(s / 2.0)
 
 def main():
     d = json.load(open("globe_data.json", encoding="utf-8"))
@@ -44,6 +53,10 @@ def main():
                         if not (-180.001 <= lon <= 180.001 and -90.001 <= lat <= 90.001):
                             err(f"{y}/{nom} : coordonnée hors bornes ({lon},{lat})")
                             break
+                # Anneau extérieur inversé (> 2π stéradians) : remplirait la sphère
+                # au rendu (bug historique « océans qui changent de couleur »).
+                if poly and len(poly[0]) >= 4 and aire_spherique(poly[0]) > 6.283:
+                    err(f"{y}/{nom} : anneau extérieur inversé (enroulement)")
 
     # 3. Surcouches arméniennes (o=1) : nombre attendu = len(SPECS) du script
     # de build (lu par regex pour éviter d'exécuter son code au niveau module)

@@ -342,7 +342,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] 1918 : l'Azerbaïdjan a été recentré par soustraction de l'Arménie
   moderne ; vérifier qu'il ne laisse pas un liseré fin le long de la frontière.
 
+### Nouvelles critiques (it. 73)
+- 🟡 [DATA] Le contrôle d'enroulement ne teste que l'anneau extérieur ; un trou
+  (lac) inversé passerait — cas rare mais non couvert.
+- 🟡 [DATA] Audit limité aux surcouches et à l'enroulement ; la justesse
+  historique fine des tracés source (hors Arménie) n'est pas vérifiable.
+- 🟡 [UX] verifie_donnees.py est un outil dev ; un récap visuel des surcouches
+  par période aiderait la relecture humaine.
+
 ## Critiques traitées
+- ✅ (it. 73) [DATA] Audit de carte complet : 0 surcouche débordant du plateau/
+  Cilicie/Karabagh, 0 anneau inversé (calcul sphérique), 0 écart aire
+  déclarée/réelle. Contrôle d'enroulement sphérique AJOUTÉ à verifie_donnees.py
+  (attrape le bug historique des anneaux inversés qui remplissent la sphère).
 - ✅ (it. 72) [DATA] Corrections it.71 VÉRIFIÉES en ligne (captures) : 1914 =
   Caucase russe unifié sans frontière interne (Erevan dans le bloc vert Empire
   russe) ; 1921 = Arménie en forme réelle (Sevan visible, plus de triangle),
