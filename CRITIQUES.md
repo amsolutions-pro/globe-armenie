@@ -22,8 +22,8 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 Les dates des villes (de/à) n'ont pas été systématiquement sourcées.
 
 ### [UX]
-- 🔴 **Aucun retour visuel pendant le drag sur mobile bas de gamme** : pas
-  testé sur iPhone réel (cible déclarée !) — tester Safari iOS dès que possible.
+- 🟠 **Pas encore testé sur iPhone réel** (Safari iOS) — le test Chrome
+  desktop est passé (it. 42), reste la validation tactile sur l'appareil cible.
 - 🟡 La lecture auto ne montre pas visuellement la pause sur les siècles
   majeurs (l'utilisateur croit à un blocage).
 - 🟡 Le bouton 🌐 cycle sans montrer les 4 choix — un petit menu serait plus clair.
@@ -160,16 +160,25 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   l'année affichée (…?an=1918) permettrait des liens ciblés.
 
 ### Nouvelles critiques (it. 41)
-- 🟠 [UX] **Le chargement en 2 phases n'a pas été testé dans un vrai
-  navigateur** (uniquement vérification syntaxique) : tester le flux complet
-  (amorce → verrou slider → badge → déblocage) sur le site publié.
 - 🟡 [UX] Pendant la phase 2, la lecture auto et le quiz sont accessibles
   mais dépendent des années non chargées : à verrouiller aussi (seul #temps
   est neutralisé).
 - 🟡 [DATA] globe_data_init.json duplique l'année -700 (124 Ko) : le
   chargement complet pourrait la sauter (micro-optimisation).
 
+### Nouvelles critiques (it. 42)
+- 🟡 [UX] Sur desktop rapide, le badge de phase 2 disparaît avant d'être
+  visible : impossible de juger son apparence réelle — vérifier sur 4G.
+- 🟡 [DATA] Le libellé « Haut-Karabagh et districts occupés… » déborde
+  peut-être de la bulle au clic (non testé au zoom mobile).
+- 🟡 [UX] La vue 1994 montre les frontières modernes très simplifiées
+  (dataset world_1994 grossier) : contraste avec les lacs désormais précis.
+
 ## Critiques traitées
+- ✅ (it. 42) [UX] 🟠 Test navigateur réel (Chrome/site publié) : amorce
+  rendue, slider débloqué, 43 années, badge retiré, 0 erreur console ;
+  vue 1994 vérifiée visuellement (zone Karabagh pointillée, Stepanakert,
+  lacs Van/Sevan/Ourmia réels). Test iPhone réel rétrogradé 🔴→🟠.
 - ✅ (it. 41) [DATA/PERF] 🟠 JSON monolithique → analyse : gzip de Pages
   ramène déjà le transfert à 2,26 Mo ; ajout d'une amorce
   globe_data_init.json (124 Ko, année -700) : le globe s'affiche
