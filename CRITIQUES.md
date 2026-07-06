@@ -341,9 +341,13 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   (source), non clippée (années d'indépendance) — cohérent mais généreux.
 - 🟡 [DATA] 1918 : l'Azerbaïdjan a été recentré par soustraction de l'Arménie
   moderne ; vérifier qu'il ne laisse pas un liseré fin le long de la frontière.
-- 🟡 [UX] Vérifier en ligne (VDATA p) le rendu corrigé 1914/1915/1918/1921.
 
 ## Critiques traitées
+- ✅ (it. 72) [DATA] Corrections it.71 VÉRIFIÉES en ligne (captures) : 1914 =
+  Caucase russe unifié sans frontière interne (Erevan dans le bloc vert Empire
+  russe) ; 1921 = Arménie en forme réelle (Sevan visible, plus de triangle),
+  Géorgie/Azerbaïdjan/Ottoman correctement positionnés ; 1918 Az recentré
+  (borne ouest 44,7) confirmé côté données.
 - ✅ (it. 71, signalement utilisateur) [DATA] 🔴 Trois erreurs de carte
   corrigées : (1) 1914/1915 — frontières internes fantômes du Caucase russe
   → Empire russe fusionné en UN polygone ; (2) 1918 — Azerbaïdjan débordant sur
