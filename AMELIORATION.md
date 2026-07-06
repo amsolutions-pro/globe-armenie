@@ -385,3 +385,20 @@ Non, cadence uniforme 2,5 s. → Itération 13 : pause allongée (4 s) sur les s
 À vérifier visuellement sur mobile ; ajuster vers #4a7c94 si trop proche.
 
 ---
+
+## Itération 13 — 2026-07-06 (directive utilisateur : fiches latérales sur PC)
+
+**Fait** : sur écran ≥ 900 px, le panneau de fiches s'ouvre en **volet latéral
+droit** (420 px / 38 vw, bordure or, coulissement horizontal) au lieu du
+bottom-sheet, et le **centre du globe se décale à gauche** (décalage = demi-largeur
+du volet) pour que la carte ne soit jamais couverte ; le test de clic sur le disque
+tient compte du décalage ; sur PC, toucher le globe ne referme plus le volet (on
+peut comparer carte et fiche côte à côte). Sur smartphone, le bottom-sheet est
+conservé (le meilleur pattern tactile : geste de fermeture vers le bas, contenu
+au pouce). Vérifié dans Chrome (fiche Empire byzantin + notice bagratide à droite,
+globe intact à gauche).
+
+(Q34/Q35 — notices EN et pauses de lecture : reportées à l'itération 14, priorité
+à la demande utilisateur.)
+
+---

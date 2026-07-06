@@ -108,6 +108,15 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
   border-radius:10px;color:var(--or);text-decoration:none;font-size:14px;background:rgba(212,165,72,.08)}
 #panel .lien-atlas:active{background:rgba(212,165,72,.18)}
 button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+/* Écrans larges : fiche en volet latéral droit, la carte reste visible */
+@media (min-width: 900px){
+  #panel{left:auto;right:0;top:0;bottom:0;width:min(420px,38vw);max-height:none;height:100dvh;
+    border-top:none;border-left:1px solid var(--or);border-radius:18px 0 0 18px;
+    transform:translateX(105%);box-shadow:-8px 0 40px rgba(0,0,0,.6)}
+  #panel.ouvert{transform:translateX(0)}
+  #panel .poignee{display:none}
+  #panel .corps{padding-top:44px}
+}
 
 /* ---------- Légende ---------- */
 #legende{position:fixed;left:calc(10px + env(safe-area-inset-left));bottom:calc(96px + env(safe-area-inset-bottom));
@@ -477,7 +486,7 @@ window.addEventListener("resize", resize);
 /* ================= Rendu ================= */
 function render(){
   if(!DATA) return;
-  projection.scale(base*k).rotate(rot);
+  projection.translate([W/2 - decalagePanel(), H/2]).scale(base*k).rotate(rot);
   ctx.clearRect(0,0,W,H);
 
   // Océan
@@ -737,7 +746,7 @@ function clic(x,y){
   const ll = projection.invert([x,y]);
   if(!ll || isNaN(ll[0])) { fermerBulle(); return; }
   // vérifier qu'on est bien sur le disque
-  const dx=x-W/2, dy=y-H/2;
+  const dx=x-(W/2-decalagePanel()), dy=y-H/2;
   if(Math.hypot(dx,dy) > base*k+2){ fermerBulle(); return; }
   // priorité aux villes visibles (rayon 12 px)
   const yA=YEARS[idx], centre=[-rot[0],-rot[1]];
@@ -1013,15 +1022,19 @@ document.getElementById("btn-armenie").addEventListener("click", ()=>{
 
 /* ================= Panneau notices ================= */
 const panel=document.getElementById("panel"), corps=document.getElementById("panel-corps");
-function ouvrirPanneau(){ panel.classList.add("ouvert"); }
-function fermerPanneau(){ panel.classList.remove("ouvert"); }
+function decalagePanel(){
+  return (window.innerWidth>=900 && panel.classList.contains("ouvert"))
+    ? Math.min(420, window.innerWidth*0.38)/2 : 0;
+}
+function ouvrirPanneau(){ panel.classList.add("ouvert"); render(); }
+function fermerPanneau(){ panel.classList.remove("ouvert"); render(); }
 document.getElementById("panel-fermer").addEventListener("click", fermerPanneau);
 document.getElementById("poignee").addEventListener("click", fermerPanneau);
 document.getElementById("btn-notice").addEventListener("click", ()=>{
   if(panel.classList.contains("ouvert")) fermerPanneau();
   else { remplirPanneauPeriode(); ouvrirPanneau(); }
 });
-canvas.addEventListener("pointerdown", fermerPanneau);
+canvas.addEventListener("pointerdown", ()=>{ if(window.innerWidth<900) fermerPanneau(); });
 
 /* Correspondance année du globe → notice arménienne de periodes.json */
 function indexPeriode(y){
