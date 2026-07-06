@@ -1,7 +1,8 @@
 # Globe historique — 4 000 ans (pivot : histoire de l'Arménie)
 
-Outil d'apprentissage de l'histoire : un globe 3D feuilletable siècle par siècle
-(−2000 → 2000, 28 pas de temps) et un atlas Leaflet de l'Arménie historique.
+Outil d'apprentissage de l'histoire : un globe 3D feuilletable de la préhistoire à nos jours
+(−10 000 → 2010, 43 pas de temps, cadence resserrée à l'époque contemporaine),
+multilingue (FR/EN/HY/RU) et un atlas Leaflet de l'Arménie historique.
 
 ## Contenu
 
@@ -15,6 +16,7 @@ Outil d'apprentissage de l'histoire : un globe 3D feuilletable siècle par sièc
 | `build_globe_data.py` | Régénère `globe_data.json` depuis la source (shapely requis) |
 | `build_armenie_overlays.py` | Injecte les surcouches arméniennes reconstituées (à lancer APRÈS build_globe_data) |
 | `AMELIORATION.md` | Journal d'autoamélioration (questions/réponses par itération) |
+| `REGLES.md` | Spécification des règles implémentées (niveaux, couleurs, surcouches, i18n…) |
 
 Source cartographique : [aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps)
 (numérisation d'atlas historiques — précision variable ; les écarts corrigés sont

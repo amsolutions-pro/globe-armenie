@@ -1293,6 +1293,7 @@ document.getElementById("btn-lang").addEventListener("click", ()=>{
   LANG = CYCLE_LANG[(CYCLE_LANG.indexOf(LANG)+1)%CYCLE_LANG.length];
   try{ localStorage.setItem("globe_lang",LANG); }catch(e){}
   applyLang();
+  if(quizEl.classList.contains("ouvert")){ quizEtat={qs:genQuiz(),i:0,score:0,repondu:false}; montrerQuestion(); }
 });
 applyLang();
 

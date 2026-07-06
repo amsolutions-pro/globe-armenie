@@ -480,3 +480,19 @@ R5, i18n R6, rendu R7, pédagogie R8, sources R9). Toute nouvelle règle devra y
 être consignée.
 
 ---
+
+## Itération 18 — 2026-07-06
+
+**Fait** : vérification visuelle 1945 (RSS d'Arménie or pointillé, Stepanakert)
+et 1994 (Haut-Karabagh en surcouche + Armenia du dataset) ; **quiz régénéré dans
+la nouvelle langue** si on change de langue pendant une partie ; README mis à
+jour (43 pas, multilingue, REGLES.md).
+
+**Q40.** Les étiquettes 1945/1960 : « RSS d'Arménie » masque parfois « Erevan » —
+ajuster l'ancrage étiquette des surcouches petites ? → à observer.
+**Q41.** L'Artsakh 1994 utilise une boîte — remplacer par le tracé réel de la
+ligne de contact ? Données introuvables en source libre simple ; boîte conservée,
+documentée R3.2.
+**Q42.** Publication GitHub Pages toujours en attente d'accord utilisateur.
+
+---
