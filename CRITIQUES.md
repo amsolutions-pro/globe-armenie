@@ -336,7 +336,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Bash-Aparan/Karakilissa sont des lieux de notice sans entrée dans
   VILLES : non cliquables sur le globe.
 
+### Nouvelles critiques (it. 71)
+- 🟡 [DATA] 1918/1920 : l'Arménie reste la « Grande Arménie » de Sèvres
+  (source), non clippée (années d'indépendance) — cohérent mais généreux.
+- 🟡 [DATA] 1918 : l'Azerbaïdjan a été recentré par soustraction de l'Arménie
+  moderne ; vérifier qu'il ne laisse pas un liseré fin le long de la frontière.
+- 🟡 [UX] Vérifier en ligne (VDATA p) le rendu corrigé 1914/1915/1918/1921.
+
 ## Critiques traitées
+- ✅ (it. 71, signalement utilisateur) [DATA] 🔴 Trois erreurs de carte
+  corrigées : (1) 1914/1915 — frontières internes fantômes du Caucase russe
+  → Empire russe fusionné en UN polygone ; (2) 1918 — Azerbaïdjan débordant sur
+  le Zanguezour arménien → Arménie moderne soustraite (borne ouest 43,5→44,7) ;
+  (3) 1921 — « triangle » anguleux dû au clip sur boîte → remplacement par la
+  forme RÉELLE de l'Arménie moderne (idem 1923/1930/1938).
 - ✅ (it. 70) [DATA] Notice dédiée 1918 (Sardarabad : 21-29 mai 1918, gén.
   Silikian, batailles simultanées de Bash-Aparan et Karakilissa, proclamation
   de la République le 28 mai, première depuis 1045) en FR+EN+HY, 3 lieux

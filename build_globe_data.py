@@ -33,8 +33,20 @@ def only_poly(g):
     return None
 
 from shapely.geometry import box as _box
-# Emprise ≈ RSS d'Arménie (boîte, robuste face aux polygones source mal enroulés)
-SSR_BOX = _box(43.4, 38.8, 46.7, 41.3)
+# Géométrie réelle de la RSS d'Arménie ≈ Arménie moderne (world_2000), pour
+# clipper les « Grande Arménie » anachroniques sans produire de forme anguleuse.
+_ARM_MODERNE = None
+def arm_moderne():
+    global _ARM_MODERNE
+    if _ARM_MODERNE is None:
+        p = "geo/world_2000.geojson"
+        if not os.path.exists(p):
+            urllib.request.urlretrieve(BASE.format("2000"), p)
+        w = json.load(open(p, encoding="utf-8"))
+        gs = [make_valid(shape(f["geometry"])) for f in w["features"]
+              if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry")]
+        _ARM_MODERNE = unary_union(gs) if gs else None
+    return _ARM_MODERNE
 
 def process(fname, annee=None):
     path = f"geo/world_{fname}.geojson"
@@ -43,23 +55,39 @@ def process(fname, annee=None):
         urllib.request.urlretrieve(BASE.format(fname), path)
     d = json.load(open(path, encoding="utf-8"))
     # Corrections cartographiques de la source (erreurs sur le Caucase 1900–1940).
-    # (a) 1930/1938 et 1921 : la source dessine une « Grande Arménie » anachronique
-    #     (jusqu'en Anatolie orientale, tracé de Sèvres) alors que seule la petite
-    #     RSS d'Arménie existe (1921 : déjà soviétisée après Kars). → clip à la RSS.
+    # (a) 1921/1923/1930/1938 : la source dessine une « Grande Arménie » anachronique
+    #     (tracé de Sèvres, jusqu'en Anatolie) alors que seule la petite RSS existe.
+    #     → clip sur la forme RÉELLE de l'Arménie moderne (pas une boîte : évite le
+    #     « triangle » anguleux signalé pour 1921).
     if annee in (1921, 1923, 1930, 1938):
-        for f in d["features"]:
-            if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
-                g = shape(f["geometry"]).buffer(0).intersection(SSR_BOX)
-                f["geometry"] = mapping(g) if not g.is_empty else None
-    # (b) 1914/1915 : la source montre Arménie, Azerbaïdjan et Géorgie INDÉPENDANTES,
-    #     or en 1914 tout le Caucase du Sud appartient à l'Empire russe (ces États
-    #     n'existent qu'à partir de 1918). → fusionner leurs polygones dans
-    #     « Russian Empire » et supprimer les libellés séparés.
+        mask = arm_moderne()
+        if mask is not None:
+            for f in d["features"]:
+                if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
+                    f["geometry"] = mapping(mask)   # remplacer par la RSS réelle
+    # (b) 1914/1915 : la source montre Arménie/Azerbaïdjan/Géorgie INDÉPENDANTES,
+    #     or en 1914 le Caucase du Sud est russe. → fusionner en UN SEUL polygone
+    #     « Russian Empire » (sinon des frontières internes fantômes apparaissent).
     if annee in (1914, 1915):
-        for f in d["features"]:
-            if (f["properties"].get("NAME") or "") in ("Armenia", "Azerbaijan", "Georgia"):
-                f["properties"]["NAME"] = "Russian Empire"   # territoire russe en 1914
-                f["properties"]["SUBJECTO"] = "Russian Empire"
+        russes = [f for f in d["features"]
+                  if (f["properties"].get("NAME") or "") in ("Russian Empire", "Armenia", "Azerbaijan", "Georgia")
+                  and f.get("geometry")]
+        if russes:
+            union = unary_union([make_valid(shape(f["geometry"])).buffer(0) for f in russes])
+            russes[0]["properties"]["NAME"] = "Russian Empire"
+            russes[0]["properties"]["SUBJECTO"] = "Russian Empire"
+            russes[0]["geometry"] = mapping(union)
+            for f in russes[1:]:
+                f["geometry"] = None
+    # (c) 1918 : l'Azerbaïdjan de la source (fond 1920) déborde vers l'ouest sur le
+    #     Zanguezour/Syunik arménien. → lui soustraire l'Arménie moderne.
+    if annee == 1918:
+        mask = arm_moderne()
+        if mask is not None:
+            for f in d["features"]:
+                if (f["properties"].get("NAME") or "") == "Azerbaijan" and f.get("geometry"):
+                    g = make_valid(shape(f["geometry"])).difference(mask)
+                    f["geometry"] = mapping(g) if not g.is_empty else None
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue
