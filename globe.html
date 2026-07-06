@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-<title>Globe historique — 4 000 ans</title>
+<title>Globe historique — 12 000 ans</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -128,7 +128,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   background:rgba(23,18,16,.94);border:1px solid var(--or);border-radius:10px;
   padding:7px 12px;font-size:13px;max-width:240px;display:none;text-align:center}
 #bulle b{color:var(--or);font-family:'Cormorant Garamond',serif;font-size:16px;display:block}
-#bulle span{color:var(--encre-2);font-size:11.5px}
+#bulle span{color:var(--encre-2);font-size:11.5px;display:block;margin-top:2px}
 
 /* ---------- Chargement ---------- */
 #charge{position:fixed;inset:0;z-index:20;background:var(--obsidienne);
@@ -147,7 +147,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
 
 <div id="entete">
   <h1>Le Monde à travers les siècles</h1>
-  <div class="sous">2000 av. J.-C. — 2000 apr. J.-C. · frontières historiques</div>
+  <div class="sous">10 000 av. J.-C. — 2000 apr. J.-C. · frontières historiques</div>
 </div>
 <div id="annee"></div>
 <div id="charniere"></div>
@@ -396,6 +396,12 @@ function render(){
 
 /* Villes principales : {nom, lng, lat, de, à, z (zoom mini), arm} */
 const VILLES = [
+ {nom:"Portasar (Göbekli Tepe)",lng:38.92,lat:37.22,de:-9600,a:-8000,z:3,arm:1,note:"Le plus ancien sanctuaire monumental du monde (v. 9600 av. J.-C.), aux marges sud du plateau — antérieur de 6 000 ans à Stonehenge."},
+ {nom:"Aknashen / Aratashen",lng:44.28,lat:40.07,de:-6500,a:-5000,z:3,arm:1,note:"Villages néolithiques de la vallée de l'Araxe (VIIᵉ–VIᵉ mill.) : céréales, élevage, outillage d'obsidienne du volcan Arteni."},
+ {nom:"Karahunj (Zorats Karer)",lng:46.03,lat:39.55,de:-5500,a:-2000,z:3,arm:1,note:"Alignement mégalithique du Syunik (~223 pierres, certaines percées) — interprété par certains comme observatoire astronomique."},
+ {nom:"Areni-1",lng:45.18,lat:39.73,de:-4200,a:-3400,z:3,arm:1,note:"Grotte du Vayots Dzor : plus ancienne cave de vinification connue (v. 4100 av. J.-C.) et plus vieille chaussure de cuir du monde (v. 3500)."},
+ {nom:"Shengavit",lng:44.48,lat:40.16,de:-3300,a:-2200,z:3,arm:1,note:"Grande agglomération Kouro-Araxe (4–6 ha) sur le Hrazdan, dans l'actuelle Erevan : maisons rondes, métallurgie, greniers."},
+ {nom:"Metsamor",lng:44.18,lat:40.13,de:-4000,a:800,z:4,arm:1,note:"Centre métallurgique majeur dès le Chalcolithique, actif plus de 4 000 ans ; observatoire supposé de l'âge du bronze."},
  {nom:"Erevan (Erebouni)",lng:44.51,lat:40.18,de:-782,z:3,arm:1,note:"Fondée en 782 av. J.-C. par Argishti Iᵉʳ — 29 ans avant Rome. Capitale de l'Arménie depuis 1918."},
  {nom:"Tushpa (Van)",lng:43.34,lat:38.5,de:-860,a:1100,z:3,arm:1,note:"Capitale d'Ourartou fondée par Sarduri Iᵉʳ sur le rocher de Van."},
  {nom:"Van",lng:43.38,lat:38.5,de:1100,z:4,arm:1},
@@ -558,9 +564,9 @@ canvas.addEventListener("pointermove", e=>{
   pointeurs.set(e.pointerId,[e.clientX,e.clientY]);
   if(Math.hypot(e.clientX-dep[0], e.clientY-dep[1])>6) bouge=true;
   if(pointeurs.size===1){
-    const s = 75/(base*k/250);   // sensibilité ≈ 75/scale normalisée
-    rot[0] += (e.clientX-prev[0]) * s/250 * 60/Math.max(k,1)**.9;
-    rot[1] -= (e.clientY-prev[1]) * s/250 * 60/Math.max(k,1)**.9;
+    const s = 75/(base*k);       // °/px : le globe suit le doigt à toute échelle
+    rot[0] += (e.clientX-prev[0]) * s;
+    rot[1] -= (e.clientY-prev[1]) * s;
     rot[1] = Math.max(-90, Math.min(90, rot[1]));
     stopAnim(); demandeRender();
   } else if(pointeurs.size===2){
@@ -624,6 +630,7 @@ function clic(x,y){
     if(d3.geoContains({type:"Feature",geometry:{type:f.t,coordinates:f.c}}, ll)){
       selection = {f, annee:YEARS[idx]};
       montrerBulle(f, x, y);
+      remplirPanneauPeriode(); ouvrirPanneau();
       render();
       return;
     }
@@ -643,6 +650,11 @@ function fermerBulle(){ bulle.style.display="none"; }
 const slider=document.getElementById("slider"), annee=document.getElementById("annee");
 /* Événement charnière côté Arménie, affiché sous l'année */
 const CHARNIERE = {
+"-10000":"Fin des glaciations : chasseurs-cueilleurs dans les vallées du plateau",
+"-8000":"Néolithisation : Portasar (Göbekli Tepe) aux marges sud du plateau",
+"-5000":"Villages agricoles de l'Araxe (Aknashen, Aratashen) · obsidienne",
+"-4000":"Areni-1 : vin (4100) et métallurgie du cuivre · mégalithes du Syunik",
+"-3000":"Culture Kouro-Araxe : du Caucase au Levant · Shengavit",
 "-2000":"Cultures Kouro-Araxe et Trialeti sur le plateau",
 "-1500":"Hayasa-Azzi face aux Hittites · pays du Nairi",
 "-1000":"Vers 860 av. J.-C., Arame unifie le Nairi : naissance d'Ourartou",
@@ -751,6 +763,18 @@ function indexPeriode(y){
 }
 /* Mini-notices pour les siècles sans période dans periodes.json */
 const MINI = {
+  "-10000":{nom:"Les premiers habitants du plateau",dates:"v. 10 000 av. J.-C.",pouvoir:"Chasseurs-cueilleurs de l'Épipaléolithique",
+    apercu:["À la fin des glaciations, des groupes de chasseurs-cueilleurs occupent les gorges du <strong>Hrazdan</strong> et les abris du plateau — la présence humaine y est attestée depuis plus de 300 000 ans (site de Nor Geghi). L'<strong>obsidienne</strong> des volcans arméniens, taillée en lames, circule déjà sur des centaines de kilomètres.","Aux marges sud du plateau, vers 9600 av. J.-C., des chasseurs érigent <strong>Portasar (Göbekli Tepe)</strong> : le plus ancien ensemble monumental de l'humanité."],
+    capitales:[{nom:"Portasar (Göbekli Tepe)",lat:37.22,lng:38.92,principal:true,info:"Enceintes de piliers en T sculptés, érigées par des chasseurs-cueilleurs — une révolution dans notre compréhension du Néolithique."}]},
+  "-8000":{nom:"La néolithisation",dates:"v. 8000 av. J.-C.",pouvoir:"Premiers villages du Croissant fertile et de ses marges",
+    apercu:["Le plateau arménien borde le <strong>Croissant fertile</strong> : blé engrain, orge et légumineuses y sont domestiqués. Les villages de briques crues se multiplient dans les piémonts, et l'obsidienne arménienne s'exporte jusqu'en Mésopotamie.","La carte reste « vide » d'États pendant des millénaires encore : les surcouches dorées signalent la continuité du peuplement, non des frontières."]},
+  "-5000":{nom:"Villages de l'Araxe",dates:"VIIᵉ – VIᵉ millénaire av. J.-C.",pouvoir:"Culture néolithique d'Aratashen-Chataï",
+    apercu:["Dans la plaine de l'<strong>Araxe</strong>, les tells d'<strong>Aknashen</strong> et d'<strong>Aratashen</strong> livrent maisons circulaires, faucilles d'obsidienne, céramique et vanneries : une vie villageoise stable, en réseau avec la Mésopotamie du Nord et le Caucase.","Au Syunik, l'alignement de <strong>Karahunj</strong> (Zorats Karer) — des pierres percées orientées vers l'horizon — témoigne d'une observation précoce du ciel."]},
+  "-4000":{nom:"Le Chalcolithique : cuivre et vin",dates:"Vᵉ – IVᵉ millénaire av. J.-C.",pouvoir:"Cultures d'Areni et de Sioni",
+    apercu:["La grotte d'<strong>Areni-1</strong> (Vayots Dzor) conserve la plus ancienne <strong>cave de vinification</strong> du monde (v. 4100 av. J.-C.) — cuves, pressoir, pépins de vigne domestiquée — et la plus vieille chaussure de cuir connue (v. 3500).","La métallurgie du <strong>cuivre</strong> se répand depuis les mines du plateau ; les communautés se hiérarchisent, prélude à l'âge du bronze."]},
+  "-3000":{nom:"La culture Kouro-Araxe",dates:"v. 3400 – 2000 av. J.-C.",pouvoir:"Première grande culture pan-caucasienne",
+    apercu:["Née entre <strong>Koura et Araxe</strong>, cette culture au bronze naissant — céramique noire lustrée, maisons rondes, foyers rituels — essaime de façon spectaculaire : Anatolie orientale, Iran du nord-ouest, jusqu'en Syrie et en Palestine (où on l'appelle Khirbet Kerak).","<strong>Shengavit</strong>, sur le territoire de l'actuelle Erevan, en est l'un des grands centres : ateliers métallurgiques et greniers collectifs."],
+    capitales:[{nom:"Shengavit",lat:40.16,lng:44.48,principal:true,info:"Agglomération fortifiée de 4 à 6 ha occupée du IVᵉ au IIIᵉ millénaire, cœur de la métallurgie Kouro-Araxe."}]},
   "-2000":{nom:"Aube du plateau arménien",dates:"v. 2000 av. J.-C.",pouvoir:"Cultures de l'âge du bronze (Kouro-Araxe tardif, Trialeti)",
     apercu:["Le plateau arménien sort de la culture <strong>Kouro-Araxe</strong>, qui a rayonné mille ans du Caucase à la Palestine ; les kourganes princiers de <strong>Trialeti</strong> et les forteresses cyclopéennes du Sevan témoignent de sociétés hiérarchisées, maîtresses du bronze et de l'obsidienne.","Aucun État n'existe encore : les sources hittites mentionneront bientôt les pays de <strong>Hayasa-Azzi</strong>, dont le nom résonne avec « Hay », le nom que les Arméniens se donnent."],
     capitales:[{nom:"Metsamor",lat:40.13,lng:44.18,principal:true,info:"Site métallurgique majeur de l'âge du bronze dans la plaine de l'Araxe, occupé dès le IIIᵉ millénaire, avec observatoire supposé et vastes ateliers de fonte."}]},
@@ -778,6 +802,7 @@ function remplirPanneauPeriode(){
     html += `<h2>${nomFR(f.n)}</h2>`;
     if(f.s && f.s!==f.n) html += `<div class="entite-sujet">Sous suzeraineté : <b style="color:var(--or)">${nomFR(f.s)}</b></div>`;
     if(f.o) html += `<div class="entite-sujet" style="font-style:italic">Frontières reconstituées par intersection de cartes historiques — tracé indicatif.</div>`;
+    html += `<a class="lien-atlas" style="margin-bottom:6px" href="https://fr.wikipedia.org/w/index.php?search=${encodeURIComponent(nomFR(f.n).replace(/\s*\(.*\)$/,''))}" target="_blank" rel="noopener">📖 Fiche historique (Wikipédia) →</a>`;
   }
   if(i>=0 && PERIODES && PERIODES[i]){
     const p=PERIODES[i];
@@ -898,10 +923,11 @@ quizSuite.addEventListener("click", ()=>{
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
+const VDATA = "2026-07-06a";   // à incrémenter quand les JSON changent (contourne le cache)
 Promise.all([
-  fetch("globe_data.json").then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
-  fetch("periodes.json").then(r=>r.ok?r.json():null).catch(()=>null),
-  fetch("traductions_fr.json").then(r=>r.ok?r.json():null).catch(()=>null)
+  fetch("globe_data.json?v="+VDATA).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
+  fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
+  fetch("traductions_fr.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
 ]).then(([d,p,tr])=>{
   DATA=d; PERIODES=p; YEARS=d.years;
   if(tr) FRX=tr;

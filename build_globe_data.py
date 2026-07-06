@@ -9,7 +9,8 @@ from shapely.geometry import shape, mapping, MultiPolygon, Polygon, GeometryColl
 from shapely.ops import unary_union
 from shapely.validation import make_valid
 
-YEARS = [(-2000,"bc2000"),(-1500,"bc1500"),(-1000,"bc1000"),(-700,"bc700"),
+YEARS = [(-10000,"bc10000"),(-8000,"bc8000"),(-5000,"bc5000"),(-4000,"bc4000"),(-3000,"bc3000"),
+         (-2000,"bc2000"),(-1500,"bc1500"),(-1000,"bc1000"),(-700,"bc700"),
          (-500,"bc500"),(-300,"bc300"),(-100,"bc100"),(1,"bc1")] + \
         [(y,str(y)) for y in range(100,2001,100)]
 BASE = "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_{}.geojson"
@@ -27,7 +28,7 @@ def process(fname):
     if not os.path.exists(path):
         os.makedirs("geo", exist_ok=True)
         urllib.request.urlretrieve(BASE.format(fname), path)
-    d = json.load(open(path))
+    d = json.load(open(path, encoding="utf-8"))
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue
@@ -56,5 +57,5 @@ if __name__ == "__main__":
         DATA["years"].append(y); DATA["world"][str(y)] = fs
         print(y, len(fs), "entités")
     s = json.dumps(DATA, ensure_ascii=False, separators=(",",":")).replace("</","<\\/")
-    open("globe_data.json","w").write(s)
+    open("globe_data.json","w",encoding="utf-8").write(s)
     print("Écrit globe_data.json :", round(len(s)/1024/1024,2), "Mo")

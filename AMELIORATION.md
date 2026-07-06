@@ -298,3 +298,42 @@ CHARNIERE, VILLES, DIASPORA) gagneraient à vivre dans un JSON séparé.
 traductions_fr.json).
 
 ---
+
+## Itération 10 — 2026-07-06 (+ directives utilisateur)
+
+**Fait (Q25–Q26)** : audit des libellés — seuls 3 noms d'États restaient sans
+traduction (Dakapeng, Lopburi, Arakan princier), ajoutés ; test étiquettes 1100 OK.
+(Q27 — extraction pedagogie_fr.json : reportée, priorité aux demandes utilisateur.)
+
+**Directives utilisateur intégrées** :
+1. **Préhistoire** : la frise commence désormais à **10 000 av. J.-C.** (33 pas de
+   temps : ajout de −10000, −8000, −5000, −4000, −3000 depuis historical-basemaps).
+   Le « terres non revendiquées » sur le plateau en −2000 venait de la source (pas
+   d'entité politique avant Ourartou) → 6 nouvelles surcouches culturelles dorées
+   (chasseurs-cueilleurs, néolithisation, Aratashen, Chalcolithique d'Areni,
+   Kouro-Araxe, Trialeti) + 6 sites de présence humaine sur le plateau (Portasar/
+   Göbekli Tepe, Aknashen, Karahunj, Areni-1, Shengavit, Metsamor) avec notices,
+   5 mini-notices de période et 5 événements charnières.
+2. **Rotation dézoomée trop rapide** : la vitesse de rotation suit maintenant
+   exactement le doigt/curseur à toute échelle (75/(base·k) °/px au lieu de la
+   formule composée qui survirait à faible zoom).
+3. **Fiche historique au clic sur un territoire** : le panneau s'ouvre avec le nom,
+   la suzeraineté, la mention de reconstitution éventuelle, un lien « Fiche
+   historique (Wikipédia) » et la notice arménienne de la période le cas échéant.
+4. Cache : les fetch JSON sont versionnés (VDATA) — les mises à jour de données ne
+   sont plus masquées par le cache navigateur.
+
+**Q28. Les 5 nouveaux siècles préhistoriques ont-ils des libellés traduits ?**
+À vérifier (« Culture d'Andronovo » vu OK). → Itération 11 : échantillonner
+−10000…−3000 et compléter traductions_fr.json.
+
+**Q29. Le quiz couvre-t-il la préhistoire (nouvelles charnières) ?**
+Oui mécaniquement (CHARNIERE), mais les leurres ±600 ans sont inadaptés aux pas
+millénaires. → Itération 11 : élargir la fenêtre de leurres proportionnellement à
+l'ancienneté (±40 % de l'âge).
+
+**Q30. La densité d'étiquettes en préhistoire est-elle suffisante (grandes aires culturelles) ?**
+Les aires immenses (chasseurs-cueilleurs) dominent. → Itération 11 : vérifier que
+les surcouches du plateau restent lisibles à k=2 et abaisser leur seuil si besoin.
+
+---

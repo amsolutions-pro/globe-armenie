@@ -62,6 +62,12 @@ def gabarit_armenie():
 
 # (année_cible, nom_FR, suzerain_FR, source_du_masque, motif_empire_dans_l_année_cible, emprise)
 SPECS = [
+    (-10000, "Chasseurs-cueilleurs du plateau arménien", "Épipaléolithique — grottes du Hrazdan et de l'Araxe", "tout", None, PLATEAU),
+    (-8000, "Premiers villages du plateau arménien", "Néolithisation — obsidienne, orge et blé engrain", "tout", None, PLATEAU),
+    (-5000, "Néolithique arménien (Aratashen, Aknashen)", "Villages agricoles de la vallée de l'Araxe", "tout", None, PLATEAU),
+    (-4000, "Chalcolithique arménien (Areni, Sioni)", "Métallurgie du cuivre — plus vieille cave à vin du monde (Areni-1)", "tout", None, PLATEAU),
+    (-3000, "Culture Kouro-Araxe", "Âge du bronze ancien — expansion du Caucase au Levant", "tout", None, PLATEAU),
+    (-2000, "Cultures Trialeti et du Sevan", "Âge du bronze moyen — kourganes princiers", "tout", None, PLATEAU),
     (-500, "Armina (satrapie d'Arménie)", "Empire achéménide", "gabarit", r"achaemenid|persian?\b|persia", PLATEAU),
     (-100, "Grande Arménie (Artaxiades)", "Royaume indépendant — Tigrane II", "gabarit", None, PLATEAU),
     (400,  "Arménie arsacide (partagée en 387)", "Rome / Perse sassanide", "gabarit", None, PLATEAU),
