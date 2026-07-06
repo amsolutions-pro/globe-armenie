@@ -126,6 +126,9 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
   border-radius:10px;color:var(--or);text-decoration:none;font-size:14px;background:rgba(212,165,72,.08)}
 #panel .lien-atlas:active{background:rgba(212,165,72,.18)}
 button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+/* Le canvas remplit l'écran : un outline externe serait invisible → liseré intérieur */
+#globe:focus{outline:none}
+#globe:focus-visible{outline:none;box-shadow:inset 0 0 0 3px var(--or)}
 /* Écrans larges : fiche en volet latéral droit, la carte reste visible */
 @media (min-width: 900px){
   #panel{left:auto;right:0;top:0;bottom:0;width:min(420px,38vw);max-height:none;height:100dvh;
@@ -1633,7 +1636,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06y";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06z";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)

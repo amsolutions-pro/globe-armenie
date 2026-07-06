@@ -122,8 +122,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Fizouli et Agdam sont inclus en entier dans la zone 1994 alors
   qu'ils n'étaient occupés que partiellement (~1/3 d'Agdam) : surestimation
   à l'est, documentée mais améliorable.
-- 🟡 [DATA] La surcouche 2010 devrait différer de 1994 (ajustements mineurs
-  de la ligne de contact) — actuellement identiques.
 - 🟡 [UX] Le nouveau nom est long (« Haut-Karabagh et districts occupés… ») :
   vérifier qu'il ne déborde pas dans la bulle sur mobile.
 
@@ -209,14 +207,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   (seulement année + charnière) : un lecteur d'écran ne « voit » pas la carte.
 
 ### Nouvelles critiques (it. 52)
-- 🟡 [A11Y] Le canvas focusable n'a pas de style :focus-visible spécifique
-  (l'outline global s'applique mais peut être discret sur fond sombre).
 - 🟡 [A11Y] Les flèches ←→ déplacent le temps même quand le focus est sur un
   bouton : comportement global pratique mais surprenant au clavier.
 - 🟡 [DATA] L'annonce aria-live pourrait mentionner le niveau de zoom / la
   région centrée, pas seulement l'année.
 
-## Critiques invalidées (vérification du code)
+### Nouvelles critiques (it. 53)
+- 🟡 [A11Y] Le liseré intérieur du canvas (box-shadow inset) n'apparaît qu'au
+  focus clavier : vérifier qu'il ne gêne pas visuellement pendant le rendu.
+- 🟡 [DATA] Fizouli et Agdam restent inclus en entier dans la zone 1994
+  (occupation partielle) : seule critique DATA de fond encore ouverte.
+- 🟡 [UX] Beaucoup de micro-itérations A11Y/UX : un audit Lighthouse
+  donnerait un score objectif et hiérarchiserait ce qui reste.
+
+## Critiques invalidées
+- ❌ (it. 53) [DATA] « 2010 devrait différer de 1994 » : rejeté — la ligne de
+  contact du Karabagh est restée gelée du cessez-le-feu de 1994 à la guerre de
+  2020 ; des surcouches identiques sur cette période sont historiquement justes. (vérification du code)
 - ❌ [DATA] « Notices hy sans provinces → libellé français au clic » : faux,
   globe.html n'affiche pas les provinces au clic (champ utilisé seulement
   dans atlas_armenie_historique.html, page francophone séparée).
@@ -225,6 +232,9 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   tournants les plus importants) ; tout unifier ferait pauser partout.
 
 ## Critiques traitées
+- ✅ (it. 53) [A11Y] 🟡 Canvas sans focus visible net sur fond sombre →
+  liseré intérieur doré (box-shadow inset) au focus clavier, l'outline externe
+  étant invisible sur un canvas plein écran.
 - ✅ (it. 52) [A11Y] 🟡 Canvas non focusable / aria-label figé → tabindex=0 +
   aria-label instructif traduit (canvasAria, 4 langues, mis à jour au
   changement de langue) ; la navigation temporelle au clavier (←→) existait
