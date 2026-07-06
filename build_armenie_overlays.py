@@ -159,6 +159,17 @@ def main():
         data["world"][y] = [f for f in data["world"][y] if not f.get("o")]
 
     gab = gabarit_armenie()
+
+    # Couche « présence arménienne continue » : aire de peuplement historique
+    # (Arménie an 300, la plus large des couches sources) ∪ Cilicie. Contour
+    # unique, indépendant des entités politiques, montrant la continuité du
+    # foyer arménien à travers les occupations. Source : historical-basemaps.
+    presence = only_poly(make_valid(unary_union([gab, CILICIE])))
+    pj = mapping(presence.simplify(SIMPLIFY, preserve_topology=True))
+    open("presence_armenienne.json", "w", encoding="utf-8").write(
+        json.dumps({"t": pj["type"], "c": rnd(pj["coordinates"])},
+                   ensure_ascii=False, separators=(",", ":")))
+    print(f"presence_armenienne.json écrit (aire {round(presence.area,1)} deg²)")
     # Masques par époque : "armenia:<année>" = géométrie Armenia de l'année source
     # la plus proche documentée (au lieu du gabarit unique an 300 pour tout)
     cache_arm = {}
