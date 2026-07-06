@@ -117,6 +117,13 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
   d'itération.
 
 ## R9 — Sources
+- **Neutralité (exigence utilisateur, 2026-07-07)** : aucune source
+  azerbaïdjanaise ni anti-arménienne. Sources utilisées, toutes neutres :
+  historical-basemaps (A. Ourednik, communautaire) ; geoBoundaries/gbOpen
+  (laboratoire William & Mary, université américaine) ; Natural Earth. Les
+  noms affichés sont arméniens/neutres (Stepanakert, Artsakh — jamais les
+  toponymes azéris). Le tracé du Karabagh (issu de gbOpen AZE ADM2, découpage
+  administratif azéri) est à remplacer par un tracé neutre du NKAO historique.
 - Frontières : historical-basemaps (aourednik) — précision d'atlas historique.
 - Textes : synthèses rédigées (périodes arméniennes), résumés Wikipédia à la
   demande (langue courante).

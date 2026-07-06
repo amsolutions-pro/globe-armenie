@@ -15,7 +15,8 @@ BASE = "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/g
 SIMPLIFY, ROUND = 0.1, 2
 
 # Années arméniennes ajoutées sans fond de carte dédié → fond source le plus proche
-ALIAS_FOND = {1915: "1914", 1988: "1960", 1991: "1994", 2020: "2010", 2023: "2010", 2026: "2010"}
+ALIAS_FOND = {1915: "1914", 1918: "1920", 1923: "1930", 1988: "1960", 1991: "1994",
+              2018: "2010", 2020: "2010", 2023: "2010", 2026: "2010"}
 
 def fname(y):
     if y in ALIAS_FOND: return ALIAS_FOND[y]
@@ -139,10 +140,12 @@ SPECS = [
     (1915, "Arménie occidentale (génocide en cours)", "Empire ottoman — génocide des Arméniens (1915–1916)", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia:2000", None, PLATEAU),
     (1960, "RSS d'Arménie", "Union soviétique", "armenia:2000", None, PLATEAU),
+    (1923, "Oblast autonome du Haut-Karabagh (NKAO)", "Création au sein de l'Azerbaïdjan soviétique (7 juillet 1923)", "tout", r"azerbaijan|soviet|ussr", KARABAGH),
     (1988, "RSS d'Arménie", "Union soviétique — séisme de Spitak, début du mouvement du Karabagh", "armenia:2000", None, PLATEAU),
     (1991, "Haut-Karabagh (oblast autonome, NKAO)", "Proclamation de la République d'Artsakh (1991) — guerre en cours", "tout", r"azerbaijan", KARABAGH),
     (1994, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
     (2010, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
+    (2018, "Haut-Karabagh et districts occupés (contrôle arménien)", "République d'Artsakh — Révolution de velours en Arménie", "tout", r"azerbaijan", CONTROLE_1994),
     (2020, "Artsakh résiduel (après la guerre des 44 jours)", "Haut-Karabagh réduit au cœur nord (Stepanakert) sous garantie russe", "tout", r"azerbaijan", KARABAGH),
     # 2023 : exode de l'Artsakh, 2026 : plus aucun contrôle arménien au Karabagh
     # → pas de surcouche (l'Azerbaïdjan contrôle l'ensemble, affiché nativement)

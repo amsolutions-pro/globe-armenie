@@ -309,7 +309,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Vérifier en ligne le rendu corrigé de 1914–1921 (couleurs, absence
   de trou) après déploiement.
 
+### Nouvelles critiques (it. 67)
+- 🟠 [DATA] Le tracé du Karabagh dérive encore de gbOpen AZE ADM2 (découpage
+  administratif azerbaïdjanais) : à remplacer par un polygone neutre du NKAO
+  historique (1923–1991) — priorité suite à la demande utilisateur.
+- 🟡 [DATA] 1918 et 2020 conservent des géométries « de Sèvres » / résiduelles
+  approximées ; le contrôle réel de la Première République en 1918-1920 reste
+  sans polygone sourcé.
+- 🟡 [DATA] Les notices 1918/2018 réutilisent des notices existantes (Première
+  et Troisième Républiques) : dédiées possibles plus tard.
+
 ## Critiques traitées
+- ✅ (it. 67, demande utilisateur) [DATA] 3 années ajoutées pour mieux décrire :
+  1918 (Sardarabad, proclamation de la République), 1923 (création du NKAO,
+  origine du conflit — notice dédiée FR+EN+HY), 2018 (Révolution de velours) ;
+  53 pas de temps, charnières trilingues. Sources auditées : toutes neutres
+  (aucune azerbaïdjanaise) ; documentées dans REGLES R9.
 - ✅ (it. 66, signalement utilisateur) [DATA] 🔴 Erreurs de carte 1900–1940 :
   (1) 1914/1915 montraient Arménie/Azerbaïdjan/Géorgie indépendantes alors que
   le Caucase était russe → reclassées « Empire russe » (couvre Erevan/Bakou/

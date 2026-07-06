@@ -14,11 +14,13 @@ YEARS = [(-10000,"bc10000"),(-8000,"bc8000"),(-5000,"bc5000"),(-4000,"bc4000"),(
          (-500,"bc500"),(-300,"bc300"),(-100,"bc100"),(1,"bc1")] + \
         [(y,str(y)) for y in range(100,1801,100)] +         [(1815,"1815"),(1880,"1880"),(1900,"1900"),(1914,"1914"),
          (1915,"1914"),                       # génocide — fond ottoman/russe de 1914
-         (1920,"1920"),(1921,"1920"),         # Première République ; traité de Kars
+         (1918,"1920"),                        # proclamation de la Première République
+         (1920,"1920"),(1921,"1920"),         # apogée républicaine ; traité de Kars
+         (1923,"1930"),                        # création de l'oblast du Haut-Karabagh
          (1930,"1930"),(1938,"1938"),(1945,"1945"),(1960,"1960"),
          (1988,"1960"),                       # séisme de Spitak — fond soviétique
          (1991,"1994"),                       # indépendance — fond post-soviétique
-         (1994,"1994"),(2000,"2000"),(2010,"2010"),
+         (1994,"1994"),(2000,"2000"),(2010,"2010"),(2018,"2010"),  # Révolution de velours
          (2020,"2010"),(2023,"2010"),(2026,"2010")]  # guerre 44 j., exode d'Artsakh, aujourd'hui
 BASE = "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_{}.geojson"
 SIMPLIFY, ROUND, AIRE_MIN = 0.1, 2, 0.5
@@ -44,7 +46,7 @@ def process(fname, annee=None):
     # (a) 1930/1938 et 1921 : la source dessine une « Grande Arménie » anachronique
     #     (jusqu'en Anatolie orientale, tracé de Sèvres) alors que seule la petite
     #     RSS d'Arménie existe (1921 : déjà soviétisée après Kars). → clip à la RSS.
-    if annee in (1921, 1930, 1938):
+    if annee in (1921, 1923, 1930, 1938):
         for f in d["features"]:
             if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
                 g = shape(f["geometry"]).buffer(0).intersection(SSR_BOX)
