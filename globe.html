@@ -36,6 +36,16 @@ html,body{height:100%;overflow:hidden;background:var(--obsidienne);color:var(--e
   pointer-events:none;z-index:5;font-size:clamp(11px,2.8vw,13px);color:var(--or-clair);
   font-style:italic;text-shadow:0 1px 6px rgba(0,0,0,.8);padding:0 16px}
 
+/* R11 sur mobile : seule l'année reste visible ; toucher l'année déplie
+   titre, sous-titre et événement charnière */
+@media (max-width:700px){
+  #entete h1,#entete .sous,#charniere{display:none}
+  #annee{top:calc(8px + env(safe-area-inset-top));pointer-events:auto;cursor:pointer}
+  body.detail-titre #entete h1,body.detail-titre #entete .sous{display:block}
+  body.detail-titre #charniere{display:block}
+  body.detail-titre #annee{top:calc(58px + env(safe-area-inset-top))}
+}
+
 /* ---------- Commandes temps ---------- */
 #temps{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));
   width:min(560px,calc(100% - 24px));z-index:6;
@@ -1432,6 +1442,11 @@ quizSuite.addEventListener("click", ()=>{
   quizEtat.i++; montrerQuestion();
 });
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
+
+/* R11 mobile : toucher l'année déplie/replie titre + événement charnière */
+document.getElementById("annee").addEventListener("click", ()=>{
+  document.body.classList.toggle("detail-titre");
+});
 
 /* Légende repliée par défaut, affichée à la demande */
 const btnLegende = document.getElementById("btn-legende");

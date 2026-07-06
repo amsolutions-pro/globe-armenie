@@ -87,14 +87,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   traduction (vs texte original français).
 
 ### Nouvelles critiques (it. 27)
-- 🟠 [UX] **Le bandeau-titre reste imposant sur iPhone** (titre + sous-titre +
-  année + événement charnière ≈ 1/4 d'écran) : candidat au repli R11 (garder
-  l'année seule, le reste à la demande).
 - 🟡 [UX] Le bouton 🗺 n'a pas de libellé traduit (aria-label français en dur).
 - 🟡 [UX] L'état ouvert/fermé de la légende n'est pas mémorisé entre visites
   (localStorage).
 
+### Nouvelles critiques (it. 28)
+- 🟠 [UX] **Rien n'indique que l'année est tactile** sur mobile (le repli
+  R11 du titre est invisible pour qui ne sait pas) : ajouter un indice discret
+  (chevron ⌄ ou pulsation au premier lancement).
+- 🟡 [UX] L'événement charnière n'est plus visible du tout par défaut sur
+  mobile : vérifier qu'il reste découvrable (il porte de la pédagogie R8).
+- 🟡 [DATA] Les aria-labels des nouveaux toggles (année, 🗺) ne sont pas
+  traduits dans les 4 langues.
+
 ## Critiques traitées
+- ✅ (it. 28) [UX] 🟠 Bandeau-titre imposant sur iPhone → R11 appliqué :
+  sur mobile seule l'année reste affichée en haut ; toucher l'année
+  déplie/replie titre, sous-titre et événement charnière.
 - ✅ (it. 27) [UX] 🔴 (décision utilisateur, capture iPhone) La légende
   occupait la moitié de l'écran mobile → repliée par défaut, bouton 🗺 pour
   l'afficher ; règle générale R11 « affichage à la demande » ajoutée à
