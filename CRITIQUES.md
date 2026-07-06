@@ -19,8 +19,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 **Certaines surcouches gardent le gabarit an 300** (400, 500/600, 800,
   1400–1914) faute de tracé Armenia proche dans la source : acceptable pour
   « terres arméniennes sous X », mais à documenter période par période.
-- 🟠 **Les lacs-ellipses sont approximatifs** (Caspienne surtout) et peuvent
-  jurer avec les trous réels du dataset à fort zoom.
 - 🟡 Les dates des villes (de/à) n'ont pas été systématiquement sourcées.
 
 ### [UX]
@@ -151,7 +149,18 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Le nouveau nom est long (« Haut-Karabagh et districts occupés… ») :
   vérifier qu'il ne déborde pas dans la bulle sur mobile.
 
+### Nouvelles critiques (it. 39)
+- 🟡 [DATA] La Caspienne et l'Aral ne sont pas dans lacs.json (la Caspienne
+  vient des trous du dataset) : vérifier qu'aucun siècle ne l'affiche mal.
+- 🟡 [DATA] lacs.json n'est pas contrôlé par verifie_donnees.py (16 lacs
+  attendus, anneaux fermés).
+- 🟡 [UX] Les lacs réels étant plus détaillés, vérifier la performance du
+  rendu sur mobile (16 tracés × ~50 points redessinés à chaque frame).
+
 ## Critiques traitées
+- ✅ (it. 39) [DATA] 🟠 Lacs-ellipses approximatifs → tracés réels Natural
+  Earth 50m (build_lacs.py → lacs.json, 11 Ko, 16 lacs dont Van/Sevan/Ourmia),
+  chargés au démarrage avec repli sur les ellipses.
 - ✅ (it. 38) [DATA] 🟡 1994 : la surcouche représente désormais la ligne de
   contact réelle — NKAO + 7 districts occupés (geoBoundaries), aire 1,2 deg²
   (~12 000 km²), nom et traductions (en/hy/ru) mis à jour.

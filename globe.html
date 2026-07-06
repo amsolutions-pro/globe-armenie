@@ -494,6 +494,9 @@ const LACS = [
   ellipseLac(-77.8,43.6,1.3,.45,3),      // Ontario
   ellipseLac(-69.3,-15.8,.85,.5,-40)     // Titicaca
 ];
+/* Tracés réels (lacs.json, Natural Earth 50m) chargés au démarrage ;
+   les ellipses ci-dessus servent de repli si le fichier manque */
+let LACS_GEO = LACS.map(r=>({type:"Polygon",coordinates:[r]}));
 /* Rendu regroupé : un seul render par frame, même si plusieurs événements pointeur */
 let renderDemande=false;
 function demandeRender(){
@@ -625,8 +628,8 @@ function render(){
   }
   // Grands lacs permanents (au-dessus des territoires — toujours visibles)
   ctx.fillStyle="#3a6478";
-  for(const lac of LACS){
-    ctx.beginPath(); path({type:"Polygon",coordinates:[lac]});
+  for(const lac of LACS_GEO){
+    ctx.beginPath(); path(lac);
     ctx.fill();
     ctx.strokeStyle="rgba(13,20,26,.6)"; ctx.lineWidth=.5; ctx.stroke();
   }
@@ -1529,7 +1532,7 @@ btnLegende.addEventListener("click", ()=>{
 });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06m";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06n";   // à incrémenter quand les JSON changent (contourne le cache)
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
 function fetchAvecProgression(url){
@@ -1564,8 +1567,21 @@ Promise.all([
   fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
   fetch("traductions_fr.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
   fetch("periodes_en.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
-  fetch("periodes_hy.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
-]).then(([d,p,tr,pen,phy])=>{
+  fetch("periodes_hy.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
+  fetch("lacs.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([d,p,tr,pen,phy,lacs])=>{
+  if(lacs && lacs.length){
+    const DEMI_L = 2*Math.PI;
+    LACS_GEO = lacs.map(l=>{
+      const geo={type:l.t,coordinates:l.c};
+      const polys = l.t==="Polygon" ? [l.c] : l.c;
+      for(const poly of polys){
+        if(d3.geoArea({type:"Polygon",coordinates:poly}) > DEMI_L)
+          for(const ring of poly) ring.reverse();
+      }
+      return geo;
+    });
+  }
   PERIODES_EN_FULL = pen; PERIODES_HY_FULL = phy;
   DATA=d; PERIODES=p; YEARS=d.years;
   if(tr) FRX=tr;
