@@ -38,8 +38,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ---
 
 ### Nouvelles critiques (it. 23)
-- 🟠 [UX] **Pas de bouton « partager / copier le lien »** : l'URL publique
-  existe mais rien dans l'interface ne la mentionne ni ne facilite le partage.
 - 🟡 [UX] Le texte de progression n'est pas traduit (français en dur) alors
   que l'interface est quadrilingue.
 
@@ -152,12 +150,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 39)
 - 🟡 [DATA] La Caspienne et l'Aral ne sont pas dans lacs.json (la Caspienne
   vient des trous du dataset) : vérifier qu'aucun siècle ne l'affiche mal.
-- 🟡 [DATA] lacs.json n'est pas contrôlé par verifie_donnees.py (16 lacs
-  attendus, anneaux fermés).
 - 🟡 [UX] Les lacs réels étant plus détaillés, vérifier la performance du
   rendu sur mobile (16 tracés × ~50 points redessinés à chaque frame).
 
+### Nouvelles critiques (it. 40)
+- 🟡 [UX] Le bouton ↗ porte à 6 le nombre de boutons flottants empilés :
+  la colonne devient haute sur petits écrans — envisager un regroupement.
+- 🟡 [UX] La copie de lien (fallback desktop) n'affiche qu'un ✓ furtif :
+  un toast « Lien copié » serait plus explicite.
+- 🟡 [DATA] navigator.share reçoit l'URL sans paramètres : partager aussi
+  l'année affichée (…?an=1918) permettrait des liens ciblés.
+
 ## Critiques traitées
+- ✅ (it. 40) [UX] 🟠 Pas de bouton partager → bouton flottant ↗ : feuille
+  de partage native iOS/Android (navigator.share), copie du lien en repli
+  desktop, libellés 4 langues ; [DATA] 🟡 lacs.json contrôlé par
+  verifie_donnees.py (16 lacs, anneaux, bornes).
 - ✅ (it. 39) [DATA] 🟠 Lacs-ellipses approximatifs → tracés réels Natural
   Earth 50m (build_lacs.py → lacs.json, 11 Ko, 16 lacs dont Van/Sevan/Ourmia),
   chargés au démarrage avec repli sur les ellipses.

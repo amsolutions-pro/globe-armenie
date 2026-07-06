@@ -88,6 +88,23 @@ def main():
             if not p.get("provinces"):
                 warn(f"periodes.json[{i}] ({p.get('nom','?')}) : pas de provinces")
 
+    # 6. lacs.json : 16 lacs, anneaux fermés, coordonnées bornées
+    try:
+        lacs = json.load(open("lacs.json", encoding="utf-8"))
+        if len(lacs) != 16:
+            warn(f"lacs.json : {len(lacs)} lacs (16 attendus)")
+        for l in lacs:
+            polys = [l["c"]] if l["t"] == "Polygon" else l["c"]
+            for poly in polys:
+                for ring in poly:
+                    if ring[0] != ring[-1]:
+                        err(f"lacs.json/{l['nom']} : anneau non fermé")
+                    for lon, lat in ring:
+                        if not (-180.001 <= lon <= 180.001 and -90.001 <= lat <= 90.001):
+                            err(f"lacs.json/{l['nom']} : coordonnée hors bornes"); break
+    except FileNotFoundError:
+        warn("lacs.json absent (les ellipses de repli seront utilisées)")
+
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)
     if ERREURS:
