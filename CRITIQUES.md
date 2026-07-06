@@ -87,8 +87,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   faciliterait la relecture visuelle.
 
 ### Nouvelles critiques (it. 33)
-- 🟡 [UX] La question carte ne surligne pas le bon territoire après une
-  mauvaise réponse (le texte le nomme, mais un flash visuel aiderait).
 - 🟡 [DATA] Les cibles carte sont limitées aux surcouches arméniennes (o=1) :
   ajouter les grands empires du siècle varierait le quiz.
 
@@ -181,7 +179,17 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Les suffixes de version (d, e, … r) ne disent pas ce qui a changé :
   un lien vers le journal des commits serait plus utile.
 
+### Nouvelles critiques (it. 46)
+- 🟡 [UX] Le surlignage de 1,5 s n'est pas annoncé : l'utilisateur peut
+  cliquer ailleurs pendant ce délai (événements non bloqués).
+- 🟡 [UX] Sur un territoire minuscule (Karabagh), le surlignage peut être
+  invisible sans zoom : centrer/zoomer brièvement serait plus clair.
+- 🟡 [DATA] afficheVerdictCarte relit quizEtat.qs[quizEtat.i].nom : si
+  l'utilisateur enchaîne très vite, l'état peut avoir avancé (bord de course).
+
 ## Critiques traitées
+- ✅ (it. 46) [UX] 🟡 Quiz carte : après une mauvaise réponse, le bon
+  territoire est surligné 1,5 s sur le globe avant l'affichage du verdict.
 - ✅ (it. 45) 🟡×3 : texte de chargement traduit dès l'init de la langue ;
   version des données affichée au bas de la légende (visible à la demande,
   R11) ; seuil des surcouches lu depuis SPECS au lieu de 37 en dur.

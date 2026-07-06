@@ -1474,8 +1474,21 @@ function lancerQuestionCarte(q){
 }
 function reponseCarte(f){
   const ok = f.n===quizCarte.nom;
+  const bonNom = quizCarte.nom;
   quizCarte=null; quizCibleEl.style.display="none";
   quizEtat.repondu=true; if(ok) quizEtat.score++;
+  if(!ok){
+    // Pédagogie : surligner le bon territoire 1,5 s avant le verdict
+    const cf=(DATA.world[String(YEARS[idx])]||[]).find(x=>x.n===bonNom);
+    if(cf){
+      selection={f:cf, annee:YEARS[idx]}; render();
+      setTimeout(()=>{ selection=null; render(); afficheVerdictCarte(ok); }, 1500);
+      return;
+    }
+  }
+  afficheVerdictCarte(ok);
+}
+function afficheVerdictCarte(ok){
   quizEl.classList.add("ouvert");
   quizProg.textContent=`${T("question")} ${quizEtat.i+1} / ${quizEtat.qs.length}`;
   quizQ.textContent=quizEtat.qs[quizEtat.i].q;
@@ -1554,7 +1567,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06r";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06s";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
