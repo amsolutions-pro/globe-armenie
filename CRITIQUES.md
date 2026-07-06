@@ -22,8 +22,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 Les dates des villes (de/à) n'ont pas été systématiquement sourcées.
 
 ### [UX]
-- 🟠 **Pas encore testé sur iPhone réel** (Safari iOS) — le test Chrome
-  desktop est passé (it. 42), reste la validation tactile sur l'appareil cible.
 
 ### Nouvelles critiques (it. 22)
 - 🟡 [DATA] La géométrie « Armenia an 2000 » utilisée pour la RSS 1945/1960
@@ -256,10 +254,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   défile.
 - 🟡 [DATA] « Aire maximale (an 300) » : formulation dense ; une note d'aide
   expliquerait mieux que le foyer réel s'est réduit après 1915.
-- 🟡 [UX] Le libellé de légende arménien est long et peut occuper 2 lignes :
-  vérifier le rendu réel sur iPhone.
+
+### Nouvelles critiques (it. 59)
+- 🟠 [UX] Toujours pas de test tactile sur iPhone RÉEL (Safari iOS) : les
+  vérifs se font en Chrome à fenêtre étroite (390 px), fidèle au layout mais
+  pas au tactile ni au moteur WebKit.
+- 🟡 [DATA] Couverture arménienne complète de −500 à 2026 confirmée, mais les
+  nouvelles années récentes réutilisent des notices aliasées (thématiquement
+  correctes) plutôt que des notices dédiées.
 
 ## Critiques traitées
+- ✅ (it. 59) [UX] 🟡 Vérifié en Chrome à 390×720 (type iPhone) : légende
+  bornée (280 px large, 388→574 px, aucun débordement), 6 entrées lisibles en
+  arménien dont « aire maximale (300) », contour du foyer visible. Couverture
+  arménienne complète de −500 à 2026 confirmée (aucune année sans entité).
 - ✅ (it. 58) [UX/DATA] 🟡 Légende : largeur max (retour à la ligne) +
   hauteur max avec défilement de sécurité (pas de débordement iPhone) ; le
   foyer arménien est précisé comme « aire maximale (an 300) » en 4 langues.
