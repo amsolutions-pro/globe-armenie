@@ -187,8 +187,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 47)
 - 🟡 [UX] Le menu langue s'ouvre vers la gauche du bouton : sur très petit
   écran il peut sortir du cadre — vérifier le positionnement sur iPhone.
-- 🟡 [UX] Le menu n'est pas navigable au clavier (pas de focus/flèches) :
-  accessibilité perfectible.
 - 🟡 [UX] Un simple clic sur le bouton n'affiche plus le cycle rapide : les
   habitués du cycle FR→EN→HY→RU doivent maintenant viser dans le menu.
 
@@ -201,7 +199,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] La pause double (2 × 2,5 s) sur un tournant peut sembler longue :
   vérifier le ressenti sur mobile pendant une lecture complète.
 
+### Nouvelles critiques (it. 49)
+- 🟡 [A11Y] Le menu langue manque encore d'un piège de focus complet (Tab
+  peut sortir du menu ouvert) : suffisant pour l'usage mais imparfait.
+- 🟡 [A11Y] Les boutons flottants (֎, ✦, ?, ↗, 🗺) n'ont pas tous d'états
+  focus visibles au clavier : passe d'accessibilité globale à prévoir.
+- 🟡 [DATA] Les notices hy restent sans champ provinces : au clic sur une
+  province arménienne, le libellé retombe en français (critique reportée).
+
 ## Critiques traitées
+- ✅ (it. 49) [A11Y] 🟡 Menu langue navigable au clavier : rôles ARIA
+  menu/menuitem, flèches ↑↓ pour circuler, Entrée pour choisir, Échap pour
+  fermer, focus posé sur la langue active à l'ouverture et rendu au bouton
+  à la fermeture.
 - ✅ (it. 48) [UX] 🟡 Pause de lecture auto invisible sur les siècles
   majeurs → l'année pulse en or (animation 1,2 s) pendant la pause double,
   signalant un temps d'arrêt volontaire et non un blocage.
