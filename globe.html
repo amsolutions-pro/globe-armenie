@@ -116,6 +116,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(-
   #panel.ouvert{transform:translateX(0)}
   #panel .poignee{display:none}
   #panel .corps{padding-top:44px}
+  body:has(#panel.ouvert) .flottant{right:calc(min(420px,38vw) + 10px)}
 }
 
 /* ---------- Légende ---------- */
@@ -423,7 +424,7 @@ function estArmenien(n){ return /armen|arm[ée]n|armina|urartu|ourartou|syunik|a
 const canvas = document.getElementById("globe"), ctx = canvas.getContext("2d");
 const DPR = Math.min(window.devicePixelRatio||1, 2);
 let W=0, H=0, base=0;
-let DATA=null, PERIODES=null, PERIODES_EN_FULL=null, YEARS=[], idx=0;
+let DATA=null, PERIODES=null, PERIODES_EN_FULL=null, PERIODES_HY_FULL=null, YEARS=[], idx=0;
 let k=1, rot=[-44.3,-39.7,0];         // départ centré Arménie
 const K_MIN=0.7, K_MAX=60;
 let selection=null;                    // entité cliquée
@@ -433,6 +434,34 @@ const projection = d3.geoOrthographic().clipAngle(90);
 const path = d3.geoPath(projection, ctx);
 const graticule = d3.geoGraticule10();
 
+/* Grands lacs : ellipses approchées {cx,cy,rx,ry,rot°} — toujours dessinés (R7.2b) */
+function ellipseLac(cx,cy,rx,ry,rot){
+  const r=rot*Math.PI/180, pts=[];
+  for(let i=0;i<=24;i++){ const a=i/24*2*Math.PI;
+    const x=Math.cos(a)*rx, y=Math.sin(a)*ry;
+    pts.push([+(cx + x*Math.cos(r)-y*Math.sin(r)).toFixed(2), +(cy + x*Math.sin(r)+y*Math.cos(r)).toFixed(2)]);
+  }
+  if(d3.geoArea({type:"Polygon",coordinates:[pts]}) > 2*Math.PI) pts.reverse();
+  return pts;
+}
+const LACS = [
+  ellipseLac(42.95,38.63,.58,.28,-25),   // Van
+  ellipseLac(45.35,40.35,.38,.22,-40),   // Sevan
+  ellipseLac(45.4,37.6,.5,.62,10),       // Ourmia
+  ellipseLac(74.5,46.2,3.1,.55,12),      // Balkhach
+  ellipseLac(107.5,53.3,3.2,.55,40),     // Baïkal
+  ellipseLac(31.4,61.0,1.0,.85,0),       // Ladoga
+  ellipseLac(33.0,-1.3,1.55,1.4,0),      // Victoria
+  ellipseLac(29.55,-6.3,.4,3.0,10),      // Tanganyika
+  ellipseLac(34.7,-12.2,.4,2.4,-5),      // Malawi
+  ellipseLac(14.2,13.2,.9,.8,0),         // Tchad (historique)
+  ellipseLac(-87.6,47.7,2.5,.95,8),      // Supérieur
+  ellipseLac(-87.1,43.9,.55,2.3,5),      // Michigan
+  ellipseLac(-82.4,44.9,1.3,1.15,0),     // Huron
+  ellipseLac(-81.1,42.2,1.5,.42,32),     // Érié
+  ellipseLac(-77.8,43.6,1.3,.45,3),      // Ontario
+  ellipseLac(-69.3,-15.8,.85,.5,-40)     // Titicaca
+];
 /* Rendu regroupé : un seul render par frame, même si plusieurs événements pointeur */
 let renderDemande=false;
 function demandeRender(){
@@ -552,6 +581,13 @@ function render(){
   if(selection && selection.annee===YEARS[idx]){
     ctx.beginPath(); path({type:selection.f.t, coordinates:selection.f.c});
     ctx.strokeStyle="#e8c47a"; ctx.lineWidth=2; ctx.stroke();
+  }
+  // Grands lacs permanents (au-dessus des territoires — toujours visibles)
+  ctx.fillStyle="#3a6478";
+  for(const lac of LACS){
+    ctx.beginPath(); path({type:"Polygon",coordinates:[lac]});
+    ctx.fill();
+    ctx.strokeStyle="rgba(13,20,26,.6)"; ctx.lineWidth=.5; ctx.stroke();
   }
   // Limbe
   ctx.beginPath(); path({type:"Sphere"});
@@ -1136,19 +1172,32 @@ const PERIODES_EN = [
  {nom:"Cilicia and the Zakarids",dates:"1080 – 1375",pouvoir:"Armenian Kingdom of Cilicia · Zakarid principality · Mongols"},
  {nom:"Ottoman–Persian partitions",dates:"1514 – 1828",pouvoir:"Ottoman Empire (west) · Safavid then Qajar Persia (east)"}];
 const MINI_EN = {
- "-10000":{nom:"First inhabitants of the highlands",dates:"c. 10,000 BC",pouvoir:"Epipalaeolithic hunter-gatherers"},
- "-8000":{nom:"Neolithisation",dates:"c. 8000 BC",pouvoir:"First villages of the Fertile Crescent and its margins"},
- "-5000":{nom:"Villages of the Araxes",dates:"7th–6th millennium BC",pouvoir:"Aratashen-Shulaveri Neolithic culture"},
- "-4000":{nom:"Chalcolithic: copper and wine",dates:"5th–4th millennium BC",pouvoir:"Areni and Sioni cultures"},
- "-3000":{nom:"The Kura-Araxes culture",dates:"c. 3400 – 2000 BC",pouvoir:"First pan-Caucasian culture"},
- "-2000":{nom:"Dawn of the Armenian highlands",dates:"c. 2000 BC",pouvoir:"Bronze Age cultures (late Kura-Araxes, Trialeti)"},
- "-1500":{nom:"Hayasa-Azzi and the Nairi lands",dates:"c. 1500 – 1200 BC",pouvoir:"Tribal confederations (Hittite and Assyrian sources)"},
- "-1000":{nom:"Towards Urartian unification",dates:"c. 1000 – 860 BC",pouvoir:"Nairi principalities on the road to unity"},
- "1400":{nom:"Between Timur and the Turkmens",dates:"1387 – 1502",pouvoir:"Timurids, then Kara Koyunlu and Ak Koyunlu"},
- "1920":{nom:"The First Republic",dates:"28 May 1918 – 2 December 1920",pouvoir:"Republic of Armenia (Dashnaktsutyun)"},
- "1945":{nom:"Soviet Armenia",dates:"1920 – 1991",pouvoir:"Armenian SSR (USSR)"},
- "1900":{nom:"The Armenian Question",dates:"1878 – 1915",pouvoir:"Ottoman Empire (west) · Russian Empire (east)"},
- "2000":{nom:"Third Republic of Armenia",dates:"1991 – today",pouvoir:"Independent republic (21 September 1991)"}};
+ "-10000":{nom:"First inhabitants of the highlands",dates:"c. 10,000 BC",pouvoir:"Epipalaeolithic hunter-gatherers",
+  apercu:["At the end of the Ice Age, hunter-gatherer bands occupied the Hrazdan gorges and the shelters of the plateau — human presence there is attested for over 300,000 years (Nor Geghi). <strong>Obsidian</strong> from the Armenian volcanoes already travelled hundreds of kilometres.","On the southern edge of the highlands, around 9600 BC, hunters raised <strong>Portasar (Göbekli Tepe)</strong>: humanity's oldest monumental complex."]},
+ "-8000":{nom:"Neolithisation",dates:"c. 8000 BC",pouvoir:"First villages of the Fertile Crescent and its margins",
+  apercu:["The Armenian highlands border the <strong>Fertile Crescent</strong>: einkorn wheat, barley and pulses were domesticated there. Mud-brick villages multiplied in the foothills, and Armenian obsidian was exported as far as Mesopotamia.","The map remains \"empty\" of states for millennia yet: the gold overlays mark the continuity of settlement, not borders."]},
+ "-5000":{nom:"Villages of the Araxes",dates:"7th–6th millennium BC",pouvoir:"Aratashen-Shulaveri Neolithic culture",
+  apercu:["In the <strong>Araxes</strong> plain, the mounds of <strong>Aknashen</strong> and <strong>Aratashen</strong> yield round houses, obsidian sickles, pottery and basketry: a settled village life, networked with northern Mesopotamia and the Caucasus.","In Syunik, the <strong>Karahunj</strong> alignment (Zorats Karer) — pierced stones facing the horizon — testifies to early sky-watching."]},
+ "-4000":{nom:"Chalcolithic: copper and wine",dates:"5th–4th millennium BC",pouvoir:"Areni and Sioni cultures",
+  apercu:["The <strong>Areni-1</strong> cave (Vayots Dzor) preserves the world's oldest known <strong>winery</strong> (c. 4100 BC) — vats, press, domesticated grape pips — and the oldest leather shoe (c. 3500 BC).","<strong>Copper</strong> metallurgy spread from the plateau's mines; communities grew hierarchical, prelude to the Bronze Age."]},
+ "-3000":{nom:"The Kura-Araxes culture",dates:"c. 3400 – 2000 BC",pouvoir:"First pan-Caucasian culture",
+  apercu:["Born between <strong>Kura and Araxes</strong>, this early Bronze Age culture — burnished black pottery, round houses, ritual hearths — spread spectacularly: eastern Anatolia, northwest Iran, as far as Syria and Palestine (where it is called Khirbet Kerak).","<strong>Shengavit</strong>, within today's Yerevan, was one of its great centres: metallurgical workshops and collective granaries.","<strong>Around it</strong>: to the north, the <strong>Maykop</strong> kurgans then the <strong>Yamnaya</strong> steppe herders; to the south, the nascent <strong>Hurrian kingdoms</strong>, the city-states of <strong>Sumer</strong> (Ur, Uruk) and <strong>Elam</strong>; to the west, early urban Anatolia (Troy I); further off, Thinite Egypt and the <strong>Minoans</strong>. Kura-Araxes traded with them all: obsidian, arsenical copper and wine."]},
+ "-2000":{nom:"Dawn of the Armenian highlands",dates:"c. 2000 BC",pouvoir:"Bronze Age cultures (late Kura-Araxes, Trialeti)",
+  apercu:["The plateau emerges from the <strong>Kura-Araxes</strong> culture, which had radiated for a millennium from the Caucasus to Palestine; the princely kurgans of <strong>Trialeti</strong> and the cyclopean forts of the Sevan basin show hierarchical societies, masters of bronze and obsidian.","No state exists yet: Hittite sources will soon name the lands of <strong>Hayasa-Azzi</strong>, whose name echoes \"Hay\", the Armenians' own name for themselves."]},
+ "-1500":{nom:"Hayasa-Azzi and the Nairi lands",dates:"c. 1500 – 1200 BC",pouvoir:"Tribal confederations (Hittite and Assyrian sources)",
+  apercu:["The Hittite annals describe Suppiluliuma's wars against <strong>Hayasa-Azzi</strong>, a confederation of the upper Euphrates — for many Armenian historians, the root of the name <em>Hay</em>. The Assyrians called <strong>Nairi</strong> the \"lands of the rivers\" around Lake Van.","The map already shows \"Urartu\": an anachronism of the cartographic source — the kingdom emerges only in the 9th century BC; before it, a mosaic of principalities."]},
+ "-1000":{nom:"Towards Urartian unification",dates:"c. 1000 – 860 BC",pouvoir:"Nairi principalities on the road to unity",
+  apercu:["Under the pressure of Assyrian campaigns, the <strong>Nairi</strong> principalities federated: around 860 BC <strong>Arame</strong> — perhaps the Ara the Fair of legend — united the lands of Van. Sarduri I founded Tushpa and the kingdom of Urartu entered history.","The map's \"Urartu\" label slightly anticipates: in this century, unification is under way."]},
+ "1920":{nom:"The First Republic",dates:"28 May 1918 – 2 December 1920",pouvoir:"Republic of Armenia (Dashnaktsutyun)",
+  apercu:["Born of the desperate victory of <strong>Sardarabad</strong> (May 1918) against the Ottoman offensive, the First Republic gathered the genocide's survivors around Yerevan. The treaty of <strong>Sèvres</strong> (1920) promised it Wilsonian \"Greater Armenia\" — never applied.","Caught between Kemalist Turkey and the Red Army, the republic was sovietised in December 1920; the treaty of <strong>Kars</strong> (1921) fixed today's border, leaving Ararat on the Turkish side."]},
+ "1945":{nom:"Soviet Armenia",dates:"1920 – 1991",pouvoir:"Armenian SSR (USSR)",
+  apercu:["A small republic of 29,800 km², the <strong>Armenian SSR</strong> saw industrialisation, full literacy and a demographic boom (from 880,000 to 3.3 million). Yerevan, rebuilt in pink tuff to <strong>Alexander Tamanian's</strong> circular plan, became a true capital.","After the Stalinist terror (purges of 1936–1938), the thaw allowed the <strong>Tsitsernakaberd memorial</strong> (1967) — the first Soviet acknowledgement of the genocide — and a scientific renaissance (Byurakan, Matenadaran)."]},
+ "1900":{nom:"The Armenian Question",dates:"1878 – 1915",pouvoir:"Ottoman Empire (west) · Russian Empire (east)",
+  apercu:["The treaty of <strong>Berlin (1878)</strong> internationalised the \"Armenian question\": article 61 promised reforms in the six vilayets — never applied. The Hamidian massacres (1894–1896, ~200,000 dead) and Adana (1909) foreshadowed the worst: the <strong>genocide of 1915</strong>, planned by the Young Turk government, would annihilate Western Armenia (1.5 million victims).","On the Russian side, the governorates of <strong>Erivan</strong> and <strong>Kars</strong> saw schooling and a cultural renaissance (Tumanyan, Komitas) despite russification. This eastern remnant would carry the First Republic (1918) after Sardarabad."]},
+ "1400":{nom:"Between Timur and the Turkmens",dates:"1387 – 1502",pouvoir:"Timurids, then Kara Koyunlu and Ak Koyunlu",
+  apercu:["<strong>Timur's</strong> invasions (1387–1403) ravaged the plateau: Van, Erzurum and Syunik were devastated, tens of thousands of Armenians deported to Samarkand. After his death, the Turkmen confederations of the <strong>Black Sheep</strong> (Kara Koyunlu, capital Tabriz) and the <strong>White Sheep</strong> (Ak Koyunlu) fought over the country.","Under Jihanshah the catholicosate was restored at <strong>Etchmiadzin</strong> (1441) — a decisive event: the Church again became the nation's substitute institution. The meliks of Karabakh and Syunik kept a mountain autonomy."]},
+ "2000":{nom:"Third Republic of Armenia",dates:"1991 – today",pouvoir:"Independent republic (21 September 1991)",
+  apercu:["Armenia regained independence at the USSR's dissolution, within the borders of the Armenian SSR (29,743 km² — less than a tenth of historic Armenia). The first <strong>Karabakh</strong> war (1988–1994) put the self-proclaimed republic of <strong>Artsakh</strong> under Armenian control until the 2020 war and the 2023 exodus.","The diaspora (~7 million people, against ~3 million in Armenia) remains the nation's other half: Yerevan, the world's oldest capital city at 2,800 years, is its symbolic heart."]}};
 
 /* Correspondance année du globe → notice arménienne de periodes.json */
 function indexPeriode(y){
@@ -1176,7 +1225,7 @@ const MINI = {
   "-4000":{nom:"Le Chalcolithique : cuivre et vin",dates:"Vᵉ – IVᵉ millénaire av. J.-C.",pouvoir:"Cultures d'Areni et de Sioni",
     apercu:["La grotte d'<strong>Areni-1</strong> (Vayots Dzor) conserve la plus ancienne <strong>cave de vinification</strong> du monde (v. 4100 av. J.-C.) — cuves, pressoir, pépins de vigne domestiquée — et la plus vieille chaussure de cuir connue (v. 3500).","La métallurgie du <strong>cuivre</strong> se répand depuis les mines du plateau ; les communautés se hiérarchisent, prélude à l'âge du bronze."]},
   "-3000":{nom:"La culture Kouro-Araxe",dates:"v. 3400 – 2000 av. J.-C.",pouvoir:"Première grande culture pan-caucasienne",
-    apercu:["Née entre <strong>Koura et Araxe</strong>, cette culture au bronze naissant — céramique noire lustrée, maisons rondes, foyers rituels — essaime de façon spectaculaire : Anatolie orientale, Iran du nord-ouest, jusqu'en Syrie et en Palestine (où on l'appelle Khirbet Kerak).","<strong>Shengavit</strong>, sur le territoire de l'actuelle Erevan, en est l'un des grands centres : ateliers métallurgiques et greniers collectifs."],
+    apercu:["Née entre <strong>Koura et Araxe</strong>, cette culture au bronze naissant — céramique noire lustrée, maisons rondes, foyers rituels — essaime de façon spectaculaire : Anatolie orientale, Iran du nord-ouest, jusqu'en Syrie et en Palestine (où on l'appelle Khirbet Kerak).","<strong>Shengavit</strong>, sur le territoire de l'actuelle Erevan, en est l'un des grands centres : ateliers métallurgiques et greniers collectifs.","<strong>Autour d'elle</strong> : au nord, les kourganes de la culture <strong>Maïkop</strong> puis les pasteurs <strong>Yamnaya</strong> de la steppe pontique ; au sud, les <strong>royaumes hourrites</strong> naissants, les cités-États de <strong>Sumer</strong> (Ur, Uruk) et l'<strong>Élam</strong> ; à l'ouest, l'Anatolie des premières cités (Troie I) ; plus loin, l'Égypte thinite et les <strong>Minoens</strong>. Le Kouro-Araxe commerce avec toutes : obsidienne, cuivre arsénié et vin."],
     capitales:[{nom:"Shengavit",lat:40.16,lng:44.48,principal:true,info:"Agglomération fortifiée de 4 à 6 ha occupée du IVᵉ au IIIᵉ millénaire, cœur de la métallurgie Kouro-Araxe."}]},
   "-2000":{nom:"Aube du plateau arménien",dates:"v. 2000 av. J.-C.",pouvoir:"Cultures de l'âge du bronze (Kouro-Araxe tardif, Trialeti)",
     apercu:["Le plateau arménien sort de la culture <strong>Kouro-Araxe</strong>, qui a rayonné mille ans du Caucase à la Palestine ; les kourganes princiers de <strong>Trialeti</strong> et les forteresses cyclopéennes du Sevan témoignent de sociétés hiérarchisées, maîtresses du bronze et de l'obsidienne.","Aucun État n'existe encore : les sources hittites mentionneront bientôt les pays de <strong>Hayasa-Azzi</strong>, dont le nom résonne avec « Hay », le nom que les Arméniens se donnent."],
@@ -1224,7 +1273,8 @@ function remplirPanneauPeriode(){
   }
   if(i>=0 && PERIODES && PERIODES[i]){
     const p=PERIODES[i];
-    const enFull = (LANG==="en" && PERIODES_EN_FULL && PERIODES_EN_FULL[i]) ? PERIODES_EN_FULL[i] : null;
+    const enFull = (LANG==="en" && PERIODES_EN_FULL && PERIODES_EN_FULL[i]) ? PERIODES_EN_FULL[i]
+                 : (LANG==="hy" && PERIODES_HY_FULL && PERIODES_HY_FULL[i]) ? PERIODES_HY_FULL[i] : null;
     if(LANG!=="fr" && !enFull) html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
     const pe = enFull || ((LANG==="en" && PERIODES_EN[i]) ? PERIODES_EN[i] : p);
     const corps = enFull || p;
@@ -1241,10 +1291,11 @@ function remplirPanneauPeriode(){
     html += `<a class="lien-atlas" href="atlas_armenie_historique.html" target="_blank" rel="noopener">${T("atlas")}</a>`;
   } else if(MINI[ALIAS_MINI[String(y)] || String(y)]){
     const m=MINI[ALIAS_MINI[String(y)] || String(y)];
-    if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
+    const enOK = LANG==="en" && MINI_EN[ALIAS_MINI[String(y)] || String(y)] && MINI_EN[ALIAS_MINI[String(y)] || String(y)].apercu;
+    if(LANG!=="fr" && !enOK) html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
     const me = (LANG==="en" && MINI_EN[ALIAS_MINI[String(y)] || String(y)]) ? MINI_EN[ALIAS_MINI[String(y)] || String(y)] : m;
     html += `<h2>${me.nom}</h2><div class="dates">${me.dates}</div><div class="pouvoir">${me.pouvoir}</div>`;
-    for(const par of m.apercu) html += `<p>${par}</p>`;
+    for(const par of (me.apercu || m.apercu)) html += `<p>${par}</p>`;
     if(m.capitales && m.capitales.length){
       html += `<div class="caps"><h3>${T("lieux")}</h3>`;
       for(const c of m.capitales)
@@ -1376,14 +1427,15 @@ quizSuite.addEventListener("click", ()=>{
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06c";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06d";   // à incrémenter quand les JSON changent (contourne le cache)
 Promise.all([
   fetch("globe_data.json?v="+VDATA).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
   fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
   fetch("traductions_fr.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
-  fetch("periodes_en.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
-]).then(([d,p,tr,pen])=>{
-  PERIODES_EN_FULL = pen;
+  fetch("periodes_en.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
+  fetch("periodes_hy.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([d,p,tr,pen,phy])=>{
+  PERIODES_EN_FULL = pen; PERIODES_HY_FULL = phy;
   DATA=d; PERIODES=p; YEARS=d.years;
   if(tr) FRX=tr;
   // Corrige le sens d'enroulement des anneaux (sinon D3 remplit toute la sphère :

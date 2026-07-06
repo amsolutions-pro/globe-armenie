@@ -510,3 +510,24 @@ chantier éditorial, à faire en plusieurs itérations.
 **Q45.** Étiquette RSS 1945 vs Erevan : non résolu, à observer à k>10.
 
 ---
+
+## Itération 21 — 2026-07-06 (directives utilisateur ×5)
+
+1. **Cultures autour du Kouro-Araxe** : la notice −3000 énumère désormais les
+   voisines attestées (Maïkop, Yamnaya, royaumes hourrites, Sumer/Ur, Élam,
+   Anatolie de Troie I, Égypte thinite, Minoens) en FR et EN — toutes visibles
+   sur la carte de −3000.
+2. **Lacs permanents** : couche de 16 grands lacs dessinée à chaque siècle
+   au-dessus des territoires — Van, Sevan, Ourmia (lacs arméniens historiques),
+   Balkhach, Baïkal, Ladoga, Victoria, Tanganyika, Malawi, Tchad, les 5 Grands
+   Lacs, Titicaca. (Caspienne/Aral laissées au dataset ; piège d'enroulement des
+   ellipses corrigé par test geoArea.)
+3. **Bouton de langue visible** : les boutons flottants se décalent à gauche du
+   volet PC quand une fiche est ouverte (body:has).
+4. **CRITIQUES.md créé** : registre d'autocritique classé [UX]/[DATA] ×
+   importance 🔴🟠🟡, lu en début d'itération, 3 critiques ajoutées en fin —
+   processus ajouté au prompt de la boucle.
+5. Erreur « 529 API overloaded » expliquée à l'utilisateur (saturation côté
+   Anthropic, retries automatiques, sans impact sur le travail).
+
+---

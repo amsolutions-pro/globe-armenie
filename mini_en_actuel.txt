@@ -1,0 +1,14 @@
+const MINI_EN = {
+ "-10000":{nom:"First inhabitants of the highlands",dates:"c. 10,000 BC",pouvoir:"Epipalaeolithic hunter-gatherers"},
+ "-8000":{nom:"Neolithisation",dates:"c. 8000 BC",pouvoir:"First villages of the Fertile Crescent and its margins"},
+ "-5000":{nom:"Villages of the Araxes",dates:"7th–6th millennium BC",pouvoir:"Aratashen-Shulaveri Neolithic culture"},
+ "-4000":{nom:"Chalcolithic: copper and wine",dates:"5th–4th millennium BC",pouvoir:"Areni and Sioni cultures"},
+ "-3000":{nom:"The Kura-Araxes culture",dates:"c. 3400 – 2000 BC",pouvoir:"First pan-Caucasian culture"},
+ "-2000":{nom:"Dawn of the Armenian highlands",dates:"c. 2000 BC",pouvoir:"Bronze Age cultures (late Kura-Araxes, Trialeti)"},
+ "-1500":{nom:"Hayasa-Azzi and the Nairi lands",dates:"c. 1500 – 1200 BC",pouvoir:"Tribal confederations (Hittite and Assyrian sources)"},
+ "-1000":{nom:"Towards Urartian unification",dates:"c. 1000 – 860 BC",pouvoir:"Nairi principalities on the road to unity"},
+ "1400":{nom:"Between Timur and the Turkmens",dates:"1387 – 1502",pouvoir:"Timurids, then Kara Koyunlu and Ak Koyunlu"},
+ "1920":{nom:"The First Republic",dates:"28 May 1918 – 2 December 1920",pouvoir:"Republic of Armenia (Dashnaktsutyun)"},
+ "1945":{nom:"Soviet Armenia",dates:"1920 – 1991",pouvoir:"Armenian SSR (USSR)"},
+ "1900":{nom:"The Armenian Question",dates:"1878 – 1915",pouvoir:"Ottoman Empire (west) · Russian Empire (east)"},
+ "2000":{nom:"Third Republic of Armenia",dates:"1991 – today",pouvoir:"Independent republic (21 September 1991)"}};

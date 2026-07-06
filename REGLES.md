@@ -90,6 +90,9 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
   chargement.
 - **R7.2** : **lacs** = anneaux intérieurs des polygones, remplis `#3a6478`
   (bleu clair), peints avant les territoires (les enclaves restent visibles).
+- **R7.2b** : **16 grands lacs permanents** (ellipses approchées, dont Van,
+  Sevan, Ourmia) dessinés au-dessus des territoires à chaque siècle — les lacs
+  ne disparaissent jamais, quel que soit le dataset.
 - **R7.3** : rotation = le point saisi reste sous le curseur (75/(base·k) °/px) ;
   zoom molette doux (1,0007^Δ, Δ borné ±180), pincement à deux doigts ;
   k ∈ [0,7, 60] ; latitude bornée ±90°.
@@ -106,6 +109,11 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
 - Quiz : 5 QCM (siècle d'un événement, date de fondation d'une ville), leurres
   à ±600 ans / ±700 ans de la bonne réponse, score commenté.
 - Légende permanente ; voile d'accueil au premier lancement.
+
+## R10 — Autocritique
+- CRITIQUES.md : lu en début d'itération (priorité à la critique 🔴 la plus
+  ancienne), 3 nouvelles critiques classées [UX]/[DATA] × 🔴🟠🟡 en fin
+  d'itération.
 
 ## R9 — Sources
 - Frontières : historical-basemaps (aourednik) — précision d'atlas historique.
