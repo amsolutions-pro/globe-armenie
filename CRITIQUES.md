@@ -354,8 +354,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 [DATA] Relecture orthographique/terminologique native des notices hy
   toujours en attente (vérif automatique ne couvre que les nombres) : idéalement
   un locuteur arménien relit les 13 notices récentes.
-- 🟡 [UX] Aucune notice hy pour les périodes anciennes (avant 1900) hors
-  periodes_hy.json : les mini-notices préhistoire→1815 restent FR/EN en hy.
 
 ### Nouvelles critiques (it. 75)
 - 🟡 [DATA] Le contrôle de fidélité numérique génère un faux positif bénin sur
@@ -366,7 +364,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Les avertissements de verifie_donnees.py s'accumulent ; un mode
   « --strict » qui n'affiche que les erreurs aiderait en CI.
 
+### Nouvelles critiques (it. 76)
+- 🟡 [DATA] Traduction hy des mini-notices anciennes entamée (3/~15) : reste
+  la préhistoire (-10000→-2000 partiel), l'Antiquité tardive et 1600-1815.
+- 🟡 [DATA] Les toponymes anciens hy (Խիրբեթ Քերաք, Յամնայա…) sont des
+  translittérations à faire valider par un spécialiste.
+- 🟡 [UX] La couverture hy est désormais inégale (moderne complète, ancienne
+  partielle) : un indicateur « traduction disponible » par langue aiderait.
+
 ## Critiques traitées
+- ✅ (it. 76) [DATA] Extension de MINI_HY aux mini-notices anciennes
+  emblématiques : -3000 (culture Kouro-Araxe), -1500 (Hayasa-Azzi et Nairi),
+  1400 (entre Timour et les Turkmènes) traduites en arménien, fidèles au FR ;
+  contrôle de fidélité numérique OK.
 - ✅ (it. 75) [DATA] Contrôle de fidélité numérique des notices AUTOMATISÉ dans
   verifie_donnees.py : compare les nombres des aperçus EN/HY à ceux du FR
   (séparateurs de milliers et décimaux normalisés), alerte si un chiffre de la
