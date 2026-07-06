@@ -41,11 +41,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟠 [DATA] **verifie_donnees.py ne contrôle pas les périodes JSON annexes**
   (periodes*.json : chaque année du slider devrait avoir sa notice dans les
   3 langues ; les trous passent inaperçus).
-- 🟡 [UX] **Rien n'indique la version des données sur le site** : afficher
-  discrètement VDATA/date du build aiderait à vérifier qu'on voit bien la
-  dernière version depuis l'iPhone.
-- 🟡 [DATA] Le seuil « 37 surcouches » est codé en dur dans verifie_donnees.py :
-  à synchroniser automatiquement avec SPECS de build_armenie_overlays.py.
 
 ### Nouvelles critiques (it. 25)
 - 🟡 [DATA] La correspondance année→notice (indexPeriode + MINI) vit dans
@@ -173,14 +168,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   try/catch posés, mais non testés.
 
 ### Nouvelles critiques (it. 44)
-- 🟡 [UX] Le texte statique initial de #charge-info (HTML) reste français
-  jusqu'au premier octet reçu — le traduire dès l'init de LANG.
 - 🟡 [DATA] La notice hy[4] (Arsacides) indique « 66 – 428 » sans précision
   d'ère : ambigu pour un lecteur non averti (contrairement à « Ք.ա. … »).
 - 🟡 [UX] Le lien ?an= validé en desktop uniquement ; à tester sur iPhone
   (Safari gère parfois différemment location.search avec l'écran d'accueil).
 
+### Nouvelles critiques (it. 45)
+- 🟡 [DATA] L'extraction de SPECS par regex dans verifie_donnees.py casse
+  silencieusement si le format du bloc change (split sur « SPECS = [ »).
+- 🟡 [UX] « données v2026-07-06r » n'est lisible qu'en ouvrant la légende :
+  acceptable (R11) mais non documenté dans l'aide.
+- 🟡 [UX] Les suffixes de version (d, e, … r) ne disent pas ce qui a changé :
+  un lien vers le journal des commits serait plus utile.
+
 ## Critiques traitées
+- ✅ (it. 45) 🟡×3 : texte de chargement traduit dès l'init de la langue ;
+  version des données affichée au bas de la légende (visible à la demande,
+  R11) ; seuil des surcouches lu depuis SPECS au lieu de 37 en dur.
 - ✅ (it. 44) 🟡×2 : dates hy harmonisées (suppression du « թթ. » isolé) ;
   texte de progression du chargement traduit en 4 langues (chargeTxt).
   Vérifié en ligne : ?an=1920 saute bien à 1920 (VDATA p).

@@ -45,10 +45,15 @@ def main():
                             err(f"{y}/{nom} : coordonnée hors bornes ({lon},{lat})")
                             break
 
-    # 3. Surcouches arméniennes (o=1) : nombre attendu et présence par période
+    # 3. Surcouches arméniennes (o=1) : nombre attendu = len(SPECS) du script
+    # de build (lu par regex pour éviter d'exécuter son code au niveau module)
+    import re as _re
+    src = open("build_armenie_overlays.py", encoding="utf-8").read()
+    bloc = src.split("SPECS = [", 1)[1].split("\n]", 1)[0]
+    attendu = len(_re.findall(r"^\s*\(", bloc, _re.M))
     ov = [(int(y), f["n"]) for y in d["world"] for f in d["world"][y] if f.get("o")]
-    if len(ov) != 37:
-        warn(f"{len(ov)} surcouches o=1 (37 attendues — mettre à jour si volontaire)")
+    if len(ov) != attendu:
+        warn(f"{len(ov)} surcouches o=1 ({attendu} attendues d'après SPECS)")
     for a, b in [(1945, 1960), (1994, 2010)]:
         for y in (a, b):
             if not any(yy == y for yy, _ in ov):
