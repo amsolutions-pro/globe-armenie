@@ -496,3 +496,17 @@ documentée R3.2.
 **Q42.** Publication GitHub Pages toujours en attente d'accord utilisateur.
 
 ---
+
+## Itération 19 — 2026-07-06
+
+**Fait** : **periodes_en.json** — traduction anglaise complète des 10 notices de
+période (aperçu 2 §, contexte, capitales avec notices), chargée par fetch et
+substituée quand LANG=en (repli FR sinon, bandeau conservé pour HY/RU) ; REGLES.md
+R6 mis à jour. Vérifié dans Chrome (« Bagratid Kingdoms » avec corps anglais).
+
+**Q43.** Corps HY/RU des notices : même mécanique (periodes_hy/ru.json) — gros
+chantier éditorial, à faire en plusieurs itérations.
+**Q44.** MINI (13 mini-notices) : corps EN à écrire (seuls titres traduits).
+**Q45.** Étiquette RSS 1945 vs Erevan : non résolu, à observer à k>10.
+
+---

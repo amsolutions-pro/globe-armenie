@@ -423,7 +423,7 @@ function estArmenien(n){ return /armen|arm[ée]n|armina|urartu|ourartou|syunik|a
 const canvas = document.getElementById("globe"), ctx = canvas.getContext("2d");
 const DPR = Math.min(window.devicePixelRatio||1, 2);
 let W=0, H=0, base=0;
-let DATA=null, PERIODES=null, YEARS=[], idx=0;
+let DATA=null, PERIODES=null, PERIODES_EN_FULL=null, YEARS=[], idx=0;
 let k=1, rot=[-44.3,-39.7,0];         // départ centré Arménie
 const K_MIN=0.7, K_MAX=60;
 let selection=null;                    // entité cliquée
@@ -1224,15 +1224,17 @@ function remplirPanneauPeriode(){
   }
   if(i>=0 && PERIODES && PERIODES[i]){
     const p=PERIODES[i];
-    if(LANG!=="fr") html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
-    const pe = (LANG==="en" && PERIODES_EN[i]) ? PERIODES_EN[i] : p;
+    const enFull = (LANG==="en" && PERIODES_EN_FULL && PERIODES_EN_FULL[i]) ? PERIODES_EN_FULL[i] : null;
+    if(LANG!=="fr" && !enFull) html += `<div class="entite-sujet" style="font-style:italic">${T("noticeFrSeulement")}</div>`;
+    const pe = enFull || ((LANG==="en" && PERIODES_EN[i]) ? PERIODES_EN[i] : p);
+    const corps = enFull || p;
     html += `<h2>${pe.nom}</h2><div class="dates">${pe.dates}</div>
       <div class="pouvoir">${pe.pouvoir}</div>`;
-    for(const par of p.apercu) html += `<p>${par}</p>`;
-    if(p.contexte) html += `<div class="contexte">${p.contexte}</div>`;
-    if(p.capitales && p.capitales.length){
+    for(const par of corps.apercu) html += `<p>${par}</p>`;
+    if(corps.contexte) html += `<div class="contexte">${corps.contexte}</div>`;
+    if(corps.capitales && corps.capitales.length){
       html += `<div class="caps"><h3>${T("capitales")}</h3>`;
-      for(const c of p.capitales)
+      for(const c of corps.capitales)
         html += `<div class="cap" data-lat="${c.lat}" data-lng="${c.lng}"><b>${c.nom}${c.principal?" ★":""}</b> — <span>${c.info}</span></div>`;
       html += `</div>`;
     }
@@ -1374,12 +1376,14 @@ quizSuite.addEventListener("click", ()=>{
 quizEl.addEventListener("click", e=>{ if(e.target===quizEl) quizEl.classList.remove("ouvert"); });
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06b";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-06c";   // à incrémenter quand les JSON changent (contourne le cache)
 Promise.all([
   fetch("globe_data.json?v="+VDATA).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
   fetch("periodes.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
-  fetch("traductions_fr.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
-]).then(([d,p,tr])=>{
+  fetch("traductions_fr.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null),
+  fetch("periodes_en.json?v="+VDATA).then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([d,p,tr,pen])=>{
+  PERIODES_EN_FULL = pen;
   DATA=d; PERIODES=p; YEARS=d.years;
   if(tr) FRX=tr;
   // Corrige le sens d'enroulement des anneaux (sinon D3 remplit toute la sphère :

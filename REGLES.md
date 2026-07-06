@@ -78,9 +78,10 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
 - Bouton 🌐 cyclique, choix mémorisé (`localStorage.globe_lang`).
 - Traduits intégralement : interface, années, légende, accueil, quiz,
   33+ événements charnières, ~70 noms d'entités clés + surcouches, ~36 villes.
-- Repli assumé : libellé source (anglais) pour les entités non répertoriées ;
-  corps des notices en FR avec bandeau explicite (EN : titres/dates/pouvoir déjà
-  traduits).
+- Repli assumé : libellé source (anglais) pour les entités non répertoriées.
+- Notices de période : **corps intégralement traduit en anglais**
+  (periodes_en.json, chargé par fetch, repli FR) ; HY/RU : titres localisés à
+  venir, corps FR avec bandeau explicite.
 - Liens Wikipédia dans la langue courante ; lien hy.wikipedia systématique.
 
 ## R7 — Rendu cartographique
