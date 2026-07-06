@@ -324,14 +324,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   visuellement au zoom.
 
 ### Nouvelles critiques (it. 69)
-- 🟡 [DATA] 1918 réutilise encore la notice de la Première République (1920) :
-  une notice propre sur Sardarabad serait plus précise.
-- 🟡 [UX] Le rendu du Karabagh neutre vérifié en 1994 ; à vérifier aussi en
-  1923 (NKAO seul, plus petit) et 2020 (Artsakh résiduel).
 - 🟡 [DATA] La zone de contrôle 1994 manuelle englobe Fizouli/Agdam en entier
   (occupation partielle) — même limite qu'avant, mais désormais sans source AZE.
 
+### Nouvelles critiques (it. 70)
+- 🟡 [DATA] Toutes les années arméniennes modernes (1915→2026) ont désormais
+  une notice dédiée trilingue ; le chantier de fond bascule vers les périodes
+  anciennes (mini-notices sans hy, sourçage des dates de villes).
+- 🟡 [UX] Le mémorial de Sardarabad (1968) pourrait être une ville/lieu
+  affichable sur la carte, pas seulement dans la notice.
+- 🟡 [DATA] Bash-Aparan/Karakilissa sont des lieux de notice sans entrée dans
+  VILLES : non cliquables sur le globe.
+
 ## Critiques traitées
+- ✅ (it. 70) [DATA] Notice dédiée 1918 (Sardarabad : 21-29 mai 1918, gén.
+  Silikian, batailles simultanées de Bash-Aparan et Karakilissa, proclamation
+  de la République le 28 mai, première depuis 1045) en FR+EN+HY, 3 lieux
+  situés ; alias 1918→1918. Karabagh neutre vérifié cohérent en 1923 et 2020.
 - ✅ (it. 69) [DATA] Notice dédiée 2018 (Révolution de velours : printemps 2018,
   Sargsian PM avorté, marche de Pachinian, démission 23 avril, élection 8 mai,
   transition sans violence) en FR+EN+HY ; alias 2018→2018. Rendu du Karabagh
