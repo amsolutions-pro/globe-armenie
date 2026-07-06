@@ -14,10 +14,15 @@ from shapely.validation import make_valid
 BASE = "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/geojson/world_{}.geojson"
 SIMPLIFY, ROUND = 0.1, 2
 
-def fname(y): return f"bc{-y}" if y < 0 else ("bc1" if y == 1 else str(y))
+# Années arméniennes ajoutées sans fond de carte dédié → fond source le plus proche
+ALIAS_FOND = {1915: "1914", 1988: "1960", 1991: "1994", 2020: "2010", 2023: "2010", 2026: "2010"}
+
+def fname(y):
+    if y in ALIAS_FOND: return ALIAS_FOND[y]
+    return f"bc{-y}" if y < 0 else ("bc1" if y == 1 else str(y))
 
 def load_world(y):
-    f = fname(y) if y != 1 else "bc1"
+    f = fname(y)
     path = f"geo/world_{f}.geojson"
     if not os.path.exists(path):
         os.makedirs("geo", exist_ok=True)
@@ -131,10 +136,16 @@ SPECS = [
     (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1900, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — traités de Turkmentchaï (1828) et Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1914, "Arménie occidentale (six vilayets)", "Empire ottoman — veille du génocide de 1915", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1915, "Arménie occidentale (génocide en cours)", "Empire ottoman — génocide des Arméniens (1915–1916)", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia:2000", None, PLATEAU),
     (1960, "RSS d'Arménie", "Union soviétique", "armenia:2000", None, PLATEAU),
+    (1988, "RSS d'Arménie", "Union soviétique — séisme de Spitak, début du mouvement du Karabagh", "armenia:2000", None, PLATEAU),
+    (1991, "Haut-Karabagh (oblast autonome, NKAO)", "Proclamation de la République d'Artsakh (1991) — guerre en cours", "tout", r"azerbaijan", KARABAGH),
     (1994, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
     (2010, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
+    (2020, "Artsakh résiduel (après la guerre des 44 jours)", "Haut-Karabagh réduit au cœur nord (Stepanakert) sous garantie russe", "tout", r"azerbaijan", KARABAGH),
+    # 2023 : exode de l'Artsakh, 2026 : plus aucun contrôle arménien au Karabagh
+    # → pas de surcouche (l'Azerbaïdjan contrôle l'ensemble, affiché nativement)
 ]
 
 def rnd(c):

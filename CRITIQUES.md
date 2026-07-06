@@ -240,6 +240,18 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   tournants les plus importants) ; tout unifier ferait pauser partout.
 
 ## Critiques traitées
+- ✅ (it. 55, demandes utilisateur) [DATA] XXe–XXIe siècles densifiés : ajout
+  des années 1915 (génocide), 1921 (Kars), 1988 (Spitak), 1991 (indépendance),
+  2020 (guerre 44 j.), 2023 (exode d'Artsakh), 2026 (aujourd'hui) — 50 pas de
+  temps ; charnières FR/EN/HY, surcouches arméniennes, notices aliasées.
+- ✅ (it. 55, signalement utilisateur) [DATA] 🔴 Carte 1930/1938 : la source
+  dessinait une « Grande Arménie » anachronique (17 deg², Anatolie orientale
+  comprise) → clippée à la RSS réelle (2,3 deg²) dans build_globe_data.py.
+- ✅ (it. 55, question utilisateur) [DATA] Atropatène : vérifié — présentée
+  uniquement comme conquête de Tigrane II (correct) ; c'était un royaume
+  distinct de Médie, pas une province arménienne. Contenu exact, rien à changer.
+- ✅ (it. 55, demande utilisateur) [UX] Langue par défaut = arménien (hy) au
+  premier atterrissage (le choix reste mémorisé ensuite).
 - ✅ (it. 54) [PERF/A11Y] 🟡 Audit objectif du site publié : DOMContentLoaded
   286 ms, amorce 43 Ko/100 ms, complet 2,28 Mo gzip/80 ms, 0 erreur page,
   canvas focusable+aria OK, aria-live OK, tous les boutons nommés. Ligne de

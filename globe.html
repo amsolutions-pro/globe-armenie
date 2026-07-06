@@ -329,8 +329,8 @@ const FR = {
 "Nomads":"Nomades","nomads":"Nomades","Turkic nomads":"Nomades turcs","Mongol tribes":"Tribus mongoles"
 };
 /* ================= I18N — fr / en / hy / ru ================= */
-let LANG = "fr";
-try{ LANG = localStorage.getItem("globe_lang") || "fr"; }catch(e){}
+let LANG = "hy";   // arménien par défaut ; mémorise le choix de l'utilisateur ensuite
+try{ LANG = localStorage.getItem("globe_lang") || "hy"; }catch(e){}
 const UI = {
 fr:{titre:"Le Monde à travers les siècles",sous:"10 000 av. J.-C. — 2000 apr. J.-C. · frontières historiques",
  avjc:"AV. J.-C.",apjc:"APR. J.-C.",an1:"An 1",auj:"aujourd'hui",
@@ -959,14 +959,21 @@ const CHARNIERE = {
 "1880":"Traité de Berlin (1878) : la question arménienne devient internationale",
 "1900":"1878 : question arménienne · 1915 : génocide · 1918 : Première République",
 "1914":"Veille du génocide : 2 millions d'Arméniens dans l'Empire ottoman",
-"1920":"Première République (1918–1920) : Sardarabad, Sèvres, puis soviétisation",
+"1915":"Génocide des Arméniens (1915–1916) : ~1,5 million de victimes, l'Arménie occidentale anéantie",
+"1920":"Première République (1918–1920) : Sardarabad, traité de Sèvres, puis soviétisation",
+"1921":"Traité de Kars : la frontière turco-soviétique fixée · l'Ararat reste en Turquie",
 "1930":"RSS d'Arménie dans l'URSS · reconstruction et exode des rescapés",
 "1938":"Purges staliniennes · Erevan se reconstruit selon le plan Tamanian",
 "1945":"L'Arménie soviétique dans la victoire · rapatriements de la diaspora",
 "1960":"Renaissance culturelle soviétique · mémorial du génocide (1965–1967)",
+"1988":"Séisme de Spitak (25 000 morts) · le mouvement du Karabagh s'enflamme",
+"1991":"21 septembre 1991 : indépendance de l'Arménie · première guerre du Karabagh",
 "1994":"Cessez-le-feu au Karabagh : victoire arménienne, indépendance consolidée",
-"2010":"Diaspora mondiale · protocoles arméno-turcs avortés · avant 2020",
-"2000":"1991 : indépendance · guerres du Karabagh (1994, 2020) · exode d'Artsakh (2023)"
+"2000":"Troisième République : reconstruction post-soviétique, blocus turco-azéri",
+"2010":"Diaspora mondiale · protocoles arméno-turcs avortés · avant-guerre",
+"2020":"Guerre des 44 jours : l'Azerbaïdjan reprend le sud du Karabagh et Chouchi",
+"2023":"Septembre 2023 : offensive azérie éclair · exode de tout l'Artsakh (~100 000 réfugiés)",
+"2026":"Aujourd'hui : République d'Arménie · diaspora d'environ 7 millions · Artsakh disparu"
 };
 const CHARNIERE_EN = {
 "-10000":"End of the Ice Age: hunter-gatherers in the highland valleys",
@@ -1004,14 +1011,21 @@ const CHARNIERE_EN = {
 "1880":"Treaty of Berlin (1878): the Armenian question goes international",
 "1900":"1878: Armenian question · 1915: genocide · 1918: First Republic",
 "1914":"Eve of the genocide: 2 million Armenians in the Ottoman Empire",
-"1920":"First Republic (1918–1920): Sardarabad, Sèvres, then sovietisation",
+"1915":"Armenian Genocide (1915–1916): ~1.5 million victims, Western Armenia annihilated",
+"1920":"First Republic (1918–1920): Sardarabad, Treaty of Sèvres, then sovietisation",
+"1921":"Treaty of Kars fixes the Turkish-Soviet border · Mount Ararat stays in Turkey",
 "1930":"Armenian SSR within the USSR · reconstruction and survivor influx",
 "1938":"Stalinist purges · Yerevan rebuilt to Tamanian's plan",
 "1945":"Soviet Armenia in the victory · diaspora repatriations",
 "1960":"Soviet cultural renaissance · genocide memorial (1965–1967)",
+"1988":"Spitak earthquake (25,000 dead) · the Karabakh movement ignites",
+"1991":"21 September 1991: Armenia's independence · first Karabakh war",
 "1994":"Karabakh ceasefire: Armenian victory, independence consolidated",
-"2010":"Worldwide diaspora · failed Armenian-Turkish protocols · before 2020",
-"2000":"1991: independence · Karabakh wars (1994, 2020) · Artsakh exodus (2023)"
+"2000":"Third Republic: post-Soviet recovery under Turkish-Azeri blockade",
+"2010":"Worldwide diaspora · failed Armenian-Turkish protocols · pre-war",
+"2020":"44-day war: Azerbaijan retakes the south of Karabakh and Shusha",
+"2023":"September 2023: lightning Azeri offensive · exodus of all Artsakh (~100,000 refugees)",
+"2026":"Today: Republic of Armenia · diaspora of about 7 million · Artsakh gone"
 };
 const CHARNIERE_HY = {
 "-10000":"Սառցե դարաշրջանի ավարտ․ որսորդ-հավաքիչներ լեռնաշխարհի հովիտներում",
@@ -1049,14 +1063,21 @@ const CHARNIERE_HY = {
 "1880":"Բեռլինի պայմանագիր (1878)․ Հայկական հարցը դառնում է միջազգային",
 "1900":"1878․ Հայկական հարց · 1915․ Ցեղասպանություն · 1918․ Առաջին Հանրապետություն",
 "1914":"Ցեղասպանության նախօրե․ 2 միլիոն հայ Օսմանյան կայսրությունում",
+"1915":"Հայոց ցեղասպանություն (1915–1916)․ ~1,5 միլիոն զոհ, Արևմտյան Հայաստանը ոչնչացվեց",
 "1920":"Առաջին Հանրապետություն (1918–1920)․ Սարդարապատ, Սևր, ապա խորհրդայնացում",
+"1921":"Կարսի պայմանագիր․ ամրագրվում է թուրք-խորհրդային սահմանը · Արարատը մնում է Թուրքիայում",
 "1930":"Հայկական ԽՍՀ․ վերականգնում և վերապրածների հոսք",
 "1938":"Ստալինյան բռնաճնշումներ · Երևանը կառուցվում է Թամանյանի հատակագծով",
 "1945":"Խորհրդային Հայաստանը հաղթանակի մեջ · սփյուռքի հայրենադարձություն",
 "1960":"Մշակութային վերածնունդ · Ցեղասպանության հուշահամալիր (1965–1967)",
+"1988":"Սպիտակի երկրաշարժ (25 000 զոհ) · բռնկվում է Ղարաբաղյան շարժումը",
+"1991":"1991 թ. սեպտեմբերի 21․ Հայաստանի անկախություն · Առաջին Ղարաբաղյան պատերազմ",
 "1994":"Ղարաբաղյան զինադադար․ հայկական հաղթանակ, ամրապնդված անկախություն",
+"2000":"Երրորդ Հանրապետություն․ հետխորհրդային վերականգնում թուրք-ադրբեջանական շրջափակման ներքո",
 "2010":"Համաշխարհային սփյուռք · ձախողված հայ-թուրքական արձանագրություններ",
-"2000":"1991․ անկախություն · Ղարաբաղյան պատերազմներ (1994, 2020) · Արցախի արտագաղթ (2023)"
+"2020":"44-օրյա պատերազմ․ Ադրբեջանը վերագրավում է Ղարաբաղի հարավը և Շուշին",
+"2023":"2023 թ. սեպտեմբեր․ ադրբեջանական կայծակնային հարձակում · ողջ Արցախի արտագաղթ (~100 000 փախստական)",
+"2026":"Այսօր․ Հայաստանի Հանրապետություն · մոտ 7 միլիոն սփյուռք · Արցախն այլևս չկա"
 };
 const CHARNIERE_RU = {
 "-10000":"Конец ледниковья: охотники-собиратели в долинах нагорья",
@@ -1329,7 +1350,7 @@ const MINI = {
     apercu:["L'Arménie recouvre l'indépendance à la dissolution de l'URSS, dans les frontières de la RSS d'Arménie (29 743 km² — moins d'un dixième de l'Arménie historique). La première guerre du <strong>Haut-Karabagh</strong> (1988–1994) met la république autoproclamée d'<strong>Artsakh</strong> sous contrôle arménien jusqu'à la guerre de 2020 et l'exode de 2023.","La diaspora (~7 millions de personnes, contre ~3 millions en Arménie) demeure l'autre moitié de la nation : Erevan, plus vieille ville-capitale du monde avec ses 2 800 ans, en est le cœur symbolique."],
     capitales:[{nom:"Erevan",lat:40.18,lng:44.51,principal:true,info:"Capitale de la République d'Arménie, ~1,1 million d'habitants — fondée comme Erebouni en 782 av. J.-C."},{nom:"Stepanakert",lat:39.82,lng:46.75,info:"Capitale de la république autoproclamée d'Artsakh (1991–2023), vidée de sa population arménienne lors de l'exode de septembre 2023."}]}
 };
-const ALIAS_MINI = {"1880":"1900","1914":"1900","1930":"1945","1938":"1945","1960":"1945","1994":"2000","2010":"2000"};
+const ALIAS_MINI = {"1880":"1900","1914":"1900","1915":"1900","1921":"1920","1930":"1945","1938":"1945","1960":"1945","1988":"1945","1991":"2000","1994":"2000","2010":"2000","2020":"2000","2023":"2000","2026":"2000"};
 function remplirPanneauPeriode(){
   const y=YEARS[idx], i=indexPeriode(y);
   let html="";
@@ -1636,7 +1657,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-06z";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-07a";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
