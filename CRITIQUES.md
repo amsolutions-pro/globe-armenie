@@ -247,15 +247,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   petit écran ; regroupement à envisager.
 
 ### Nouvelles critiques (it. 57)
-- 🟡 [UX] La légende compte maintenant 6 lignes + version : elle grandit ;
-  vérifier qu'elle ne déborde pas verticalement sur petit écran iPhone.
-- 🟡 [DATA] La légende « foyer arménien historique » ne dit pas que c'est
-  l'aire MAXIMALE (an 300) : un utilisateur pourrait la croire valable à toutes
-  les époques exactement.
 - 🟡 [UX] Le pictogramme de légende (rectangle pointillé) diffère un peu du
   rendu réel (contour libre) : cohérence graphique perfectible.
 
+### Nouvelles critiques (it. 58)
+- 🟡 [UX] La légende défilante (overflow-y) est peu visible comme telle : sur
+  un écran minuscule où elle déborde, l'utilisateur peut ne pas deviner qu'elle
+  défile.
+- 🟡 [DATA] « Aire maximale (an 300) » : formulation dense ; une note d'aide
+  expliquerait mieux que le foyer réel s'est réduit après 1915.
+- 🟡 [UX] Le libellé de légende arménien est long et peut occuper 2 lignes :
+  vérifier le rendu réel sur iPhone.
+
 ## Critiques traitées
+- ✅ (it. 58) [UX/DATA] 🟡 Légende : largeur max (retour à la ligne) +
+  hauteur max avec défilement de sécurité (pas de débordement iPhone) ; le
+  foyer arménien est précisé comme « aire maximale (an 300) » en 4 langues.
 - ✅ (it. 57) [UX] 🟡 Couche « foyer arménien » inexpliquée → entrée de légende
   dédiée (pictogramme pointillé or + libellé 4 langues via T("presence")).
 - ✅ (it. 56, demande utilisateur) [DATA/UX] Couche « foyer arménien historique »
