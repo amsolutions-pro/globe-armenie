@@ -478,11 +478,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] La zone de plausibilité arm:1 (28–52°E, 34–43°N) exclut d'éventuels
   lieux de diaspora marqués arm:1 : vérifier qu'aucun lieu légitime hors zone
   n'est ainsi mal signalé (aucun aujourd'hui).
-- 🟡 [DOC] Le projet a 3 fichiers de suivi (CRITIQUES, REGLES, AMELIORATION
-  archivé) : un index unique en tête de README clarifierait leur rôle.
 - 🟡 [UX] Tests device réel iPhone (Safari tactile) toujours en attente.
 
+### Nouvelles critiques (it. 95)
+- 🟡 [DATA] La cohérence croisée capitales↔VILLES n'est pas dans
+  verifie_donnees.py (faite ponctuellement) : automatisable.
+- 🟡 [DOC] Le README ne mentionne pas atlas_armenie_historique dans la nouvelle
+  table remaniée : vérifier qu'il y figure toujours.
+- 🟡 [UX] Tests device réel iPhone toujours en attente (seule limite connue).
+
 ## Critiques traitées
+- ✅ (it. 95) [DATA] Relecture croisée : les coordonnées des capitales dans les
+  notices concordent avec VILLES (0 écart >30 km). [DOC] Table du README
+  complétée et clarifiée (fichiers de suivi CRITIQUES/REGLES/AMELIORATION,
+  verifie_donnees, presence/lacs, amorce).
 - ✅ (it. 94) [DATA] Contrôle des villes renforcé : zone de plausibilité
   arménienne (28–52°E, 34–43°N) pour les lieux arm:1 (avertit si coquille de
   coordonnées). [DOC] AMELIORATION.md clôturé proprement (en-tête d'archivage

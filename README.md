@@ -17,13 +17,18 @@ note **« Sources & méthodologie »** intégrée. En ligne :
 |---|---|
 | `globe.html` | Globe D3 orthographique (canvas) : rotation, zoom, clic d'identification, frise, lecture auto, notices, surcouches arméniennes |
 | `atlas_armenie_historique.html` | Atlas Leaflet des 10 périodes de l'Arménie historique (autonome) |
-| `globe_data.json` | Frontières mondiales par siècle (dérivées de historical-basemaps, simplifiées) + surcouches arméniennes `"o":1` |
-| `periodes.json` | Notices détaillées des 10 périodes arméniennes (texte FR, capitales) |
+| `globe_data.json` (+ `globe_data_init.json`) | Frontières mondiales par pas de temps (+ amorce année −700 pour un affichage immédiat) + surcouches arméniennes `"o":1` |
+| `periodes*.json` | Notices détaillées des périodes arméniennes — FR (`periodes.json`), EN, HY |
+| `presence_armenienne.json` | Contour du « foyer arménien historique » (plateau + Cilicie) |
+| `lacs.json` | Grands lacs (tracés réels Natural Earth) |
 | `traductions_fr.json` | Dictionnaire EN→FR (~700 libellés d'États et cultures) |
-| `build_globe_data.py` | Régénère `globe_data.json` depuis la source (shapely requis) |
-| `build_armenie_overlays.py` | Injecte les surcouches arméniennes reconstituées (à lancer APRÈS build_globe_data) |
-| `AMELIORATION.md` | Journal d'autoamélioration (questions/réponses par itération) |
-| `REGLES.md` | Spécification des règles implémentées (niveaux, couleurs, surcouches, i18n…) |
+| `build_globe_data.py` | Régénère `globe_data.json` + corrige les anachronismes de source (shapely) |
+| `build_armenie_overlays.py` | Injecte les surcouches arméniennes (à lancer APRÈS build_globe_data) |
+| `build_lacs.py` | Régénère `lacs.json` depuis Natural Earth |
+| **`verifie_donnees.py`** | Contrôles avant publication : géométrie, enroulement, traductions, villes (**doit passer à 0 erreur**) |
+| **`REGLES.md`** | Règles implémentées + liste des corrections de source (R9) |
+| **`CRITIQUES.md`** | Registre d'autocritique par itération (ouvertes / traitées / invalidées) |
+| `AMELIORATION.md` | Journal des premières itérations — **archivé**, voir CRITIQUES.md |
 
 Sources (toutes neutres, **aucune source azerbaïdjanaise**) :
 [aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps) (frontières),
