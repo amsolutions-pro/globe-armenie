@@ -11,6 +11,14 @@ AVERTS  = []
 def err(msg):  ERREURS.append(msg)
 def warn(msg): AVERTS.append(msg)
 
+import re as _re
+def nombres(texte):
+    """Ensemble des nombres d'un texte, séparateurs de milliers/décimaux normalisés."""
+    t = texte
+    for _ in range(3):
+        t = _re.sub(u"([0-9])[    ,.]([0-9])", lambda m: m.group(1) + m.group(2), t)
+    return set(_re.findall(r"\d{3,}|\d{1,2}(?!\d)", t))
+
 def aire_spherique(ring):
     """Aire de l'anneau sur la sphère unité, en stéradians (valeur absolue)."""
     s = 0.0; n = len(ring)
@@ -105,6 +113,17 @@ def main():
         for i, p in enumerate(per["periodes.json"]):
             if not p.get("provinces"):
                 warn(f"periodes.json[{i}] ({p.get('nom','?')}) : pas de provinces")
+        # Fidélité numérique des aperçus : aucun nombre EN/HY absent du FR.
+        fr_lst = per["periodes.json"]
+        for fn in ("periodes_en.json", "periodes_hy.json"):
+            for i, p in enumerate(per.get(fn, [])):
+                if p is None or i >= len(fr_lst) or fr_lst[i] is None:
+                    continue
+                nf = nombres(" ".join(fr_lst[i].get("apercu", [])))
+                nt = nombres(" ".join(p.get("apercu", [])))
+                surplus = nt - nf
+                if surplus:
+                    warn(f"{fn}[{i}] : nombre(s) absent(s) du FR : {sorted(surplus)} (format ?)")
 
     # 6. lacs.json : 16 lacs, anneaux fermés, coordonnées bornées
     try:

@@ -459,12 +459,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 90)
 - 🟡 [DOC] README mis à jour mais AMELIORATION.md (journal d'itérations) n'est
   plus tenu depuis longtemps : à archiver ou reprendre.
-- 🟡 [DATA] periodes.json (10 notices longues) n'est pas re-contrôlé par le
-  contrôle de fidélité numérique (seul MINI l'est).
 - 🟡 [UX] Le projet est mature ; les prochaines améliorations seront
   incrémentales (relecture native hy, tests device réel iPhone).
 
+### Nouvelles critiques (it. 91)
+- 🟡 [DATA] Le contrôle de fidélité signale 2 faux positifs bénins (nombres
+  écrits en lettres ou chiffres romains selon la langue : « 1001 églises » vs
+  « mille et une », « 9th » vs « IXe ») : tolérés en avertissement.
+- 🟡 [DATA] Le contrôle ne vérifie que le sens traduction→FR ; un nombre FR
+  oublié dans la traduction n'est pas signalé (moins grave).
+- 🟡 [DOC] AMELIORATION.md toujours à archiver/reprendre.
+
 ## Critiques traitées
+- ✅ (it. 91) [DATA] Contrôle de fidélité numérique ÉTENDU aux notices longues
+  periodes*.json (EN + HY vs FR) : 0 erreur de contenu ; seul faux positif =
+  « 1001 églises » (EN) écrit « mille et une » (FR). Le garde-fou couvre
+  désormais MINI + periodes.
 - ✅ (it. 90) [UX/DOC] Densité d'étiquettes du sud (5 monastères proches)
   vérifiée en ligne en l'an 1300 : aucune collision illisible, placement propre.
   README actualisé (53 pas de temps → 2026, 77 lieux, arménien par défaut,
