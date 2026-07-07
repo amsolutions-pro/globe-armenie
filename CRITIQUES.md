@@ -434,12 +434,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 86)
 - 🟡 [DATA] Beaucoup de villes anciennes (Portasar, Metsamor…) n'ont pas de
   VILLES_RU : leurs libellés russes retombent sur le nom translittéré.
-- 🟡 [DATA] Restent à ajouter : Vanadzor, Goris, Dilijan, Aghtamar, Mush,
-  Nakhitchevan pour compléter la couverture urbaine arménienne.
 - 🟡 [UX] Vérifier que Chouchi (39.76) et Stepanakert (39.82) à 46.75°E ne se
   chevauchent pas à faible zoom (z:6 pour les deux).
 
+### Nouvelles critiques (it. 87)
+- 🟡 [DATA] Restent Goris, Dilijan, Mush/Taron, Nakhitchevan, Etchmiadzin
+  (comme lieu distinct) pour une couverture encore plus fine.
+- 🟡 [UX] Densité de lieux au sud-est (Tatev, Kapan, Chouchi, Stepanakert
+  proches) : vérifier la lisibilité des étiquettes à moyen zoom.
+- 🟡 [DATA] Aghtamar existe aussi comme capitale dans la notice 900 (MINI) :
+  léger doublon conceptuel ville/notice.
+
 ## Critiques traitées
+- ✅ (it. 87) [DATA] 4 hauts lieux culturels ajoutés avec dates sourcées +
+  traductions hy/ru : Aghtamar (Sainte-Croix 915–921), Tatev (monastère-
+  université IXᵉ/XIVᵉ s.), Sanahin & Haghpat (UNESCO, Xᵉ s.), Vanadzor
+  (3ᵉ ville, séisme 1988). 70 villes/lieux au total.
 - ✅ (it. 86) [DATA] Traductions hy et ru des 4 nouvelles villes ajoutées
   (Գյումրի/Гюмри, Կապան/Капан, Շուշի/Шуши, Կարին/Карин) ; en FR/EN le nom
   d'origine sert de libellé (Gyumri, Kapan, Shusha, Erzurum reconnaissables).

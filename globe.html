@@ -711,6 +711,10 @@ const VILLES = [
  {nom:"Kapan",lng:46.41,lat:39.20,de:987,z:6,arm:1,note:"Capitale du royaume de Syunik (Xᵉ siècle) sous la maison Siouni ; aujourd'hui chef-lieu du Syunik, cœur minier du sud de l'Arménie."},
  {nom:"Chouchi (Choucha)",lng:46.75,lat:39.76,de:1752,a:2020,z:6,arm:1,note:"Fondée vers 1752, place forte et grand centre culturel arménien du Karabagh (imprimeries, théâtres) ; prise en 1920 puis en 2020."},
  {nom:"Karin (Erzurum)",lng:41.28,lat:39.91,de:415,z:4,arm:1,note:"Théodosiopolis byzantine (Vᵉ s.), verrou du haut plateau ; grande ville arménienne ottomane (vilayet d'Erzurum) jusqu'au génocide de 1915."},
+ {nom:"Aghtamar",lng:43.03,lat:38.34,de:915,z:6,arm:1,note:"Île du lac de Van : l'église de la Sainte-Croix (915–921), aux célèbres bas-reliefs bibliques, est un chef-d'œuvre de l'art médiéval arménien."},
+ {nom:"Tatev",lng:46.25,lat:39.38,de:895,z:6,arm:1,note:"Monastère du Syunik (IXᵉ s.) et grande université médiévale (XIVᵉ s.) ; aujourd'hui relié par le plus long téléphérique du monde."},
+ {nom:"Sanahin & Haghpat",lng:44.86,lat:41.09,de:966,z:6,arm:1,note:"Monastères du Lori (Xᵉ s.), foyers d'enseignement médiéval — inscrits au patrimoine mondial de l'UNESCO."},
+ {nom:"Vanadzor (Kirovakan)",lng:44.49,lat:40.81,de:1826,z:6,arm:1,note:"Troisième ville d'Arménie, Kirovakan sous l'URSS ; centre industriel du nord, durement touché par le séisme de 1988."},
  {nom:"Babylone",lng:44.42,lat:32.54,de:-1900,a:-140,z:3},
  {nom:"Ninive",lng:43.15,lat:36.36,de:-1800,a:-612,z:4},
  {nom:"Ur",lng:46.1,lat:30.96,de:-2000,a:-500,z:4},
@@ -1168,7 +1172,7 @@ function charniereDe(y){
   return CHARNIERE[k]||"";
 }
 /* Translittérations des villes (hy/ru) */
-const VILLES_HY = {"Erevan (Erebouni)":"Երևան (Էրեբունի)","Tushpa (Van)":"Տուշպա (Վան)","Van":"Վան","Armavir":"Արմավիր","Gyumri (Alexandropol)":"Գյումրի (Ալեքսանդրապոլ)","Kapan":"Կապան","Chouchi (Choucha)":"Շուշի","Karin (Erzurum)":"Կարին (Էրզրում)",
+const VILLES_HY = {"Erevan (Erebouni)":"Երևան (Էրեբունի)","Tushpa (Van)":"Տուշպա (Վան)","Van":"Վան","Armavir":"Արմավիր","Gyumri (Alexandropol)":"Գյումրի (Ալեքսանդրապոլ)","Kapan":"Կապան","Chouchi (Choucha)":"Շուշի","Karin (Erzurum)":"Կարին (Էրզրում)","Aghtamar":"Աղթամար","Tatev":"Տաթև","Sanahin & Haghpat":"Սանահին և Հաղպատ","Vanadzor (Kirovakan)":"Վանաձոր (Կիրովական)",
 "Artashat":"Արտաշատ","Tigranakert":"Տիգրանակերտ","Vagharshapat (Etchmiadzin)":"Վաղարշապատ (Էջմիածին)","Dvin":"Դվին",
 "Ani":"Անի","Kars":"Կարս","Sis":"Սիս","Stepanakert":"Ստեփանակերտ","Portasar (Göbekli Tepe)":"Պորտասար","Aknashen / Aratashen":"Ակնաշեն / Առատաշեն",
 "Karahunj (Zorats Karer)":"Քարահունջ (Զորաց քարեր)","Areni-1":"Արենի-1","Shengavit":"Շենգավիթ","Metsamor":"Մեծամոր",
@@ -1176,7 +1180,7 @@ const VILLES_HY = {"Erevan (Erebouni)":"Երևան (Էրեբունի)","Tushpa (
 "Rome":"Հռոմ","Athènes":"Աթենք","Jérusalem":"Երուսաղեմ","Moscou":"Մոսկվա","Damas":"Դամասկոս","Le Caire":"Կահիրե","Venise":"Վենետիկ",
 "Nouvelle-Djoulfa (Ispahan)":"Նոր Ջուղա (Սպահան)","San Lazzaro (Venise)":"Սուրբ Ղազար (Վենետիկ)","Madras":"Մադրաս",
 "Constantinople (communauté)":"Կոստանդնուպոլիս (համայնք)","Tiflis (communauté)":"Թիֆլիս (համայնք)","Lviv (communauté)":"Լվով (համայնք)","Caffa (Crimée)":"Կաֆա (Ղրիմ)","Amsterdam (imprimerie)":"Ամստերդամ (տպարան)"};
-const VILLES_RU = {"Erevan (Erebouni)":"Ереван (Эребуни)","Tushpa (Van)":"Тушпа (Ван)","Van":"Ван","Armavir":"Армавир","Gyumri (Alexandropol)":"Гюмри (Александрополь)","Kapan":"Капан","Chouchi (Choucha)":"Шуши","Karin (Erzurum)":"Карин (Эрзурум)",
+const VILLES_RU = {"Erevan (Erebouni)":"Ереван (Эребуни)","Tushpa (Van)":"Тушпа (Ван)","Van":"Ван","Armavir":"Армавир","Gyumri (Alexandropol)":"Гюмри (Александрополь)","Kapan":"Капан","Chouchi (Choucha)":"Шуши","Karin (Erzurum)":"Карин (Эрзурум)","Aghtamar":"Ахтамар","Tatev":"Татев","Sanahin & Haghpat":"Санаин и Ахпат","Vanadzor (Kirovakan)":"Ванадзор (Кировакан)",
 "Artashat":"Арташат","Tigranakert":"Тигранакерт","Vagharshapat (Etchmiadzin)":"Вагаршапат (Эчмиадзин)","Dvin":"Двин",
 "Ani":"Ани","Kars":"Карс","Sis":"Сис","Stepanakert":"Степанакерт","Portasar (Göbekli Tepe)":"Портасар (Гёбекли-Тепе)","Aknashen / Aratashen":"Акнашен / Араташен",
 "Karahunj (Zorats Karer)":"Карахундж (Зорац-Карер)","Areni-1":"Арени-1","Shengavit":"Шенгавит","Metsamor":"Мецамор",
@@ -1810,7 +1814,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-08a";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-08b";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
