@@ -580,11 +580,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 113)
 - 🟡 [DATA] Les notices longues récentes (MINI) n'ont pas de version RU dédiée
   (seules les charnières le sont désormais) : en ru, corps FR/EN.
-- 🟡 [DATA] verifie_donnees.py ne contrôle pas la parité des CHARNIERE entre
-  langues : automatisable (comme l'audit ponctuel de l'it. 113).
+- 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
+
+### Nouvelles critiques (it. 114)
+- 🟡 [DATA] Le contrôle de parité vérifie l'EXISTENCE des clés, pas que le texte
+  est réellement traduit (une valeur = copie du FR passerait) : suffisant en
+  pratique (repli FR explicite ailleurs).
+- 🟡 [DATA] La même parité n'est pas vérifiée pour MINI/MINI_EN/MINI_HY (couverts
+  par d'autres contrôles) ni les libellés UI.
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
 ## Critiques traitées
+- ✅ (it. 114) [DATA] Contrôle de parité linguistique des charnières AJOUTÉ à
+  verifie_donnees.py (#11) : chaque clé de CHARNIERE (FR) doit exister dans
+  EN/HY/RU, sinon avertissement. Prévient la lacune corrigée en it.113. Passe
+  à 0 avertissement (couverture 4 langues complète).
 - ✅ (it. 113) [DATA] Lacune trouvée et comblée : les 10 années récentes (1915,
   1918, 1921, 1923, 1988, 1991, 2018, 2020, 2023, 2026) n'avaient pas d'événement
   charnière en RUSSE (repli FR) → traduits. Couverture des charnières désormais

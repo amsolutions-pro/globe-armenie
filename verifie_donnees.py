@@ -270,6 +270,21 @@ def main():
             if not _couvert(feats, lo, la):
                 err(f"Repère « {nom} » ({lo},{la}) non couvert en {y} (rendu en « mer »)")
 
+    # 11. Parité linguistique des événements charnière (globe.html) : chaque clé
+    # de CHARNIERE (FR) doit exister dans CHARNIERE_EN/HY/RU (cf. lacune RU it.113).
+    try:
+        html = open("globe.html", encoding="utf-8").read()
+        def _cles(nom):
+            i = html.index("const " + nom + " = {")
+            return set(_re.findall(r'"(-?\d+)":', html[i:html.index("};", i)]))
+        fr = _cles("CHARNIERE")
+        for lang in ("CHARNIERE_EN", "CHARNIERE_HY", "CHARNIERE_RU"):
+            manque = fr - _cles(lang)
+            if manque:
+                warn(f"{lang} : charnière(s) manquante(s) vs FR : {sorted(manque, key=int)}")
+    except (FileNotFoundError, ValueError):
+        warn("globe.html : contrôle de parité des charnières ignoré")
+
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)
     if ERREURS:
