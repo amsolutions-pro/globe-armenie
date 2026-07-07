@@ -1,5 +1,11 @@
 # Journal d'autoamélioration — Globe & Atlas d'histoire (pivot : Arménie)
 
+> **⚠ Archivé (clôturé it. 94).** Ce journal couvre les premières itérations
+> (≈ 1–21). Le suivi actuel — critiques ouvertes, traitées et invalidées — vit
+> désormais dans **`CRITIQUES.md`** (registre par itération) ; les règles et
+> corrections de source appliquées sont dans **`REGLES.md`**. Ce fichier est
+> conservé pour la mémoire du projet mais n'est plus mis à jour.
+
 Chaque itération : 3 questions « est-ce assez bien, et comment faire mieux ? »,
 les réponses sont appliquées à l'itération suivante (ou immédiatement si possible).
 

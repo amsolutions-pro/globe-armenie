@@ -197,6 +197,10 @@ def main():
             a_ = _re.search(r"[,{]a:(-?\d+)", e)
             if a_ and int(a_.group(1)) < de_:
                 err(f"VILLES/{nom} : année de fin {a_.group(1)} < début {de_}")
+            # Lieux arméniens (arm:1) : zone plausible plateau+Cilicie+Karabagh
+            # (28–52°E, 34–43°N). Hors zone = probable coquille de coordonnées.
+            if _re.search(r"\barm:1\b", e) and not (28 <= lo <= 52 and 34 <= la <= 43):
+                warn(f"VILLES/{nom} (arm:1) hors zone arménienne plausible ({lo},{la})")
     except (FileNotFoundError, ValueError, AttributeError):
         warn("globe.html : contrôle des villes ignoré")
 

@@ -469,17 +469,24 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   l'entrée peut devenir obsolète (référence à un index/nombre qui a changé).
 - 🟡 [DATA] Un vrai nombre EN/HY masqué par erreur dans le whitelist passerait
   inaperçu : le whitelist doit rester minimal et justifié.
-- 🟡 [DOC] AMELIORATION.md toujours à clôturer.
 
 ### Nouvelles critiques (it. 93)
 - 🟡 [DATA] Le contrôle des villes lit VILLES par ligne (globe.html) : fragile
   si une entrée est reformatée sur plusieurs lignes.
-- 🟡 [DATA] La zone de plausibilité des villes n'est pas testée par
-  verifie_donnees (seulement bornes globales) : un lieu arménien mal placé
-  loin du plateau passerait.
-- 🟡 [DOC] AMELIORATION.md toujours à clôturer.
+
+### Nouvelles critiques (it. 94)
+- 🟡 [DATA] La zone de plausibilité arm:1 (28–52°E, 34–43°N) exclut d'éventuels
+  lieux de diaspora marqués arm:1 : vérifier qu'aucun lieu légitime hors zone
+  n'est ainsi mal signalé (aucun aujourd'hui).
+- 🟡 [DOC] Le projet a 3 fichiers de suivi (CRITIQUES, REGLES, AMELIORATION
+  archivé) : un index unique en tête de README clarifierait leur rôle.
+- 🟡 [UX] Tests device réel iPhone (Safari tactile) toujours en attente.
 
 ## Critiques traitées
+- ✅ (it. 94) [DATA] Contrôle des villes renforcé : zone de plausibilité
+  arménienne (28–52°E, 34–43°N) pour les lieux arm:1 (avertit si coquille de
+  coordonnées). [DOC] AMELIORATION.md clôturé proprement (en-tête d'archivage
+  pointant vers CRITIQUES.md/REGLES.md, contenu historique conservé).
 - ✅ (it. 93) [DATA] Relecture des 77 villes : 33 arméniennes toutes dans la
   zone plausible (28–50°E, 35–42°N), aucune date incohérente (fin ≥ début).
   Contrôle AJOUTÉ à verifie_donnees.py (coordonnées bornées + cohérence des
