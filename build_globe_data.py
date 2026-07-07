@@ -79,9 +79,9 @@ def process(fname, annee=None):
             russes[0]["geometry"] = mapping(union)
             for f in russes[1:]:
                 f["geometry"] = None
-    # (c) 1918 : l'Azerbaïdjan de la source (fond 1920) déborde vers l'ouest sur le
-    #     Zanguezour/Syunik arménien. → lui soustraire l'Arménie moderne.
-    if annee == 1918:
+    # (c) 1918/1920 : l'Azerbaïdjan de la source (fond 1920) déborde vers l'ouest sur
+    #     le Zanguezour/Syunik arménien. → lui soustraire l'Arménie moderne.
+    if annee in (1918, 1920):
         mask = arm_moderne()
         if mask is not None:
             for f in d["features"]:

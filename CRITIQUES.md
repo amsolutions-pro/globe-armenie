@@ -378,7 +378,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] La densité de notices anciennes en hy justifierait un test de rendu
   arménien sur ces siècles préhistoriques.
 
+### Nouvelles critiques (it. 78)
+- 🟡 [DATA] 1918/1920 : l'Arménie reste la « Grande Arménie » de Sèvres (17
+  deg², jusqu'en Anatolie) — non signalée par l'utilisateur mais généreuse ;
+  faute de polygone sourcé du contrôle réel, laissée telle quelle.
+- 🟡 [DATA] La soustraction Az−Arménie moderne peut laisser un fin liseré le
+  long de la frontière Syunik/Nakhitchevan : à vérifier au zoom.
+- 🟡 [UX] Vérifier en ligne (VDATA s) que 1920 s'affiche corrigé.
+
 ## Critiques traitées
+- ✅ (it. 78, signalement utilisateur) [DATA] 🔴 1920 : Azerbaïdjan trop grand
+  (13,5 deg², débordant sur le Zanguezour à 43,5°E) → correction du fond 1920
+  étendue de 1918 à 1920 (soustraction de l'Arménie moderne) : Azerbaïdjan
+  ramené à 10,3 deg², bord ouest 44,7°E.
 - ✅ (it. 77) [DATA] MINI_HY étendu à 4 nouvelles mini-notices préhistoriques :
   -10000 (premiers habitants, Nor Geghi, Portasar), -4000 (Chalcolithique,
   vin d'Areni), -2000 (aube du plateau, Trialeti), -1000 (unification
