@@ -590,6 +590,13 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   par d'autres contrôles) ni les libellés UI.
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
+## État stable (it. 115, 2026-07-08)
+Projet abouti : cartes auditées et corrigées de bout en bout (−10000→2026), 14
+contrôles anti-régression à 0 avertissement, contenu historique complet en 4
+langues, sources neutres et transparentes, site publié. Vérif finale OK, arbre
+git propre. Restent uniquement des critiques 🟡 mineures (tests iPhone réel,
+refactor de confort) ; pas de correctif essentiel en attente.
+
 ## Critiques traitées
 - ✅ (it. 114) [DATA] Contrôle de parité linguistique des charnières AJOUTÉ à
   verifie_donnees.py (#11) : chaque clé de CHARNIERE (FR) doit exister dans
