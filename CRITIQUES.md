@@ -537,9 +537,12 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   1921) est un polygone manuel : approximation de la vraie ligne Arpatchaï-Ararat.
 - 🟡 [DATA] Kars est arménien en 1918/1920 puis turc dès 1921 (traité de Kars) :
   transition correcte mais à vérifier visuellement.
-- 🟡 [UX] Vérifier en ligne (VDATA i) l'Anatolie orientale comblée sur 1921.
 
 ## Critiques traitées
+- ✅ (it. 106) [DATA] Anatolie orientale comblée VÉRIFIÉE en ligne (capture
+  1921) : Van, Mush, Erzurum, Kars sont terre ottomane/turque (violet), plus de
+  trou « mer ». Kars turc en 1921 (traité de Kars), arménien en 1918 :
+  transition correcte. Arménie soviétique réduite à l'est. Cohérent.
 - ✅ (it. 105, audit) [DATA] 🔴 Effet de bord détecté et corrigé : le retrait de
   l'Arménie de Sèvres avait laissé l'Anatolie orientale (Van, Bitlis, Erzurum,
   Kars) VIDE en 1918-1938 (rendue en « mer »). → Turquie/Empire ottoman étendu
