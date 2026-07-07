@@ -27,6 +27,7 @@ YEARS = [(-10000,"bc10000"),(-8000,"bc8000"),(-5000,"bc5000"),(-4000,"bc4000"),(
          (1960,"1960"),
          (1965,"1960"),                        # 50e anniversaire du génocide
          (1988,"1960"),                       # séisme de Spitak — fond soviétique
+         (1990,"1994"),                        # pogroms de Bakou · Janvier noir
          (1991,"1994"),                       # indépendance — fond post-soviétique
          (1994,"1994"),(2000,"2000"),(2010,"2010"),(2018,"2010"),  # Révolution de velours
          (2020,"2010"),(2023,"2010"),(2026,"2010")]  # guerre 44 j., exode d'Artsakh, aujourd'hui

@@ -16,7 +16,7 @@ SIMPLIFY, ROUND = 0.1, 2
 
 # Années arméniennes ajoutées sans fond de carte dédié → fond source le plus proche
 ALIAS_FOND = {1828: "1880", 1896: "1900", 1915: "1914", 1918: "1920", 1923: "1930",
-              1936: "1938", 1946: "1945", 1965: "1960", 1988: "1960", 1991: "1994",
+              1936: "1938", 1946: "1945", 1965: "1960", 1988: "1960", 1990: "1994", 1991: "1994",
               2018: "2010", 2020: "2010", 2023: "2010", 2026: "2010"}
 
 def fname(y):
@@ -135,6 +135,7 @@ SPECS = [
     (1965, "RSS d'Arménie", "Union soviétique — 50e anniversaire du génocide", "armenia:2000", None, PLATEAU),
     (1923, "Oblast autonome du Haut-Karabagh (NKAO)", "Création au sein de l'Azerbaïdjan soviétique (7 juillet 1923)", "tout", r"azerbaijan|soviet|ussr", KARABAGH),
     (1988, "RSS d'Arménie", "Union soviétique — séisme de Spitak, début du mouvement du Karabagh", "armenia:2000", None, PLATEAU),
+    (1990, "Haut-Karabagh (oblast autonome, NKAO)", "URSS finissante — pogroms de Bakou, blocus de l'Arménie", "tout", r"azerbaijan|soviet|ussr", KARABAGH),
     (1991, "Haut-Karabagh (oblast autonome, NKAO)", "Proclamation de la République d'Artsakh (1991) — guerre en cours", "tout", r"azerbaijan", KARABAGH),
     (1994, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),
     (2010, "Haut-Karabagh et districts occupés (contrôle arménien)", "République autoproclamée d'Artsakh (1991–2023) — ligne de contact de 1994", "tout", r"azerbaijan", CONTROLE_1994),

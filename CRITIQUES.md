@@ -602,14 +602,25 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Les notices 1828/1896/1936/1946/1965 n'ont pas de version RU dédiée.
 
 ### Nouvelles critiques (it. 118)
-- 🟠 [DATA] 1990 (pogroms de Bakou, Janvier noir, blocus) : année charnière
-  encore manquante entre 1988 et 1991.
 - 🟠 [DATA] La guerre turco-arménienne de 1920 mériterait sa propre année
   (la carte de 1920 montre l'apogée revendiquée, pas la défaite de novembre).
 - 🟡 [DATA] Njdeh/République montagneuse : évoquée en notice, pas figurée sur
   la carte (surcouche Syunik dédiée possible pour 1921).
 
+### Nouvelles critiques (it. 119)
+- 🟠 [DATA] La guerre turco-arménienne de 1920 (défaite de nov.) reste sous-
+  représentée : la carte 1920 montre l'apogée revendiquée, une année 1920-fin
+  ou une nuance manque.
+- 🟡 [DATA] Les pogroms de Soumgaït (fév. 1988) sont dans la notice 1988 mais
+  Bakou (1990) et Kirovabad (1988) mériteraient d'être reliés.
+- 🟡 [DATA] Notices récentes sans version RU dédiée (charnières RU OK).
+
 ## Critiques traitées
+- ✅ (it. 119) [DATA] Année 1990 ajoutée (pipeline complet) : pogroms
+  anti-arméniens de Bakou (janvier 1990, ~200 000 Arméniens chassés), « Janvier
+  noir », blocus ferroviaire/énergétique de l'Arménie, effondrement de l'URSS.
+  Charnière 4 langues, notice dédiée FR/EN/HY, surcouche NKAO, alias. 59 pas de
+  temps, 0 avertissement.
 - ✅ (it. 118) [DATA] Notice de la Première République (1920) enrichie de ses
   GUERRES en FR/EN/HY : arméno-géorgienne (Lori, déc. 1918), arméno-azérie
   (Karabagh/Zanguezour/Nakhitchevan), turco-arménienne (sept-nov 1920, Kazım
