@@ -130,6 +130,22 @@ Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
   demande (langue courante).
 - Aucune donnée inventée : toute reconstitution est marquée comme telle (R3.2).
 
+### Corrections de source appliquées (build_globe_data.py)
+La source historical-basemaps comporte des anachronismes sur le Caucase, corrigés
+par des données sourcées (jamais inventées) — audit « qui couvre Erevan par
+siècle » (it. 66–81) :
+- **1700** : Erevan était séfévide (post-Zuhab 1639), pas ottoman → plateau
+  oriental (est de la ligne de Zuhab) transféré Ottoman → Séfévides.
+- **1880/1900** : Erevan/Syunik russes depuis Turkmentchaï (1828), pas persans
+  → Transcaucasie russe transférée Perse → Empire russe.
+- **1914/1915** : Caucase du Sud = Empire russe (pas d'États indépendants avant
+  1918) → Arménie/Azerbaïdjan/Géorgie fusionnés dans « Russian Empire ».
+- **1918/1920** : Azerbaïdjan débordant sur le Zanguezour → Arménie moderne
+  soustraite.
+- **1921/1923/1930/1938** : « Grande Arménie » de Sèvres anachronique →
+  remplacée par la forme réelle de la RSS (Arménie moderne).
+- **1600** laissé tel quel (Erevan ottoman 1583–1604, historiquement correct).
+
 ## R11 — Affichage à la demande (décision utilisateur, 2026-07-06)
 - Les informations complémentaires (légende, aides, notices non essentielles)
   ne s'affichent JAMAIS automatiquement : masquées par défaut, un bouton

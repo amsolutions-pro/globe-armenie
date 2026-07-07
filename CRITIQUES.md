@@ -402,9 +402,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   (1639) — légère incohérence base/overlay pour ce seul millésime.
 - 🟡 [DATA] Le transfert 1700 utilise une boîte (est de 43,7°) : la vraie
   frontière de Zuhab suivait l'Arpatchaï puis les crêtes — approximation.
-- 🟡 [UX] Vérifier en ligne (VDATA v) 1700 (Erevan persan) et 1880/1900.
+
+### Nouvelles critiques (it. 82)
+- 🟡 [DATA] L'audit « qui couvre Erevan » couvre l'Arménie ; les frontières
+  hors-Arménie (autres régions du monde) ne sont pas auditées — hors périmètre.
+- 🟡 [DATA] Les corrections de source sont des transferts par polygone/boîte :
+  documentées dans REGLES, mais chacune est une approximation des vraies
+  frontières historiques.
+- 🟡 [UX] Le tableau des corrections de source (REGLES) pourrait être exposé
+  dans l'app (page « méthodologie ») pour la transparence.
 
 ## Critiques traitées
+- ✅ (it. 82) [DATA] Audit « qui couvre Erevan » TERMINÉ sur les 53 années :
+  1700 corrigé (vérifié en ligne, Erevan séfévide) ; -100 (surcouche Artaxiade
+  couvre Erevan) et 400 (base Perse + surcouche Arsacide = Persarménie) déjà
+  corrects via le système de surcouches. Liste complète des corrections de
+  source documentée dans REGLES R9.
 - ✅ (it. 81) [DATA] Audit « qui couvre Erevan » sur les 53 années : cohérent
   sauf 1700 (corrigé). 1880/1900 (Erevan russe) vérifié visuellement en ligne.
   🔴 1700 : la source plaçait Erevan sous les Ottomans alors qu'après Zuhab
