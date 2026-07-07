@@ -590,14 +590,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   par d'autres contrôles) ni les libellés UI.
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
-## État stable (it. 115, 2026-07-08)
-Projet abouti : cartes auditées et corrigées de bout en bout (−10000→2026), 14
-contrôles anti-régression à 0 avertissement, contenu historique complet en 4
-langues, sources neutres et transparentes, site publié. Vérif finale OK, arbre
-git propre. Restent uniquement des critiques 🟡 mineures (tests iPhone réel,
-refactor de confort) ; pas de correctif essentiel en attente.
+### Nouvelles critiques (it. 116, sur critique utilisateur « pas assez critique sur le XIXe-XXe »)
+- 🟠 [DATA] 1936/1946 aliasent la notice 1945 (Arménie soviétique) : mériteraient
+  des notices dédiées (république de plein droit 1936 ; rapatriement 1946).
+- 🟠 [DATA] Manque encore : guerres de la Première République (arméno-géorgienne
+  1918, arméno-azérie, turco-arménienne 1920), République montagneuse de Njdeh
+  (1921), pogroms de Bakou (1990), déportations de 1949.
+- 🟡 [DATA] 1828/1896 : notices FR/EN/HY dédiées ; RU en repli (corps FR/EN).
 
 ## Critiques traitées
+- ✅ (it. 116, critique utilisateur) [DATA] XIXe-XXe densifié : 5 années
+  pivots ajoutées — 1828 (Turkmentchaï, naissance de l'Arménie orientale russe),
+  1896 (massacres hamidiens + partis Arménakan/Hentchak/Dachnaktsoutioun),
+  1936 (RSS de plein droit + Grande Terreur), 1946 (rapatriement/nerkaght),
+  1965 (50e anniversaire du génocide, réveil de la mémoire). 58 pas de temps,
+  charnières 4 langues, surcouches, notices dédiées FR/EN/HY pour 1828/1896/1965.
+  0 avertissement.
 - ✅ (it. 114) [DATA] Contrôle de parité linguistique des charnières AJOUTÉ à
   verifie_donnees.py (#11) : chaque clé de CHARNIERE (FR) doit exister dans
   EN/HY/RU, sinon avertissement. Prévient la lacune corrigée en it.113. Passe

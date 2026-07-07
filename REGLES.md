@@ -154,6 +154,9 @@ siècle » (it. 66–81) :
   remplacée par la forme réelle de la RSS (Arménie moderne).
 - **1100** : mince interstice topologique de la source entre « Armenia » et
   « Syunik » à Nakhitchevan (les deux arméniens) → « Armenia » étendu sur le gap.
+- **1828/1896** : Erevan russe (post-Turkmentchaï) — corrections Perse→Russie
+  appliquées comme 1880/1900. **1936** : clip RSS + Anatolie orientale (comme
+  1938). Nouvelles années XIXe-XXe (1828, 1896, 1936, 1946, 1965) ajoutées.
 - **1600** laissé tel quel (Erevan ottoman 1583–1604, historiquement correct).
 
 ## R11 — Affichage à la demande (décision utilisateur, 2026-07-06)

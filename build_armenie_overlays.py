@@ -15,7 +15,8 @@ BASE = "https://raw.githubusercontent.com/aourednik/historical-basemaps/master/g
 SIMPLIFY, ROUND = 0.1, 2
 
 # Années arméniennes ajoutées sans fond de carte dédié → fond source le plus proche
-ALIAS_FOND = {1915: "1914", 1918: "1920", 1923: "1930", 1988: "1960", 1991: "1994",
+ALIAS_FOND = {1828: "1880", 1896: "1900", 1915: "1914", 1918: "1920", 1923: "1930",
+              1936: "1938", 1946: "1945", 1965: "1960", 1988: "1960", 1991: "1994",
               2018: "2010", 2020: "2010", 2023: "2010", 2026: "2010"}
 
 def fname(y):
@@ -117,14 +118,21 @@ SPECS = [
     (1800, "Arménie orientale (khanats d'Erevan et du Karabagh)", "Perse kadjare", "gabarit", r"persia|qajar|central asian khanates|russia", PLATEAU),
     (1815, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU),
     (1815, "Arménie orientale (khanats d'Erevan et du Karabagh)", "Perse kadjare", "gabarit", r"persia|qajar|central asian khanates|russia", PLATEAU),
+    (1828, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1828, "Arménie orientale russe (khanats d'Erevan et du Nakhitchevan)", "Empire russe — traité de Turkmentchaï (1828)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1880, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1880, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — Turkmentchaï (1828), Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1900, "Arménie occidentale (ottomane)", "Empire ottoman", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1900, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — traités de Turkmentchaï (1828) et Berlin (1878)", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
+    (1896, "Arménie occidentale (massacres hamidiens)", "Empire ottoman — massacres de 1894–1896", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1896, "Arménie russe (gouvernorats d'Erevan et de Kars)", "Empire russe — réveil politique arménien", "gabarit", r"russia|persia|ottoman", PLATEAU.intersection(RUSSE_1900)),
     (1914, "Arménie occidentale (six vilayets)", "Empire ottoman — veille du génocide de 1915", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
     (1915, "Arménie occidentale (génocide en cours)", "Empire ottoman — génocide des Arméniens (1915–1916)", "gabarit", r"ottoman", PLATEAU.difference(RUSSE_1900)),
+    (1936, "RSS d'Arménie (république de plein droit)", "Union soviétique — fin de la RSFS de Transcaucasie (1936)", "armenia:2000", None, PLATEAU),
     (1945, "RSS d'Arménie", "Union soviétique (depuis 1920/1922)", "armenia:2000", None, PLATEAU),
+    (1946, "RSS d'Arménie", "Union soviétique — grand rapatriement de la diaspora", "armenia:2000", None, PLATEAU),
     (1960, "RSS d'Arménie", "Union soviétique", "armenia:2000", None, PLATEAU),
+    (1965, "RSS d'Arménie", "Union soviétique — 50e anniversaire du génocide", "armenia:2000", None, PLATEAU),
     (1923, "Oblast autonome du Haut-Karabagh (NKAO)", "Création au sein de l'Azerbaïdjan soviétique (7 juillet 1923)", "tout", r"azerbaijan|soviet|ussr", KARABAGH),
     (1988, "RSS d'Arménie", "Union soviétique — séisme de Spitak, début du mouvement du Karabagh", "armenia:2000", None, PLATEAU),
     (1991, "Haut-Karabagh (oblast autonome, NKAO)", "Proclamation de la République d'Artsakh (1991) — guerre en cours", "tout", r"azerbaijan", KARABAGH),

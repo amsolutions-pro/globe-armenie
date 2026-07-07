@@ -12,12 +12,20 @@ from shapely.validation import make_valid
 YEARS = [(-10000,"bc10000"),(-8000,"bc8000"),(-5000,"bc5000"),(-4000,"bc4000"),(-3000,"bc3000"),
          (-2000,"bc2000"),(-1500,"bc1500"),(-1000,"bc1000"),(-700,"bc700"),
          (-500,"bc500"),(-300,"bc300"),(-100,"bc100"),(1,"bc1")] + \
-        [(y,str(y)) for y in range(100,1801,100)] +         [(1815,"1815"),(1880,"1880"),(1900,"1900"),(1914,"1914"),
+        [(y,str(y)) for y in range(100,1801,100)] +         [(1815,"1815"),
+         (1828,"1880"),                        # traité de Turkmentchaï — Arménie orientale russe
+         (1880,"1880"),
+         (1896,"1900"),                        # massacres hamidiens · partis arméniens
+         (1900,"1900"),(1914,"1914"),
          (1915,"1914"),                       # génocide — fond ottoman/russe de 1914
          (1918,"1920"),                        # proclamation de la Première République
          (1920,"1920"),(1921,"1920"),         # apogée républicaine ; traité de Kars
          (1923,"1930"),                        # création de l'oblast du Haut-Karabagh
-         (1930,"1930"),(1938,"1938"),(1945,"1945"),(1960,"1960"),
+         (1930,"1930"),(1936,"1938"),          # RSS d'Arménie, république de plein droit
+         (1938,"1938"),(1945,"1945"),
+         (1946,"1945"),                        # grand rapatriement (nerkaght)
+         (1960,"1960"),
+         (1965,"1960"),                        # 50e anniversaire du génocide
          (1988,"1960"),                       # séisme de Spitak — fond soviétique
          (1991,"1994"),                       # indépendance — fond post-soviétique
          (1994,"1994"),(2000,"2000"),(2010,"2010"),(2018,"2010"),  # Révolution de velours
@@ -59,7 +67,7 @@ def process(fname, annee=None):
     #     (tracé de Sèvres, jusqu'en Anatolie) alors que seule la petite RSS existe.
     #     → clip sur la forme RÉELLE de l'Arménie moderne (pas une boîte : évite le
     #     « triangle » anguleux signalé pour 1921).
-    if annee in (1921, 1923, 1930, 1938):
+    if annee in (1921, 1923, 1930, 1936, 1938):
         mask = arm_moderne()
         if mask is not None:
             for f in d["features"]:
@@ -109,7 +117,7 @@ def process(fname, annee=None):
     # (d) 1880/1900 : la source fait couvrir Erevan/Syunik par la PERSE, or ils
     #     sont russes depuis Turkmentchaï (1828). → transférer la Transcaucasie
     #     russe (nord de l'Araxe) de la Perse vers l'Empire russe.
-    if annee in (1880, 1900):
+    if annee in (1828, 1880, 1896, 1900):
         from shapely.geometry import Polygon as _Poly
         RUSSE_TRANS = _Poly([(42.5,41.9),(42.55,41.3),(42.7,40.9),(42.8,40.4),
                              (43.4,40.05),(44.0,39.85),(44.32,39.72),(44.8,39.70),
@@ -150,7 +158,7 @@ def process(fname, annee=None):
     #     l'époque : il se rend en couleur « mer » (la mer Noire semble déborder).
     #     → combler en étendant l'entité qui couvre l'Anatolie centrale (Empire
     #     ottoman, sultanat ottoman ou Turquie, selon l'année) le long de la côte.
-    if 1800 <= annee <= 1960:
+    if 1800 <= annee <= 1965:
         from shapely.geometry import Point as _Pt
         PONT = Polygon([(39.2, 40.6), (39.5, 41.1), (40.3, 41.4), (41.2, 41.5),
                         (41.5, 41.45), (41.55, 40.7), (40.8, 40.5), (39.2, 40.6)])
@@ -168,7 +176,7 @@ def process(fname, annee=None):
     #     TURQUE (Kars redevient turc au traité de Kars, 1921). → étendre la
     #     Turquie/Empire ottoman sur l'Anatolie orientale, moins l'Arménie du
     #     moment (rep1 en 1918/1920 : Kars-Sourmalou arméniens ; RSS ensuite).
-    if annee in (1918, 1920, 1921, 1923, 1930, 1938):
+    if annee in (1918, 1920, 1921, 1923, 1930, 1936, 1938):
         from shapely.geometry import Point as _Pt2
         EST_ANATOLIE = Polygon([(38.7, 41.05), (43.0, 41.15), (43.7, 40.7),
                                 (44.3, 39.9), (44.55, 39.4), (44.5, 38.0),
