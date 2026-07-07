@@ -187,6 +187,17 @@ def process(fname, annee=None):
             if g.contains(_Pt2(35, 39.5)):   # entité turque (Anatolie centrale)
                 f["geometry"] = mapping(g.union(fill))
                 break
+    # (h) 1100 : mince interstice topologique de la source entre « Armenia » et
+    #     « Syunik » autour de Nakhitchevan (les deux sont arméniens) → combler en
+    #     étendant l'entité « Armenia » sur ce petit gap.
+    if annee == 1100:
+        NAKH_GAP = Polygon([(45.05, 38.85), (45.75, 38.85), (45.75, 39.7),
+                            (45.05, 39.7), (45.05, 38.85)])
+        for f in d["features"]:
+            if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
+                g = make_valid(shape(f["geometry"])).buffer(0).union(NAKH_GAP)
+                f["geometry"] = mapping(g)
+                break
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue

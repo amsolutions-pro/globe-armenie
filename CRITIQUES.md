@@ -559,13 +559,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
 ### Nouvelles critiques (it. 110)
-- 🟡 [DATA] Nakhitchevan a un trou isolé de source en 1100 : non ajouté aux
-  repères requis (ferait échouer le contrôle) — micro-lacune à corriger un jour.
 - 🟡 [DATA] verifie_donnees.py : refactor en fonctions nommées toujours
   souhaitable (reporté : risque de régression sur l'état partagé, faible gain).
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
+### Nouvelles critiques (it. 111)
+- 🟡 [DATA] Le comblement 1100 étend « Armenia » sur un petit rectangle : peut
+  déborder de ~qq km sur Syunik/Goghtn (tous arméniens) — cosmétique négligeable.
+- 🟡 [DATA] D'autres interstices topologiques de source pourraient exister
+  entre entités adjacentes ailleurs (hors repères testés).
+- 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
+
 ## Critiques traitées
+- ✅ (it. 111) [DATA] Micro-trou 1100 corrigé : interstice topologique de la
+  source entre « Armenia » et « Syunik » à Nakhitchevan (les deux arméniens) →
+  « Armenia » étendu sur le gap. Nakhitchevan AJOUTÉ au filet anti-trou
+  (13 repères, tous couverts de −500 à 2026). 0 avertissement.
 - ✅ (it. 110) [DATA] Contrôle anti-trou élargi de 8 à 12 repères stables
   couvrant toute la géographie arménienne : + Sis (Cilicie), Tigranakert
   (plateau ouest), Stepanakert (Karabagh), Tabriz (bordure perse). Sortie

@@ -152,6 +152,8 @@ siècle » (it. 66–81) :
   de la côte.
 - **1921/1923/1930/1938** : « Grande Arménie » de Sèvres anachronique →
   remplacée par la forme réelle de la RSS (Arménie moderne).
+- **1100** : mince interstice topologique de la source entre « Armenia » et
+  « Syunik » à Nakhitchevan (les deux arméniens) → « Armenia » étendu sur le gap.
 - **1600** laissé tel quel (Erevan ottoman 1583–1604, historiquement correct).
 
 ## R11 — Affichage à la demande (décision utilisateur, 2026-07-06)
