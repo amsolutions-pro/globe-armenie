@@ -1,8 +1,15 @@
 # Globe historique — 12 000 ans (pivot : histoire de l'Arménie)
 
 Outil d'apprentissage de l'histoire : un globe 3D feuilletable de la préhistoire à nos jours
-(−10 000 → 2010, 43 pas de temps, cadence resserrée à l'époque contemporaine),
-multilingue (FR/EN/HY/RU) et un atlas Leaflet de l'Arménie historique.
+(−10 000 → 2026, **53 pas de temps**, cadence resserrée à l'époque contemporaine avec les
+grandes dates arméniennes : génocide 1915, Sardarabad 1918, indépendance 1991, guerre 2020,
+exode d'Artsakh 2023…), multilingue (FR/EN/HY/RU, **arménien par défaut**) et un atlas
+Leaflet de l'Arménie historique.
+
+**77 villes et lieux** arméniens (capitales historiques, monastères UNESCO, hauts lieux de
+mémoire), une **couche « foyer arménien historique »** (plateau + Cilicie) activable, et une
+note **« Sources & méthodologie »** intégrée. En ligne :
+<https://amsolutions-pro.github.io/globe-armenie/globe.html>
 
 ## Contenu
 
@@ -18,9 +25,13 @@ multilingue (FR/EN/HY/RU) et un atlas Leaflet de l'Arménie historique.
 | `AMELIORATION.md` | Journal d'autoamélioration (questions/réponses par itération) |
 | `REGLES.md` | Spécification des règles implémentées (niveaux, couleurs, surcouches, i18n…) |
 
-Source cartographique : [aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps)
-(numérisation d'atlas historiques — précision variable ; les écarts corrigés sont
-documentés dans `AMELIORATION.md`).
+Sources (toutes neutres, **aucune source azerbaïdjanaise**) :
+[aourednik/historical-basemaps](https://github.com/aourednik/historical-basemaps) (frontières),
+Natural Earth (lacs). Le tracé du Haut-Karabagh est un polygone du NKAO historique reconstitué.
+La source comporte des anachronismes sur le Caucase (Erevan persan en 1700, russe en 1880/1900,
+Arménie de Sèvres surdimensionnée…) : ils sont **corrigés avec des données sourcées** (jamais
+inventées) dans `build_globe_data.py` et documentés dans `REGLES.md` (R9). Un contrôle
+`verifie_donnees.py` valide cohérence géométrique et fidélité numérique des traductions.
 
 ## Lancement local
 

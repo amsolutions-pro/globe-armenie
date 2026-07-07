@@ -450,16 +450,25 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   aux zooms intermédiaires sur tout le globe.
 
 ### Nouvelles critiques (it. 89)
-- 🟡 [UX] 77 lieux : plusieurs monastères du sud (Tatev, Noravank, Khor Virap,
-  Guéghard) et du Karabagh (Gandzasar) sont proches ; contrôler les collisions
-  d'étiquettes à moyen zoom sur cette zone.
 - 🟡 [DATA] Les monastères apparaissent dès leur date de construction (de:) ;
   certains sites (Ayrivank pour Guéghard) sont bien plus anciens — nuance
   portée par la note seulement.
 - 🟡 [DATA] Couverture des monuments quasi complète ; prochaine profondeur =
   lieux de la diaspora historique ou événements ponctuels.
 
+### Nouvelles critiques (it. 90)
+- 🟡 [DOC] README mis à jour mais AMELIORATION.md (journal d'itérations) n'est
+  plus tenu depuis longtemps : à archiver ou reprendre.
+- 🟡 [DATA] periodes.json (10 notices longues) n'est pas re-contrôlé par le
+  contrôle de fidélité numérique (seul MINI l'est).
+- 🟡 [UX] Le projet est mature ; les prochaines améliorations seront
+  incrémentales (relecture native hy, tests device réel iPhone).
+
 ## Critiques traitées
+- ✅ (it. 90) [UX/DOC] Densité d'étiquettes du sud (5 monastères proches)
+  vérifiée en ligne en l'an 1300 : aucune collision illisible, placement propre.
+  README actualisé (53 pas de temps → 2026, 77 lieux, arménien par défaut,
+  sources neutres + corrections, URL en ligne).
 - ✅ (it. 89) [DATA] 4 monastères emblématiques ajoutés (dates sourcées +
   traductions hy/ru) : Khor Virap (face à l'Ararat, saint Grégoire),
   Guéghard (UNESCO, 1215), Noravank (Momik, XIIIᵉ s.), Gandzasar
