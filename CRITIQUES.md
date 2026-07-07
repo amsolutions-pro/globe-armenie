@@ -504,9 +504,12 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   contesté) reste approximé.
 - 🟡 [DATA] Le comblement côtier PONT est un polygone manuel : à comparer à la
   vraie côte pontique si une source précise apparaît.
-- 🟡 [UX] Vérifier en ligne (VDATA e) 1918 (Erevan arménien) et 1921 (côte).
 
 ## Critiques traitées
+- ✅ (it. 99) [DATA] Corrections it.98 VÉRIFIÉES en ligne (captures) : 1918 =
+  Première République centrée sur Erevan (Erevan/Kars dans le territoire or,
+  Erzurum hors Arménie — Sèvres écarté) ; 1921 = côte pontique ottomane
+  continue jusqu'à la Géorgie soviétique, la mer Noire ne déborde plus.
 - ✅ (it. 98, signalements utilisateur) [DATA] 🔴 (1) 1918/1920 : la « carte de
   la Première République » montrait l'Arménie de Sèvres (Anatolie, SANS Erevan)
   → remplacée par la République réelle centrée sur Erevan (Arménie moderne +
