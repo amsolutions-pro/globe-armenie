@@ -523,9 +523,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   une concavité réelle entre deux régions : effet cosmétique mineur assumé.
 - 🟡 [DATA] Les polygones des régions revendiquées restent des approximations
   manuelles ; à affiner si des tracés sourcés de 1918-1920 émergent.
-- 🟡 [UX] Vérifier en ligne (VDATA h) le rendu adouci de 1918.
+
+### Nouvelles critiques (it. 104)
+- 🟡 [DATA] 1918 et 1920 partagent la même extension maximale ; historiquement
+  la République de mai 1918 (fondation) était plus petite que son apogée de
+  1920 — nuance non représentée (choix « République revendiquée » assumé).
+- 🟡 [DATA] Le bord ouest (Kars-Sourmalou) reste assez droit (frontière ≈
+  Arpatchaï) : acceptable mais perfectible si tracé sourcé.
+- 🟡 [UX] Tests device réel iPhone toujours la seule limite ouverte notable.
 
 ## Critiques traitées
+- ✅ (it. 104) [UX] Rendu adouci de la République 1918 VÉRIFIÉ en ligne : coins
+  arrondis, jonctions lissées, les 5 régions (Erevan, Artsakh, Nakhitchevan,
+  Djavakhk, Kars) toujours présentes. Demande utilisateur pleinement satisfaite.
 - ✅ (it. 103) [UX] Contours de la République 1918 adoucis : fermeture
   morphologique (buffer +0,07°/−0,07°) qui arrondit les angles vifs des boîtes
   Kars-Sourmalou et Djavakhk et lisse les jonctions, sans changer les
