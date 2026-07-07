@@ -621,7 +621,177 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] La République montagneuse de Njdeh (1921) reste en notice, pas
   figurée sur la carte.
 
+### Nouvelles critiques (it. 121, audit externe — interface, carte, couleurs, données historiques)
+
+#### Couleurs et lisibilité de la carte
+
+- 🟠 [UX] **Le dégradé radial de l'océan crée un « reflet » décentré
+  artificiel.** Le centre du dégradé est décalé (`W/2-base*k*.25`), ce qui
+  produit une tache claire en haut à gauche censée simuler un éclairage.
+  Mais sur un globe interactif qu'on tourne, ce reflet ne suit PAS la
+  rotation — il reste fixe, ce qui casse l'illusion. Proposition : soit un
+  bleu uniforme sombre (plus honnête), soit un éclairage qui suit la rotation
+  (reflet toujours face au « soleil »), soit un dégradé subtil du pôle nord
+  vers le pôle sud (logique de lumière solaire).
+
+- 🟠 [UX] **Les cultures/chefferies (N2) ressemblent à des royaumes
+  ternes.** `hsl(t,20%,31%)` produit des teintes sourdes mais colorées qui se
+  confondent facilement avec des N3 sombres. La distinction « tribu → culture
+  → royaume → empire » devrait être plus intuitive visuellement. Proposition :
+  les N2 devraient avoir un rendu TEXTURÉ (hachures légères ou motif de points
+  via un pattern canvas) plutôt qu'un aplat — ça signalerait « pas un État
+  constitué » sans avoir besoin de lire la légende.
+
+- 🟡 [UX] **Les lacs sont trop bleu-vert (`#3a6478`) par rapport à l'océan
+  (`#0d151c`→`#20303c`).** Les lacs se voient bien, mais leur couleur tire
+  vers le turquoise alors que l'océan est bleu nuit. Visuellement on dirait
+  deux substances différentes. Proposition : rapprocher la teinte des lacs
+  de celle de l'océan (un bleu plus sombre, ex. `#2a4a5c`), tout en gardant
+  un écart suffisant pour qu'ils soient visibles sur les territoires.
+
+- 🟡 [UX] **La couleur or de l'Arménie est la même que la couleur de
+  sélection et de l'UI.** Or = Arménie = boutons = titre = slider = surbrillance
+  au clic. Quand on clique sur un territoire non-arménien, le liseré de
+  sélection (`#e8c47a`) est presque identique au or arménien (`#d4a548`).
+  Le visiteur peut confondre « c'est l'Arménie » et « c'est ce que j'ai
+  sélectionné ». Proposition : sélection dans une couleur distincte (blanc
+  pur, ou cyan clair) pour ne pas interférer avec le code « or = arménien ».
+
+#### Frontières et données cartographiques
+
+- 🔴 [DATA] **Les frontières sont trop simplifiées (SIMPLIFY=0.1°) pour
+  les petites entités.** 0,1° ≈ 11 km de tolérance. C'est acceptable pour
+  les grands empires, mais les petits royaumes (Syunik, Artsakh, Cilicie)
+  deviennent des quadrilatères grossiers au zoom. Le Karabagh à fort zoom
+  ressemble à un rectangle. Proposition : simplification adaptative — moindre
+  pour les entités < 5 deg² (SIMPLIFY=0.03), standard pour les grandes.
+  Ou : garder un niveau de détail supplémentaire chargé au zoom > 8.
+
+- 🟠 [DATA] **Des entités modernes (2010) couvrent toute la carte, mais
+  avec des frontières de 2010 utilisées aussi pour 2018/2020/2023/2026.**
+  Depuis 2010, la Crimée a changé de statut (2014), le Soudan du Sud est né
+  (2011), et l'Artsakh a disparu (2023). La carte « actuelle » (2026) montre
+  un monde de 2010. Même si l'Arménie est corrigée par les surcouches, le
+  reste du monde est anachronique sur ces 4 pas de temps récents.
+
+- 🟠 [DATA] **Les frontières entre l'Arménie et la Géorgie/Azerbaïdjan en
+  1994–2010 sont celles du fond world_1994 (très grossier).** Le contraste
+  entre les lacs détaillés (Natural Earth 50m) et les frontières anguleuses
+  du Caucase en 1994 est visuellement choquant au zoom. Les lacs ont plus de
+  détails que les pays.
+
+- 🟡 [DATA] **Aucune distinction visuelle entre frontière internationale et
+  frontière disputée/non reconnue.** Le Karabagh (1994–2020) avait une
+  frontière de facto non reconnue. Le globe le traite comme n'importe quel
+  territoire. Proposition : liseré pointillé (au lieu de plein) pour les
+  frontières de facto, cohérent avec les standards cartographiques
+  internationaux.
+
+#### Interface et ergonomie
+
+- 🟠 [UX] **Le slider de 59 pas ne donne AUCUN repère visuel.** Un slider
+  brut (input range) sans graduation ni label intermédiaire. L'utilisateur
+  glisse au hasard sans savoir où se situe 1915 vs 1920. Proposition :
+  ajouter sous le slider des graduations visuelles (tirets) aux epochs-clés
+  (-3000, -700, 1, 1000, 1500, 1900, 2000), au minimum un repère « av. J.-C. /
+  apr. J.-C. » visible.
+
+- 🟠 [UX] **Le clic sur un territoire minuscule est quasi impossible sur
+  mobile.** Les petits territoires (Karabagh, Syunik en 1100, Cilicie) ont
+  des polygones de quelques pixels. Le `geoContains` exige de toucher PILE
+  dedans. Proposition : pour les entités < 20px d'envergure au zoom courant,
+  élargir la zone cliquable (buffer de 8px autour du centroïde), ou afficher
+  une liste des entités sous le doigt quand plusieurs se chevauchent.
+
+- 🟠 [UX] **Pas d'indication de l'année pendant le glissement du slider.**
+  Quand l'utilisateur drag le slider, il ne voit l'année qu'en haut de
+  l'écran (loin du doigt sur mobile). Proposition : tooltip flottant au-dessus
+  du pouce du slider montrant l'année en temps réel pendant le drag.
+
+- 🟡 [UX] **La lecture automatique n'a pas de vitesse réglable.** Un seul
+  rythme (2,5s/pas). Trop lent pour survoler, trop rapide pour lire les
+  charnières. Proposition : double-clic ou appui long sur ⏵ pour un mode
+  rapide (1s/pas), ou un petit contrôle ×½ / ×1 / ×2.
+
+- 🟡 [UX] **Aucun indicateur de direction temporelle.** Quand la lecture
+  auto est en cours, le visiteur ne sait pas s'il avance ou recule dans le
+  temps (même si c'est toujours vers l'avant). Un discret « → » animé près de
+  l'année rassurerait.
+
+#### Données historiques
+
+- 🟠 [DATA] **Le foyer de diaspora est réduit à 8 points (tous pré-1800).**
+  La diaspora post-génocide (~7 millions) est absente : pas de Los Angeles,
+  Marseille, Beyrouth, Buenos Aires, Moscou. Un visiteur de 2026 ne voit pas
+  la diaspora actuelle sur le globe. Proposition : ajouter au minimum 5–6
+  centres de diaspora moderne (datés de 1920 : formation post-génocide).
+
+- 🟠 [DATA] **La carte de 1915 ne montre visuellement RIEN du génocide.**
+  C'est l'événement central du récit arménien. La carte montre juste l'Empire
+  ottoman en une couleur unie. Aucune route de déportation, aucun site de
+  massacre figuré. Proposition : couche optionnelle avec les grandes routes
+  de convois (tracés pointillés rouges) et les principaux sites (Deir ez-Zor,
+  Ras al-Ain, Meskene) en symboles.
+
+- 🟡 [DATA] **Les surcouches préhistoriques (−10000 à −3000) en OR suggèrent
+  un « peuple arménien » dès la préhistoire.** C'est anachronique. R3.4
+  précise « cultures, pas politiques », mais visuellement l'or = arménien est
+  trop fort. Proposition : teinte distincte pour la préhistoire (ambre pâle,
+  ou ocre) + libellé explicite « cultures du plateau » au lieu de « présence
+  arménienne ».
+
+- 🟡 [DATA] **Les notices ne citent aucune source.** Les textes sont des
+  synthèses sans renvoi bibliographique. Pour la crédibilité éducative, un
+  minimum de sources (Hewsen, Hovannisian, Redgate…) en bas de notice serait
+  bienvenu.
+
+- 🟡 [DATA] **L'atlas et le globe ne sont pas interconnectés.** Le globe
+  pointe vers l'atlas, mais l'atlas ne pointe jamais vers le globe. Les deux
+  outils vivent en silo.
+
+#### Anciennes critiques 🔴 rétrogradées (audit it. 121)
+
+- 🟡 [UX] Pas de parcours guidé pour néophyte (voile d'accueil suffisant
+  pour l'instant, à réévaluer quand le rendu sera affiné).
+- 🟡 [UX] Pas d'export/citation de carte (fonctionnalité désirable mais pas
+  prioritaire vs les problèmes visuels fondamentaux).
+- 🟡 [DATA] Pas de distinction de confiance des reconstitutions (toutes
+  en or translucide) — à revisiter quand le rendu de base sera meilleur.
+
+### Nouvelles critiques (it. 122)
+- 🟡 [DATA] Les nouvelles luminosités N0/N1 (30 %/36 %) et le liseré renforcé
+  ont été choisis empiriquement (captures Playwright locales) sans calcul
+  formel du ratio de contraste WCAG contre le dégradé océan (`#0d151c` →
+  `#20303c`) : à vérifier numériquement pour garantir ≥ 3:1 en tout point.
+- 🟡 [UX] Le nouveau liseré N3 plus épais (1 px, opacité 0,85) n'a pas été
+  vérifié sur de très petits territoires (quelques px à l'écran, ex. Syunik
+  1100, Karabagh à faible zoom) : risque que le contour mange le remplissage.
+- 🟡 [DATA] La plage de teinte N0/N1 resserrée (22–92° au lieu de 25–120°)
+  favorise un rendu plus uniforme sur les vastes zones tribales à faible
+  saturation (ex. l'immense aire « Hunter-gatherers » vers −8000) : à
+  vérifier que la variété de teintes reste suffisante pour distinguer deux
+  grandes zones adjacentes de ce niveau, pas seulement grâce au liseré.
+
+---
+
 ## Critiques traitées
+- ✅ (it. 122, audit externe it. 121) [UX] 🔴 N0/N1 (chasseurs-cueilleurs,
+  nomades/tribus) quasi invisibles sur l'océan → luminosité relevée de
+  17-23 % à 30-36 % et légèrement teintée (`hsl(t,9%,30%)` / `hsl(t,11%,36%)`
+  au lieu de `hsl(t,3%,17%)` / `hsl(t,5%,23%)`), liseré renforcé (0,4→0,7px,
+  opacité ×2). Vérifié en local (Playwright, an −8000) : les territoires
+  anciens se détachent nettement de l'océan `#0d151c`.
+- ✅ (it. 122, audit externe it. 121) [UX] 🔴 Deux entités voisines de même
+  niveau indiscernables → opacité aléatoire du remplissage N3 (`(h>>5)%3===1`,
+  sans justification sémantique) supprimée ; liserés renforcés à tous les
+  niveaux (N0/N1 0,55 opacité, N2 0,55, N3 0,85 noir 1px, N4 0,55 clair 1,4px)
+  pour que toute frontière entre voisins reste visible quelle que soit la
+  proximité de teinte. Vérifié en local (an 1200) : royaumes voisins de même
+  couleur nettement séparés par un liseré sombre.
+- ✅ (it. 122, audit externe it. 121) [UX] 🟠 Liseré des empires (N4) trop
+  discret → passé de `rgba(255,240,210,.35)` 1px à `rgba(255,240,210,.55)`
+  1,4px (même correctif que ci-dessus). REGLES.md R2 mis à jour avec les
+  valeurs de liseré par niveau.
 - ✅ (it. 120, critique utilisateur « frontière Arménie-Turquie 1918-1945
   bizarre, territoire vide ») [DATA] Interstice terre-vide comblé : EST_ANATOLIE
   (remplissage turc) et boîte Kars-Sourmalou de la Première République élargies

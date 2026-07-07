@@ -17,21 +17,29 @@ Toute nouvelle règle doit être ajoutée à ce fichier (exigence utilisateur,
 ## R2 — Niveau d'organisation socio-politique (code couleur évolutif)
 Classement `niveau(n)` sur le nom source de l'entité, 5 paliers :
 - **N0 chasseurs-cueilleurs** : regex `hunter|gatherer|forag|fisher|shellfish|paleo-`
-  → gris sombre `hsl(t, 3%, 17%)`.
+  → teinte terre sombre `hsl(t, 9%, 30%)`.
 - **N1 nomades, pasteurs, tribus** : regex `nomad|pastoral|tribes|peoples|aboriginal|
   indigenous|proto-|cimerian` + ethnonymes courts non répertoriés
-  → gris `hsl(t, 5%, 23%)` (désaturé volontairement : « niveau de développement
-  retardé », exigence utilisateur).
+  → teinte terre `hsl(t, 11%, 36%)` (désaturé volontairement : « niveau de
+  développement retardé », exigence utilisateur — mais relevé à 30-36 % de
+  luminosité et légèrement teinté, au lieu de 17-23 % quasi neutre, pour
+  rester lisible sur l'océan `#0d151c` ; correction it. 121, contraste
+  initial < 1.5:1).
 - **N2 cultures, chefferies, cités-États** : regex `culture|chiefdom|farmer|
   civilization|city-states|complex|pottery|neolithic|bronze age` → tons sourds
   `hsl(t, 20%, 31%)`.
 - **N3 royaumes, États constitués** (défaut) : palette curatée de 24 teintes
-  riches (charte or/tuf).
+  riches (charte or/tuf) ; opacité aléatoire du remplissage retirée (it. 121 :
+  n'avait aucune justification sémantique et rendait certains N3 translucides
+  sans raison).
 - **N4 empires, califats, khaganats** : regex `empire|caliphate|khaganate|tsardom|
   imperial|great khanate|golden horde|soviet|ilkhanate` → palette « impériale »
-  (mêmes teintes, +16 pts saturation, +12 pts lumière) + liseré clair.
+  (mêmes teintes, +16 pts saturation, +12 pts lumière) + liseré clair renforcé.
 - **Règle générale** : la teinte (hash du nom, stable) identifie l'entité ;
   la **luminosité croît avec le niveau d'organisation**.
+- **Liserés entre entités** (renforcés it. 121, pour distinguer deux voisines de
+  même niveau) : N0/N1 `rgba(20,15,10,.55)` 0,7px ; N2 `rgba(15,10,8,.55)` 0,6px ;
+  N3 `rgba(8,6,4,.85)` 1,0px ; N4 `rgba(255,240,210,.55)` 1,4px (liseré clair).
 - Liste blanche `ETATS_BLANCS` pour les faux positifs (Haripunjaya, Lambakannas…).
 - Étiquettes : seuil d'affichage aire×zoom > 110 (N3–N4), > 300 (N0–N2, italique
   maigre) ; > 25 pour toute entité arménienne.
