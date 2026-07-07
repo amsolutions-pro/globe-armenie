@@ -409,10 +409,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Les corrections de source sont des transferts par polygone/boîte :
   documentées dans REGLES, mais chacune est une approximation des vraies
   frontières historiques.
-- 🟡 [UX] Le tableau des corrections de source (REGLES) pourrait être exposé
-  dans l'app (page « méthodologie ») pour la transparence.
+
+### Nouvelles critiques (it. 83)
+- 🟡 [UX] La note Sources s'ouvre depuis l'accueil et la ligne de version
+  (légende) ; sa découvrabilité via la version dépend de l'ouverture de la
+  légende — acceptable (R11) mais peu évident.
+- 🟡 [DATA] Le texte des corrections dans la note est un résumé ; il pourrait
+  diverger de REGLES si l'un est mis à jour sans l'autre.
+- 🟡 [UX] La note n'a pas de lien vers le dépôt GitHub (transparence du code).
 
 ## Critiques traitées
+- ✅ (it. 83) [UX] Note « Sources & méthodologie » exposée dans l'app (R11) :
+  voile ouvrable depuis l'accueil et depuis la ligne de version de la légende,
+  en 4 langues — liste les sources neutres (aucune azerbaïdjanaise) et les
+  corrections d'anachronismes appliquées. Transparence répondant à la demande
+  utilisateur sur les sources.
 - ✅ (it. 82) [DATA] Audit « qui couvre Erevan » TERMINÉ sur les 53 années :
   1700 corrigé (vérifié en ligne, Erevan séfévide) ; -100 (surcouche Artaxiade
   couvre Erevan) et 400 (base Perse + surcouche Arsacide = Persarménie) déjà
