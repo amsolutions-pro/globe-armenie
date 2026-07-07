@@ -446,12 +446,24 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 88)
 - 🟡 [DATA] La date « de » de Mush (300) et Nakhitchevan (-100) est
   approximative (ancienneté attestée mais fondation imprécise) : à sourcer.
-- 🟡 [DATA] Couverture urbaine désormais dense ; il resterait surtout des
-  lieux de diaspora ou des monastères secondaires (Gandzasar, Noravank).
 - 🟡 [UX] 73 villes/lieux : vérifier globalement les collisions d'étiquettes
   aux zooms intermédiaires sur tout le globe.
 
+### Nouvelles critiques (it. 89)
+- 🟡 [UX] 77 lieux : plusieurs monastères du sud (Tatev, Noravank, Khor Virap,
+  Guéghard) et du Karabagh (Gandzasar) sont proches ; contrôler les collisions
+  d'étiquettes à moyen zoom sur cette zone.
+- 🟡 [DATA] Les monastères apparaissent dès leur date de construction (de:) ;
+  certains sites (Ayrivank pour Guéghard) sont bien plus anciens — nuance
+  portée par la note seulement.
+- 🟡 [DATA] Couverture des monuments quasi complète ; prochaine profondeur =
+  lieux de la diaspora historique ou événements ponctuels.
+
 ## Critiques traitées
+- ✅ (it. 89) [DATA] 4 monastères emblématiques ajoutés (dates sourcées +
+  traductions hy/ru) : Khor Virap (face à l'Ararat, saint Grégoire),
+  Guéghard (UNESCO, 1215), Noravank (Momik, XIIIᵉ s.), Gandzasar
+  (Haut-Karabagh, 1216–1238). 77 villes/lieux au total.
 - ✅ (it. 88) [DATA] 3 lieux historiques ajoutés (traductions hy/ru) : Mush
   (Taron, berceau des Mamikonian, génocide 1915), Nakhitchevan (tutelle azérie
   1921, khatchkars de Djoulfa détruits), Goris (Syunik, David Bek). Nouveaux
