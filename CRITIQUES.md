@@ -426,14 +426,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   double : un point de vérité unique serait mieux.
 
 ### Nouvelles critiques (it. 85)
-- 🟡 [DATA] Les 4 nouvelles villes n'ont pas de traduction hy/ru/en (VILLES_HY…) :
-  leurs libellés restent en français/translittéré dans les autres langues.
 - 🟡 [DATA] Manquent encore Vanadzor, Goris, Dilijan, Aghtamar, Mush, Bitlis,
   Nakhitchevan pour une couverture urbaine arménienne complète.
 - 🟡 [UX] Beaucoup de villes au même endroit (Chouchi/Stepanakert à 46.75) :
   vérifier qu'elles ne se chevauchent pas à faible zoom.
 
+### Nouvelles critiques (it. 86)
+- 🟡 [DATA] Beaucoup de villes anciennes (Portasar, Metsamor…) n'ont pas de
+  VILLES_RU : leurs libellés russes retombent sur le nom translittéré.
+- 🟡 [DATA] Restent à ajouter : Vanadzor, Goris, Dilijan, Aghtamar, Mush,
+  Nakhitchevan pour compléter la couverture urbaine arménienne.
+- 🟡 [UX] Vérifier que Chouchi (39.76) et Stepanakert (39.82) à 46.75°E ne se
+  chevauchent pas à faible zoom (z:6 pour les deux).
+
 ## Critiques traitées
+- ✅ (it. 86) [DATA] Traductions hy et ru des 4 nouvelles villes ajoutées
+  (Գյումրի/Гюмри, Կապան/Капан, Շուշի/Шуши, Կարին/Карин) ; en FR/EN le nom
+  d'origine sert de libellé (Gyumri, Kapan, Shusha, Erzurum reconnaissables).
 - ✅ (it. 85) [DATA] 4 villes arméniennes emblématiques ajoutées à VILLES avec
   dates et notes sourcées : Gyumri (Alexandropol 1837, séisme 1988), Kapan
   (capitale du Syunik Xᵉ s.), Chouchi (1752, prise 2020), Karin/Erzurum

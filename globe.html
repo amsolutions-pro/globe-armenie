@@ -1168,7 +1168,7 @@ function charniereDe(y){
   return CHARNIERE[k]||"";
 }
 /* Translittérations des villes (hy/ru) */
-const VILLES_HY = {"Erevan (Erebouni)":"Երևան (Էրեբունի)","Tushpa (Van)":"Տուշպա (Վան)","Van":"Վան","Armavir":"Արմավիր",
+const VILLES_HY = {"Erevan (Erebouni)":"Երևան (Էրեբունի)","Tushpa (Van)":"Տուշպա (Վան)","Van":"Վան","Armavir":"Արմավիր","Gyumri (Alexandropol)":"Գյումրի (Ալեքսանդրապոլ)","Kapan":"Կապան","Chouchi (Choucha)":"Շուշի","Karin (Erzurum)":"Կարին (Էրզրում)",
 "Artashat":"Արտաշատ","Tigranakert":"Տիգրանակերտ","Vagharshapat (Etchmiadzin)":"Վաղարշապատ (Էջմիածին)","Dvin":"Դվին",
 "Ani":"Անի","Kars":"Կարս","Sis":"Սիս","Stepanakert":"Ստեփանակերտ","Portasar (Göbekli Tepe)":"Պորտասար","Aknashen / Aratashen":"Ակնաշեն / Առատաշեն",
 "Karahunj (Zorats Karer)":"Քարահունջ (Զորաց քարեր)","Areni-1":"Արենի-1","Shengavit":"Շենգավիթ","Metsamor":"Մեծամոր",
@@ -1176,7 +1176,7 @@ const VILLES_HY = {"Erevan (Erebouni)":"Երևան (Էրեբունի)","Tushpa (
 "Rome":"Հռոմ","Athènes":"Աթենք","Jérusalem":"Երուսաղեմ","Moscou":"Մոսկվա","Damas":"Դամասկոս","Le Caire":"Կահիրե","Venise":"Վենետիկ",
 "Nouvelle-Djoulfa (Ispahan)":"Նոր Ջուղա (Սպահան)","San Lazzaro (Venise)":"Սուրբ Ղազար (Վենետիկ)","Madras":"Մադրաս",
 "Constantinople (communauté)":"Կոստանդնուպոլիս (համայնք)","Tiflis (communauté)":"Թիֆլիս (համայնք)","Lviv (communauté)":"Լվով (համայնք)","Caffa (Crimée)":"Կաֆա (Ղրիմ)","Amsterdam (imprimerie)":"Ամստերդամ (տպարան)"};
-const VILLES_RU = {"Erevan (Erebouni)":"Ереван (Эребуни)","Tushpa (Van)":"Тушпа (Ван)","Van":"Ван","Armavir":"Армавир",
+const VILLES_RU = {"Erevan (Erebouni)":"Ереван (Эребуни)","Tushpa (Van)":"Тушпа (Ван)","Van":"Ван","Armavir":"Армавир","Gyumri (Alexandropol)":"Гюмри (Александрополь)","Kapan":"Капан","Chouchi (Choucha)":"Шуши","Karin (Erzurum)":"Карин (Эрзурум)",
 "Artashat":"Арташат","Tigranakert":"Тигранакерт","Vagharshapat (Etchmiadzin)":"Вагаршапат (Эчмиадзин)","Dvin":"Двин",
 "Ani":"Ани","Kars":"Карс","Sis":"Сис","Stepanakert":"Степанакерт","Portasar (Göbekli Tepe)":"Портасар (Гёбекли-Тепе)","Aknashen / Aratashen":"Акнашен / Араташен",
 "Karahunj (Zorats Karer)":"Карахундж (Зорац-Карер)","Areni-1":"Арени-1","Shengavit":"Шенгавит","Metsamor":"Мецамор",
@@ -1810,7 +1810,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-07z";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-08a";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
