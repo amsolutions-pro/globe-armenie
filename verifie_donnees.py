@@ -207,19 +207,29 @@ def main():
     except (FileNotFoundError, ValueError, AttributeError):
         warn("globe.html : contrôle des villes ignoré")
 
-    # 9. Cohérence croisée : une capitale citée dans une notice periodes.json et
-    # présente aussi dans VILLES doit avoir ~les mêmes coordonnées (< 0,3° ≈ 30 km).
+    # 9. Cohérence croisée : une capitale citée dans une notice et présente aussi
+    # dans VILLES doit avoir ~les mêmes coordonnées (< 0,3° ≈ 30 km). Couvre les
+    # notices longues (periodes.json) ET les mini-notices (MINI dans globe.html).
+    def croiser(nom, lng, lat, source):
+        for key in (nom, _re.sub(r"\s*\(.*", "", nom).strip()):
+            if key in villes_xy:
+                vlo, vla = villes_xy[key]
+                if ((vlo - lng) ** 2 + (vla - lat) ** 2) ** 0.5 > 0.3:
+                    err(f"Capitale « {nom} » ({source}) : ({lng},{lat}) ≠ VILLES ({vlo},{vla})")
+                return
     if villes_xy:
         try:
             for p in json.load(open("periodes.json", encoding="utf-8")):
                 for c in p.get("capitales", []):
-                    for key in (c.get("nom", ""), _re.sub(r"\s*\(.*", "", c.get("nom", "")).strip()):
-                        if key in villes_xy:
-                            vlo, vla = villes_xy[key]
-                            if ((vlo - c["lng"]) ** 2 + (vla - c["lat"]) ** 2) ** 0.5 > 0.3:
-                                err(f"Capitale « {c['nom']} » : notice ({c['lng']},{c['lat']}) ≠ VILLES ({vlo},{vla})")
-                            break
+                    croiser(c.get("nom", ""), c["lng"], c["lat"], "periodes.json")
         except FileNotFoundError:
+            pass
+        # MINI (globe.html) : capitales {nom:"…",lat:…,lng:…}
+        try:
+            mdeb = html.index("const MINI = {")
+            for cap in _re.finditer(r'\{nom:"([^"]*)",lat:(-?[\d.]+),lng:(-?[\d.]+)', html[mdeb:html.index("\nconst ", mdeb)]):
+                croiser(cap.group(1), float(cap.group(3)), float(cap.group(2)), "MINI")
+        except (ValueError, NameError):
             pass
 
     for m in AVERTS:  print("AVERT :", m)

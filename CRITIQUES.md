@@ -486,13 +486,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Tests device réel iPhone toujours en attente (seule limite connue).
 
 ### Nouvelles critiques (it. 96)
-- 🟡 [DATA] Le contrôle croisé ne compare que periodes.json (FR) ↔ VILLES ; les
-  capitales des mini-notices (MINI) ne sont pas recoupées avec VILLES.
 - 🟡 [DATA] verifie_donnees.py grossit (9 contrôles) : un découpage en
   fonctions nommées améliorerait la lisibilité.
 - 🟡 [UX] Tests device réel iPhone toujours la seule limite ouverte notable.
 
+### Nouvelles critiques (it. 97)
+- 🟡 [DATA] Le croisement compare les capitales FR (periodes + MINI) à VILLES ;
+  les capitales des versions EN/HY ne sont pas recoupées (mais partagent les
+  coordonnées FR, donc peu de risque).
+- 🟡 [DATA] verifie_donnees.py : 9 contrôles dans une seule fonction main() —
+  un refactor en fonctions nommées reste souhaitable pour la maintenabilité.
+- 🟡 [UX] Tests device réel iPhone (Safari tactile) : seule limite ouverte.
+
 ## Critiques traitées
+- ✅ (it. 97) [DATA] Contrôle croisé capitales↔VILLES ÉTENDU aux mini-notices
+  (MINI dans globe.html) : 33 capitales extraites, 23 croisées avec VILLES,
+  toutes concordantes (< 30 km). Le garde-fou couvre notices longues ET
+  courtes ; rapport toujours à 0 avertissement.
 - ✅ (it. 96) [DATA] Cohérence croisée capitales↔VILLES AUTOMATISÉE dans
   verifie_donnees.py (contrôle #9) : une capitale citée dans une notice et
   présente dans VILLES doit avoir les mêmes coordonnées (< 0,3° ≈ 30 km),
