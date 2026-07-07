@@ -88,6 +88,27 @@ def process(fname, annee=None):
                 if (f["properties"].get("NAME") or "") == "Azerbaijan" and f.get("geometry"):
                     g = make_valid(shape(f["geometry"])).difference(mask)
                     f["geometry"] = mapping(g) if not g.is_empty else None
+    # (d) 1880/1900 : la source fait couvrir Erevan/Syunik par la PERSE, or ils
+    #     sont russes depuis Turkmentchaï (1828). → transférer la Transcaucasie
+    #     russe (nord de l'Araxe) de la Perse vers l'Empire russe.
+    if annee in (1880, 1900):
+        from shapely.geometry import Polygon as _Poly
+        RUSSE_TRANS = _Poly([(42.5,41.9),(42.55,41.3),(42.7,40.9),(42.8,40.4),
+                             (43.4,40.05),(44.0,39.85),(44.32,39.72),(44.8,39.70),
+                             (45.4,39.56),(45.8,39.30),(46.2,38.95),(46.55,38.87),
+                             (47.1,39.15),(47.6,39.35),(47.6,41.9)])
+        perse = russie = None
+        for f in d["features"]:
+            nm = f["properties"].get("NAME") or ""
+            if nm == "Persia" and f.get("geometry"): perse = f
+            elif nm == "Russian Empire" and f.get("geometry"): russie = f
+        if perse is not None:
+            gp = make_valid(shape(perse["geometry"])).buffer(0)
+            transfert = gp.intersection(RUSSE_TRANS)
+            perse["geometry"] = mapping(gp.difference(RUSSE_TRANS))
+            if russie is not None and not transfert.is_empty:
+                gr = make_valid(shape(russie["geometry"])).buffer(0)
+                russie["geometry"] = mapping(unary_union([gr, transfert]))
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue

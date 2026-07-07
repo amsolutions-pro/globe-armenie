@@ -388,10 +388,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   mériterait une relecture native cohérente avec les mini-notices.
 - 🟡 [DATA] Translittérations arméniennes de toponymes préhistoriques
   (Քարահունջ, Ակնաշեն, Գյոբեկլի Թեփե…) à valider par un spécialiste.
-- 🟡 [UX] La couverture hy étant complète, un test de rendu arménien sur
-  toute la frise (préhistoire → 2026) confirmerait l'absence de repli FR.
+
+### Nouvelles critiques (it. 80)
+- 🟡 [DATA] Le transfert Perse→Russie utilise un polygone Transcaucasie fixe :
+  à comparer au tracé réel de la frontière de Turkmentchaï (1828) le long de
+  l'Araxe pour d'éventuels écarts fins.
+- 🟡 [DATA] 1800/1815 laissent Erevan à la Perse/khanats (correct avant 1828)
+  mais le libellé source « central Asian khanates » (1800) est peu précis.
+- 🟡 [UX] Vérifier en ligne (VDATA u) le rendu corrigé 1880/1900 (Erevan russe).
 
 ## Critiques traitées
+- ✅ (it. 80) [DATA] Couverture arménienne de TOUTE la frise (53 années)
+  vérifiée en ligne : 0 repli français. [DATA] 🔴 Audit 1800-1900 : erreur
+  détectée et corrigée — en 1880/1900 la source plaçait Erevan/Syunik sous la
+  PERSE alors qu'ils étaient russes depuis Turkmentchaï (1828) → Transcaucasie
+  russe transférée de la Perse vers l'Empire russe. 1800/1815 laissés (Erevan
+  encore persan, correct).
 - ✅ (it. 79) [DATA] Couverture MINI_HY COMPLÈTE : ajout de -8000
   (néolithisation) et -5000 (villages de l'Araxe, Karahunj) → toutes les
   mini-notices ont leur version arménienne. 1920 (Azerbaïdjan corrigé)
