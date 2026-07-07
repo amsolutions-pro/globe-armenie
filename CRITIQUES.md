@@ -438,14 +438,24 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   chevauchent pas à faible zoom (z:6 pour les deux).
 
 ### Nouvelles critiques (it. 87)
-- 🟡 [DATA] Restent Goris, Dilijan, Mush/Taron, Nakhitchevan, Etchmiadzin
-  (comme lieu distinct) pour une couverture encore plus fine.
 - 🟡 [UX] Densité de lieux au sud-est (Tatev, Kapan, Chouchi, Stepanakert
   proches) : vérifier la lisibilité des étiquettes à moyen zoom.
 - 🟡 [DATA] Aghtamar existe aussi comme capitale dans la notice 900 (MINI) :
   léger doublon conceptuel ville/notice.
 
+### Nouvelles critiques (it. 88)
+- 🟡 [DATA] La date « de » de Mush (300) et Nakhitchevan (-100) est
+  approximative (ancienneté attestée mais fondation imprécise) : à sourcer.
+- 🟡 [DATA] Couverture urbaine désormais dense ; il resterait surtout des
+  lieux de diaspora ou des monastères secondaires (Gandzasar, Noravank).
+- 🟡 [UX] 73 villes/lieux : vérifier globalement les collisions d'étiquettes
+  aux zooms intermédiaires sur tout le globe.
+
 ## Critiques traitées
+- ✅ (it. 88) [DATA] 3 lieux historiques ajoutés (traductions hy/ru) : Mush
+  (Taron, berceau des Mamikonian, génocide 1915), Nakhitchevan (tutelle azérie
+  1921, khatchkars de Djoulfa détruits), Goris (Syunik, David Bek). Nouveaux
+  lieux it.87 vérifiés en ligne : affichage arménien net, sans chevauchement.
 - ✅ (it. 87) [DATA] 4 hauts lieux culturels ajoutés avec dates sourcées +
   traductions hy/ru : Aghtamar (Sainte-Croix 915–921), Tatev (monastère-
   université IXᵉ/XIVᵉ s.), Sanahin & Haghpat (UNESCO, Xᵉ s.), Vanadzor
