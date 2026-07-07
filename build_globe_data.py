@@ -96,6 +96,9 @@ def process(fname, annee=None):
                                    (45.9, 38.85), (45.2, 38.9), (44.85, 39.35), (44.9, 39.75)])
             DJAVAKHK = _box(43.0, 41.05, 43.9, 41.6)
             rep1 = unary_union([mask, KARS_SURMALU, ARTSAKH, NAKHIDJEVAN, DJAVAKHK])
+            # Fermeture morphologique : arrondit les angles vifs des boîtes et
+            # lisse les jonctions (sans changer les territoires inclus).
+            rep1 = only_poly(rep1.buffer(0.07).buffer(-0.07))
             for f in d["features"]:
                 nm = f["properties"].get("NAME") or ""
                 if nm == "Azerbaijan" and f.get("geometry"):

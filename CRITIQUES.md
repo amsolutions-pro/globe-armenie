@@ -517,10 +517,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] L'extension revendiquée 1918 (Artsakh/Nakhitchevan/Djavakhk) est une
   interprétation « maximale » : ces régions étaient contestées, non fermement
   contrôlées — d'où le libellé « revendiquée » dans la notice.
-- 🟡 [DATA] Les polygones Artsakh/Nakhitchevan/Djavakhk sont manuels (boîtes/
-  contours approchés) : à affiner si des tracés de 1918-1920 sourcés émergent.
+
+### Nouvelles critiques (it. 103)
+- 🟡 [DATA] La fermeture morphologique (buffer 0,07°) peut légèrement combler
+  une concavité réelle entre deux régions : effet cosmétique mineur assumé.
+- 🟡 [DATA] Les polygones des régions revendiquées restent des approximations
+  manuelles ; à affiner si des tracés sourcés de 1918-1920 émergent.
+- 🟡 [UX] Vérifier en ligne (VDATA h) le rendu adouci de 1918.
 
 ## Critiques traitées
+- ✅ (it. 103) [UX] Contours de la République 1918 adoucis : fermeture
+  morphologique (buffer +0,07°/−0,07°) qui arrondit les angles vifs des boîtes
+  Kars-Sourmalou et Djavakhk et lisse les jonctions, sans changer les
+  territoires (aire 7,6 deg², les 5 régions toujours incluses).
 - ✅ (it. 102) [DATA] République maximale 1918 VÉRIFIÉE en ligne (capture) :
   Erevan, Artsakh (Gandzasar/Chouchi/Goris/Kapan), Zanguezour, Nakhitchevan,
   Kars, Djavakhk bien dans le territoire arménien or ; Azerbaïdjan réduit à
