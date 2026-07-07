@@ -532,7 +532,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   Arpatchaï) : acceptable mais perfectible si tracé sourcé.
 - 🟡 [UX] Tests device réel iPhone toujours la seule limite ouverte notable.
 
+### Nouvelles critiques (it. 105)
+- 🟡 [DATA] Le contour est du remplissage Anatolie orientale (frontière de Kars
+  1921) est un polygone manuel : approximation de la vraie ligne Arpatchaï-Ararat.
+- 🟡 [DATA] Kars est arménien en 1918/1920 puis turc dès 1921 (traité de Kars) :
+  transition correcte mais à vérifier visuellement.
+- 🟡 [UX] Vérifier en ligne (VDATA i) l'Anatolie orientale comblée sur 1921.
+
 ## Critiques traitées
+- ✅ (it. 105, audit) [DATA] 🔴 Effet de bord détecté et corrigé : le retrait de
+  l'Arménie de Sèvres avait laissé l'Anatolie orientale (Van, Bitlis, Erzurum,
+  Kars) VIDE en 1918-1938 (rendue en « mer »). → Turquie/Empire ottoman étendu
+  sur l'Anatolie orientale (moins l'Arménie du moment). Tous les trous comblés,
+  Arménie 1918 intacte (garde Kars et Artsakh). Documenté REGLES R9.
 - ✅ (it. 104) [UX] Rendu adouci de la République 1918 VÉRIFIÉ en ligne : coins
   arrondis, jonctions lissées, les 5 régions (Erevan, Artsakh, Nakhitchevan,
   Djavakhk, Kars) toujours présentes. Demande utilisateur pleinement satisfaite.

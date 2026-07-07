@@ -162,6 +162,30 @@ def process(fname, annee=None):
             if g.contains(anatolie):
                 f["geometry"] = mapping(g.union(PONT))
                 break
+    # (g) 1918–1938 : en retirant la « Grande Arménie » de Sèvres (qui couvrait à
+    #     tort l'Anatolie orientale), Van/Bitlis/Erzurum/Kars se sont retrouvés
+    #     sans entité et se rendent en « mer ». Or l'Anatolie orientale était
+    #     TURQUE (Kars redevient turc au traité de Kars, 1921). → étendre la
+    #     Turquie/Empire ottoman sur l'Anatolie orientale, moins l'Arménie du
+    #     moment (rep1 en 1918/1920 : Kars-Sourmalou arméniens ; RSS ensuite).
+    if annee in (1918, 1920, 1921, 1923, 1930, 1938):
+        from shapely.geometry import Point as _Pt2
+        EST_ANATOLIE = Polygon([(39.3, 41.0), (43.0, 41.15), (43.7, 40.7),
+                                (44.05, 39.9), (44.3, 39.6), (44.0, 38.4),
+                                (42.0, 37.6), (39.3, 38.0), (39.3, 41.0)])
+        arm_now = None
+        for f in d["features"]:
+            if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
+                arm_now = make_valid(shape(f["geometry"])).buffer(0)
+                break
+        fill = EST_ANATOLIE.difference(arm_now) if arm_now is not None else EST_ANATOLIE
+        for f in d["features"]:
+            if not f.get("geometry"):
+                continue
+            g = make_valid(shape(f["geometry"])).buffer(0)
+            if g.contains(_Pt2(35, 39.5)):   # entité turque (Anatolie centrale)
+                f["geometry"] = mapping(g.union(fill))
+                break
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue
