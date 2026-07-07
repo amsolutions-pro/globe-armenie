@@ -554,14 +554,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   axes (contenu, UX, tests device).
 
 ### Nouvelles critiques (it. 109)
-- 🟡 [DATA] Le contrôle anti-trou porte sur 8 repères ponctuels ; un trou entre
-  deux repères passerait — l'audit grille complet (it.107-108) reste le filet
-  exhaustif ponctuel.
 - 🟡 [DATA] verifie_donnees.py compte 10 contrôles dans main() : refactor en
   fonctions nommées toujours souhaitable pour la maintenabilité.
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
+### Nouvelles critiques (it. 110)
+- 🟡 [DATA] Nakhitchevan a un trou isolé de source en 1100 : non ajouté aux
+  repères requis (ferait échouer le contrôle) — micro-lacune à corriger un jour.
+- 🟡 [DATA] verifie_donnees.py : refactor en fonctions nommées toujours
+  souhaitable (reporté : risque de régression sur l'état partagé, faible gain).
+- 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
+
 ## Critiques traitées
+- ✅ (it. 110) [DATA] Contrôle anti-trou élargi de 8 à 12 repères stables
+  couvrant toute la géographie arménienne : + Sis (Cilicie), Tigranakert
+  (plateau ouest), Stepanakert (Karabagh), Tabriz (bordure perse). Sortie
+  identique (0 avertissement) ; filet anti-régression « rendu en mer » renforcé.
 - ✅ (it. 109) [DATA] Contrôle anti-trou AJOUTÉ à verifie_donnees.py (#10) :
   8 repères arméniens (Erevan, Van, Ani, Kars, Erzurum, Bitlis, Dvin, Mush)
   doivent être couverts par une entité à chaque pas ≥ −500 (point-dans-polygone

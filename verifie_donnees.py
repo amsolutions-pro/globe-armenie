@@ -255,9 +255,12 @@ def main():
                         continue
                     return True
         return False
+    # Repères stables (toujours sous une entité de −500 à 2026) couvrant toute
+    # la géographie arménienne : plateau, Anatolie, Cilicie, Karabagh, bordure perse.
     REPERES = {"Erevan": (44.5, 40.2), "Van": (43.4, 38.5), "Ani": (43.57, 40.51),
                "Kars": (43.1, 40.6), "Erzurum": (41.3, 39.9), "Bitlis": (42.1, 38.4),
-               "Dvin": (44.63, 40.0), "Mush": (41.5, 38.7)}
+               "Dvin": (44.63, 40.0), "Mush": (41.5, 38.7), "Sis (Cilicie)": (35.82, 37.45),
+               "Tigranakert": (41.0, 38.14), "Stepanakert": (46.75, 39.82), "Tabriz": (46.29, 38.08)}
     for y in d["years"]:
         if y < -500:
             continue
