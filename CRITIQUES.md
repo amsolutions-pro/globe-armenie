@@ -395,9 +395,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   l'Araxe pour d'éventuels écarts fins.
 - 🟡 [DATA] 1800/1815 laissent Erevan à la Perse/khanats (correct avant 1828)
   mais le libellé source « central Asian khanates » (1800) est peu précis.
-- 🟡 [UX] Vérifier en ligne (VDATA u) le rendu corrigé 1880/1900 (Erevan russe).
+
+### Nouvelles critiques (it. 81)
+- 🟡 [DATA] 1600 laissé Ottoman à Erevan (défendable : occupation 1583-1604) ;
+  mais l'overlay « Arménie orientale (persane) » du même an suppose déjà Zuhab
+  (1639) — légère incohérence base/overlay pour ce seul millésime.
+- 🟡 [DATA] Le transfert 1700 utilise une boîte (est de 43,7°) : la vraie
+  frontière de Zuhab suivait l'Arpatchaï puis les crêtes — approximation.
+- 🟡 [UX] Vérifier en ligne (VDATA v) 1700 (Erevan persan) et 1880/1900.
 
 ## Critiques traitées
+- ✅ (it. 81) [DATA] Audit « qui couvre Erevan » sur les 53 années : cohérent
+  sauf 1700 (corrigé). 1880/1900 (Erevan russe) vérifié visuellement en ligne.
+  🔴 1700 : la source plaçait Erevan sous les Ottomans alors qu'après Zuhab
+  (1639) l'Arménie orientale était séfévide → plateau oriental transféré
+  Ottoman→Séfévides (Erevan désormais persan).
 - ✅ (it. 80) [DATA] Couverture arménienne de TOUTE la frise (53 années)
   vérifiée en ligne : 0 repli français. [DATA] 🔴 Audit 1800-1900 : erreur
   détectée et corrigée — en 1880/1900 la source plaçait Erevan/Syunik sous la

@@ -109,6 +109,24 @@ def process(fname, annee=None):
             if russie is not None and not transfert.is_empty:
                 gr = make_valid(shape(russie["geometry"])).buffer(0)
                 russie["geometry"] = mapping(unary_union([gr, transfert]))
+    # (e) 1700 : la source fait couvrir Erevan par les OTTOMANS, or après la paix
+    #     de Zuhab (1639) l'Arménie orientale (Erevan, Nakhitchevan) est séfévide.
+    #     → transférer le plateau oriental (est de la ligne de Zuhab) de l'Empire
+    #     ottoman vers l'Empire séfévide. (1600 laissé : Erevan ottoman 1583–1604.)
+    if annee == 1700:
+        ZUHAB_EST_PLAT = _box(43.7, 38.5, 47.6, 41.2)
+        ott = saf = None
+        for f in d["features"]:
+            nm = f["properties"].get("NAME") or ""
+            if nm == "Ottoman Empire" and f.get("geometry"): ott = f
+            elif nm == "Safavid Empire" and f.get("geometry"): saf = f
+        if ott is not None:
+            go = make_valid(shape(ott["geometry"])).buffer(0)
+            transfert = go.intersection(ZUHAB_EST_PLAT)
+            ott["geometry"] = mapping(go.difference(ZUHAB_EST_PLAT))
+            if saf is not None and not transfert.is_empty:
+                gs2 = make_valid(shape(saf["geometry"])).buffer(0)
+                saf["geometry"] = mapping(unary_union([gs2, transfert]))
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue
