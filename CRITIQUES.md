@@ -416,9 +416,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   légende — acceptable (R11) mais peu évident.
 - 🟡 [DATA] Le texte des corrections dans la note est un résumé ; il pourrait
   diverger de REGLES si l'un est mis à jour sans l'autre.
-- 🟡 [UX] La note n'a pas de lien vers le dépôt GitHub (transparence du code).
+
+### Nouvelles critiques (it. 84)
+- 🟡 [UX] Le lien GitHub est en dur ; si le dépôt est renommé/déplacé, à mettre
+  à jour manuellement dans la note.
+- 🟡 [UX] La note Sources pourrait indiquer la licence des données sources
+  (ODbL pour Natural Earth/OSM, etc.) pour la conformité.
+- 🟡 [DATA] Le résumé des corrections dans la note et REGLES sont maintenus en
+  double : un point de vérité unique serait mieux.
 
 ## Critiques traitées
+- ✅ (it. 84) [UX] Note « Sources » vérifiée en ligne (s'ouvre, en arménien) ;
+  ajout d'un lien vers le dépôt GitHub (github.com/amsolutions-pro/globe-armenie)
+  pour la transparence du code et des données.
 - ✅ (it. 83) [UX] Note « Sources & méthodologie » exposée dans l'app (R11) :
   voile ouvrable depuis l'accueil et depuis la ligne de version de la légende,
   en 4 langues — liste les sources neutres (aucune azerbaïdjanaise) et les
