@@ -11,6 +11,14 @@ AVERTS  = []
 def err(msg):  ERREURS.append(msg)
 def warn(msg): AVERTS.append(msg)
 
+# Différences de FORMAT connues et bénignes (nombre écrit en lettres ou en
+# chiffres romains dans une langue, en chiffres arabes dans l'autre) — pas des
+# erreurs de contenu. (source, clé, nombre_arabe_côté_traduction)
+FIDELITE_OK = {
+    ("periodes_en.json", 7, "1001"),   # « 1001 churches » = « mille et une églises »
+    ("MINI_EN", "-1500", "9"),          # « 9th century » = « IXᵉ siècle »
+}
+
 import re as _re
 def nombres(texte):
     """Ensemble des nombres d'un texte, séparateurs de milliers/décimaux normalisés."""
@@ -121,7 +129,7 @@ def main():
                     continue
                 nf = nombres(" ".join(fr_lst[i].get("apercu", [])))
                 nt = nombres(" ".join(p.get("apercu", [])))
-                surplus = nt - nf
+                surplus = {n for n in (nt - nf) if (fn, i, n) not in FIDELITE_OK}
                 if surplus:
                     warn(f"{fn}[{i}] : nombre(s) absent(s) du FR : {sorted(surplus)} (format ?)")
 
@@ -165,7 +173,7 @@ def main():
                 af, at = _apercu(fr_b, key), _apercu(tr_b, key)
                 if af is None or at is None:
                     continue
-                surplus = _nums(at) - _nums(af)
+                surplus = {n for n in (_nums(at) - _nums(af)) if (lang, key, n) not in FIDELITE_OK}
                 if surplus:
                     warn(f"{lang}[{key}] : nombre(s) absent(s) du FR : {sorted(surplus)} (format ?)")
     except (FileNotFoundError, ValueError):

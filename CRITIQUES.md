@@ -356,9 +356,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   un locuteur arménien relit les 13 notices récentes.
 
 ### Nouvelles critiques (it. 75)
-- 🟡 [DATA] Le contrôle de fidélité numérique génère un faux positif bénin sur
-  les mini-notices anciennes (chiffres romains FR « IXe » vs arabes EN « 9th »)
-  — en avertissement, sans gravité.
 - 🟡 [DATA] Le contrôle ne compare que MINI/MINI_EN/MINI_HY ; les notices
   longues (periodes*.json) ne sont pas croisées numériquement.
 - 🟡 [UX] Les avertissements de verifie_donnees.py s'accumulent ; un mode
@@ -463,14 +460,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   incrémentales (relecture native hy, tests device réel iPhone).
 
 ### Nouvelles critiques (it. 91)
-- 🟡 [DATA] Le contrôle de fidélité signale 2 faux positifs bénins (nombres
-  écrits en lettres ou chiffres romains selon la langue : « 1001 églises » vs
-  « mille et une », « 9th » vs « IXe ») : tolérés en avertissement.
 - 🟡 [DATA] Le contrôle ne vérifie que le sens traduction→FR ; un nombre FR
   oublié dans la traduction n'est pas signalé (moins grave).
 - 🟡 [DOC] AMELIORATION.md toujours à archiver/reprendre.
 
+### Nouvelles critiques (it. 92)
+- 🟡 [DATA] Le whitelist FIDELITE_OK est manuel : si une notice est réécrite,
+  l'entrée peut devenir obsolète (référence à un index/nombre qui a changé).
+- 🟡 [DATA] Un vrai nombre EN/HY masqué par erreur dans le whitelist passerait
+  inaperçu : le whitelist doit rester minimal et justifié.
+- 🟡 [DOC] AMELIORATION.md toujours à clôturer.
+
 ## Critiques traitées
+- ✅ (it. 92) [DATA] Contrôle de fidélité numérique : rapport à **0
+  avertissement**. Les 2 seules divergences (numéral/lettres « 1001 églises »
+  vs « mille et une » ; romain/arabe « 9th »/« IXᵉ ») sont whitelistées
+  explicitement (FIDELITE_OK, commentées) ; le contrôle reste actif pour toute
+  vraie erreur de date/chiffre.
 - ✅ (it. 91) [DATA] Contrôle de fidélité numérique ÉTENDU aux notices longues
   periodes*.json (EN + HY vs FR) : 0 erreur de contenu ; seul faux positif =
   « 1001 églises » (EN) écrit « mille et une » (FR). Le garde-fou couvre
