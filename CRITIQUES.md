@@ -550,12 +550,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 ### Nouvelles critiques (it. 108)
 - 🟡 [DATA] L'audit grille couvre le pourtour arménien ; le reste du monde
   (Afrique, Asie, Amériques) n'est pas audité pour les trous — hors périmètre.
-- 🟡 [DATA] Méthode de distinction terre/mer par « présent en 2026 » : robuste
-  mais indirecte ; un masque côtier explicite serait plus rigoureux.
 - 🟡 [UX] Le thread « audit cartographique » est clos ; réorienter vers d'autres
   axes (contenu, UX, tests device).
 
+### Nouvelles critiques (it. 109)
+- 🟡 [DATA] Le contrôle anti-trou porte sur 8 repères ponctuels ; un trou entre
+  deux repères passerait — l'audit grille complet (it.107-108) reste le filet
+  exhaustif ponctuel.
+- 🟡 [DATA] verifie_donnees.py compte 10 contrôles dans main() : refactor en
+  fonctions nommées toujours souhaitable pour la maintenabilité.
+- 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
+
 ## Critiques traitées
+- ✅ (it. 109) [DATA] Contrôle anti-trou AJOUTÉ à verifie_donnees.py (#10) :
+  8 repères arméniens (Erevan, Van, Ani, Kars, Erzurum, Bitlis, Dvin, Mush)
+  doivent être couverts par une entité à chaque pas ≥ −500 (point-dans-polygone
+  avec exclusion des trous/lacs). Prévient toute régression « rendu en mer ».
+  Passe à 0 erreur.
 - ✅ (it. 108) [DATA] Audit grille ÉTENDU à la Cilicie (32-37°E) et à la bordure
   persane (45-49°E) : les seuls « trous » (golfe d'Alexandrette 34,6/36,5 ;
   mer Caspienne lon 49) sont de la MER (présents aussi en 2026). CONCLUSION :

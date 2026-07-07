@@ -232,6 +232,40 @@ def main():
         except (ValueError, NameError):
             pass
 
+    # 10. Anti-trou : les repères arméniens clés (terre à toutes les époques)
+    # doivent être couverts par une entité à chaque pas de temps ≥ −500 — sinon
+    # ils se rendent en « mer » (cf. effet de bord du retrait de Sèvres, it. 105).
+    def _pt_in(ring_geom, lon, lat):
+        # point-dans-polygone (ray casting) sur un anneau [ [lon,lat], ... ]
+        inside = False
+        n = len(ring_geom); j = n - 1
+        for i in range(n):
+            xi, yi = ring_geom[i]; xj, yj = ring_geom[j]
+            if ((yi > lat) != (yj > lat)) and (lon < (xj - xi) * (lat - yi) / (yj - yi + 1e-12) + xi):
+                inside = not inside
+            j = i
+        return inside
+    def _couvert(feats, lon, lat):
+        for f in feats:
+            polys = [f["c"]] if f["t"] == "Polygon" else f["c"]
+            for poly in polys:
+                if poly and _pt_in(poly[0], lon, lat):
+                    # exclure si dans un trou (anneau intérieur = lac/enclave)
+                    if any(len(r) >= 4 and _pt_in(r, lon, lat) for r in poly[1:]):
+                        continue
+                    return True
+        return False
+    REPERES = {"Erevan": (44.5, 40.2), "Van": (43.4, 38.5), "Ani": (43.57, 40.51),
+               "Kars": (43.1, 40.6), "Erzurum": (41.3, 39.9), "Bitlis": (42.1, 38.4),
+               "Dvin": (44.63, 40.0), "Mush": (41.5, 38.7)}
+    for y in d["years"]:
+        if y < -500:
+            continue
+        feats = d["world"][str(y)]
+        for nom, (lo, la) in REPERES.items():
+            if not _couvert(feats, lo, la):
+                err(f"Repère « {nom} » ({lo},{la}) non couvert en {y} (rendu en « mer »)")
+
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)
     if ERREURS:
