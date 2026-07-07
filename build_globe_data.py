@@ -98,11 +98,11 @@ def process(fname, annee=None):
     if annee in (1918, 1920):
         mask = arm_moderne()
         if mask is not None:
-            KARS_SURMALU = _box(42.3, 39.6, 44.3, 41.3)
+            KARS_SURMALU = _box(42.3, 39.5, 44.7, 41.35)
             ARTSAKH = Polygon([(46.0, 39.5), (46.4, 40.25), (47.05, 40.1),
                                (47.15, 39.6), (46.75, 39.3), (46.25, 39.35), (46.0, 39.5)])
             NAKHIDJEVAN = Polygon([(44.9, 39.75), (45.5, 39.6), (46.05, 39.2),
-                                   (45.9, 38.85), (45.2, 38.9), (44.85, 39.35), (44.9, 39.75)])
+                                   (45.9, 38.85), (45.0, 38.85), (44.8, 39.3), (44.9, 39.75)])
             DJAVAKHK = _box(43.0, 41.05, 43.9, 41.6)
             rep1 = unary_union([mask, KARS_SURMALU, ARTSAKH, NAKHIDJEVAN, DJAVAKHK])
             # Fermeture morphologique : arrondit les angles vifs des boîtes et
@@ -179,10 +179,10 @@ def process(fname, annee=None):
     #     moment (rep1 en 1918/1920 : Kars-Sourmalou arméniens ; RSS ensuite).
     if annee in (1918, 1920, 1921, 1923, 1930, 1936, 1938):
         from shapely.geometry import Point as _Pt2
-        EST_ANATOLIE = Polygon([(38.7, 41.05), (43.0, 41.15), (43.7, 40.7),
-                                (44.3, 39.9), (44.55, 39.4), (44.5, 38.0),
-                                (43.0, 37.4), (40.0, 37.3), (38.7, 38.0),
-                                (38.7, 41.05)])
+        EST_ANATOLIE = Polygon([(38.7, 41.1), (41.6, 41.25), (42.6, 41.45),
+                                (43.4, 41.45), (43.95, 40.85), (44.4, 40.0),
+                                (44.72, 39.5), (44.6, 38.0), (43.0, 37.4),
+                                (40.0, 37.3), (38.7, 38.0), (38.7, 41.1)])
         arm_now = None
         for f in d["features"]:
             if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):
@@ -207,6 +207,21 @@ def process(fname, annee=None):
                 g = make_valid(shape(f["geometry"])).buffer(0).union(NAKH_GAP)
                 f["geometry"] = mapping(g)
                 break
+    # (i) 1921–1938 : petit trou à l'ouest du Nakhitchevan (exclave azérie après
+    #     1921) entre l'entité Azerbaïdjan et l'Araxe → étendre l'Azerbaïdjan.
+    if annee in (1921, 1923, 1930, 1936, 1938):
+        NAKH_W = Polygon([(44.7, 38.9), (45.4, 38.9), (45.4, 39.5),
+                          (44.75, 39.45), (44.7, 38.9)])
+        cible = None
+        for nm_pref in ("Azerbaijan", "USSR"):   # Azerbaïdjan, sinon URSS (1938)
+            for f in d["features"]:
+                if (f["properties"].get("NAME") or "") == nm_pref and f.get("geometry"):
+                    cible = f; break
+            if cible is not None:
+                break
+        if cible is not None:
+            g = make_valid(shape(cible["geometry"])).buffer(0).union(NAKH_W)
+            cible["geometry"] = mapping(g)
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue

@@ -615,7 +615,23 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   Bakou (1990) et Kirovabad (1988) mériteraient d'être reliés.
 - 🟡 [DATA] Notices récentes sans version RU dédiée (charnières RU OK).
 
+### Nouvelles critiques (it. 120, critiques utilisateur)
+- 🟡 [DATA] La note de clarification Atropatène/Parskahayk n'est qu'en FR (les
+  notes de provinces ne sont pas traduites EN/HY dans periodes_*.json).
+- 🟡 [DATA] La République montagneuse de Njdeh (1921) reste en notice, pas
+  figurée sur la carte.
+
 ## Critiques traitées
+- ✅ (it. 120, critique utilisateur « frontière Arménie-Turquie 1918-1945
+  bizarre, territoire vide ») [DATA] Interstice terre-vide comblé : EST_ANATOLIE
+  (remplissage turc) et boîte Kars-Sourmalou de la Première République élargies
+  pour se rejoindre (bord Ardahan, Surmalou/Ararat) ; trou ouest-Nakhitchevan
+  1921-1938 comblé. Audit grille : 0 trou frontalier 1918-1938. Arménie 1918
+  garde Kars et Surmalou.
+- ✅ (it. 120, question utilisateur Atropatène) [DATA] Note ajoutée dans la
+  période orontide (−300) : l'Atropatène est un royaume MÈDE/iranien distinct
+  (≠ province arménienne), à ne pas confondre avec le Parskahayk (province
+  arménienne de l'Ourmia). Confirme que la carte est correcte.
 - ✅ (it. 119) [DATA] Année 1990 ajoutée (pipeline complet) : pogroms
   anti-arméniens de Bakou (janvier 1990, ~200 000 Arméniens chassés), « Janvier
   noir », blocus ferroviaire/énergétique de l'Arménie, effondrement de l'URSS.

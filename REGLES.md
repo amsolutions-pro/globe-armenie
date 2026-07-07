@@ -157,6 +157,11 @@ siècle » (it. 66–81) :
 - **1828/1896** : Erevan russe (post-Turkmentchaï) — corrections Perse→Russie
   appliquées comme 1880/1900. **1936** : clip RSS + Anatolie orientale (comme
   1938). Nouvelles années XIXe-XXe (1828, 1896, 1936, 1946, 1965) ajoutées.
+- **1918–1938 frontière Arménie-Turquie** : interstice « terre vide » entre
+  l'Arménie reconstituée et le remplissage d'Anatolie orientale (bord Ardahan
+  au nord, Surmalou/Ararat) → EST_ANATOLIE et la boîte Kars-Sourmalou élargies
+  pour se rejoindre ; petit trou ouest-Nakhitchevan (1921-1938) comblé côté
+  Azerbaïdjan/URSS. Aucun trou frontalier résiduel 1918-1938 (audit grille).
 - **1600** laissé tel quel (Erevan ottoman 1583–1604, historiquement correct).
 
 ## R11 — Affichage à la demande (décision utilisateur, 2026-07-06)
