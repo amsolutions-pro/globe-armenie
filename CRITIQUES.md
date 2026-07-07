@@ -577,7 +577,18 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   visuel de chaque siècle (galerie de vignettes) donnerait une preuve visuelle.
 - 🟡 [UX] Tests device réel iPhone (Safari tactile) : seule limite ouverte.
 
+### Nouvelles critiques (it. 113)
+- 🟡 [DATA] Les notices longues récentes (MINI) n'ont pas de version RU dédiée
+  (seules les charnières le sont désormais) : en ru, corps FR/EN.
+- 🟡 [DATA] verifie_donnees.py ne contrôle pas la parité des CHARNIERE entre
+  langues : automatisable (comme l'audit ponctuel de l'it. 113).
+- 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
+
 ## Critiques traitées
+- ✅ (it. 113) [DATA] Lacune trouvée et comblée : les 10 années récentes (1915,
+  1918, 1921, 1923, 1988, 1991, 2018, 2020, 2023, 2026) n'avaient pas d'événement
+  charnière en RUSSE (repli FR) → traduits. Couverture des charnières désormais
+  complète dans les 4 langues (FR/EN/HY/RU) sur les 53 années.
 - ✅ (it. 112) [DATA] Vérification d'ensemble en ligne (VDATA k) : sur les 53
   années, les repères arméniens (Erevan, Van, Kars, Sis, Stepanakert,
   Nakhitchevan) sont TOUS couverts (d3.geoContains sphérique en direct) — aucun
