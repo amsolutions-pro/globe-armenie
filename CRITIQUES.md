@@ -519,9 +519,13 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   contrôlées — d'où le libellé « revendiquée » dans la notice.
 - 🟡 [DATA] Les polygones Artsakh/Nakhitchevan/Djavakhk sont manuels (boîtes/
   contours approchés) : à affiner si des tracés de 1918-1920 sourcés émergent.
-- 🟡 [UX] Vérifier en ligne (VDATA g) le rendu de la République maximale 1918.
 
 ## Critiques traitées
+- ✅ (it. 102) [DATA] République maximale 1918 VÉRIFIÉE en ligne (capture) :
+  Erevan, Artsakh (Gandzasar/Chouchi/Goris/Kapan), Zanguezour, Nakhitchevan,
+  Kars, Djavakhk bien dans le territoire arménien or ; Azerbaïdjan réduit à
+  l'est, Géorgie au nord. Contours un peu anguleux (reconstitution) mais
+  cohérents. Conforme à la précision utilisateur.
 - ✅ (it. 101, précision utilisateur) [DATA] 1918/1920 : la Première République
   inclut désormais ses régions arméniennes revendiquées — Artsakh (Karabagh),
   Zanguezour, Nakhitchevan, Djavakhk (Akhalkalaki) — en plus d'Erevan et Kars
