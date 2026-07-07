@@ -547,7 +547,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] La ligne « trous » à lat 41,1 (côte pontique) est de la MER (présente
   à toutes les années dont 2026) — pas une erreur : confirmé.
 
+### Nouvelles critiques (it. 108)
+- 🟡 [DATA] L'audit grille couvre le pourtour arménien ; le reste du monde
+  (Afrique, Asie, Amériques) n'est pas audité pour les trous — hors périmètre.
+- 🟡 [DATA] Méthode de distinction terre/mer par « présent en 2026 » : robuste
+  mais indirecte ; un masque côtier explicite serait plus rigoureux.
+- 🟡 [UX] Le thread « audit cartographique » est clos ; réorienter vers d'autres
+  axes (contenu, UX, tests device).
+
 ## Critiques traitées
+- ✅ (it. 108) [DATA] Audit grille ÉTENDU à la Cilicie (32-37°E) et à la bordure
+  persane (45-49°E) : les seuls « trous » (golfe d'Alexandrette 34,6/36,5 ;
+  mer Caspienne lon 49) sont de la MER (présents aussi en 2026). CONCLUSION :
+  audit du pourtour arménien terminé, aucun trou terrestre réel restant (hors
+  1 point de tripoint Turquie-Iran-Irak, négligeable). Intégrité côtière validée.
 - ✅ (it. 107, audit systématique grille) [DATA] Balayage complet du pourtour
   arménien (36-48°E, 37-42°N) toutes années : la « côte mer Noire » (lat 41,1)
   est de l'eau (non-erreur). Trous terrestres résiduels de 1918-1938 (bord
