@@ -570,7 +570,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   entre entités adjacentes ailleurs (hors repères testés).
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
+### Nouvelles critiques (it. 112)
+- 🟡 [DATA] La vérif navigateur teste 6 repères (sous-ensemble des 13 de
+  verifie_donnees) : cohérent mais moins exhaustif que le contrôle local.
+- 🟡 [UX] La cohérence globale est validée par sondage de repères ; un rendu
+  visuel de chaque siècle (galerie de vignettes) donnerait une preuve visuelle.
+- 🟡 [UX] Tests device réel iPhone (Safari tactile) : seule limite ouverte.
+
 ## Critiques traitées
+- ✅ (it. 112) [DATA] Vérification d'ensemble en ligne (VDATA k) : sur les 53
+  années, les repères arméniens (Erevan, Van, Kars, Sis, Stepanakert,
+  Nakhitchevan) sont TOUS couverts (d3.geoContains sphérique en direct) — aucun
+  trou. 0 erreur console propre à la page. Le déploiement correspond au build
+  local ; intégrité cartographique validée de bout en bout.
 - ✅ (it. 111) [DATA] Micro-trou 1100 corrigé : interstice topologique de la
   source entre « Armenia » et « Syunik » à Nakhitchevan (les deux arméniens) →
   « Armenia » étendu sur le gap. Nakhitchevan AJOUTÉ au filet anti-trou
