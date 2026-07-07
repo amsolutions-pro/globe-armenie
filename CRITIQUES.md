@@ -425,7 +425,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Le résumé des corrections dans la note et REGLES sont maintenus en
   double : un point de vérité unique serait mieux.
 
+### Nouvelles critiques (it. 85)
+- 🟡 [DATA] Les 4 nouvelles villes n'ont pas de traduction hy/ru/en (VILLES_HY…) :
+  leurs libellés restent en français/translittéré dans les autres langues.
+- 🟡 [DATA] Manquent encore Vanadzor, Goris, Dilijan, Aghtamar, Mush, Bitlis,
+  Nakhitchevan pour une couverture urbaine arménienne complète.
+- 🟡 [UX] Beaucoup de villes au même endroit (Chouchi/Stepanakert à 46.75) :
+  vérifier qu'elles ne se chevauchent pas à faible zoom.
+
 ## Critiques traitées
+- ✅ (it. 85) [DATA] 4 villes arméniennes emblématiques ajoutées à VILLES avec
+  dates et notes sourcées : Gyumri (Alexandropol 1837, séisme 1988), Kapan
+  (capitale du Syunik Xᵉ s.), Chouchi (1752, prise 2020), Karin/Erzurum
+  (Théodosiopolis Vᵉ s., génocide 1915).
 - ✅ (it. 84) [UX] Note « Sources » vérifiée en ligne (s'ouvre, en arménien) ;
   ajout d'un lien vers le dépôt GitHub (github.com/amsolutions-pro/globe-armenie)
   pour la transparence du code et des données.

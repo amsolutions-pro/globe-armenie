@@ -707,6 +707,10 @@ const VILLES = [
  {nom:"Kars",lng:43.1,lat:40.61,de:928,z:6,arm:1},
  {nom:"Sis",lng:35.82,lat:37.45,de:1080,a:1920,z:4,arm:1,note:"Capitale du royaume de Cilicie (prise en 1375) ; siège d'un catholicossat jusqu'en 1921."},
  {nom:"Stepanakert",lng:46.75,lat:39.82,de:1923,z:6,arm:1},
+ {nom:"Gyumri (Alexandropol)",lng:43.85,lat:40.79,de:1837,z:5,arm:1,note:"Sur le site de l'antique Kumayri ; forteresse russe d'Alexandropol (1837), Leninakan sous l'URSS, Gyumri depuis 1991. Deuxième ville d'Arménie, ravagée par le séisme de 1988."},
+ {nom:"Kapan",lng:46.41,lat:39.20,de:987,z:6,arm:1,note:"Capitale du royaume de Syunik (Xᵉ siècle) sous la maison Siouni ; aujourd'hui chef-lieu du Syunik, cœur minier du sud de l'Arménie."},
+ {nom:"Chouchi (Choucha)",lng:46.75,lat:39.76,de:1752,a:2020,z:6,arm:1,note:"Fondée vers 1752, place forte et grand centre culturel arménien du Karabagh (imprimeries, théâtres) ; prise en 1920 puis en 2020."},
+ {nom:"Karin (Erzurum)",lng:41.28,lat:39.91,de:415,z:4,arm:1,note:"Théodosiopolis byzantine (Vᵉ s.), verrou du haut plateau ; grande ville arménienne ottomane (vilayet d'Erzurum) jusqu'au génocide de 1915."},
  {nom:"Babylone",lng:44.42,lat:32.54,de:-1900,a:-140,z:3},
  {nom:"Ninive",lng:43.15,lat:36.36,de:-1800,a:-612,z:4},
  {nom:"Ur",lng:46.1,lat:30.96,de:-2000,a:-500,z:4},
@@ -1806,7 +1810,7 @@ btnLegende.addEventListener("click", ()=>{
 try{ if(localStorage.getItem("legende")==="1") poseLegende(true); }catch(e){}
 
 /* ================= Chargement ================= */
-const VDATA = "2026-07-07y";   // à incrémenter quand les JSON changent (contourne le cache)
+const VDATA = "2026-07-07z";   // à incrémenter quand les JSON changent (contourne le cache)
 document.getElementById("lg-version").textContent = "données v" + VDATA;
 
 // Télécharge le gros JSON en streaming pour afficher la progression (Mo reçus / %)
