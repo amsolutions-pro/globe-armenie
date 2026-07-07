@@ -591,14 +591,25 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Tests device réel iPhone : seule limite ouverte notable.
 
 ### Nouvelles critiques (it. 116, sur critique utilisateur « pas assez critique sur le XIXe-XXe »)
-- 🟠 [DATA] 1936/1946 aliasent la notice 1945 (Arménie soviétique) : mériteraient
-  des notices dédiées (république de plein droit 1936 ; rapatriement 1946).
 - 🟠 [DATA] Manque encore : guerres de la Première République (arméno-géorgienne
   1918, arméno-azérie, turco-arménienne 1920), République montagneuse de Njdeh
   (1921), pogroms de Bakou (1990), déportations de 1949.
 - 🟡 [DATA] 1828/1896 : notices FR/EN/HY dédiées ; RU en repli (corps FR/EN).
 
+### Nouvelles critiques (it. 117)
+- 🟠 [DATA] Reste à traiter : guerres de la Première République (arméno-géorgienne
+  1918, arméno-azérie, turco-arménienne 1920, République montagneuse de Njdeh
+  1921) — à intégrer dans la notice 1918/1920.
+- 🟠 [DATA] 1990 (pogroms de Bakou, Janvier noir) : année charnière manquante
+  entre 1988 et 1991.
+- 🟡 [DATA] Les notices 1828/1896/1936/1946/1965 n'ont pas de version RU dédiée.
+
 ## Critiques traitées
+- ✅ (it. 117) [DATA] Notices dédiées 1936 (RSS de plein droit, dissolution de
+  la Transcaucasie soviétique, Grande Terreur, mort d'Aghassi Khandjian) et
+  1946 (rapatriement/nerkaght ~100 000, revendication de Kars, déportations de
+  1949) en FR+EN+HY ; alias 1936→1936, 1946→1946. Vérifié en ligne : 58 années,
+  1965 s'affiche en arménien. 0 avertissement.
 - ✅ (it. 116, critique utilisateur) [DATA] XIXe-XXe densifié : 5 années
   pivots ajoutées — 1828 (Turkmentchaï, naissance de l'Arménie orientale russe),
   1896 (massacres hamidiens + partis Arménakan/Hentchak/Dachnaktsoutioun),
