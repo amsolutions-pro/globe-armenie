@@ -179,6 +179,27 @@ def main():
     except (FileNotFoundError, ValueError):
         warn("globe.html : contrôle de fidélité numérique des notices ignoré")
 
+    # 8. Villes (VILLES dans globe.html) : coordonnées bornées et dates
+    # cohérentes (année de fin ≥ année de début).
+    try:
+        html = open("globe.html", encoding="utf-8").read()
+        deb = html.index("const VILLES = [")
+        blocv = html[deb:html.index("];", deb)]
+        for e in blocv.split("\n"):
+            if 'nom:"' not in e or "lng:" not in e:
+                continue
+            nom = _re.search(r'nom:"([^"]*)"', e).group(1)
+            lo = float(_re.search(r"lng:(-?[\d.]+)", e).group(1))
+            la = float(_re.search(r"lat:(-?[\d.]+)", e).group(1))
+            de_ = int(_re.search(r"de:(-?\d+)", e).group(1))
+            if not (-180 <= lo <= 180 and -90 <= la <= 90):
+                err(f"VILLES/{nom} : coordonnée hors bornes ({lo},{la})")
+            a_ = _re.search(r"[,{]a:(-?\d+)", e)
+            if a_ and int(a_.group(1)) < de_:
+                err(f"VILLES/{nom} : année de fin {a_.group(1)} < début {de_}")
+    except (FileNotFoundError, ValueError, AttributeError):
+        warn("globe.html : contrôle des villes ignoré")
+
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)
     if ERREURS:

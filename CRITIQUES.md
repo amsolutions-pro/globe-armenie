@@ -471,7 +471,19 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   inaperçu : le whitelist doit rester minimal et justifié.
 - 🟡 [DOC] AMELIORATION.md toujours à clôturer.
 
+### Nouvelles critiques (it. 93)
+- 🟡 [DATA] Le contrôle des villes lit VILLES par ligne (globe.html) : fragile
+  si une entrée est reformatée sur plusieurs lignes.
+- 🟡 [DATA] La zone de plausibilité des villes n'est pas testée par
+  verifie_donnees (seulement bornes globales) : un lieu arménien mal placé
+  loin du plateau passerait.
+- 🟡 [DOC] AMELIORATION.md toujours à clôturer.
+
 ## Critiques traitées
+- ✅ (it. 93) [DATA] Relecture des 77 villes : 33 arméniennes toutes dans la
+  zone plausible (28–50°E, 35–42°N), aucune date incohérente (fin ≥ début).
+  Contrôle AJOUTÉ à verifie_donnees.py (coordonnées bornées + cohérence des
+  dates de/à des villes). Rapport toujours à 0 avertissement.
 - ✅ (it. 92) [DATA] Contrôle de fidélité numérique : rapport à **0
   avertissement**. Les 2 seules divergences (numéral/lettres « 1001 églises »
   vs « mille et une » ; romain/arabe « 9th »/« IXᵉ ») sont whitelistées
