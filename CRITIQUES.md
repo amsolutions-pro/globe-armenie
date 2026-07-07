@@ -371,8 +371,6 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   partielle) : un indicateur « traduction disponible » par langue aiderait.
 
 ### Nouvelles critiques (it. 77)
-- 🟡 [DATA] MINI_HY couvre maintenant -10000→-1000, -3000, 1400 et 1900→2023 ;
-  restent en hy à faire : 1600/1700/1800/1815 (partages ottomano-persans).
 - 🟡 [DATA] Traduction des dates en chiffres romains (V–IV հազարամյակ, IX դար)
   cohérente FR↔HY mais divergente de l'anglais (arabe) : sans gravité.
 - 🟡 [UX] La densité de notices anciennes en hy justifierait un test de rendu
@@ -384,9 +382,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   faute de polygone sourcé du contrôle réel, laissée telle quelle.
 - 🟡 [DATA] La soustraction Az−Arménie moderne peut laisser un fin liseré le
   long de la frontière Syunik/Nakhitchevan : à vérifier au zoom.
-- 🟡 [UX] Vérifier en ligne (VDATA s) que 1920 s'affiche corrigé.
+
+### Nouvelles critiques (it. 79)
+- 🟡 [DATA] MINI_HY complet, mais periodes_hy.json (notices longues -700→1815)
+  mériterait une relecture native cohérente avec les mini-notices.
+- 🟡 [DATA] Translittérations arméniennes de toponymes préhistoriques
+  (Քարահունջ, Ակնաշեն, Գյոբեկլի Թեփե…) à valider par un spécialiste.
+- 🟡 [UX] La couverture hy étant complète, un test de rendu arménien sur
+  toute la frise (préhistoire → 2026) confirmerait l'absence de repli FR.
 
 ## Critiques traitées
+- ✅ (it. 79) [DATA] Couverture MINI_HY COMPLÈTE : ajout de -8000
+  (néolithisation) et -5000 (villages de l'Araxe, Karahunj) → toutes les
+  mini-notices ont leur version arménienne. 1920 (Azerbaïdjan corrigé)
+  vérifié visuellement en ligne : frontière nette, plus de débordement.
 - ✅ (it. 78, signalement utilisateur) [DATA] 🔴 1920 : Azerbaïdjan trop grand
   (13,5 deg², débordant sur le Zanguezour à 43,5°E) → correction du fond 1920
   étendue de 1918 à 1920 (soustraction de l'Arménie moderne) : Azerbaïdjan
