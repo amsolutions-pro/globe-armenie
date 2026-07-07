@@ -170,9 +170,10 @@ def process(fname, annee=None):
     #     moment (rep1 en 1918/1920 : Kars-Sourmalou arméniens ; RSS ensuite).
     if annee in (1918, 1920, 1921, 1923, 1930, 1938):
         from shapely.geometry import Point as _Pt2
-        EST_ANATOLIE = Polygon([(39.3, 41.0), (43.0, 41.15), (43.7, 40.7),
-                                (44.05, 39.9), (44.3, 39.6), (44.0, 38.4),
-                                (42.0, 37.6), (39.3, 38.0), (39.3, 41.0)])
+        EST_ANATOLIE = Polygon([(38.7, 41.05), (43.0, 41.15), (43.7, 40.7),
+                                (44.3, 39.9), (44.55, 39.4), (44.5, 38.0),
+                                (43.0, 37.4), (40.0, 37.3), (38.7, 38.0),
+                                (38.7, 41.05)])
         arm_now = None
         for f in d["features"]:
             if (f["properties"].get("NAME") or "") == "Armenia" and f.get("geometry"):

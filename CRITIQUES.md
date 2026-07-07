@@ -538,7 +538,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Kars est arménien en 1918/1920 puis turc dès 1921 (traité de Kars) :
   transition correcte mais à vérifier visuellement.
 
+### Nouvelles critiques (it. 107)
+- 🟡 [DATA] Un trou résiduel subsiste au tripoint Turquie-Iran-Irak (44,9°E ;
+  38,7°N) : non comblé pour ne pas mordre sur l'Iran — négligeable (1 point).
+- 🟡 [DATA] Micro-trous de tripoint isolés à d'autres années (ex : 1880-1915
+  vers l'Ararat/Surmalou, 1100 vers le Nakhitchevan) : effets de bord de la
+  source, très localisés.
+- 🟡 [DATA] La ligne « trous » à lat 41,1 (côte pontique) est de la MER (présente
+  à toutes les années dont 2026) — pas une erreur : confirmé.
+
 ## Critiques traitées
+- ✅ (it. 107, audit systématique grille) [DATA] Balayage complet du pourtour
+  arménien (36-48°E, 37-42°N) toutes années : la « côte mer Noire » (lat 41,1)
+  est de l'eau (non-erreur). Trous terrestres résiduels de 1918-1938 (bord
+  Erzurum, sud de Van/Hakkari, Surmalou) comblés en élargissant le remplissage
+  Anatolie orientale ; Arménie 1918 intacte. Reste 1 point de tripoint (négl.).
 - ✅ (it. 106) [DATA] Anatolie orientale comblée VÉRIFIÉE en ligne (capture
   1921) : Van, Mush, Erzurum, Kars sont terre ottomane/turque (violet), plus de
   trou « mer ». Kars turc en 1921 (traité de Kars), arménien en 1918 :
