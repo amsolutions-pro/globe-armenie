@@ -513,7 +513,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   qu'au pourtour arménien (hors périmètre d'audit actuel).
 - 🟡 [UX] Vérifier en ligne (VDATA f) la côte pontique sur 1900 et 1945.
 
+### Nouvelles critiques (it. 101)
+- 🟡 [DATA] L'extension revendiquée 1918 (Artsakh/Nakhitchevan/Djavakhk) est une
+  interprétation « maximale » : ces régions étaient contestées, non fermement
+  contrôlées — d'où le libellé « revendiquée » dans la notice.
+- 🟡 [DATA] Les polygones Artsakh/Nakhitchevan/Djavakhk sont manuels (boîtes/
+  contours approchés) : à affiner si des tracés de 1918-1920 sourcés émergent.
+- 🟡 [UX] Vérifier en ligne (VDATA g) le rendu de la République maximale 1918.
+
 ## Critiques traitées
+- ✅ (it. 101, précision utilisateur) [DATA] 1918/1920 : la Première République
+  inclut désormais ses régions arméniennes revendiquées — Artsakh (Karabagh),
+  Zanguezour, Nakhitchevan, Djavakhk (Akhalkalaki) — en plus d'Erevan et Kars
+  (aire 7,5 deg²). Notice enrichie (FR/EN/HY) expliquant ces territoires
+  contestés puis cédés à l'Azerbaïdjan (Karabagh, Nakhitchevan) ou restés
+  géorgiens (Djavakhk). Documenté REGLES R9.
 - ✅ (it. 100) [DATA] Audit du trou côtier mer Noire orientale : présent sur
   TOUTES les années 1800–1960 (pas seulement 1921). Correction généralisée —
   l'entité couvrant l'Anatolie centrale (Ottoman/Turquie, quel que soit son

@@ -79,20 +79,27 @@ def process(fname, annee=None):
             russes[0]["geometry"] = mapping(union)
             for f in russes[1:]:
                 f["geometry"] = None
-    # (c) 1918/1920 : l'Azerbaïdjan de la source déborde sur le Zanguezour arménien
-    #     → lui soustraire l'Arménie moderne. ET l'« Arménie » de la source est
-    #     l'attribution de Sèvres (Anatolie orientale, SANS Erevan !), jamais
-    #     appliquée : on la remplace par la Première République RÉELLE, centrée
-    #     sur Erevan = Arménie moderne ∪ région de Kars-Ardahan-Sourmalou (Ararat)
-    #     qu'elle contrôla en 1919-1920.
+    # (c) 1918/1920 : l'« Arménie » de la source est l'attribution de Sèvres
+    #     (Anatolie orientale, SANS Erevan !), jamais appliquée : on la remplace
+    #     par la Première République dans son extension MAXIMALE / revendiquée,
+    #     centrée sur Erevan et incluant les régions arméniennes contestées puis
+    #     progressivement cédées : Kars-Ardahan-Sourmalou (Ararat), Zanguezour
+    #     (déjà dans l'Arménie moderne), Artsakh (Karabagh montagneux), Nakhitchevan
+    #     et Djavakhk (Akhalkalaki). Reconstitution documentée (R3.2, R9).
     if annee in (1918, 1920):
         mask = arm_moderne()
         if mask is not None:
-            rep1 = unary_union([mask, _box(42.3, 39.6, 44.3, 41.3)])
+            KARS_SURMALU = _box(42.3, 39.6, 44.3, 41.3)
+            ARTSAKH = Polygon([(46.0, 39.5), (46.4, 40.25), (47.05, 40.1),
+                               (47.15, 39.6), (46.75, 39.3), (46.25, 39.35), (46.0, 39.5)])
+            NAKHIDJEVAN = Polygon([(44.9, 39.75), (45.5, 39.6), (46.05, 39.2),
+                                   (45.9, 38.85), (45.2, 38.9), (44.85, 39.35), (44.9, 39.75)])
+            DJAVAKHK = _box(43.0, 41.05, 43.9, 41.6)
+            rep1 = unary_union([mask, KARS_SURMALU, ARTSAKH, NAKHIDJEVAN, DJAVAKHK])
             for f in d["features"]:
                 nm = f["properties"].get("NAME") or ""
                 if nm == "Azerbaijan" and f.get("geometry"):
-                    g = make_valid(shape(f["geometry"])).difference(mask)
+                    g = make_valid(shape(f["geometry"])).difference(rep1)
                     f["geometry"] = mapping(g) if not g.is_empty else None
                 elif nm == "Armenia" and f.get("geometry"):
                     f["geometry"] = mapping(rep1)
