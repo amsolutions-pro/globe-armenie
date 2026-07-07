@@ -181,6 +181,7 @@ def main():
 
     # 8. Villes (VILLES dans globe.html) : coordonnées bornées et dates
     # cohérentes (année de fin ≥ année de début).
+    villes_xy = {}
     try:
         html = open("globe.html", encoding="utf-8").read()
         deb = html.index("const VILLES = [")
@@ -192,6 +193,8 @@ def main():
             lo = float(_re.search(r"lng:(-?[\d.]+)", e).group(1))
             la = float(_re.search(r"lat:(-?[\d.]+)", e).group(1))
             de_ = int(_re.search(r"de:(-?\d+)", e).group(1))
+            villes_xy[nom] = (lo, la)
+            villes_xy.setdefault(_re.sub(r"\s*\(.*", "", nom).strip(), (lo, la))
             if not (-180 <= lo <= 180 and -90 <= la <= 90):
                 err(f"VILLES/{nom} : coordonnée hors bornes ({lo},{la})")
             a_ = _re.search(r"[,{]a:(-?\d+)", e)
@@ -203,6 +206,21 @@ def main():
                 warn(f"VILLES/{nom} (arm:1) hors zone arménienne plausible ({lo},{la})")
     except (FileNotFoundError, ValueError, AttributeError):
         warn("globe.html : contrôle des villes ignoré")
+
+    # 9. Cohérence croisée : une capitale citée dans une notice periodes.json et
+    # présente aussi dans VILLES doit avoir ~les mêmes coordonnées (< 0,3° ≈ 30 km).
+    if villes_xy:
+        try:
+            for p in json.load(open("periodes.json", encoding="utf-8")):
+                for c in p.get("capitales", []):
+                    for key in (c.get("nom", ""), _re.sub(r"\s*\(.*", "", c.get("nom", "")).strip()):
+                        if key in villes_xy:
+                            vlo, vla = villes_xy[key]
+                            if ((vlo - c["lng"]) ** 2 + (vla - c["lat"]) ** 2) ** 0.5 > 0.3:
+                                err(f"Capitale « {c['nom']} » : notice ({c['lng']},{c['lat']}) ≠ VILLES ({vlo},{vla})")
+                            break
+        except FileNotFoundError:
+            pass
 
     for m in AVERTS:  print("AVERT :", m)
     for m in ERREURS: print("ERREUR:", m)

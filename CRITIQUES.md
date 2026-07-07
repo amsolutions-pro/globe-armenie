@@ -481,13 +481,22 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [UX] Tests device réel iPhone (Safari tactile) toujours en attente.
 
 ### Nouvelles critiques (it. 95)
-- 🟡 [DATA] La cohérence croisée capitales↔VILLES n'est pas dans
-  verifie_donnees.py (faite ponctuellement) : automatisable.
 - 🟡 [DOC] Le README ne mentionne pas atlas_armenie_historique dans la nouvelle
   table remaniée : vérifier qu'il y figure toujours.
 - 🟡 [UX] Tests device réel iPhone toujours en attente (seule limite connue).
 
+### Nouvelles critiques (it. 96)
+- 🟡 [DATA] Le contrôle croisé ne compare que periodes.json (FR) ↔ VILLES ; les
+  capitales des mini-notices (MINI) ne sont pas recoupées avec VILLES.
+- 🟡 [DATA] verifie_donnees.py grossit (9 contrôles) : un découpage en
+  fonctions nommées améliorerait la lisibilité.
+- 🟡 [UX] Tests device réel iPhone toujours la seule limite ouverte notable.
+
 ## Critiques traitées
+- ✅ (it. 96) [DATA] Cohérence croisée capitales↔VILLES AUTOMATISÉE dans
+  verifie_donnees.py (contrôle #9) : une capitale citée dans une notice et
+  présente dans VILLES doit avoir les mêmes coordonnées (< 0,3° ≈ 30 km),
+  sinon erreur. Rapport toujours à 0 avertissement.
 - ✅ (it. 95) [DATA] Relecture croisée : les coordonnées des capitales dans les
   notices concordent avec VILLES (0 écart >30 km). [DOC] Table du README
   complétée et clarifiée (fichiers de suivi CRITIQUES/REGLES/AMELIORATION,
