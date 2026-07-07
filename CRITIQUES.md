@@ -505,7 +505,20 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
 - 🟡 [DATA] Le comblement côtier PONT est un polygone manuel : à comparer à la
   vraie côte pontique si une source précise apparaît.
 
+### Nouvelles critiques (it. 100)
+- 🟡 [DATA] Le comblement côtier PONT (polygone manuel) est appliqué à
+  1800–1960 ; en 1945/1960 son bord est (41,5°E) pourrait frôler Batoumi
+  soviétique — vérifier l'absence de recouvrement gênant.
+- 🟡 [DATA] D'autres trous de source rendus en mer peuvent exister ailleurs
+  qu'au pourtour arménien (hors périmètre d'audit actuel).
+- 🟡 [UX] Vérifier en ligne (VDATA f) la côte pontique sur 1900 et 1945.
+
 ## Critiques traitées
+- ✅ (it. 100) [DATA] Audit du trou côtier mer Noire orientale : présent sur
+  TOUTES les années 1800–1960 (pas seulement 1921). Correction généralisée —
+  l'entité couvrant l'Anatolie centrale (Ottoman/Turquie, quel que soit son
+  nom) est étendue le long de la côte. Tous les trous comblés (10 années
+  vérifiées), 0 avertissement.
 - ✅ (it. 99) [DATA] Corrections it.98 VÉRIFIÉES en ligne (captures) : 1918 =
   Première République centrée sur Erevan (Erevan/Kars dans le territoire or,
   Erzurum hors Arménie — Sèvres écarté) ; 1921 = côte pontique ottomane

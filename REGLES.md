@@ -144,8 +144,10 @@ siècle » (it. 66–81) :
   soustraite. De plus l'« Arménie » de la source est l'attribution de Sèvres
   (Anatolie orientale, SANS Erevan, jamais appliquée) → remplacée par la
   Première République réelle (Erevan-centrée : Arménie moderne + Kars-Sourmalou).
-- **1918/1920/1921** : trou côtier de la mer Noire orientale (Trabzon-Lazistan,
-  terre turque rendue en « mer ») → Empire ottoman étendu le long de la côte.
+- **1800–1960** : trou côtier persistant de la mer Noire orientale (Trabzon-
+  Lazistan, terre ottomane/turque rendue en « mer ») → l'entité couvrant
+  l'Anatolie centrale (Empire/sultanat ottoman ou Turquie) est étendue le long
+  de la côte.
 - **1921/1923/1930/1938** : « Grande Arménie » de Sèvres anachronique →
   remplacée par la forme réelle de la RSS (Arménie moderne).
 - **1600** laissé tel quel (Erevan ottoman 1583–1604, historiquement correct).

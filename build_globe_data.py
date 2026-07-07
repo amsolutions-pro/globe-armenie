@@ -135,17 +135,22 @@ def process(fname, annee=None):
             if saf is not None and not transfert.is_empty:
                 gs2 = make_valid(shape(saf["geometry"])).buffer(0)
                 saf["geometry"] = mapping(unary_union([gs2, transfert]))
-    # (f) 1918–1921 : la source laisse un trou côtier sur la mer Noire orientale
-    #     (Trabzon–Lazistan, ~39,5–41,5°E), pourtant terre turque à l'époque : il
-    #     se rend en couleur « mer » (la mer Noire semble déborder). → combler en
-    #     étendant l'Empire ottoman le long de la côte jusqu'à la Géorgie soviétique.
-    if annee in (1918, 1920, 1921):
-        PONT = Polygon([(39.2, 40.6), (39.5, 41.1), (40.3, 41.4), (41.2, 41.55),
-                        (41.75, 41.55), (41.75, 40.7), (40.8, 40.5), (39.2, 40.6)])
+    # (f) 1800–1960 : la source laisse un trou côtier sur la mer Noire orientale
+    #     (Trabzon–Lazistan, ~39,5–41,5°E), pourtant terre ottomane/turque à
+    #     l'époque : il se rend en couleur « mer » (la mer Noire semble déborder).
+    #     → combler en étendant l'entité qui couvre l'Anatolie centrale (Empire
+    #     ottoman, sultanat ottoman ou Turquie, selon l'année) le long de la côte.
+    if 1800 <= annee <= 1960:
+        from shapely.geometry import Point as _Pt
+        PONT = Polygon([(39.2, 40.6), (39.5, 41.1), (40.3, 41.4), (41.2, 41.5),
+                        (41.5, 41.45), (41.55, 40.7), (40.8, 40.5), (39.2, 40.6)])
+        anatolie = _Pt(35, 39.5)   # repère central de la Turquie/Anatolie
         for f in d["features"]:
-            if (f["properties"].get("NAME") or "") in ("Ottoman Sultanate", "Ottoman Empire") and f.get("geometry"):
-                g = make_valid(shape(f["geometry"])).buffer(0).union(PONT)
-                f["geometry"] = mapping(g)
+            if not f.get("geometry"):
+                continue
+            g = make_valid(shape(f["geometry"])).buffer(0)
+            if g.contains(anatolie):
+                f["geometry"] = mapping(g.union(PONT))
                 break
     feats = []
     for f in d["features"]:
