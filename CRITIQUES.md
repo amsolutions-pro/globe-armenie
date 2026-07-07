@@ -498,7 +498,21 @@ Importance : 🔴 majeure · 🟠 notable · 🟡 mineure.
   un refactor en fonctions nommées reste souhaitable pour la maintenabilité.
 - 🟡 [UX] Tests device réel iPhone (Safari tactile) : seule limite ouverte.
 
+### Nouvelles critiques (it. 98)
+- 🟡 [DATA] La Première République 1918/1920 utilise Arménie moderne + boîte
+  Kars-Sourmalou : le tracé exact (frontières de 1919-1920, Nakhitchevan
+  contesté) reste approximé.
+- 🟡 [DATA] Le comblement côtier PONT est un polygone manuel : à comparer à la
+  vraie côte pontique si une source précise apparaît.
+- 🟡 [UX] Vérifier en ligne (VDATA e) 1918 (Erevan arménien) et 1921 (côte).
+
 ## Critiques traitées
+- ✅ (it. 98, signalements utilisateur) [DATA] 🔴 (1) 1918/1920 : la « carte de
+  la Première République » montrait l'Arménie de Sèvres (Anatolie, SANS Erevan)
+  → remplacée par la République réelle centrée sur Erevan (Arménie moderne +
+  Kars-Sourmalou, aire 5,8 deg², contient Erevan et Kars). (2) 1921 mer Noire :
+  trou côtier Trabzon-Lazistan rendu en « mer » → comblé (côte pontique
+  ottomane). Documenté dans REGLES R9.
 - ✅ (it. 97) [DATA] Contrôle croisé capitales↔VILLES ÉTENDU aux mini-notices
   (MINI dans globe.html) : 33 capitales extraites, 23 croisées avec VILLES,
   toutes concordantes (< 30 km). Le garde-fou couvre notices longues ET

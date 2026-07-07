@@ -79,15 +79,23 @@ def process(fname, annee=None):
             russes[0]["geometry"] = mapping(union)
             for f in russes[1:]:
                 f["geometry"] = None
-    # (c) 1918/1920 : l'Azerbaïdjan de la source (fond 1920) déborde vers l'ouest sur
-    #     le Zanguezour/Syunik arménien. → lui soustraire l'Arménie moderne.
+    # (c) 1918/1920 : l'Azerbaïdjan de la source déborde sur le Zanguezour arménien
+    #     → lui soustraire l'Arménie moderne. ET l'« Arménie » de la source est
+    #     l'attribution de Sèvres (Anatolie orientale, SANS Erevan !), jamais
+    #     appliquée : on la remplace par la Première République RÉELLE, centrée
+    #     sur Erevan = Arménie moderne ∪ région de Kars-Ardahan-Sourmalou (Ararat)
+    #     qu'elle contrôla en 1919-1920.
     if annee in (1918, 1920):
         mask = arm_moderne()
         if mask is not None:
+            rep1 = unary_union([mask, _box(42.3, 39.6, 44.3, 41.3)])
             for f in d["features"]:
-                if (f["properties"].get("NAME") or "") == "Azerbaijan" and f.get("geometry"):
+                nm = f["properties"].get("NAME") or ""
+                if nm == "Azerbaijan" and f.get("geometry"):
                     g = make_valid(shape(f["geometry"])).difference(mask)
                     f["geometry"] = mapping(g) if not g.is_empty else None
+                elif nm == "Armenia" and f.get("geometry"):
+                    f["geometry"] = mapping(rep1)
     # (d) 1880/1900 : la source fait couvrir Erevan/Syunik par la PERSE, or ils
     #     sont russes depuis Turkmentchaï (1828). → transférer la Transcaucasie
     #     russe (nord de l'Araxe) de la Perse vers l'Empire russe.
@@ -127,6 +135,18 @@ def process(fname, annee=None):
             if saf is not None and not transfert.is_empty:
                 gs2 = make_valid(shape(saf["geometry"])).buffer(0)
                 saf["geometry"] = mapping(unary_union([gs2, transfert]))
+    # (f) 1918–1921 : la source laisse un trou côtier sur la mer Noire orientale
+    #     (Trabzon–Lazistan, ~39,5–41,5°E), pourtant terre turque à l'époque : il
+    #     se rend en couleur « mer » (la mer Noire semble déborder). → combler en
+    #     étendant l'Empire ottoman le long de la côte jusqu'à la Géorgie soviétique.
+    if annee in (1918, 1920, 1921):
+        PONT = Polygon([(39.2, 40.6), (39.5, 41.1), (40.3, 41.4), (41.2, 41.55),
+                        (41.75, 41.55), (41.75, 40.7), (40.8, 40.5), (39.2, 40.6)])
+        for f in d["features"]:
+            if (f["properties"].get("NAME") or "") in ("Ottoman Sultanate", "Ottoman Empire") and f.get("geometry"):
+                g = make_valid(shape(f["geometry"])).buffer(0).union(PONT)
+                f["geometry"] = mapping(g)
+                break
     feats = []
     for f in d["features"]:
         if not f.get("geometry"): continue

@@ -141,7 +141,11 @@ siècle » (it. 66–81) :
 - **1914/1915** : Caucase du Sud = Empire russe (pas d'États indépendants avant
   1918) → Arménie/Azerbaïdjan/Géorgie fusionnés dans « Russian Empire ».
 - **1918/1920** : Azerbaïdjan débordant sur le Zanguezour → Arménie moderne
-  soustraite.
+  soustraite. De plus l'« Arménie » de la source est l'attribution de Sèvres
+  (Anatolie orientale, SANS Erevan, jamais appliquée) → remplacée par la
+  Première République réelle (Erevan-centrée : Arménie moderne + Kars-Sourmalou).
+- **1918/1920/1921** : trou côtier de la mer Noire orientale (Trabzon-Lazistan,
+  terre turque rendue en « mer ») → Empire ottoman étendu le long de la côte.
 - **1921/1923/1930/1938** : « Grande Arménie » de Sèvres anachronique →
   remplacée par la forme réelle de la RSS (Arménie moderne).
 - **1600** laissé tel quel (Erevan ottoman 1583–1604, historiquement correct).
