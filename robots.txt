@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amsolutions-pro.github.io/globe-armenie/sitemap.xml
