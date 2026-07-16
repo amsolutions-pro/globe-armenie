@@ -1,0 +1,62 @@
+[
+ {
+  "cle": "periode_0",
+  "fr": "Le royaume d'Ourartou, appelé Biaïnili, unifie les hauts plateaux autour du lac de Van vers 860 avant Jésus-Christ. Grand rival de l'Assyrie, il excelle dans la métallurgie et les grands travaux hydrauliques. Sa capitale Tushpa domine la région jusqu'à sa chute, vers 590 avant notre ère.",
+  "en": "The kingdom of Urartu, known as Biainili, unified the highlands around Lake Van around 860 BC. A great rival of Assyria, it excelled in metalwork and large hydraulic works. Its capital Tushpa dominated the region until its fall, around 590 BC.",
+  "ru": "Царство Урарту, называемое Биайнили, объединило нагорья вокруг озера Ван около 860 года до нашей эры. Крупный соперник Ассирии, оно преуспело в металлургии и больших гидротехнических работах. Его столица Тушпа господствовала в регионе до падения, около 590 года до нашей эры."
+ },
+ {
+  "cle": "periode_1",
+  "fr": "Après la chute d'Ourartou, le plateau arménien passe aux Mèdes, puis à l'Empire perse achéménide. C'est là qu'apparaît, sur l'inscription trilingue de Béhistoun en 520 avant Jésus-Christ, le premier témoignage écrit du nom d'Arménie. Le pays est alors gouverné comme une satrapie par la dynastie orontide.",
+  "en": "After the fall of Urartu, the Armenian plateau passed to the Medes, then to the Achaemenid Persian Empire. It is there, on the trilingual Behistun inscription of 520 BC, that the name of Armenia first appears in writing. The country was then governed as a satrapy by the Orontid dynasty.",
+  "ru": "После падения Урарту Армянское нагорье перешло к мидянам, а затем к персидской империи Ахеменидов. Именно там, на трёхъязычной Бехистунской надписи 520 года до нашей эры, впервые письменно появляется название Армении. Страной тогда управляла как сатрапией династия Оронтидов."
+ },
+ {
+  "cle": "periode_2",
+  "fr": "Après la bataille de Gaugamèles en 331 avant Jésus-Christ, l'Arménie reste nominalement sous les Macédoniens, mais n'est jamais réellement occupée. La mort d'Alexandre et le chaos des guerres de ses successeurs permettent à la dynastie orontide de régner en rois de fait indépendants.",
+  "en": "After the battle of Gaugamela in 331 BC, Armenia remained nominally under Macedonian rule, yet was never truly occupied. The death of Alexander and the chaos of his successors' wars allowed the Orontid dynasty to reign as kings independent in practice.",
+  "ru": "После битвы при Гавгамелах в 331 году до нашей эры Армения формально осталась под властью македонян, но никогда не была по-настоящему занята. Смерть Александра и хаос войн его преемников позволили династии Оронтидов править как фактически независимым царям."
+ },
+ {
+  "cle": "periode_3",
+  "fr": "En 189 avant Jésus-Christ, Artaxias Premier se proclame roi et, selon Strabon, rassemble les terres où l'on parle l'arménien. Sous cette dynastie artaxiade, le royaume atteint son apogée avec Tigrane le Grand, qui bâtit brièvement un empire de la mer Caspienne à la Méditerranée.",
+  "en": "In 189 BC, Artaxias the First proclaimed himself king and, according to Strabo, gathered the lands where Armenian was spoken. Under this Artaxiad dynasty, the kingdom reached its height with Tigranes the Great, who briefly built an empire stretching from the Caspian Sea to the Mediterranean.",
+  "ru": "В 189 году до нашей эры Арташес Первый провозгласил себя царём и, по словам Страбона, собрал земли, где говорили по-армянски. При этой Арташесидской династии царство достигло расцвета при Тигране Великом, который ненадолго создал империю от Каспийского моря до Средиземного."
+ },
+ {
+  "cle": "periode_4",
+  "fr": "En 66 après Jésus-Christ, Tiridate Premier reçoit la couronne d'Arménie des mains de Néron à Rome : un compromis fondateur entre dynastie parthe et investiture romaine. En 301, l'Arménie devient le premier État à adopter le christianisme comme religion officielle. Le partage de 387 divise ensuite le royaume entre Rome et la Perse.",
+  "en": "In 66 AD, Tiridates the First received the Armenian crown from Nero in Rome, a founding compromise between Parthian dynasty and Roman investiture. In 301, Armenia became the first state to adopt Christianity as its official religion. The partition of 387 then divided the kingdom between Rome and Persia.",
+  "ru": "В 66 году нашей эры Трдат Первый получил армянскую корону из рук Нерона в Риме — основополагающий компромисс между парфянской династией и римским утверждением. В 301 году Армения стала первым государством, принявшим христианство как официальную религию. Раздел 387 года затем разделил царство между Римом и Персией."
+ },
+ {
+  "cle": "periode_5",
+  "fr": "Après 428, l'Arménie n'a plus de roi : à l'est, la Perse sassanide la gouverne par un marzpan siégeant à Dvin ; à l'ouest, Byzance réorganise ses provinces arméniennes. En 451, la bataille d'Avarayr, menée par Vardan Mamikonian, permet aux Arméniens d'arracher la liberté religieuse malgré une défaite militaire.",
+  "en": "After 428, Armenia no longer had a king: in the east, Sassanid Persia governed it through a marzpan based in Dvin; in the west, Byzantium reorganised its Armenian provinces. In 451, the battle of Avarayr, led by Vardan Mamikonian, let the Armenians secure religious freedom despite a military defeat.",
+  "ru": "После 428 года у Армении больше не было царя: на востоке сасанидская Персия управляла ею через марзпана в Двине; на западе Византия реорганизовала свои армянские провинции. В 451 году битва при Аварайре под предводительством Вардана Мамиконяна позволила армянам отстоять религиозную свободу, несмотря на военное поражение."
+ },
+ {
+  "cle": "periode_6",
+  "fr": "Les premières incursions arabes atteignent Dvin dès 640. Vers 652, le prince Théodoros Rechtouni obtient un statut autonome et tributaire pour l'Arménie, désormais province du califat sous le nom d'Arminiya, gouvernée par un ostikan. La pression fiscale et les révoltes marquent ces deux siècles.",
+  "en": "The first Arab raids reached Dvin as early as 640. Around 652, prince Theodoros Rshtuni secured an autonomous, tributary status for Armenia, now a province of the caliphate called Arminiya, governed by an ostikan. Heavy taxation and revolts marked these two centuries.",
+  "ru": "Первые арабские набеги достигли Двина уже в 640 году. Около 652 года князь Теодорос Рштуни добился для Армении автономного, даннического статуса; теперь это провинция халифата под названием Арминия, управляемая остиканом. Тяжёлые налоги и восстания отметили эти два столетия."
+ },
+ {
+  "cle": "periode_7",
+  "fr": "En 884, Achot Premier Bagratouni est couronné roi des Arméniens, reconnu à la fois par le calife et par Byzance. Sous les Bagratides, Ani devient une capitale prestigieuse, surnommée la ville aux mille et une églises. Ce renouveau prend fin avec la prise d'Ani en 1045 puis 1064.",
+  "en": "In 884, Ashot the First Bagratuni was crowned king of the Armenians, recognised by both the caliph and Byzantium. Under the Bagratids, Ani became a prestigious capital, nicknamed the city of a thousand and one churches. This revival ended with the fall of Ani in 1045 and 1064.",
+  "ru": "В 884 году Ашот Первый Багратуни был коронован царём армян, признанным и халифом, и Византией. При Багратидах Ани стал прославленной столицей, прозванной городом тысячи и одной церкви. Этот расцвет завершился падением Ани в 1045, а затем в 1064 году."
+ },
+ {
+  "cle": "periode_8",
+  "fr": "Fuyant les invasions seldjoukides, des princes arméniens fondent en Cilicie, au bord de la Méditerranée, un royaume qui durera jusqu'en 1375. Au nord, sous protection géorgienne, les frères Zakarian libèrent une partie de l'Arménie, avant la vague mongole du treizième siècle.",
+  "en": "Fleeing the Seljuk invasions, Armenian princes founded in Cilicia, on the Mediterranean coast, a kingdom that lasted until 1375. In the north, under Georgian protection, the Zakarian brothers liberated part of Armenia, before the Mongol wave of the thirteenth century.",
+  "ru": "Спасаясь от сельджукских нашествий, армянские князья основали в Киликии, на побережье Средиземного моря, царство, просуществовавшее до 1375 года. На севере, под грузинским покровительством, братья Закаряны освободили часть Армении, до монгольской волны тринадцатого века."
+ },
+ {
+  "cle": "periode_9",
+  "fr": "Après la bataille de Tchaldiran en 1514, Ottomans et Perses se disputent le plateau arménien pendant plus de trois siècles. Les traités successifs, jusqu'au partage de Zuhab en 1639, coupent durablement l'Arménie en deux. Cette longue rivalité ne prend fin qu'avec l'arrivée de la Russie au début du dix-neuvième siècle.",
+  "en": "After the battle of Chaldiran in 1514, Ottomans and Persians fought over the Armenian plateau for more than three centuries. Successive treaties, up to the partition of Zuhab in 1639, lastingly cut Armenia in two. This long rivalry ended only with the arrival of Russia in the early nineteenth century.",
+  "ru": "После битвы при Чалдыране в 1514 году османы и персы более трёх столетий оспаривали Армянское нагорье. Последовательные договоры, вплоть до Зохабского раздела 1639 года, надолго разделили Армению надвое. Это долгое соперничество завершилось лишь с приходом России в начале девятнадцатого века."
+ }
+]
