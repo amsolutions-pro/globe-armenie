@@ -268,5 +268,35 @@
   "fr": "Tigranakert fut une capitale impériale fondée vers quatre-vingt-trois avant notre ère par Tigrane deux, peuplée en partie de populations déportées de Cappadoce, de Cilicie et d'Adiabène. Elle fut prise et pillée par le général romain Lucullus en soixante-neuf avant notre ère ; sa localisation exacte reste débattue.",
   "en": "Tigranakert was an imperial capital founded around eighty-three years before our era by Tigranes the Second, populated in part by peoples deported from Cappadocia, Cilicia, and Adiabene. It was captured and sacked by the Roman general Lucullus in sixty-nine before our era; its exact location remains debated.",
   "ru": "Тигранакерт был имперской столицей, основанной около восемьдесят третьего года до нашей эры Тиграном Вторым и частично заселённой депортированными жителями Каппадокии, Киликии и Адиабены. Город был взят и разграблен римским полководцем Лукуллом в шестьдесят девятом году до нашей эры; его точное местоположение остаётся предметом споров."
+ },
+ {
+  "cle": "ville_dvin",
+  "fr": "Dvin, fondée vers trois cent trente-cinq par le roi Khosrov trois, fut à la fois siège des catholicos et des gouverneurs successifs, marzpans perses puis émirs arabes, ainsi qu'une grande ville caravanière. Sévèrement détruite par les Mongols en mille deux cent trente-six, elle déclina jusqu'à son abandon.",
+  "en": "Dvin, founded around three hundred and thirty-five by King Khosrov the Third, was both the seat of the catholicoi and of successive governors, Persian marzbans then Arab emirs, as well as a major caravan city. Severely destroyed by the Mongols in twelve thirty-six, it declined until its abandonment.",
+  "ru": "Двин, основанный около трёхсот тридцать пятого года царём Хосровом Третьим, был одновременно резиденцией католикосов и сменявших друг друга правителей — персидских марзпанов, затем арабских эмиров, — а также крупным караванным городом. Жестоко разрушенный монголами в тысяча двести тридцать шестом году, он постепенно пришёл в упадок вплоть до полного запустения."
+ },
+ {
+  "cle": "ville_deir-ez-zor",
+  "fr": "Deir ez-Zor fut le terminus des « marches de la mort » du génocide arménien : plusieurs centaines de milliers de déportés périrent dans le désert syrien environnant, notamment lors des tueries de masse de mille neuf cent seize. Un mémorial-église construit en mille neuf cent quatre-vingt-dix y fut détruit par l'État islamique en septembre deux mille quatorze.",
+  "en": "Deir ez-Zor was the terminus of the Armenian genocide's \"death marches\": several hundred thousand deportees perished in the surrounding Syrian desert, notably during the mass killings of nineteen sixteen. A memorial church built in nineteen ninety was destroyed there by the Islamic State in September two thousand fourteen.",
+  "ru": "Дейр-эз-Зор стал конечной точкой «маршей смерти» армянского геноцида: несколько сотен тысяч депортированных погибли в окружающей сирийской пустыне, особенно во время массовых убийств тысяча девятьсот шестнадцатого года. Построенная в тысяча девятьсот девяностом году мемориальная церковь была разрушена боевиками ИГИЛ в сентябре две тысячи четырнадцатого года."
+ },
+ {
+  "cle": "ville_smyrne-izmir",
+  "fr": "Smyrne abritait une grande communauté arménienne de la façade égéenne. Ses quartiers arménien et grec furent détruits en septembre mille neuf cent vingt-deux par l'incendie et les massacres perpétrés par les forces turques après la victoire militaire sur la Grèce, dans le cadre d'un nettoyage ciblé qui épargna le quartier turc.",
+  "en": "Smyrna was home to a large Armenian community on the Aegean coast. Its Armenian and Greek quarters were destroyed in September nineteen twenty-two by fire and massacres carried out by Turkish forces after the military victory over Greece, as part of a targeted cleansing that spared the Turkish quarter.",
+  "ru": "В Смирне проживала крупная армянская община на побережье Эгейского моря. Армянский и греческий кварталы города были уничтожены в сентябре тысяча девятьсот двадцать второго года пожаром и резнёй, устроенными турецкими войсками после военной победы над Грецией, в рамках целенаправленной чистки, пощадившей турецкий квартал."
+ },
+ {
+  "cle": "ville_akhalkalaki",
+  "fr": "Akhalkalaki, dans le Djavakhk géorgien, est une ville à majorité arménienne depuis l'immigration de mille huit cent vingt-neuf à mille huit cent trente, après la guerre russo-turque et le traité d'Andrinople. La région, disputée entre l'Arménie et la Géorgie lors de la guerre de décembre mille neuf cent dix-huit, est restée sous administration géorgienne.",
+  "en": "Akhalkalaki, in Georgian Javakheti, has had an Armenian majority since the immigration of eighteen twenty-nine to eighteen thirty, following the Russo-Turkish war and the Treaty of Adrianople. The region, disputed between Armenia and Georgia during the December nineteen eighteen war, remained under Georgian administration.",
+  "ru": "Ахалкалаки, в грузинском Джавахети, имеет армянское большинство населения со времён переселения тысяча восемьсот двадцать девятого - тысяча восемьсот тридцатого годов после русско-турецкой войны и Адрианопольского мира. Регион, оспаривавшийся Арменией и Грузией во время войны декабря тысяча девятьсот восемнадцатого года, остался под грузинским управлением."
+ },
+ {
+  "cle": "ville_garni",
+  "fr": "Garni est un temple à colonnade construit sous le roi Tiridate premier vers l'an soixante-dix-sept, considéré comme le seul édifice gréco-romain de ce type dans l'espace ex-soviétique. Effondré lors du séisme de mille six cent soixante-dix-neuf, il a été reconstruit par anastylose entre mille neuf cent soixante-quatorze et mille neuf cent soixante-seize.",
+  "en": "Garni is a colonnaded temple built under King Tiridates the First around the year seventy-seven, considered the only Greco-Roman building of its kind in the former Soviet space. Collapsed during the earthquake of sixteen seventy-nine, it was rebuilt by anastylosis between nineteen seventy-four and nineteen seventy-six.",
+  "ru": "Гарни — колонный храм, построенный при царе Трдате Первом около семьдесят седьмого года, считающийся единственным подобным греко-римским сооружением на постсоветском пространстве. Разрушенный землетрясением тысяча шестьсот семьдесят девятого года, он был восстановлен методом анастилоза между тысяча девятьсот семьдесят четвёртым и тысяча девятьсот семьдесят шестым годами."
  }
 ]
