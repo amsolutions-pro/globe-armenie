@@ -1,0 +1,92 @@
+[
+ {
+  "cle": "province_ayrarat",
+  "fr": "L'Ayrarat est la province centrale de la Grande Arménie et le domaine royal des dynasties successives. Il couvre la moyenne vallée de l'Araxe, du Basean au coude du Nakhitchevan, avec le mont Ararat et les capitales historiques Armavir, Artashat, Vagharshapat et Dvin. Le canton de Chirak y abritera plus tard Ani, la ville aux mille et une églises.",
+  "en": "Ayrarat is the central province of Greater Armenia and the royal domain of its successive dynasties. It covers the middle Araxes valley, from Basean to the bend of Nakhichevan, with Mount Ararat and the historic capitals Armavir, Artashat, Vagharshapat and Dvin. Its district of Shirak would later host Ani, the city of a thousand and one churches.",
+  "ru": "Айрарат — центральная провинция Великой Армении и царский домен сменявших друг друга династий. Он охватывает среднюю долину Аракса, от Басеана до изгиба у Нахичевани, с горой Арарат и историческими столицами Армавир, Арташат, Вагаршапат и Двин. В его области Ширак позднее возникнет Ани — город тысячи и одной церкви."
+ },
+ {
+  "cle": "province_vaspurakan",
+  "fr": "Le Vaspurakan, « pays des princes », s'étend des rives est du lac de Van jusqu'à l'Araxe, incluant Nakhitchevan et Goltn. Cœur de la maison Artsrouni, il devient un royaume indépendant en 908, célèbre pour l'église de la Sainte-Croix sur l'île d'Aghtamar.",
+  "en": "Vaspurakan, the land of princes, stretches from the eastern shores of Lake Van to the Araxes, including Nakhichevan and Goghtn. Heartland of the Artsruni house, it became an independent kingdom in 908, famed for the Holy Cross church on Aghtamar island.",
+  "ru": "Васпуракан, «страна князей», простирается от восточных берегов озера Ван до Аракса, включая Нахичевань и Гохтн. Сердце дома Арцруни, он стал независимым царством в 908 году, прославленным церковью Святого Креста на острове Ахтамар."
+ },
+ {
+  "cle": "province_syunik",
+  "fr": "Le Syunik s'étend du bassin du lac Sevan aux gorges du Zanguezour, jusqu'à l'Araxe près de Meghri. Fief de la maison des Siouni, il devient un royaume au dixième siècle autour de Kapan. Le monastère de Tatev en fut le grand centre spirituel et universitaire.",
+  "en": "Syunik stretches from the Lake Sevan basin through the Zangezur gorges down to the Araxes near Meghri. Fief of the Siuni house, it became a kingdom in the tenth century centred on Kapan. The monastery of Tatev was its great spiritual and scholarly centre.",
+  "ru": "Сюник простирается от бассейна озера Севан через ущелья Зангезура до Аракса у Мегри. Вотчина дома Сюни, в десятом веке он стал царством с центром в Капане. Монастырь Татев был его великим духовным и учёным центром."
+ },
+ {
+  "cle": "province_artsakh",
+  "fr": "L'Artsakh, dixième province de la Grande Arménie, couvre le Karabagh montagneux entre la crête du Mrav et l'Araxe. Rattaché administrativement à l'Albanie du Caucase après 387, il resta arménophone sous ses princes locaux, ancêtres de la maison de Khatchen.",
+  "en": "Artsakh, the tenth province of Greater Armenia, covers mountainous Karabakh between the Mrav ridge and the Araxes. Administratively attached to Caucasian Albania after 387, it remained Armenian-speaking under its local princes, ancestors of the house of Khachen.",
+  "ru": "Арцах, десятая провинция Великой Армении, охватывает нагорный Карабах между хребтом Мрав и Араксом. Административно присоединённый к Кавказской Албании после 387 года, он оставался армяноязычным под властью местных князей, предков дома Хачен."
+ },
+ {
+  "cle": "province_utik",
+  "fr": "L'Utik occupe le piémont et la rive droite de la Koura, autour de Partav, l'actuelle Barda. Comme l'Artsakh voisin, il passe sous l'Albanie du Caucase après 387 ; Partav devient la capitale albanienne vers 460, puis le siège de son catholicossat.",
+  "en": "Utik occupies the foothills and the right bank of the Kura, around Partav, today's Barda. Like neighbouring Artsakh, it passed to Caucasian Albania after 387; Partav became the Albanian capital around 460, then the seat of its catholicosate.",
+  "ru": "Утик занимает предгорья и правый берег Куры, вокруг Партава — нынешней Барды. Как и соседний Арцах, после 387 года он перешёл к Кавказской Албании; около 460 года Партав стал албанской столицей, затем — престолом её католикосата."
+ },
+ {
+  "cle": "province_paytakaran",
+  "fr": "Le Paytakaran couvre la steppe de Mughan et le bas Araxe, jusqu'au confluent avec la Koura et la mer Caspienne. Province de marge, elle passe sous administration perse directe dès le partage de 387, sous le nom de Balasakan.",
+  "en": "Paytakaran covers the Mughan steppe and the lower Araxes, down to the confluence with the Kura and the Caspian Sea. A frontier province, it came under direct Persian administration from the partition of 387, under the name Balasakan.",
+  "ru": "Пайтакаран охватывает Муганскую степь и нижний Аракс, до слияния с Курой и Каспийского моря. Окраинная провинция, она перешла под прямое персидское управление после раздела 387 года, под названием Баласакан."
+ },
+ {
+  "cle": "province_gugark",
+  "fr": "Le Gugark est la grande marche du nord, face à l'Ibérie, gouvernée par un bdeachkh, vice-roi des frontières. Elle englobe le Tachir, le Lori et le Djavakhk, autour d'Akhalkalaki. Cédée à l'Ibérie en 428, elle resta longtemps disputée entre les deux mondes.",
+  "en": "Gugark is the great northern march facing Iberia, governed by a bdeashkh, viceroy of the borders. It includes Tashir, Lori and Javakhk, around Akhalkalaki. Ceded to Iberia in 428, it long remained contested between the two worlds.",
+  "ru": "Гугарк — великая северная марка напротив Иберии, управляемая бдешхом, вице-королём границ. Она включает Ташир, Лори и Джавахк, вокруг Ахалкалаки. Переданная Иберии в 428 году, она долго оставалась спорной между двумя мирами."
+ },
+ {
+  "cle": "province_tayk",
+  "fr": "Le Tayk occupe le haut bassin du Tchorokh, pays des Taoques déjà décrits par Xénophon. Fief héréditaire des Mamikonian, il passe sous contrôle byzantin après 591, puis se géorgianise pour devenir le Tao des Bagratides géorgiens.",
+  "en": "Tayk occupies the upper Chorokh basin, land of the Taochi already described by Xenophon. Hereditary fief of the Mamikonians, it came under Byzantine control after 591, then became Georgian as the Tao of the Georgian Bagratids.",
+  "ru": "Тайк занимает верхний бассейн Чороха — страну таохов, описанных ещё Ксенофонтом. Наследственная вотчина Мамиконянов, после 591 года он перешёл под византийский контроль, а затем огрузинился, став Тао грузинских Багратидов."
+ },
+ {
+  "cle": "province_turuberan",
+  "fr": "Le Turuberan couvre le bassin de l'Aratsani et les rives ouest et nord du lac de Van. Son cœur est le Taron des Mamikonian, avec Mush et le monastère de Sourb Karapet ; le canton d'Apahounik abrite Manzikert, théâtre de la grande bataille de 1071.",
+  "en": "Turuberan covers the Aratsani basin and the western and northern shores of Lake Van. Its heart is the Taron of the Mamikonians, with Mush and the monastery of Surb Karapet; the district of Apahunik holds Manzikert, scene of the great battle of 1071.",
+  "ru": "Туруберан охватывает бассейн Арацани и западные и северные берега озера Ван. Его сердце — Тарон Мамиконянов, с Мушем и монастырём Сурб Карапет; в области Апахуник находится Манцикерт, место великой битвы 1071 года."
+ },
+ {
+  "cle": "province_aghdznik",
+  "fr": "L'Aghdznik s'étend du massif du Sasun à la rive sud du Tigre, autour d'Amida, l'actuelle Diyarbakir, et de Nphrkert. Zone frontière entre Rome et la Perse, elle changea plusieurs fois de mains au gré des traités, notamment après la cession de Nisibe en 363.",
+  "en": "Aghdznik stretches from the Sasun massif to the southern bank of the Tigris, around Amida, today's Diyarbakir, and Nphrkert. A border zone between Rome and Persia, it changed hands repeatedly with the treaties, notably after the cession of Nisibis in 363.",
+  "ru": "Агдзник простирается от массива Сасун до южного берега Тигра, вокруг Амиды — нынешнего Диярбакыра — и Нпркерта. Пограничная зона между Римом и Персией, она не раз переходила из рук в руки по договорам, особенно после уступки Нисибиса в 363 году."
+ },
+ {
+  "cle": "province_tsopk",
+  "fr": "Le Tsopk est la Sophène des auteurs classiques, sur l'Euphrate occidental, autour de Kharpert. Royaume vassal puis province romaine, il devient sous Justinien, en 536, la Quatrième Arménie de l'Empire byzantin.",
+  "en": "Tsopk is the Sophene of the classical authors, on the western Euphrates, around Kharpert. A vassal kingdom then a Roman province, it became under Justinian, in 536, the Fourth Armenia of the Byzantine Empire.",
+  "ru": "Цопк — это Софена классических авторов, на западном Евфрате, вокруг Харперта. Вассальное царство, затем римская провинция, при Юстиниане в 536 году она стала Четвёртой Арменией Византийской империи."
+ },
+ {
+  "cle": "province_mokk",
+  "fr": "Le Mokk occupe les montagnes du Hakkari, au sud du lac de Van — la Moxoène des sources syriaques et byzantines. Marche frontalière face à l'Adiabène, elle passa très tôt sous domination perse directe, puis parmi les premières sous l'administration arabe.",
+  "en": "Mokk occupies the Hakkari mountains south of Lake Van — the Moxoene of Syriac and Byzantine sources. A frontier march facing Adiabene, it came very early under direct Persian rule, then among the first under Arab administration.",
+  "ru": "Мокк занимает горы Хаккяри к югу от озера Ван — Моксоэну сирийских и византийских источников. Пограничная марка напротив Адиабены, она очень рано попала под прямое персидское владычество, а затем одной из первых — под арабское управление."
+ },
+ {
+  "cle": "province_kortchayk",
+  "fr": "Le Kortchayk est la plus méridionale et la moins documentée des provinces arméniennes, aux confins du Corduène antique, vers les montagnes du nord de l'Irak actuel. Petit territoire de marche, il suivit le destin du Mokk voisin, entre Perse et califat.",
+  "en": "Korchayk is the southernmost and least documented of the Armenian provinces, on the edges of ancient Corduene, towards the mountains of today's northern Iraq. A small march territory, it followed the fate of neighbouring Mokk, between Persia and the caliphate.",
+  "ru": "Корчайк — самая южная и наименее документированная из армянских провинций, на границах древней Кордуэны, у гор нынешнего северного Ирака. Небольшая пограничная территория, она разделила судьбу соседнего Мокка — между Персией и халифатом."
+ },
+ {
+  "cle": "province_parskahayk",
+  "fr": "Le Parskahayk, littéralement « Arménie perse », couvre les régions de Her et Zarevand — Khoy et Salmas — à l'ouest du lac d'Ourmia. Son nom même rappelle son rattachement précoce à la Perse, dès le partage de 387.",
+  "en": "Parskahayk, literally Persian Armenia, covers the regions of Her and Zarevand — Khoy and Salmas — west of Lake Urmia. Its very name recalls its early attachment to Persia, from the partition of 387.",
+  "ru": "Парскаайк, буквально «Персидская Армения», охватывает области Хер и Заревенд — Хой и Салмас — к западу от озера Урмия. Само его название напоминает о раннем присоединении к Персии, с раздела 387 года."
+ },
+ {
+  "cle": "province_bardzr-hayk",
+  "fr": "Le Bardzr Hayk, la Haute-Arménie, est la province la plus occidentale et la plus élevée, aux sources de l'Euphrate et de l'Araxe. Son cœur est Karin, l'actuelle Erzurum, refondée vers 415 comme Théodosiopolis, forteresse-clé du front romano-perse.",
+  "en": "Bardzr Hayk, Upper Armenia, is the westernmost and highest province, at the sources of the Euphrates and the Araxes. Its heart is Karin, today's Erzurum, refounded around 415 as Theodosiopolis, a key fortress of the Roman-Persian front.",
+  "ru": "Бардзр Айк, Высокая Армения, — самая западная и самая высокогорная провинция, у истоков Евфрата и Аракса. Её сердце — Карин, нынешний Эрзурум, перестроенный около 415 года как Феодосиополь, ключевая крепость римско-персидского фронта."
+ }
+]
