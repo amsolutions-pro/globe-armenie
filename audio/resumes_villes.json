@@ -148,5 +148,35 @@
   "fr": "Kharpert, ville perchée du haut Euphrate, était réputée pour ses écoles arméniennes et son collège fondé par des missionnaires américains en 1878. Sa population fut déportée et massacrée en 1915 par le gouvernement jeune-turc, et la ville moderne s'est depuis déplacée dans la plaine.",
   "en": "Kharpert, a hilltop town of the upper Euphrates, was renowned for its Armenian schools and its college founded by American missionaries in 1878. Its population was deported and massacred in 1915 by the Young Turk government, and the modern city has since moved down to the plain.",
   "ru": "Харберд, город на возвышенности в верховьях Евфрата, был известен своими армянскими школами и колледжем, основанным американскими миссионерами в 1878 году. Его население было депортировано и истреблено в 1915 году младотурецким правительством, а современный город с тех пор переместился на равнину."
+ },
+ {
+  "cle": "ville_karin-erzurum",
+  "fr": "Karin, site arménien refondé par Byzance vers l'an quatre cent quinze sous le nom de Théodosiopolis, devint Erzurum après la conquête seldjoukide qui suivit Manzikert. Sa forte communauté arménienne fut anéantie lors du génocide de 1915, perpétré par le gouvernement jeune-turc.",
+  "en": "Karin, an Armenian site refounded by Byzantium around the year 415 as Theodosiopolis, became Erzurum after the Seljuk conquest that followed Manzikert. Its large Armenian community was annihilated during the 1915 genocide, perpetrated by the Young Turk government.",
+  "ru": "Карин, армянское поселение, переосновано Византией около 415 года как Феодосиополь, стало Эрзурумом после сельджукского завоевания, последовавшего за Манцикертом. Его крупная армянская община была уничтожена во время геноцида 1915 года, осуществлённого младотурецким правительством."
+ },
+ {
+  "cle": "ville_stepanakert",
+  "fr": "Stepanakert, capitale du Haut-Karabagh, fut rebaptisée en 1923 en l'honneur de Stepan Chahoumian. À la suite d'un blocus organisé par l'Azerbaïdjan puis d'une offensive militaire en septembre 2023, la quasi-totalité de sa population arménienne fut contrainte de fuir la région en quelques jours.",
+  "en": "Stepanakert, capital of Nagorno-Karabakh, was renamed in 1923 in honour of Stepan Shahumian. Following a blockade organized by Azerbaijan and then a military offensive in September 2023, almost the entire Armenian population was forced to flee the region within days.",
+  "ru": "Степанакерт, столица Нагорного Карабаха, был переименован в 1923 году в честь Степана Шаумяна. После блокады, организованной Азербайджаном, а затем военного наступления в сентябре 2023 года, почти всё армянское население было вынуждено покинуть регион в течение нескольких дней."
+ },
+ {
+  "cle": "ville_kapan",
+  "fr": "Kapan, centre historique du Syunik sous la maison Siouni entre le neuvième et le onzième siècle, en fut un siège princier temporaire avant que la capitale ne se fixe à Tatev. Aujourd'hui chef-lieu du Syunik, elle est le principal bassin minier du sud de l'Arménie.",
+  "en": "Kapan, a historic centre of Syunik under the House of Syuni between the 9th and 11th centuries, was a temporary princely seat before the capital settled at Tatev. Today the capital of the Syunik province, it is the main mining basin of southern Armenia.",
+  "ru": "Капан, исторический центр Сюника при доме Сюни между девятым и одиннадцатым веками, был временной княжеской резиденцией, прежде чем столица закрепилась в Татеве. Сегодня центр области Сюник, он является главным горнодобывающим районом юга Армении."
+ },
+ {
+  "cle": "ville_goris",
+  "fr": "Goris, ville du Syunik, doit son plan en damier à une reconstruction de la fin du dix-neuvième siècle sous l'administration russe. À proximité, les habitations troglodytes de Khndzoresk sont associées, selon la tradition, à la résistance de David Bek contre les incursions ottomanes et perses dans les années 1720.",
+  "en": "Goris, a town in Syunik, owes its grid layout to a reconstruction in the late 19th century under Russian administration. Nearby, the cave dwellings of Khndzoresk are associated, by tradition, with David Bek's resistance against Ottoman and Persian incursions in the 1720s.",
+  "ru": "Горис, город в Сюнике, обязан своей решётчатой планировкой перестройке конца девятнадцатого века при российской администрации. Неподалёку пещерные жилища Хндзореска связаны, по преданию, с сопротивлением Давид-Бека османским и персидским вторжениям в 1720-х годах."
+ },
+ {
+  "cle": "ville_khor-virap",
+  "fr": "Le monastère de Khor Virap, face au mont Ararat, fut bâti au septième siècle sur le site où, selon la tradition arménienne, saint Grégoire l'Illuminateur fut emprisonné treize ans avant la conversion du royaume au christianisme en l'an trois cent un.",
+  "en": "Khor Virap monastery, facing Mount Ararat, was built in the 7th century on the site where, according to Armenian tradition, Saint Gregory the Illuminator was imprisoned for thirteen years before the kingdom's conversion to Christianity in the year 301.",
+  "ru": "Монастырь Хор Вирап, обращённый к горе Арарат, был построен в седьмом веке на месте, где, согласно армянской традиции, святой Григорий Просветитель был заключён в темницу на тринадцать лет перед принятием царством христианства в 301 году."
  }
 ]
