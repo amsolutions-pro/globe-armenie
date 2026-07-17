@@ -19,9 +19,9 @@
  },
  {
   "cle": "province_artsakh",
-  "fr": "L'Artsakh, dixième province de la Grande Arménie, couvre le Karabagh montagneux entre la crête du Mrav et l'Araxe. Rattaché administrativement à l'Albanie du Caucase après 387, il resta arménophone sous ses princes locaux, ancêtres de la maison de Khatchen.",
-  "en": "Artsakh, the tenth province of Greater Armenia, covers mountainous Karabakh between the Mrav ridge and the Araxes. Administratively attached to Caucasian Albania after 387, it remained Armenian-speaking under its local princes, ancestors of the house of Khachen.",
-  "ru": "Арцах, десятая провинция Великой Армении, охватывает нагорный Карабах между хребтом Мрав и Араксом. Административно присоединённый к Кавказской Албании после 387 года, он оставался армяноязычным под властью местных князей, предков дома Хачен."
+  "fr": "L'Artsakh, dixième province de la Grande Arménie, couvre le Karabagh montagneux entre la crête du Mrav et l'Araxe. Rattaché administrativement à l'Albanie du Caucase après 387, il resta arménophone sous ses princes locaux, dont est traditionnellement issue la maison de Khatchen.",
+  "en": "Artsakh, the tenth province of Greater Armenia, covers mountainous Karabakh between the Mrav ridge and the Araxes. Administratively attached to Caucasian Albania after 387, it remained Armenian-speaking under its local princes, from which the house of Khachen is traditionally said to descend.",
+  "ru": "Арцах, десятая провинция Великой Армении, охватывает нагорный Карабах между хребтом Мрав и Араксом. Административно присоединённый к Кавказской Албании после 387 года, он оставался армяноязычным под властью местных князей, от которых, по традиции, ведёт происхождение дом Хачен."
  },
  {
   "cle": "province_utik",
@@ -31,21 +31,21 @@
  },
  {
   "cle": "province_paytakaran",
-  "fr": "Le Paytakaran couvre la steppe de Mughan et le bas Araxe, jusqu'au confluent avec la Koura et la mer Caspienne. Province de marge, elle passe sous administration perse directe dès le partage de 387, sous le nom de Balasakan.",
-  "en": "Paytakaran covers the Mughan steppe and the lower Araxes, down to the confluence with the Kura and the Caspian Sea. A frontier province, it came under direct Persian administration from the partition of 387, under the name Balasakan.",
-  "ru": "Пайтакаран охватывает Муганскую степь и нижний Аракс, до слияния с Курой и Каспийского моря. Окраинная провинция, она перешла под прямое персидское управление после раздела 387 года, под названием Баласакан."
+  "fr": "Le Paytakaran couvre la steppe de Mughan et le bas Araxe, jusqu'au confluent avec la Koura et la mer Caspienne. Province de marge, elle passe sous administration perse directe dès le partage de 387 — un territoire que certaines sources identifient, en partie, à Balasakan.",
+  "en": "Paytakaran covers the Mughan steppe and the lower Araxes, down to the confluence with the Kura and the Caspian Sea. A frontier province, it came under direct Persian administration from the partition of 387 — a territory some sources partly identify with Balasakan.",
+  "ru": "Пайтакаран охватывает Муганскую степь и нижний Аракс, до слияния с Курой и Каспийского моря. Окраинная провинция, она перешла под прямое персидское управление после раздела 387 года — территория, которую некоторые источники частично отождествляют с Баласаканом."
  },
  {
   "cle": "province_gugark",
-  "fr": "Le Gugark est la grande marche du nord, face à l'Ibérie, gouvernée par un bdeachkh, vice-roi des frontières. Elle englobe le Tachir, le Lori et le Djavakhk, autour d'Akhalkalaki. Cédée à l'Ibérie en 428, elle resta longtemps disputée entre les deux mondes.",
-  "en": "Gugark is the great northern march facing Iberia, governed by a bdeashkh, viceroy of the borders. It includes Tashir, Lori and Javakhk, around Akhalkalaki. Ceded to Iberia in 428, it long remained contested between the two worlds.",
-  "ru": "Гугарк — великая северная марка напротив Иберии, управляемая бдешхом, вице-королём границ. Она включает Ташир, Лори и Джавахк, вокруг Ахалкалаки. Переданная Иберии в 428 году, она долго оставалась спорной между двумя мирами."
+  "fr": "Le Gugark est la grande marche du nord, face à l'Ibérie, gouvernée par un bdeachkh, vice-roi des frontières. Elle englobe le Tachir, le Lori et le Djavakhk, autour d'Akhalkalaki. Passée sous influence puis contrôle ibérique au cours du Vᵉ siècle, elle resta longtemps disputée entre les deux mondes.",
+  "en": "Gugark is the great northern march facing Iberia, governed by a bdeashkh, viceroy of the borders. It includes Tashir, Lori and Javakhk, around Akhalkalaki. Coming under growing Iberian influence and control during the 5th century, it long remained contested between the two worlds.",
+  "ru": "Гугарк — великая северная марка напротив Иберии, управляемая бдешхом, вице-королём границ. Она включает Ташир, Лори и Джавахк, вокруг Ахалкалаки. Попав под растущее иберийское влияние и контроль в течение пятого века, она долго оставалась спорной между двумя мирами."
  },
  {
   "cle": "province_tayk",
-  "fr": "Le Tayk occupe le haut bassin du Tchorokh, pays des Taoques déjà décrits par Xénophon. Fief héréditaire des Mamikonian, il passe sous contrôle byzantin après 591, puis se géorgianise pour devenir le Tao des Bagratides géorgiens.",
-  "en": "Tayk occupies the upper Chorokh basin, land of the Taochi already described by Xenophon. Hereditary fief of the Mamikonians, it came under Byzantine control after 591, then became Georgian as the Tao of the Georgian Bagratids.",
-  "ru": "Тайк занимает верхний бассейн Чороха — страну таохов, описанных ещё Ксенофонтом. Наследственная вотчина Мамиконянов, после 591 года он перешёл под византийский контроль, а затем огрузинился, став Тао грузинских Багратидов."
+  "fr": "Le Tayk occupe le haut bassin du Tchorokh, pays des Taoques déjà décrits par Xénophon. Refuge des Mamikonian à partir du VIIᵉ siècle, il passe sous contrôle byzantin après 591, puis se géorgianise pour devenir le Tao des Bagratides géorgiens.",
+  "en": "Tayk occupies the upper Chorokh basin, land of the Taochi already described by Xenophon. Refuge of the Mamikonians from the 7th century onward, it came under Byzantine control after 591, then became Georgian as the Tao of the Georgian Bagratids.",
+  "ru": "Тайк занимает верхний бассейн Чороха — страну таохов, описанных ещё Ксенофонтом. Убежище Мамиконянов с седьмого века, после 591 года он перешёл под византийский контроль, а затем огрузинился, став Тао грузинских Багратидов."
  },
  {
   "cle": "province_turuberan",
@@ -61,9 +61,9 @@
  },
  {
   "cle": "province_tsopk",
-  "fr": "Le Tsopk est la Sophène des auteurs classiques, sur l'Euphrate occidental, autour de Kharpert. Royaume vassal puis province romaine, il devient sous Justinien, en 536, la Quatrième Arménie de l'Empire byzantin.",
-  "en": "Tsopk is the Sophene of the classical authors, on the western Euphrates, around Kharpert. A vassal kingdom then a Roman province, it became under Justinian, in 536, the Fourth Armenia of the Byzantine Empire.",
-  "ru": "Цопк — это Софена классических авторов, на западном Евфрате, вокруг Харперта. Вассальное царство, затем римская провинция, при Юстиниане в 536 году она стала Четвёртой Арменией Византийской империи."
+  "fr": "Le Tsopk est la Sophène des auteurs classiques, sur l'Euphrate occidental, autour d'Arsamosata (Ashmushat). Royaume vassal puis province romaine, il devient sous Justinien, en 536, la Quatrième Arménie de l'Empire byzantin.",
+  "en": "Tsopk is the Sophene of the classical authors, on the western Euphrates, around Arsamosata (Ashmushat). A vassal kingdom then a Roman province, it became under Justinian, in 536, the Fourth Armenia of the Byzantine Empire.",
+  "ru": "Цопк — это Софена классических авторов, на западном Евфрате, вокруг Арсамосаты (Ашмушата). Вассальное царство, затем римская провинция, при Юстиниане в 536 году она стала Четвёртой Арменией Византийской империи."
  },
  {
   "cle": "province_mokk",
