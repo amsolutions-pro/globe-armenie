@@ -208,5 +208,35 @@
   "fr": "Le monastère de Guéghard, en partie taillé dans le roc, doit son nom, signifiant « la lance », à une relique de la Lance de la Passion qu'il aurait conservée selon la tradition. Son église principale date de mille deux cent quinze ; il est inscrit au patrimoine mondial de l'UNESCO.",
   "en": "Geghard monastery, partly carved into the rock, owes its name, meaning \"the spear,\" to a relic of the Holy Lance it is said to have held, according to tradition. Its main church dates from twelve hundred and fifteen; it is a UNESCO World Heritage site.",
   "ru": "Монастырь Гегард, частично высеченный в скале, обязан своим названием, означающим «копьё», реликвии Святого Копья, которую он якобы хранил по преданию. Его главная церковь датируется 1215 годом; он включён в список Всемирного наследия ЮНЕСКО."
+ },
+ {
+  "cle": "ville_aknashen-aratashen",
+  "fr": "Aknashen et Aratashen sont des villages néolithiques de la vallée de l'Araxe, occupés du septième au sixième millénaire avant notre ère. Leurs habitants cultivaient des céréales, élevaient du bétail et travaillaient l'obsidienne du volcan Arteni.",
+  "en": "Aknashen and Aratashen are Neolithic villages of the Araxes valley, occupied from the seventh to the sixth millennium before our era. Their inhabitants grew cereals, raised livestock, and worked obsidian from the Arteni volcano.",
+  "ru": "Акнашен и Араташен — неолитические поселения долины Аракса, существовавшие с седьмого по шестое тысячелетие до нашей эры. Их жители выращивали злаки, разводили скот и обрабатывали обсидиан с вулкана Артени."
+ },
+ {
+  "cle": "ville_karahunj",
+  "fr": "Karahunj, en Syunik, est un alignement mégalithique d'environ deux cent vingt-trois pierres, dont certaines percées. L'archéologie académique situe le site à l'âge du Bronze moyen, vers le deuxième millénaire avant notre ère, et y voit avant tout une nécropole plutôt qu'un observatoire astronomique, hypothèse populaire mais non validée scientifiquement.",
+  "en": "Karahunj, in Syunik, is a megalithic alignment of about two hundred and twenty-three stones, some of them pierced. Academic archaeology dates the site to the middle Bronze Age, around the second millennium before our era, and sees it above all as a necropolis rather than an astronomical observatory, a popular but scientifically unproven hypothesis.",
+  "ru": "Караундж в Сюнике — мегалитический комплекс примерно из двухсот двадцати трёх камней, некоторые из которых имеют отверстия. Академическая археология датирует памятник средним бронзовым веком, около второго тысячелетия до нашей эры, и видит в нём прежде всего некрополь, а не астрономическую обсерваторию — популярную, но научно не подтверждённую гипотезу."
+ },
+ {
+  "cle": "ville_areni-1",
+  "fr": "La grotte d'Areni-1, dans le Vayots Dzor, abrite la plus ancienne installation connue de vinification au monde, avec un pressoir et une cuve datés d'environ quatre mille cent ans avant notre ère. On y a aussi trouvé la plus vieille chaussure de cuir complète connue, vieille d'environ cinq mille cinq cents ans.",
+  "en": "The Areni-1 cave, in Vayots Dzor, holds the oldest known winemaking facility in the world, with a press and vat dated to around four thousand one hundred years before our era. The oldest known complete leather shoe, about five thousand five hundred years old, was also found there.",
+  "ru": "Пещера Арени-1 в Вайоц Дзоре хранит древнейшую известную винодельню в мире — давильню и чан возрастом около четырёх тысяч ста лет до нашей эры. Там же была найдена древнейшая известная целая кожаная обувь возрастом около пяти тысяч пятисот лет."
+ },
+ {
+  "cle": "ville_shengavit",
+  "fr": "Shengavit est une grande agglomération de la culture kouro-araxe, installée sur le fleuve Hrazdan dans l'actuelle Erevan à partir d'environ trois mille ans avant notre ère. On y trouve des maisons rondes, des ateliers de métallurgie et des greniers.",
+  "en": "Shengavit is a large Kura-Araxes culture settlement, established on the Hrazdan river in present-day Yerevan from around three thousand years before our era. It features round houses, metalworking workshops, and granaries.",
+  "ru": "Шенгавит — крупное поселение куро-аракской культуры на реке Раздан, на территории современного Еревана, существовавшее примерно с трёхтысячного года до нашей эры. Здесь обнаружены круглые дома, металлургические мастерские и зернохранилища."
+ },
+ {
+  "cle": "ville_metsamor",
+  "fr": "Metsamor fut un centre métallurgique majeur, actif pendant plus de quatre mille ans jusqu'à l'époque achéménide. L'hypothèse d'un observatoire astronomique de l'âge du bronze, populaire localement, n'est pas retenue par l'archéologie académique internationale, qui y voit plutôt un centre religieux et métallurgique fortifié.",
+  "en": "Metsamor was a major metallurgical centre, active for more than four thousand years until the Achaemenid era. The locally popular hypothesis of a Bronze Age astronomical observatory is not accepted by international academic archaeology, which sees it instead as a fortified religious and metallurgical centre.",
+  "ru": "Мецамор был крупным металлургическим центром, действовавшим более четырёх тысяч лет вплоть до ахеменидской эпохи. Популярная местная гипотеза о бронзовой астрономической обсерватории не признаётся международной академической археологией, которая видит здесь укреплённый религиозный и металлургический центр."
  }
 ]
