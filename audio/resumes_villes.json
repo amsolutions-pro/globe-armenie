@@ -88,5 +88,35 @@
   "fr": "La vieille Djoulfa, ville marchande de la soie sur l'Araxe, possédait l'un des plus grands cimetières de khatchkars du monde. Rasée en 1605 par Chah Abbas, qui déporta sa population vers l'Iran, ce cimetière fut ensuite détruit par l'Azerbaïdjan entre 1998 et 2005.",
   "en": "Old Julfa, a silk trading town on the Araxes, held one of the largest khachkar cemeteries in the world. Razed in 1605 by Shah Abbas, who deported its population to Iran, the cemetery was later destroyed by Azerbaijan between 1998 and 2005.",
   "ru": "Старая Джульфа, торговый город на Араксе на Великом шёлковом пути, обладала одним из крупнейших кладбищ хачкаров в мире. Разрушенная в 1605 году шахом Аббасом, депортировавшим её население в Иран, это кладбище было позднее уничтожено Азербайджаном между 1998 и 2005 годами."
+ },
+ {
+  "cle": "ville_aghtamar",
+  "fr": "Sur une île du lac de Van, l'église de la Sainte-Croix d'Aghtamar fut édifiée au dixième siècle pour le roi Gagik Artsrouni. Siège d'un catholicossat pendant près de huit siècles, elle fut abandonnée après le génocide de 1915 puis restaurée par l'État turc comme musée, sans restitution à l'Église arménienne.",
+  "en": "On an island of Lake Van, the Church of the Holy Cross at Aghtamar was built in the 10th century for King Gagik Artsruni. Seat of a catholicosate for nearly eight centuries, it was abandoned after the 1915 genocide and later restored by the Turkish state as a museum, without restitution to the Armenian Church.",
+  "ru": "На острове озера Ван церковь Святого Креста на Ахтамаре была построена в десятом веке для царя Гагика Арцруни. Резиденция католикосата почти восемь веков, она была заброшена после геноцида 1915 года и позднее отреставрирована турецким государством как музей, без возвращения Армянской церкви."
+ },
+ {
+  "cle": "ville_tatev",
+  "fr": "Le monastère de Tatev, dans le Syunik, abrita une grande université médiévale à la fin du quatorzième siècle. Depuis 2010, il est relié par un téléphérique détenteur d'un record du monde du plus long trajet à va-et-vient sans arrêt intermédiaire.",
+  "en": "Tatev monastery, in Syunik, housed a great medieval university at the end of the 14th century. Since 2010, it has been linked by a cable car that holds a world record for the longest non-stop reversible aerial tramway.",
+  "ru": "Монастырь Татев в Сюнике вместил в себя крупный средневековый университет в конце четырнадцатого века. С 2010 года он соединён канатной дорогой, установившей мировой рекорд самой длинной маятниковой канатной дороги без промежуточных остановок."
+ },
+ {
+  "cle": "ville_zvartnots",
+  "fr": "La cathédrale circulaire de Zvartnots, bâtie au septième siècle près d'Etchmiadzin, s'effondra probablement lors d'un séisme vers l'an neuf cent trente. Ses ruines, dégagées au début du vingtième siècle, sont inscrites au patrimoine mondial de l'UNESCO depuis l'an deux mille.",
+  "en": "The circular cathedral of Zvartnots, built in the 7th century near Etchmiadzin, probably collapsed in an earthquake around the year 930. Its ruins, uncovered in the early 20th century, have been a UNESCO World Heritage site since the year 2000.",
+  "ru": "Круглый собор Звартноц, построенный в седьмом веке близ Эчмиадзина, вероятно, обрушился при землетрясении около 930 года. Его руины, раскрытые в начале двадцатого века, включены в список Всемирного наследия ЮНЕСКО с 2000 года."
+ },
+ {
+  "cle": "ville_sevanavank",
+  "fr": "Le monastère de Sevanavank fut fondé en huit cent soixante-quatorze sur une île du lac Sevan, devenue presqu'île au vingtième siècle après l'abaissement artificiel du niveau du lac. C'est aujourd'hui l'un des sites les plus emblématiques d'Arménie.",
+  "en": "Sevanavank monastery was founded in eight hundred seventy-four on an island of Lake Sevan, which became a peninsula in the 20th century after the artificial lowering of the lake's level. It is today one of Armenia's most iconic sites.",
+  "ru": "Монастырь Севанаванк был основан в восемьсот семьдесят четвёртом году на острове озера Севан, ставшем полуостровом в двадцатом веке после искусственного понижения уровня озера. Сегодня это одно из самых знаковых мест Армении."
+ },
+ {
+  "cle": "ville_sanahin-haghpat",
+  "fr": "Les monastères jumeaux de Sanahin et Haghpat, fondés au dixième siècle dans le Lori, furent de grands foyers d'enseignement médiéval sous les rois Kiurikides. Ils sont inscrits au patrimoine mondial de l'UNESCO, Haghpat depuis 1996 et Sanahin depuis 2000.",
+  "en": "The twin monasteries of Sanahin and Haghpat, founded in the 10th century in Lori, were major centres of medieval learning under the Kiurikid kings. They are UNESCO World Heritage sites, Haghpat since 1996 and Sanahin since 2000.",
+  "ru": "Монастыри-близнецы Санаин и Ахпат, основанные в десятом веке в Лори, были крупными очагами средневекового образования при кюрикидских царях. Они включены в список Всемирного наследия ЮНЕСКО: Ахпат с 1996 года, Санаин с 2000 года."
  }
 ]
