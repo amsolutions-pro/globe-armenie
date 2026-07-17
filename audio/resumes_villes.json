@@ -238,5 +238,35 @@
   "fr": "Metsamor fut un centre métallurgique majeur, actif pendant plus de quatre mille ans jusqu'à l'époque achéménide. L'hypothèse d'un observatoire astronomique de l'âge du bronze, populaire localement, n'est pas retenue par l'archéologie académique internationale, qui y voit plutôt un centre religieux et métallurgique fortifié.",
   "en": "Metsamor was a major metallurgical centre, active for more than four thousand years until the Achaemenid era. The locally popular hypothesis of a Bronze Age astronomical observatory is not accepted by international academic archaeology, which sees it instead as a fortified religious and metallurgical centre.",
   "ru": "Мецамор был крупным металлургическим центром, действовавшим более четырёх тысяч лет вплоть до ахеменидской эпохи. Популярная местная гипотеза о бронзовой астрономической обсерватории не признаётся международной академической археологией, которая видит здесь укреплённый религиозный и металлургический центр."
+ },
+ {
+  "cle": "ville_tushpa-van",
+  "fr": "Tushpa, sur le rocher de Van, fut la capitale du royaume d'Ourartou, établie par le roi Sarduri premier vers huit cent quarante à huit cent trente avant notre ère. Le site domine encore aujourd'hui la ville de Van.",
+  "en": "Tushpa, on the Van rock, was the capital of the kingdom of Urartu, established by King Sarduri the First around eight hundred and forty to eight hundred and thirty years before our era. The site still overlooks the city of Van today.",
+  "ru": "Тушпа, на Ванской скале, была столицей царства Урарту, основанной царём Сардури Первым около восемьсот сорокового - восемьсот тридцатого года до нашей эры. Место до сих пор возвышается над современным Ваном."
+ },
+ {
+  "cle": "ville_armavir",
+  "fr": "Armavir fut d'abord le site ourartéen d'Argishtikhinili, fondé vers sept cent soixante-seize avant notre ère, avant de devenir la première capitale traditionnelle de l'Arménie sous la dynastie orontide.",
+  "en": "Armavir was first the Urartian site of Argishtikhinili, founded around seven hundred and seventy-six years before our era, before becoming the first traditional capital of Armenia under the Orontid dynasty.",
+  "ru": "Армавир был сначала урартским поселением Аргиштихинили, основанным около семьсот семьдесят шестого года до нашей эры, а затем стал первой традиционной столицей Армении при династии Ервандидов."
+ },
+ {
+  "cle": "ville_sardarabad",
+  "fr": "À Sardarabad, en mai mille neuf cent dix-huit, les troupes du général Silikian, appuyées par une mobilisation populaire massive, arrêtèrent l'offensive ottomane à quarante kilomètres d'Erevan. La Première République d'Arménie fut proclamée quelques jours plus tard, et un mémorial monumental fut érigé sur le site en mille neuf cent soixante-huit.",
+  "en": "At Sardarabad, in May nineteen eighteen, General Silikian's troops, backed by a massive popular mobilization, halted the Ottoman offensive forty kilometres from Yerevan. The First Republic of Armenia was proclaimed a few days later, and a monumental memorial was erected on the site in nineteen sixty-eight.",
+  "ru": "У Сардарапата в мае тысяча девятьсот восемнадцатого года войска генерала Силикяна при поддержке массовой народной мобилизации остановили турецкое наступление в сорока километрах от Еревана. Через несколько дней была провозглашена Первая Республика Армения, а на месте битвы в тысяча девятьсот шестьдесят восьмом году возвели монументальный мемориал."
+ },
+ {
+  "cle": "ville_artashat",
+  "fr": "Artashat fut fondée par le roi Artaxias premier au début du deuxième siècle avant notre ère, sur les rives de l'Araxe. Selon la tradition rapportée par Plutarque, ce serait sur les conseils d'Hannibal, ce qui lui valut le surnom de « Carthage arménienne ».",
+  "en": "Artashat was founded by King Artaxias the First in the early second century before our era, on the banks of the Araxes. According to the tradition reported by Plutarch, this was on the advice of Hannibal, earning it the nickname \"Armenian Carthage.\"",
+  "ru": "Арташат был основан царём Арташесом Первым в начале второго века до нашей эры на берегу Аракса. Согласно преданию, переданному Плутархом, город был заложен по совету Ганнибала, за что получил прозвище «армянский Карфаген»."
+ },
+ {
+  "cle": "ville_tigranakert",
+  "fr": "Tigranakert fut une capitale impériale fondée vers quatre-vingt-trois avant notre ère par Tigrane deux, peuplée en partie de populations déportées de Cappadoce, de Cilicie et d'Adiabène. Elle fut prise et pillée par le général romain Lucullus en soixante-neuf avant notre ère ; sa localisation exacte reste débattue.",
+  "en": "Tigranakert was an imperial capital founded around eighty-three years before our era by Tigranes the Second, populated in part by peoples deported from Cappadocia, Cilicia, and Adiabene. It was captured and sacked by the Roman general Lucullus in sixty-nine before our era; its exact location remains debated.",
+  "ru": "Тигранакерт был имперской столицей, основанной около восемьдесят третьего года до нашей эры Тиграном Вторым и частично заселённой депортированными жителями Каппадокии, Киликии и Адиабены. Город был взят и разграблен римским полководцем Лукуллом в шестьдесят девятом году до нашей эры; его точное местоположение остаётся предметом споров."
  }
 ]
