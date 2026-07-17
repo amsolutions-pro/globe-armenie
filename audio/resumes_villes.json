@@ -1,0 +1,32 @@
+[
+ {
+  "cle": "ville_erevan-erebouni",
+  "fr": "Erevan, capitale de l'Arménie depuis 1918, se dresse sur le site de la forteresse d'Erebouni, fondée en 782 avant J.-C. par le roi ourartéen Argishti Premier. La ville actuelle s'est développée à l'époque médiévale ; le lien direct avec la forteresse antique relève en partie de la mémoire nationale.",
+  "en": "Yerevan, capital of Armenia since 1918, stands on the site of the fortress of Erebuni, founded in 782 BC by the Urartian king Argishti the First. The modern city developed in medieval times; the direct link to the ancient fortress is partly a matter of national memory.",
+  "ru": "Ереван, столица Армении с 1918 года, стоит на месте крепости Эребуни, основанной в 782 году до нашей эры урартским царём Аргишти Первым. Современный город сформировался в средневековую эпоху; прямая связь с древней крепостью отчасти относится к национальной памяти."
+ },
+ {
+  "cle": "ville_van",
+  "fr": "Van, sur les rives du lac du même nom, fut le cœur du Vaspurakan médiéval. En avril 1915, sa population arménienne opposa une résistance armée aux massacres ordonnés par les autorités jeunes-turques jusqu'à l'arrivée de l'armée russe, avant que sa communauté ne soit détruite dans le génocide.",
+  "en": "Van, on the shores of the lake bearing its name, was the heart of medieval Vaspurakan. In April 1915, its Armenian population mounted an armed resistance against the massacres ordered by the Young Turk authorities until Russian forces arrived, before its community was destroyed in the genocide.",
+  "ru": "Ван, на берегу одноимённого озера, был сердцем средневекового Васпуракана. В апреле 1915 года его армянское население оказало вооружённое сопротивление резне, организованной младотурецкими властями, вплоть до прихода русской армии, прежде чем его община была уничтожена в ходе геноцида."
+ },
+ {
+  "cle": "ville_ani",
+  "fr": "Ani, surnommée « la ville aux mille et une églises », devint capitale du royaume bagratide en 961 et compta jusqu'à plusieurs dizaines de milliers d'habitants. Son déclin s'accéléra avec les invasions mongoles du treizième siècle puis le séisme de 1319, jusqu'à son abandon progressif.",
+  "en": "Ani, nicknamed the city of a thousand and one churches, became the Bagratid kingdom's capital in 961 and grew to several tens of thousands of inhabitants. Its decline accelerated with the Mongol invasions of the 13th century and then the 1319 earthquake, leading to its gradual abandonment.",
+  "ru": "Ани, прозванный «городом тысячи и одной церкви», стал столицей Багратидского царства в 961 году и насчитывал до нескольких десятков тысяч жителей. Его упадок ускорился монгольскими нашествиями XIII века, а затем землетрясением 1319 года, что привело к постепенному запустению."
+ },
+ {
+  "cle": "ville_vagharshapat-etchmiadzin",
+  "fr": "Vagharshapat abrite depuis le quatrième siècle le siège catholicossal d'Etchmiadzin, dont la fondation traditionnelle remonte à 301-303. L'édifice actuel résulte d'une reconstruction du cinquième siècle ; le nom Etchmiadzin a fini par désigner la ville elle-même.",
+  "en": "Vagharshapat has hosted the catholicosal see of Etchmiadzin since the 4th century, traditionally founded in 301-303. The current building results from a 5th-century reconstruction; the name Etchmiadzin eventually came to designate the city itself.",
+  "ru": "В Вагаршапате с четвёртого века находится кафедральная резиденция католикоса Эчмиадзина, традиционное основание которой относится к 301-303 годам. Нынешнее здание — результат перестройки пятого века; название Эчмиадзин в итоге стало обозначать и сам город."
+ },
+ {
+  "cle": "ville_gyumri-alexandropol",
+  "fr": "Gyumri, deuxième ville d'Arménie, occupe un site habité dès le Moyen Âge sous le nom de Kumayri. Devenue forteresse russe d'Alexandropol en 1837 puis Leninakan sous l'URSS, elle fut sévèrement touchée par le séisme de 1988, dont l'épicentre se situait à Spitak.",
+  "en": "Gyumri, Armenia's second city, occupies a site inhabited since the Middle Ages under the name Kumayri. It became the Russian fortress of Alexandropol in 1837, then Leninakan under the USSR, and was severely hit by the 1988 earthquake, whose epicentre was in Spitak.",
+  "ru": "Гюмри, второй город Армении, занимает место, заселённое со времён Средневековья под названием Кумайри. В 1837 году он стал российской крепостью Александрополь, затем Ленинаканом при СССР, и сильно пострадал от землетрясения 1988 года, эпицентр которого находился в Спитаке."
+ }
+]
