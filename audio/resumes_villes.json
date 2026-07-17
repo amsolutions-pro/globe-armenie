@@ -58,5 +58,35 @@
   "fr": "Sur le Musa Dagh, six villages arméniens résistèrent aux forces ottomanes pendant environ cinquante-trois jours durant le génocide de 1915. Quelque quatre mille survivants furent évacués vers Port-Saïd par une escadre française en septembre de la même année.",
   "en": "On Musa Dagh, six Armenian villages resisted Ottoman forces for about fifty-three days during the 1915 genocide. Some four thousand survivors were evacuated to Port Said by a French naval squadron in September of that year.",
   "ru": "На горе Муса-Даг шесть армянских деревень сопротивлялись османским силам около пятидесяти трёх дней во время геноцида 1915 года. Около четырёх тысяч выживших были эвакуированы в Порт-Саид французской эскадрой в сентябре того же года."
+ },
+ {
+  "cle": "ville_amida-diyarbekir",
+  "fr": "Amida, sur le Tigre, était une ville fortifiée aux communautés arménienne et syriaque importantes. Elle fut ravagée par les massacres hamidiens de 1895 puis, sous le gouvernorat de Mehmed Reşid, par le génocide de 1915, qui frappa à la fois les Arméniens et les Syriaques.",
+  "en": "Amida, on the Tigris, was a fortified city with large Armenian and Syriac communities. It was ravaged by the Hamidian massacres of 1895 and then, under governor Mehmed Reshid, by the genocide of 1915, which struck both Armenians and Syriacs.",
+  "ru": "Амида на Тигре была укреплённым городом со значительными армянской и сирийской общинами. Она была разорена гамидийской резнёй 1895 года, а затем, при губернаторе Мехмеде Решиде, геноцидом 1915 года, поразившим и армян, и сирийцев."
+ },
+ {
+  "cle": "ville_trebizonde-trabzon",
+  "fr": "Trébizonde, port de la mer Noire, vit sa communauté arménienne déportée en 1915 sur ordre des autorités jeunes-turques. Une partie importante des victimes fut noyée en mer, des faits établis par un procès en 1919 et de nombreux témoignages consulaires.",
+  "en": "Trebizond, a Black Sea port, saw its Armenian community deported in 1915 on the orders of the Young Turk authorities. A large share of the victims were drowned at sea, facts established by a 1919 trial and numerous consular testimonies.",
+  "ru": "Трапезунд, порт на Чёрном море, увидел депортацию своей армянской общины в 1915 году по приказу младотурецких властей. Значительная часть жертв была утоплена в море — факты установлены судебным процессом 1919 года и многочисленными консульскими свидетельствами."
+ },
+ {
+  "cle": "ville_marash-germanig",
+  "fr": "Marash, ville des marches de Cilicie à l'importante communauté arménienne, fut frappée par les violences hamidiennes de 1895 puis par la bataille de Marash en 1920. La résistance arménienne y fut écrasée après le retrait des troupes françaises, provoquant l'exode définitif de la population.",
+  "en": "Marash, a town on the Cilician frontier with a large Armenian community, was struck by the Hamidian violence of 1895 and then by the Battle of Marash in 1920. Armenian resistance was crushed there after the withdrawal of French troops, causing the population's definitive exodus.",
+  "ru": "Мараш, город на киликийской границе с крупной армянской общиной, пострадал от гамидийского насилия 1895 года, а затем от битвы за Мараш в 1920 году. Армянское сопротивление было там подавлено после отвода французских войск, что привело к окончательному исходу населения."
+ },
+ {
+  "cle": "ville_nakhitchevan",
+  "fr": "Le Nakhitchevan, cité très ancienne du plateau, fut rattaché en 1921 à l'Azerbaïdjan soviétique sans consultation de sa population. Sa minorité arménienne, environ quinze pour cent en 1926, a quasiment disparu au cours du vingtième siècle, devenant nulle après 1990.",
+  "en": "Nakhichevan, a very ancient city of the plateau, was attached to Soviet Azerbaijan in 1921 without consulting its population. Its Armenian minority, about fifteen percent in 1926, nearly disappeared over the 20th century, becoming nil after 1990.",
+  "ru": "Нахичевань, один из древнейших городов плато, был присоединён к советскому Азербайджану в 1921 году без опроса населения. Его армянское меньшинство, около пятнадцати процентов в 1926 году, почти полностью исчезло на протяжении XX века, став нулевым после 1990 года."
+ },
+ {
+  "cle": "ville_djoulfa-vieille",
+  "fr": "La vieille Djoulfa, ville marchande de la soie sur l'Araxe, possédait l'un des plus grands cimetières de khatchkars du monde. Rasée en 1605 par Chah Abbas, qui déporta sa population vers l'Iran, ce cimetière fut ensuite détruit par l'Azerbaïdjan entre 1998 et 2005.",
+  "en": "Old Julfa, a silk trading town on the Araxes, held one of the largest khachkar cemeteries in the world. Razed in 1605 by Shah Abbas, who deported its population to Iran, the cemetery was later destroyed by Azerbaijan between 1998 and 2005.",
+  "ru": "Старая Джульфа, торговый город на Араксе на Великом шёлковом пути, обладала одним из крупнейших кладбищ хачкаров в мире. Разрушенная в 1605 году шахом Аббасом, депортировавшим её население в Иран, это кладбище было позднее уничтожено Азербайджаном между 1998 и 2005 годами."
  }
 ]
