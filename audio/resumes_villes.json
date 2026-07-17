@@ -28,5 +28,35 @@
   "fr": "Gyumri, deuxième ville d'Arménie, occupe un site habité dès le Moyen Âge sous le nom de Kumayri. Devenue forteresse russe d'Alexandropol en 1837 puis Leninakan sous l'URSS, elle fut sévèrement touchée par le séisme de 1988, dont l'épicentre se situait à Spitak.",
   "en": "Gyumri, Armenia's second city, occupies a site inhabited since the Middle Ages under the name Kumayri. It became the Russian fortress of Alexandropol in 1837, then Leninakan under the USSR, and was severely hit by the 1988 earthquake, whose epicentre was in Spitak.",
   "ru": "Гюмри, второй город Армении, занимает место, заселённое со времён Средневековья под названием Кумайри. В 1837 году он стал российской крепостью Александрополь, затем Ленинаканом при СССР, и сильно пострадал от землетрясения 1988 года, эпицентр которого находился в Спитаке."
+ },
+ {
+  "cle": "ville_chouchi-choucha",
+  "fr": "Chouchi, forteresse fondée vers 1752, fut un grand centre culturel arménien du Karabagh avant d'être frappée par un pogrom en mars 1920. Prise par les forces arméniennes en 1992, elle resta sous administration du Haut-Karabagh jusqu'à sa reprise par l'Azerbaïdjan en novembre 2020.",
+  "en": "Shusha, a fortress founded around 1752, was a major Armenian cultural centre of Karabakh before being struck by a pogrom in March 1920. Taken by Armenian forces in 1992, it remained under Nagorno-Karabakh administration until it was retaken by Azerbaijan in November 2020.",
+  "ru": "Шуша, крепость, основанная около 1752 года, была крупным армянским культурным центром Карабаха до погрома в марте 1920 года. Взятая армянскими силами в 1992 году, она оставалась под управлением Нагорного Карабаха до её взятия Азербайджаном в ноябре 2020 года."
+ },
+ {
+  "cle": "ville_kars",
+  "fr": "Kars fut capitale du royaume bagratide de Kars-Vanand au dixième siècle, puis russe de 1878 à 1918. Brièvement arménienne en 1919-1920, elle fut prise par les forces kémalistes et définitivement cédée à la Turquie par le traité de Kars en 1921.",
+  "en": "Kars was the capital of the Bagratid kingdom of Kars-Vanand in the 10th century, then Russian from 1878 to 1918. Briefly Armenian in 1919-1920, it was captured by Kemalist forces and permanently ceded to Turkey by the Treaty of Kars in 1921.",
+  "ru": "Карс был столицей Багратидского царства Карс-Вананд в десятом веке, затем российским с 1878 по 1918 год. Недолго армянский в 1919-1920 годах, он был взят кемалистскими силами и окончательно уступлен Турции по Карсскому договору 1921 года."
+ },
+ {
+  "cle": "ville_sis",
+  "fr": "Sis fut capitale du royaume arménien de Cilicie jusqu'à sa chute en 1375, quand le dernier roi Léon V fut capturé par les Mamelouks. Siège d'un catholicossat, celui-ci fut contraint à l'exil en 1921 et s'installa finalement à Antélias, au Liban, en 1930.",
+  "en": "Sis was the capital of the Armenian kingdom of Cilicia until its fall in 1375, when the last king, Leo the Fifth, was captured by the Mamluks. Seat of a catholicosate, it was forced into exile in 1921 and finally settled in Antelias, Lebanon, in 1930.",
+  "ru": "Сис был столицей армянского Киликийского царства до его падения в 1375 году, когда последний царь Левон V был пленён мамлюками. Резиденция католикосата была вынуждена уйти в изгнание в 1921 году и окончательно обосновалась в Антилиасе, Ливан, в 1930 году."
+ },
+ {
+  "cle": "ville_ourfa-edesse",
+  "fr": "Ourfa, l'antique Édesse, fut un grand foyer du christianisme oriental et abritait une importante communauté arménienne. Sa cathédrale fut le théâtre d'un massacre hamidien meurtrier en 1895, puis la résistance armée de son quartier arménien fut écrasée par l'armée ottomane en 1915.",
+  "en": "Urfa, ancient Edessa, was a major centre of eastern Christianity and home to a large Armenian community. Its cathedral was the scene of a deadly Hamidian massacre in 1895, and the armed resistance of its Armenian quarter was crushed by the Ottoman army in 1915.",
+  "ru": "Урфа, древняя Эдесса, была крупным центром восточного христианства и домом для большой армянской общины. Её собор стал местом кровавой гамидийской резни в 1895 году, а вооружённое сопротивление её армянского квартала было подавлено османской армией в 1915 году."
+ },
+ {
+  "cle": "ville_musa-dagh",
+  "fr": "Sur le Musa Dagh, six villages arméniens résistèrent aux forces ottomanes pendant environ cinquante-trois jours durant le génocide de 1915. Quelque quatre mille survivants furent évacués vers Port-Saïd par une escadre française en septembre de la même année.",
+  "en": "On Musa Dagh, six Armenian villages resisted Ottoman forces for about fifty-three days during the 1915 genocide. Some four thousand survivors were evacuated to Port Said by a French naval squadron in September of that year.",
+  "ru": "На горе Муса-Даг шесть армянских деревень сопротивлялись османским силам около пятидесяти трёх дней во время геноцида 1915 года. Около четырёх тысяч выживших были эвакуированы в Порт-Саид французской эскадрой в сентябре того же года."
  }
 ]
