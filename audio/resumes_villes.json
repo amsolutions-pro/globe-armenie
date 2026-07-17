@@ -178,5 +178,35 @@
   "fr": "Le monastère de Khor Virap, face au mont Ararat, fut bâti au septième siècle sur le site où, selon la tradition arménienne, saint Grégoire l'Illuminateur fut emprisonné treize ans avant la conversion du royaume au christianisme en l'an trois cent un.",
   "en": "Khor Virap monastery, facing Mount Ararat, was built in the 7th century on the site where, according to Armenian tradition, Saint Gregory the Illuminator was imprisoned for thirteen years before the kingdom's conversion to Christianity in the year 301.",
   "ru": "Монастырь Хор Вирап, обращённый к горе Арарат, был построен в седьмом веке на месте, где, согласно армянской традиции, святой Григорий Просветитель был заключён в темницу на тринадцать лет перед принятием царством христианства в 301 году."
+ },
+ {
+  "cle": "ville_mont-ararat",
+  "fr": "Le mont Ararat, culminant à cinq mille cent soixante-cinq mètres, est le symbole national de l'Arménie et figure sur ses armoiries. Bien que visible depuis Erevan, il se trouve en Turquie depuis les traités de Moscou et de Kars de 1921, qui ont fixé la frontière soviéto-turque.",
+  "en": "Mount Ararat, rising to five thousand one hundred and sixty-five metres, is the national symbol of Armenia and appears on its coat of arms. Although visible from Yerevan, it lies in Turkey since the 1921 treaties of Moscow and Kars, which fixed the Soviet-Turkish border.",
+  "ru": "Гора Арарат, высотой пять тысяч сто шестьдесят пять метров, — национальный символ Армении, изображённый на её гербе. Хотя она видна из Еревана, гора находится на территории Турции с момента заключения Московского и Карсского договоров 1921 года, установивших советско-турецкую границу."
+ },
+ {
+  "cle": "ville_oshakan",
+  "fr": "Oshakan est le village où repose Mesrop Machtots, traditionnellement crédité de la création de l'alphabet arménien en quatre cent cinq, avec le soutien du catholicos Sahak Partev. La basilique qui abrite son tombeau, construite en 1875, est aujourd'hui un lieu de pèlerinage.",
+  "en": "Oshakan is the village where Mesrop Mashtots is buried, traditionally credited with creating the Armenian alphabet in the year four hundred and five, with the support of Catholicos Sahak Partev. The basilica housing his tomb, built in 1875, is today a place of pilgrimage.",
+  "ru": "Ошакан — село, где похоронен Месроп Маштоц, которому традиционно приписывается создание армянского алфавита в четыреста пятом году при поддержке католикоса Саака Партева. Базилика над его могилой, построенная в 1875 году, сегодня является местом паломничества."
+ },
+ {
+  "cle": "ville_amaras-artsakh",
+  "fr": "Le monastère d'Amaras, en Artsakh, doit sa fondation selon la tradition hagiographique à Grégoire l'Illuminateur au quatrième siècle. Toujours selon la tradition, Mesrop Machtots y ouvrit vers l'an quatre cent cinq la première école utilisant l'alphabet arménien.",
+  "en": "The monastery of Amaras, in Artsakh, is traditionally credited to Gregory the Illuminator in the 4th century. Also by tradition, Mesrop Mashtots opened there, around the year four hundred and five, the first school to use the Armenian alphabet.",
+  "ru": "Монастырь Амарас в Арцахе, согласно агиографической традиции, был основан Григорием Просветителем в четвёртом веке. Также по преданию, Месроп Маштоц открыл там около 405 года первую школу, использовавшую армянский алфавит."
+ },
+ {
+  "cle": "ville_dadivank-artsakh",
+  "fr": "Dadivank, monastère majeur du nord de l'Artsakh construit entre les neuvième et treizième siècles, est repassé sous souveraineté azerbaïdjanaise à l'issue de la guerre des Quarante-Quatre Jours en 2020. Le site reste accessible aux pèlerins arméniens sous supervision de la force russe de maintien de la paix.",
+  "en": "Dadivank, a major monastery of northern Artsakh built between the 9th and 13th centuries, came back under Azerbaijani sovereignty after the Forty-Four Day War in 2020. The site remains accessible to Armenian pilgrims under the supervision of the Russian peacekeeping force.",
+  "ru": "Дадиванк, крупный монастырь на севере Арцаха, построенный между девятым и тринадцатым веками, вновь перешёл под суверенитет Азербайджана после 44-дневной войны в 2020 году. Место остаётся доступным для армянских паломников под наблюдением российских миротворцев."
+ },
+ {
+  "cle": "ville_gueghard",
+  "fr": "Le monastère de Guéghard, en partie taillé dans le roc, doit son nom, signifiant « la lance », à une relique de la Lance de la Passion qu'il aurait conservée selon la tradition. Son église principale date de mille deux cent quinze ; il est inscrit au patrimoine mondial de l'UNESCO.",
+  "en": "Geghard monastery, partly carved into the rock, owes its name, meaning \"the spear,\" to a relic of the Holy Lance it is said to have held, according to tradition. Its main church dates from twelve hundred and fifteen; it is a UNESCO World Heritage site.",
+  "ru": "Монастырь Гегард, частично высеченный в скале, обязан своим названием, означающим «копьё», реликвии Святого Копья, которую он якобы хранил по преданию. Его главная церковь датируется 1215 годом; он включён в список Всемирного наследия ЮНЕСКО."
  }
 ]
