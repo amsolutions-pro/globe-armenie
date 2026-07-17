@@ -118,5 +118,35 @@
   "fr": "Les monastères jumeaux de Sanahin et Haghpat, fondés au dixième siècle dans le Lori, furent de grands foyers d'enseignement médiéval sous les rois Kiurikides. Ils sont inscrits au patrimoine mondial de l'UNESCO, Haghpat depuis 1996 et Sanahin depuis 2000.",
   "en": "The twin monasteries of Sanahin and Haghpat, founded in the 10th century in Lori, were major centres of medieval learning under the Kiurikid kings. They are UNESCO World Heritage sites, Haghpat since 1996 and Sanahin since 2000.",
   "ru": "Монастыри-близнецы Санаин и Ахпат, основанные в десятом веке в Лори, были крупными очагами средневекового образования при кюрикидских царях. Они включены в список Всемирного наследия ЮНЕСКО: Ахпат с 1996 года, Санаин с 2000 года."
+ },
+ {
+  "cle": "ville_vanadzor-kirovakan",
+  "fr": "Vanadzor, attestée dès le treizième siècle sous le nom de Gharakilisa, fut le théâtre en mai 1918 d'une bataille où les forces arméniennes freinèrent l'offensive ottomane. Troisième ville d'Arménie sous le nom de Kirovakan à l'époque soviétique, elle fut durement touchée par le séisme de 1988.",
+  "en": "Vanadzor, attested since the 13th century under the name Gharakilisa, was the scene in May 1918 of a battle where Armenian forces slowed the Ottoman offensive. Armenia's third city under the name Kirovakan in Soviet times, it was severely hit by the 1988 earthquake.",
+  "ru": "Ванадзор, известный с тринадцатого века под названием Каракилиса, стал в мае 1918 года местом сражения, где армянские силы сдержали османское наступление. Третий город Армении под названием Кировакан в советское время, он сильно пострадал от землетрясения 1988 года."
+ },
+ {
+  "cle": "ville_mush-taron",
+  "fr": "Mush, chef-lieu de la plaine du Taron, fut le fief historique des princes Mamikonian puis Bagratouni. Sa population arménienne fut massacrée sur place lors du génocide de 1915, perpétré par le gouvernement jeune-turc, et le proche monastère de Sourb Karapet fut détruit après cette date.",
+  "en": "Mush, chief town of the Taron plain, was the historic stronghold of the Mamikonian and then Bagratuni princes. Its Armenian population was massacred on the spot during the 1915 genocide, perpetrated by the Young Turk government, and the nearby monastery of Surb Karapet was destroyed afterward.",
+  "ru": "Муш, центр Таронской равнины, был историческим владением князей Мамиконянов, а затем Багратуни. Его армянское население было истреблено на месте во время геноцида 1915 года, осуществлённого младотурецким правительством, а близлежащий монастырь Сурб Карапет был разрушен впоследствии."
+ },
+ {
+  "cle": "ville_bitlis-baghesh",
+  "fr": "Bitlis, ville-forteresse au sud-ouest du lac de Van, fut le siège d'un émirat kurde quasi autonome puis d'un vilayet ottoman. Son importante communauté arménienne, connue pour ses monastères et son artisanat, fut anéantie lors du génocide de 1915.",
+  "en": "Bitlis, a fortress town southwest of Lake Van, was the seat of a quasi-autonomous Kurdish emirate and then an Ottoman vilayet. Its large Armenian community, known for its monasteries and crafts, was annihilated during the 1915 genocide.",
+  "ru": "Битлис, город-крепость к юго-западу от озера Ван, был центром почти автономного курдского эмирата, а затем османского вилайета. Его крупная армянская община, известная своими монастырями и ремёслами, была уничтожена во время геноцида 1915 года."
+ },
+ {
+  "cle": "ville_sebaste-sivas",
+  "fr": "Sébaste, ville d'Anatolie centrale, fut le siège du royaume arménien en exil des Artsrouni après la cession du Vaspourakan au onzième siècle. Grand pôle marchand et religieux arménien sous l'Empire ottoman, sa communauté disparut lors du génocide de 1915.",
+  "en": "Sebaste, a city of central Anatolia, was the seat of the Armenian kingdom-in-exile of the Artsruni after the cession of Vaspurakan in the 11th century. A major Armenian trading and religious hub under the Ottoman Empire, its community disappeared during the 1915 genocide.",
+  "ru": "Себастия, город Центральной Анатолии, стала центром армянского царства в изгнании Арцрунидов после уступки Васпуракана в одиннадцатом веке. Крупный армянский торговый и религиозный центр при Османской империи, его община исчезла во время геноцида 1915 года."
+ },
+ {
+  "cle": "ville_kharpert-kharberd",
+  "fr": "Kharpert, ville perchée du haut Euphrate, était réputée pour ses écoles arméniennes et son collège fondé par des missionnaires américains en 1878. Sa population fut déportée et massacrée en 1915 par le gouvernement jeune-turc, et la ville moderne s'est depuis déplacée dans la plaine.",
+  "en": "Kharpert, a hilltop town of the upper Euphrates, was renowned for its Armenian schools and its college founded by American missionaries in 1878. Its population was deported and massacred in 1915 by the Young Turk government, and the modern city has since moved down to the plain.",
+  "ru": "Харберд, город на возвышенности в верховьях Евфрата, был известен своими армянскими школами и колледжем, основанным американскими миссионерами в 1878 году. Его население было депортировано и истреблено в 1915 году младотурецким правительством, а современный город с тех пор переместился на равнину."
  }
 ]
