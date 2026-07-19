@@ -24,6 +24,12 @@
   "ru": "Эллинистическое царство, независимое со 163 г. до н.э. по 72 г. н.э., знаменитое погребальным святилищем Антиоха I на вершине Немрут-Дага. Его столица Самосата на Евфрате ныне скрыта водохранилищем плотины Ататюрка. Рим окончательно аннексировал его при Веспасиане."
  },
  {
+  "cle": "voisin_diauehi",
+  "fr": "Royaume ou puissante confédération du haut Tchorokh et des hautes vallées d'Erzurum à Ardahan, gouverné par le roi Utupurshi. Menua puis Argishti Iᵉʳ menèrent campagne contre lui — la ville royale Zua fut brûlée — et vers 750 av. J.-C. Sarduri II acheva son partage : le sud annexé à l'Ourartou, le nord passant au Qulha.",
+  "en": "Kingdom or powerful confederation of the upper Chorokh and the high valleys from Erzurum to Ardahan, ruled by King Utupurshi. Menua and then Argishti I campaigned against it — the royal city of Zua was burned — and around 750 BC Sarduri II completed its partition: the south annexed to Urartu, the north passing to Qulha.",
+  "ru": "Царство или мощная конфедерация верхнего Чороха и высокогорных долин от Эрзурума до Ардагана под властью царя Утупурши. Менуа, а затем Аргишти I ходили на него походами — царский город Зуа был сожжён — и около 750 г. до н. э. Сардури II завершил его раздел: юг отошёл к Урарту, север — к Кулхе."
+ },
+ {
   "cle": "voisin_kizzuwatna",
   "fr": "Royaume louvite et hourrite de Cilicie (plaine d'Adana), tour à tour indépendant et vassal hittite aux XVᵉ-XIVᵉ s. av. J.-C. Ses rituels et sa déesse Hebat ont profondément marqué la religion hittite. Absorbé par l'Empire hittite sous Šuppiluliuma Iᵉʳ.",
   "en": "Luwian and Hurrian kingdom of Cilicia (Adana plain), alternately independent and a Hittite vassal in the 15th-14th c. BC. Its rituals and its goddess Hebat deeply shaped Hittite religion. Absorbed into the Hittite Empire under Šuppiluliuma I.",
@@ -70,6 +76,12 @@
   "fr": "Sous Menua (v. 810-785 av. J.-C.), l'Ourartou devient une puissance régionale : canal de Van (~72 km, toujours en service), temple d'Aznavurtepe, forteresse de Menuakhinili sur l'Araxe. Son fils Argishti Iᵉʳ conquerra la plaine d'Erevan et fondera Erebouni (782).",
   "en": "Under Menua (c. 810-785 BC), Urartu became a regional power: the Van canal (~72 km, still in use), the Aznavurtepe temple, the fortress of Menuakhinili on the Araxes. His son Argishti I would conquer the Yerevan plain and found Erebuni (782).",
   "ru": "При Менуа (ок. 810-785 гг. до н.э.) Урарту стало региональной державой: Ванский канал (~72 км, действует до сих пор), храм Азнавуртепе, крепость Менуахинили на Араксе. Его сын Аргишти I завоюет Ереванскую равнину и оснуёт Эребуни (782)."
+ },
+ {
+  "cle": "voisin_qulha-proto-colchide",
+  "fr": "Ancêtre proto-colchidien de la Colchide classique, centré sur le bas Tchorokh et l'Adjarie, connu par les annales de Sarduri II qui prit sa ville royale Ildamusha vers 750 av. J.-C. Ravagé par les Cimmériens à la fin du VIIIᵉ siècle, son héritage se recompose ensuite dans la Colchide du Rioni.",
+  "en": "Proto-Colchian ancestor of classical Colchis, centred on the lower Chorokh and Adjara, known from the annals of Sarduri II, who took its royal city Ildamusha around 750 BC. Ravaged by the Cimmerians at the end of the 8th century, its legacy later re-formed in the Colchis of the Rioni.",
+  "ru": "Протоколхидский предшественник классической Колхиды с центром на нижнем Чорохе и в Аджарии, известный из анналов Сардури II, взявшего его царский город Илдамуша около 750 г. до н. э. Разорённый киммерийцами в конце VIII века, его наследие затем возродилось в Колхиде Риони."
  },
  {
   "cle": "voisin_royaume-de-cappadoce",
