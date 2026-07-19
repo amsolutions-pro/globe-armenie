@@ -18,6 +18,24 @@
   "ru": "Западная часть раздела 387 г. между Римом и Персией — около пятой части страны, вокруг Феодосиополя (Карин/Эрзурум). Юстиниан реорганизовал её в четыре провинции (Армения I-IV, 536 г.), ограничив права нахараров; Маврикий расширил её в 591 г. до Раздана."
  },
  {
+  "cle": "voisin_armenie-occidentale-article-61",
+  "fr": "Au congrès de Berlin (1878), l'article 61 engage la Porte à des réformes dans les provinces arméniennes sous la surveillance des puissances. Il ne sera jamais appliqué : la « question arménienne » entre dans la diplomatie européenne tandis que la condition des provinces se dégrade.",
+  "en": "At the Congress of Berlin (1878), Article 61 committed the Porte to reforms in the Armenian provinces under the supervision of the powers. It was never implemented: the \"Armenian question\" entered European diplomacy while conditions in the provinces worsened.",
+  "ru": "На Берлинском конгрессе (1878) статья 61 обязала Порту провести реформы в армянских провинциях под надзором держав. Она так и не была исполнена: «армянский вопрос» вошёл в европейскую дипломатию, а положение провинций ухудшалось."
+ },
+ {
+  "cle": "voisin_armenie-occidentale-massacres-adana",
+  "fr": "En avril 1909, dans le contexte de la contre-révolution ottomane, la ville d'Adana et la plaine cilicienne s'embrasent : 20 000 à 30 000 Arméniens sont tués en quelques semaines. Ni les enquêtes ni les procès qui suivent n'aboutissent à une justice réelle (Kévorkian, Der Matossian).",
+  "en": "In April 1909, amid the Ottoman counter-revolution, the city of Adana and the Cilician plain went up in flames: 20,000 to 30,000 Armenians were killed within weeks. Neither the inquiries nor the trials that followed produced real justice (Kévorkian, Der Matossian).",
+  "ru": "В апреле 1909 г., в контексте османской контрреволюции, город Адана и киликийская равнина вспыхнули: от 20 000 до 30 000 армян были убиты за несколько недель. Ни расследования, ни последовавшие процессы не привели к настоящему правосудию (Кеворкян, Дер Матосян)."
+ },
+ {
+  "cle": "voisin_armenie-occidentale-massacres-hamidiens",
+  "fr": "Entre 1894 et 1896, sous Abdülhamid II, des massacres de grande ampleur frappent les provinces arméniennes (Sassoun, Constantinople, Ourfa...). Les estimations des historiens vont de 80 000 à 300 000 morts, avec des dizaines de milliers d'orphelins et de conversions forcées (Dadrian, Kévorkian).",
+  "en": "Between 1894 and 1896, under Abdülhamid II, large-scale massacres struck the Armenian provinces (Sasun, Constantinople, Urfa...). Historians' estimates range from 80,000 to 300,000 dead, with tens of thousands of orphans and forced conversions (Dadrian, Kévorkian).",
+  "ru": "Между 1894 и 1896 гг., при Абдул-Хамиде II, масштабная резня обрушилась на армянские провинции (Сасун, Константинополь, Урфа...). Оценки историков — от 80 000 до 300 000 погибших, десятки тысяч сирот и насильственных обращений (Дадрян, Кеворкян)."
+ },
+ {
   "cle": "voisin_armenie-occidentale-ottomane",
   "fr": "Après Tchaldiran (1514) et la paix d'Amasya (1555), l'essentiel du plateau passe sous domination ottomane — les « six vilayets » de l'Est anatolien. Les Arméniens, « millet » chrétien, gardent Église, écoles et artisanat, entre autonomie communautaire et sujétion fiscale, jusqu'aux crises du XIXᵉ siècle.",
   "en": "After Chaldiran (1514) and the peace of Amasya (1555), most of the highland came under Ottoman rule — the \"six vilayets\" of eastern Anatolia. The Armenians, a Christian \"millet\", kept their Church, schools and crafts, between communal autonomy and fiscal subjection, until the crises of the 19th century.",
@@ -28,6 +46,12 @@
   "fr": "Par le traité de Turkmentchaï (10 février 1828), la Perse qadjare cède à la Russie les khanats d'Erevan et du Nakhitchevan — l'Arménie orientale devient l'« oblast arménien ». Des dizaines de milliers d'Arméniens de Perse et d'Empire ottoman y sont rapatriés : le noyau de l'Arménie moderne.",
   "en": "By the treaty of Turkmenchay (10 February 1828), Qajar Persia ceded the khanates of Erivan and Nakhichevan to Russia — eastern Armenia became the \"Armenian oblast\". Tens of thousands of Armenians from Persia and the Ottoman Empire were repatriated there: the nucleus of modern Armenia.",
   "ru": "По Туркманчайскому договору (10 февраля 1828 г.) каджарская Персия уступила России Эриванское и Нахичеванское ханства — Восточная Армения стала «Армянской областью». Десятки тысяч армян из Персии и Османской империи были переселены туда: ядро современной Армении."
+ },
+ {
+  "cle": "voisin_armenie-russe-gouvernorats",
+  "fr": "Après la guerre de 1877-1878 (traité de San Stefano, congrès de Berlin), la Russie annexe Kars, Ardahan et Batoum. L'Arménie russe s'organise en gouvernorats (Erevan, Kars) : essor d'Alexandropol et de Tiflis arménienne, écoles et presse — malgré la russification des années 1880-1900.",
+  "en": "After the war of 1877-1878 (treaty of San Stefano, Congress of Berlin), Russia annexed Kars, Ardahan and Batum. Russian Armenia was organized into governorates (Erivan, Kars): the rise of Alexandropol and of Armenian Tiflis, schools and press — despite the Russification of the 1880s-1900s.",
+  "ru": "После войны 1877-1878 гг. (Сан-Стефанский договор, Берлинский конгресс) Россия аннексировала Карс, Ардаган и Батум. Русская Армения была организована в губернии (Эривань, Карс): подъём Александрополя и армянского Тифлиса, школы и печать — несмотря на русификацию 1880-1900-х."
  },
  {
   "cle": "voisin_armenie-sous-l-ilkhanat",
