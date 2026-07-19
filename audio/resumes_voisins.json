@@ -6,6 +6,12 @@
   "ru": "Парфянское вассальное царство вокруг Арбелы (Эрбиль), между Большим и Малым Забом. Его царский дом, включая царицу Елену и царя Изата II, принял иудаизм в I веке — их гробницы находятся в Иерусалиме. Горная Кордуэна отделяла его от Армении."
  },
  {
+  "cle": "voisin_armina-satrapie-d-armenie",
+  "fr": "Première mention du nom : « Armina » dans l'inscription de Behistun de Darius Iᵉʳ (~520 av. J.-C.). Satrapie achéménide du haut plateau, elle verse un tribut de chevaux et d'argent (Hérodote III.93) ; Xénophon la traverse en 401-400 (Anabase IV) et décrit ses villages semi-enterrés et son vin d'orge.",
+  "en": "First mention of the name: \"Armina\" in Darius I's Behistun inscription (~520 BC). An Achaemenid satrapy of the highland, it paid tribute in horses and silver (Herodotus III.93); Xenophon crossed it in 401-400 (Anabasis IV), describing its semi-underground villages and barley wine.",
+  "ru": "Первое упоминание имени: «Армина» в Бехистунской надписи Дария I (~520 г. до н.э.). Ахеменидская сатрапия нагорья, платившая дань конями и серебром (Геродот III.93); Ксенофонт пересёк её в 401-400 гг. (Анабасис IV), описав полуподземные деревни и ячменное вино."
+ },
+ {
   "cle": "voisin_arzawa-and-luwian-states",
   "fr": "L'ouest de l'Anatolie forme vers 1500 av. J.-C. le pays d'Arzawa et les États louvites — Mira, Seha, Hapalla, Wilusa (la Troade) et le pays de Lukka. Rivaux des Hittites, ils seront réduits en vassaux par Šuppiluliuma Iᵉʳ puis Muršili II. Les Phrygiens n'arriveront qu'après 1200 av. J.-C.",
   "en": "Around 1500 BC western Anatolia formed the land of Arzawa and the Luwian states — Mira, Seha, Hapalla, Wilusa (the Troad) and the Lukka lands. Rivals of the Hittites, they would be reduced to vassals by Suppiluliuma I and then Mursili II. The Phrygians would only arrive after 1200 BC.",
@@ -54,6 +60,24 @@
   "ru": "Царство или мощная конфедерация верхнего Чороха и высокогорных долин от Эрзурума до Ардагана под властью царя Утупурши. Менуа, а затем Аргишти I ходили на него походами — царский город Зуа был сожжён — и около 750 г. до н. э. Сардури II завершил его раздел: юг отошёл к Урарту, север — к Кулхе."
  },
  {
+  "cle": "voisin_emirat-de-tbilissi",
+  "fr": "Émirat fondé vers 736 lors de la conquête arabe, réduit au XIᵉ siècle à la ville et à la moyenne Koura. Enclave musulmane entre royaumes géorgiens, il fut par moments gouverné par un conseil d'anciens. David IV le Reconstructeur prend la ville en 1122.",
+  "en": "Emirate founded around 736 during the Arab conquest, reduced by the 11th century to the city and the middle Kura. A Muslim enclave among Georgian kingdoms, it was at times governed by a council of elders. David IV the Builder took the city in 1122.",
+  "ru": "Эмират, основанный около 736 г. при арабском завоевании, к XI веку сведённый к городу и средней Куре. Мусульманский анклав среди грузинских царств, временами управлявшийся советом старейшин. Давид IV Строитель взял город в 1122 г."
+ },
+ {
+  "cle": "voisin_emirat-marwanide-diyar-bakr",
+  "fr": "Dynastie kurde (983-1085) régnant sur le Diyar Bakr depuis Mayyafariqin (Silvan) et Amida (Diyarbakır). Voisin méridional des royaumes arméniens, il tint Akhlat sur la rive nord-ouest du lac de Van. Vassalisé par les Seldjoukides après 1055, il tombe en 1085 quand Malik Shah confie la région à Fakhr al-Dawla ibn Jahir.",
+  "en": "Kurdish dynasty (983-1085) ruling Diyar Bakr from Mayyafariqin (Silvan) and Amida (Diyarbakır). Southern neighbour of the Armenian kingdoms, it held Akhlat on the north-west shore of Lake Van. A Seljuk vassal after 1055, it fell in 1085 when Malik Shah entrusted the region to Fakhr al-Dawla ibn Jahir.",
+  "ru": "Курдская династия (983-1085), правившая Диярбакром из Майяфарикина (Силван) и Амиды (Диярбакыр). Южный сосед армянских царств, она удерживала Ахлат на северо-западном берегу озера Ван. Вассал Сельджуков после 1055 г., пала в 1085 г., когда Малик-шах передал регион Фахр ад-Дауле ибн Джахиру."
+ },
+ {
+  "cle": "voisin_emirat-rawwadide-azerbaidjan",
+  "fr": "Dynastie kurde de Tabriz (~955-1071) dominant l'Azerbaïdjan iranien, de l'Araxe au bassin de l'Ourmia. Vassale des Seldjoukides après la prise de Tabriz par Toghril (1054), elle disparaît vers 1071.",
+  "en": "Kurdish dynasty of Tabriz (~955-1071) dominating Iranian Azerbaijan, from the Araxes to the Urmia basin. A Seljuk vassal after Toghril took Tabriz (1054), it vanished around 1071.",
+  "ru": "Курдская династия Тебриза (~955-1071), господствовавшая в Иранском Азербайджане от Аракса до бассейна Урмии. Вассал Сельджуков после взятия Тебриза Тогрулом (1054), исчезла около 1071 г."
+ },
+ {
   "cle": "voisin_etruscans-and-ligurians",
   "fr": "Au nord de Rome, l'Étrurie forme vers 323 av. J.-C. une confédération déclinante de cités — Volterra, Orvieto —, sa façade padane étant déjà passée aux Celtes ; la Ligurie voisine reste aux tribus ligures. Les colonies grecques de Corse ont disparu depuis la bataille d'Alalia (v. 540 av. J.-C.).",
   "en": "North of Rome, Etruria around 323 BC was a declining confederation of cities — Volterra, Orvieto — its Po valley fringe having already passed to the Celts; neighbouring Liguria remained with the Ligurian tribes. The Greek colonies of Corsica had been gone since the battle of Alalia (c. 540 BC).",
@@ -84,16 +108,16 @@
   "ru": "Царство Западной Анатолии, знаменитое богатством Креза и изобретением чеканной монеты из электрума. Битва при затмении (585 г. до н.э.) закрепила его восточную границу с Мидией по реке Галис. Кир взял Сарды около 546 г. до н.э."
  },
  {
-  "cle": "voisin_mitanni",
-  "fr": "Empire hourrite de Haute-Mésopotamie (XVIᵉ-XIVᵉ s. av. J.-C.), centré sur le bassin du Khabour avec Washukanni pour capitale. Grande puissance rivale de l'Égypte puis alliée par mariages royaux, il s'effondre sous les coups des Hittites (XIVᵉ s.) puis de l'Assyrie (XIIIᵉ s.).",
-  "en": "Hurrian empire of Upper Mesopotamia (16th-14th c. BC), centred on the Khabur basin with Washukanni as capital. A great power, rival then ally of Egypt through royal marriages, it collapsed under the blows of the Hittites (14th c.) and then Assyria (13th c.).",
-  "ru": "Хурритская империя Верхней Месопотамии (XVI-XIV вв. до н.э.) с центром в бассейне Хабура и столицей Вашуканни. Великая держава, соперница, а затем союзница Египта через царские браки, она рухнула под ударами хеттов (XIV в.), а затем Ассирии (XIII в.)."
- },
- {
   "cle": "voisin_medie",
   "fr": "Empire iranien qui domine le Proche-Orient après avoir abattu l'Assyrie (612 av. J.-C.) avec Babylone, puis absorbé l'Urartu vers 590. Sa capitale Ecbatane (Hamadan) passait pour avoir sept enceintes concentriques selon Hérodote. Cyrus le Grand le renverse vers 550 et fonde l'Empire perse.",
   "en": "Iranian empire that dominated the Near East after crushing Assyria (612 BC) alongside Babylon, then absorbing Urartu around 590. Its capital Ecbatana (Hamadan) was said by Herodotus to have seven concentric walls. Cyrus the Great overthrew it around 550 and founded the Persian Empire.",
   "ru": "Иранская империя, господствовавшая на Ближнем Востоке после разгрома Ассирии (612 г. до н.э.) вместе с Вавилоном и поглощения Урарту около 590 г. Её столица Экбатана (Хамадан), по Геродоту, имела семь концентрических стен. Кир Великий сверг её около 550 г. и основал Персидскую империю."
+ },
+ {
+  "cle": "voisin_mitanni",
+  "fr": "Empire hourrite de Haute-Mésopotamie (XVIᵉ-XIVᵉ s. av. J.-C.), centré sur le bassin du Khabour avec Washukanni pour capitale. Grande puissance rivale de l'Égypte puis alliée par mariages royaux, il s'effondre sous les coups des Hittites (XIVᵉ s.) puis de l'Assyrie (XIIIᵉ s.).",
+  "en": "Hurrian empire of Upper Mesopotamia (16th-14th c. BC), centred on the Khabur basin with Washukanni as capital. A great power, rival then ally of Egypt through royal marriages, it collapsed under the blows of the Hittites (14th c.) and then Assyria (13th c.).",
+  "ru": "Хурритская империя Верхней Месопотамии (XVI-XIV вв. до н.э.) с центром в бассейне Хабура и столицей Вашуканни. Великая держава, соперница, а затем союзница Египта через царские браки, она рухнула под ударами хеттов (XIV в.), а затем Ассирии (XIII в.)."
  },
  {
   "cle": "voisin_neo-hittite-and-aramean-states",
@@ -120,6 +144,12 @@
   "ru": "При Менуа (ок. 810-785 гг. до н.э.) Урарту стало региональной державой: Ванский канал (~72 км, действует до сих пор), храм Азнавуртепе, крепость Менуахинили на Араксе. Его сын Аргишти I завоюет Ереванскую равнину и оснуёт Эребуни (782)."
  },
  {
+  "cle": "voisin_principaute-orontide-armenie",
+  "fr": "À la mort d'Alexandre (323 av. J.-C.), l'Arménie des Orontides (Yervandouni) reste de fait indépendante : jamais occupée par les Macédoniens, elle couvre le haut plateau entier, gouvernée depuis Armavir. La dynastie, d'origine satrapale achéménide, se maintient face aux diadoques.",
+  "en": "At Alexander's death (323 BC), Orontid (Yervanduni) Armenia remained de facto independent: never occupied by the Macedonians, it covered the whole highland, ruled from Armavir. The dynasty, of Achaemenid satrapal origin, held its own against the Diadochi.",
+  "ru": "К моменту смерти Александра (323 г. до н.э.) Армения Ервандидов оставалась фактически независимой: никогда не занятая македонцами, она охватывала всё нагорье и управлялась из Армавира. Династия сатрапского ахеменидского происхождения устояла перед диадохами."
+ },
+ {
   "cle": "voisin_qulha-proto-colchide",
   "fr": "Ancêtre proto-colchidien de la Colchide classique, centré sur le bas Tchorokh et l'Adjarie, connu par les annales de Sarduri II qui prit sa ville royale Ildamusha vers 750 av. J.-C. Ravagé par les Cimmériens à la fin du VIIIᵉ siècle, son héritage se recompose ensuite dans la Colchide du Rioni.",
   "en": "Proto-Colchian ancestor of classical Colchis, centred on the lower Chorokh and Adjara, known from the annals of Sarduri II, who took its royal city Ildamusha around 750 BC. Ravaged by the Cimmerians at the end of the 8th century, its legacy later re-formed in the Colchis of the Rioni.",
@@ -138,6 +168,18 @@
   "ru": "Основанное около 281 г. до н.э. Митридатом I Ктистом, царство достигло расцвета при Митридате VI Евпаторе, владыке Чёрного моря и великом противнике Рима (три Митридатовы войны, 88-63 гг. до н.э.). Помпей упразднил его в 63 г. до н.э."
  },
  {
+  "cle": "voisin_royaume-hasmoneen",
+  "fr": "Né de la révolte des Maccabées (167 av. J.-C.) contre les Séleucides, indépendant sous Simon (141), le royaume atteint son apogée sous Alexandre Jannée (103-76) : Judée, Samarie, Galilée, Idumée et la côte de Jaffa à Dôra. Pompée le soumet à Rome en 63 av. J.-C. (Josèphe, 1-2 Maccabées).",
+  "en": "Born of the Maccabean revolt (167 BC) against the Seleucids, independent under Simon (141), the kingdom peaked under Alexander Jannaeus (103-76): Judea, Samaria, Galilee, Idumea and the coast from Jaffa to Dora. Pompey subjected it to Rome in 63 BC (Josephus, 1-2 Maccabees).",
+  "ru": "Рождённое восстанием Маккавеев (167 г. до н.э.) против Селевкидов, независимое при Симоне (141), царство достигло расцвета при Александре Яннае (103-76): Иудея, Самария, Галилея, Идумея и побережье от Яффы до Доры. Помпей подчинил его Риму в 63 г. до н.э. (Иосиф Флавий, 1-2 Маккавеев)."
+ },
+ {
+  "cle": "voisin_royaume-orontide-armenie",
+  "fr": "Après Gaugamèles (331 av. J.-C.), les satrapes orontides se font rois : le royaume couvre le haut plateau entier (bassin de Van, Syunik, Artsakh), avec Armavir puis Yervandashat pour capitales. La dynastie règne jusqu'à Artaxias Iᵉʳ, qui fonde la lignée artaxiade en 189 av. J.-C. (Khorenatsi, Strabon XI).",
+  "en": "After Gaugamela (331 BC) the Orontid satraps made themselves kings: the kingdom covered the whole highland (Van basin, Syunik, Artsakh), with Armavir then Yervandashat as capitals. The dynasty reigned until Artaxias I founded the Artaxiad line in 189 BC (Khorenatsi, Strabo XI).",
+  "ru": "После Гавгамел (331 г. до н.э.) ервандидские сатрапы стали царями: царство охватывало всё нагорье (бассейн Вана, Сюник, Арцах) со столицами Армавир, затем Ервандашат. Династия правила до Арташеса I, основавшего Арташесидскую линию в 189 г. до н.э. (Хоренаци, Страбон XI)."
+ },
+ {
   "cle": "voisin_samnites",
   "fr": "La Ligue samnite — Pentri, Caudins, Hirpins — domine l'Apennin central et affronte Rome dans la deuxième guerre samnite (326-304 av. J.-C.), en pleine époque d'Alexandre. Les Sabins voisins, encore formellement indépendants, ne seront soumis qu'en 290 av. J.-C.",
   "en": "The Samnite League — Pentri, Caudini, Hirpini — dominated the central Apennines and was fighting Rome in the Second Samnite War (326-304 BC), in the very age of Alexander. The neighbouring Sabines, still formally independent, would only be subdued in 290 BC.",
@@ -148,23 +190,5 @@
   "fr": "La steppe syro-arabique est parcourue vers 1500 av. J.-C. par des pasteurs sémitiques, Sutéens et Amorrites tardifs, attestés dans les archives d'Amarna et de Babylonie. Les Araméens n'apparaîtront dans les sources qu'à partir de Tiglath-phalazar Iᵉʳ (v. 1110 av. J.-C.).",
   "en": "Around 1500 BC the Syro-Arabian steppe was roamed by Semitic pastoralists, Suteans and late Amorites, attested in the Amarna and Babylonian archives. The Arameans would only appear in the sources from Tiglath-pileser I onwards (c. 1110 BC).",
   "ru": "Около 1500 г. до н. э. по сирийско-аравийской степи кочевали семитские скотоводы — сутии и поздние амореи, засвидетельствованные в архивах Амарны и Вавилонии. Арамеи появятся в источниках лишь начиная с Тиглатпаласара I (ок. 1110 г. до н. э.)."
- },
- {
-  "cle": "voisin_emirat-de-tbilissi",
-  "fr": "Émirat fondé vers 736 lors de la conquête arabe, réduit au XIᵉ siècle à la ville et à la moyenne Koura. Enclave musulmane entre royaumes géorgiens, il fut par moments gouverné par un conseil d'anciens. David IV le Reconstructeur prend la ville en 1122.",
-  "en": "Emirate founded around 736 during the Arab conquest, reduced by the 11th century to the city and the middle Kura. A Muslim enclave among Georgian kingdoms, it was at times governed by a council of elders. David IV the Builder took the city in 1122.",
-  "ru": "Эмират, основанный около 736 г. при арабском завоевании, к XI веку сведённый к городу и средней Куре. Мусульманский анклав среди грузинских царств, временами управлявшийся советом старейшин. Давид IV Строитель взял город в 1122 г."
- },
- {
-  "cle": "voisin_emirat-marwanide-diyar-bakr",
-  "fr": "Dynastie kurde (983-1085) régnant sur le Diyar Bakr depuis Mayyafariqin (Silvan) et Amida (Diyarbakır). Voisin méridional des royaumes arméniens, il tint Akhlat sur la rive nord-ouest du lac de Van. Vassalisé par les Seldjoukides après 1055, il tombe en 1085 quand Malik Shah confie la région à Fakhr al-Dawla ibn Jahir.",
-  "en": "Kurdish dynasty (983-1085) ruling Diyar Bakr from Mayyafariqin (Silvan) and Amida (Diyarbakır). Southern neighbour of the Armenian kingdoms, it held Akhlat on the north-west shore of Lake Van. A Seljuk vassal after 1055, it fell in 1085 when Malik Shah entrusted the region to Fakhr al-Dawla ibn Jahir.",
-  "ru": "Курдская династия (983-1085), правившая Диярбакром из Майяфарикина (Силван) и Амиды (Диярбакыр). Южный сосед армянских царств, она удерживала Ахлат на северо-западном берегу озера Ван. Вассал Сельджуков после 1055 г., пала в 1085 г., когда Малик-шах передал регион Фахр ад-Дауле ибн Джахиру."
- },
- {
-  "cle": "voisin_emirat-rawwadide-azerbaidjan",
-  "fr": "Dynastie kurde de Tabriz (~955-1071) dominant l'Azerbaïdjan iranien, de l'Araxe au bassin de l'Ourmia. Vassale des Seldjoukides après la prise de Tabriz par Toghril (1054), elle disparaît vers 1071.",
-  "en": "Kurdish dynasty of Tabriz (~955-1071) dominating Iranian Azerbaijan, from the Araxes to the Urmia basin. A Seljuk vassal after Toghril took Tabriz (1054), it vanished around 1071.",
-  "ru": "Курдская династия Тебриза (~955-1071), господствовавшая в Иранском Азербайджане от Аракса до бассейна Урмии. Вассал Сельджуков после взятия Тебриза Тогрулом (1054), исчезла около 1071 г."
  }
 ]
