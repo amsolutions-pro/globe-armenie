@@ -72,6 +72,18 @@
   "ru": "В конце последнего оледенения эпипалеолитические группы занимали пещеры нагорья — ущелья Раздана (Лернагог) и долину Аракса. Обсидиан вулканов (Артени, Гутансар) уже служил для орудий и обменивался за сотни километров."
  },
  {
+  "cle": "voisin_cilicie-couronnement-leon-i",
+  "fr": "Le 6 janvier 1198 à Tarse, le prince roupénide Léon II devient le roi Léon Iᵉʳ, couronné avec l'accord de l'empereur germanique et du pape. La Cilicie arménienne — refuge né après Manzikert (1071) — devient un royaume méditerranéen prospère, allié des États croisés (Sis, Adana, le port d'Ayas).",
+  "en": "On 6 January 1198 in Tarsus, the Rubenid prince Leo II became King Leo I, crowned with the assent of the German emperor and the pope. Armenian Cilicia — a refuge born after Manzikert (1071) — became a prosperous Mediterranean kingdom allied with the Crusader states (Sis, Adana, the port of Ayas).",
+  "ru": "6 января 1198 г. в Тарсе рубенидский князь Левон II стал царём Левоном I, коронованным с согласия германского императора и папы. Армянская Киликия — убежище, рождённое после Манцикерта (1071), — стала процветающим средиземноморским царством, союзником государств крестоносцев (Сис, Адана, порт Аяс)."
+ },
+ {
+  "cle": "voisin_cilicie-vassal-mongol",
+  "fr": "Le roi Héthoum Iᵉʳ se rend à Karakorum (1254) et scelle l'alliance arméno-mongole : la Cilicie garde son indépendance contre tribut et contingents. L'alliance protège du sultanat mamelouk — jusqu'aux représailles : sac de Sis (1266), déclin après la chute d'Acre (1291).",
+  "en": "King Hethum I travelled to Karakorum (1254) and sealed the Armenian-Mongol alliance: Cilicia kept its independence in exchange for tribute and troops. The alliance shielded it from the Mamluk sultanate — until the reprisals: sack of Sis (1266), decline after the fall of Acre (1291).",
+  "ru": "Царь Хетум I отправился в Каракорум (1254) и скрепил армяно-монгольский союз: Киликия сохранила независимость в обмен на дань и войска. Союз защищал от мамлюкского султаната — до возмездия: разграбление Сиса (1266), упадок после падения Акры (1291)."
+ },
+ {
   "cle": "voisin_colchide",
   "fr": "Pays du mythe de la Toison d'or et de Médée, dans le bassin du Rioni (Phase). Colonisée par les Grecs de Milet (Phasis, Dioscurias), vassalisée par Mithridate VI vers 110 av. J.-C., elle passe ensuite dans l'orbite romaine puis devient la Lazique.",
   "en": "Land of the Golden Fleece myth and of Medea, in the Rioni (Phasis) basin. Colonized by Milesian Greeks (Phasis, Dioscurias), made a vassal by Mithridates VI around 110 BC, it later passed into the Roman orbit and became Lazica.",
@@ -118,6 +130,12 @@
   "fr": "Dynastie kurde de Tabriz (~955-1071) dominant l'Azerbaïdjan iranien, de l'Araxe au bassin de l'Ourmia. Vassale des Seldjoukides après la prise de Tabriz par Toghril (1054), elle disparaît vers 1071.",
   "en": "Kurdish dynasty of Tabriz (~955-1071) dominating Iranian Azerbaijan, from the Araxes to the Urmia basin. A Seljuk vassal after Toghril took Tabriz (1054), it vanished around 1071.",
   "ru": "Курдская династия Тебриза (~955-1071), господствовавшая в Иранском Азербайджане от Аракса до бассейна Урмии. Вассал Сельджуков после взятия Тебриза Тогрулом (1054), исчезла около 1071 г."
+ },
+ {
+  "cle": "voisin_empire-de-tigrane-ii-apogee",
+  "fr": "Tigrane II (95-55 av. J.-C.), « roi des rois », unit le plateau puis conquiert la Syrie, la Cilicie et la Sophène, vassalise l'Atropatène et fonde Tigranakert : l'Arménie va « de la mer à la mer » (Caspienne-Méditerranée). Lucullus (69) puis Pompée (66) le ramènent au noyau arménien (Strabon XI, Plutarque).",
+  "en": "Tigranes II (95-55 BC), \"king of kings\", united the highland then conquered Syria, Cilicia and Sophene, made Atropatene a vassal and founded Tigranakert: Armenia stretched \"from sea to sea\" (Caspian-Mediterranean). Lucullus (69) then Pompey (66) reduced him to the Armenian core (Strabo XI, Plutarch).",
+  "ru": "Тигран II (95-55 гг. до н.э.), «царь царей», объединил нагорье, затем завоевал Сирию, Киликию и Софену, подчинил Атропатену и основал Тигранакерт: Армения простиралась «от моря до моря» (Каспий-Средиземное). Лукулл (69), затем Помпей (66) вернули его к армянскому ядру (Страбон XI, Плутарх)."
  },
  {
   "cle": "voisin_etruscans-and-ligurians",
@@ -214,6 +232,12 @@
   "fr": "À la mort d'Alexandre (323 av. J.-C.), l'Arménie des Orontides (Yervandouni) reste de fait indépendante : jamais occupée par les Macédoniens, elle couvre le haut plateau entier, gouvernée depuis Armavir. La dynastie, d'origine satrapale achéménide, se maintient face aux diadoques.",
   "en": "At Alexander's death (323 BC), Orontid (Yervanduni) Armenia remained de facto independent: never occupied by the Macedonians, it covered the whole highland, ruled from Armavir. The dynasty, of Achaemenid satrapal origin, held its own against the Diadochi.",
   "ru": "К моменту смерти Александра (323 г. до н.э.) Армения Ервандидов оставалась фактически независимой: никогда не занятая македонцами, она охватывала всё нагорье и управлялась из Армавира. Династия сатрапского ахеменидского происхождения устояла перед диадохами."
+ },
+ {
+  "cle": "voisin_principaute-zakaride-ilkhanat",
+  "fr": "Les princes zakarides, généraux de la Géorgie de Thamar, avaient libéré le nord de l'Arménie (Ani, Lori, Kars) vers 1199-1211. Après l'invasion mongole (1236), ils gouvernent en vassaux de l'Ilkhanat, préservant monastères et scriptoria (Haghpat, Sanahin) sous une fiscalité écrasante.",
+  "en": "The Zakarid princes, generals of Tamar's Georgia, had liberated northern Armenia (Ani, Lori, Kars) around 1199-1211. After the Mongol invasion (1236) they governed as vassals of the Ilkhanate, preserving monasteries and scriptoria (Haghpat, Sanahin) under crushing taxation.",
+  "ru": "Закарянские князья, полководцы Грузии Тамары, освободили северную Армению (Ани, Лори, Карс) около 1199-1211 гг. После монгольского нашествия (1236) они правили как вассалы Ильханата, сохраняя монастыри и скриптории (Ахпат, Санаин) под гнётом податей."
  },
  {
   "cle": "voisin_qulha-proto-colchide",
