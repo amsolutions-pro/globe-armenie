@@ -216,6 +216,12 @@
   "ru": "Грузинское царство на Куре со столицей Мцхета, христианизированное около 326 г. святой Нино — второе христианское государство после Армении. Оспариваемое Римом, затем Византией и Персией, оно перешло под сасанидский контроль (марзпанство после 580 г.). Это ядро будущей Грузии (Картли)."
  },
  {
+  "cle": "voisin_kingdom-of-israel",
+  "fr": "Le royaume du Nord, né du schisme de ~930 av. J.-C., a pour capitales Sichem puis Samarie (Omri). Vers 800, il sort affaibli des guerres contre Hazaël de Damas — Galaad et Dan perdus — avant la reconquête de Joas et l'apogée de Jéroboam II. Sargon II le détruit en 722 : c'est la fin des « dix tribus ».",
+  "en": "The northern kingdom, born of the schism of ~930 BC, had Shechem then Samaria (Omri) as capitals. Around 800 it emerged weakened from the wars against Hazael of Damascus — Gilead and Dan lost — before Joash's reconquest and Jeroboam II's apogee. Sargon II destroyed it in 722: the end of the \"ten tribes\".",
+  "ru": "Северное царство, рождённое расколом ~930 г. до н.э., имело столицами Сихем, затем Самарию (Омри). Около 800 г. оно вышло ослабленным из войн против Азаила Дамасского — Галаад и Дан потеряны — до реконкисты Иоаса и расцвета Иеровоама II. Саргон II уничтожил его в 722 г.: конец «десяти колен»."
+ },
+ {
   "cle": "voisin_kingdom-of-judah",
   "fr": "Après la destruction du royaume d'Israël par l'Assyrie (722 av. J.-C., la Samarie devenue province de Samerina), Juda subsiste seul autour de Jérusalem. Vassalisé après la campagne de Sennachérib (701), il survit jusqu'à sa chute face à Babylone en 586 av. J.-C.",
   "en": "After Assyria destroyed the kingdom of Israel (722 BC, Samaria becoming the province of Samerina), Judah survived alone around Jerusalem. A vassal after Sennacherib's campaign (701), it endured until its fall to Babylon in 586 BC.",
