@@ -6,6 +6,30 @@
   "ru": "Парфянское вассальное царство вокруг Арбелы (Эрбиль), между Большим и Малым Забом. Его царский дом, включая царицу Елену и царя Изата II, принял иудаизм в I веке — их гробницы находятся в Иерусалиме. Горная Кордуэна отделяла его от Армении."
  },
  {
+  "cle": "voisin_arzawa-and-luwian-states",
+  "fr": "L'ouest de l'Anatolie forme vers 1500 av. J.-C. le pays d'Arzawa et les États louvites — Mira, Seha, Hapalla, Wilusa (la Troade) et le pays de Lukka. Rivaux des Hittites, ils seront réduits en vassaux par Šuppiluliuma Iᵉʳ puis Muršili II. Les Phrygiens n'arriveront qu'après 1200 av. J.-C.",
+  "en": "Around 1500 BC western Anatolia formed the land of Arzawa and the Luwian states — Mira, Seha, Hapalla, Wilusa (the Troad) and the Lukka lands. Rivals of the Hittites, they would be reduced to vassals by Suppiluliuma I and then Mursili II. The Phrygians would only arrive after 1200 BC.",
+  "ru": "Около 1500 г. до н. э. запад Анатолии составляли страна Арцава и лувийские государства — Мира, Сеха, Хапалла, Вилуса (Троада) и страна Лукка. Соперники хеттов, они будут превращены в вассалов Суппилулиумой I, а затем Мурсили II. Фригийцы придут лишь после 1200 г. до н. э."
+ },
+ {
+  "cle": "voisin_assyrian-provinces-aram",
+  "fr": "Après la chute d'Arpad (740), de Damas (732) et de Hamath (720), plus aucun État araméen indépendant ne subsiste : la Syrie intérieure et la Jazirah sont organisées en provinces assyriennes. Les tribus araméennes demeurent nombreuses en Babylonie.",
+  "en": "After the fall of Arpad (740), Damascus (732) and Hamath (720), no independent Aramean state remained: inner Syria and the Jazirah were organised into Assyrian provinces. Aramean tribes remained numerous in Babylonia.",
+  "ru": "После падения Арпада (740), Дамаска (732) и Хамата (720) не осталось ни одного независимого арамейского государства: внутренняя Сирия и Джазира были организованы в ассирийские провинции. Арамейские племена оставались многочисленными в Вавилонии."
+ },
+ {
+  "cle": "voisin_assyrian-provinces-former-neo-hittite-states",
+  "fr": "Vers 700 av. J.-C., l'essentiel des anciens États néo-hittites et araméens est devenu provinces assyriennes : Karkemish (717), Melid (712), Kummuh (708) et Hamath (720) sont administrées par des gouverneurs. Seuls le Tabal et le Hilakku, sur les plateaux du nord-ouest, échappent encore à l'empire. Les traditions louvites et araméennes persistent sous domination.",
+  "en": "By 700 BC most of the former Neo-Hittite and Aramean states had become Assyrian provinces: Carchemish (717), Melid (712), Kummuh (708) and Hamath (720) were run by governors. Only Tabal and Hilakku, on the north-western plateaus, still escaped the empire. Luwian and Aramean traditions persisted under its rule.",
+  "ru": "К 700 г. до н. э. большинство бывших новохеттских и арамейских государств стало ассирийскими провинциями: Каркемишем (717), Мелидом (712), Куммухом (708) и Хаматом (720) управляли наместники. Лишь Табал и Хилакку на северо-западных плоскогорьях ещё оставались вне империи. Лувийские и арамейские традиции сохранялись под её властью."
+ },
+ {
+  "cle": "voisin_canaanite-city-states-egyptian-sphere",
+  "fr": "Vers 1500 av. J.-C., le Levant sud est une mosaïque de cités-États cananéennes — Jérusalem, Megiddo, Hazor, Lakish — passées sous suzeraineté égyptienne après les campagnes de Thoutmosis III (Megiddo, v. 1457 av. J.-C.). Les lettres d'Amarna documenteront un siècle plus tard leurs rivalités sous l'œil du pharaon.",
+  "en": "Around 1500 BC the southern Levant was a mosaic of Canaanite city-states — Jerusalem, Megiddo, Hazor, Lachish — brought under Egyptian suzerainty by the campaigns of Thutmose III (Megiddo, c. 1457 BC). A century later the Amarna letters would document their rivalries under Pharaoh's watch.",
+  "ru": "Около 1500 г. до н. э. южный Левант был мозаикой ханаанских городов-государств — Иерусалим, Мегиддо, Хацор, Лахиш, — приведённых под египетское владычество походами Тутмоса III (Мегиддо, ок. 1457 г. до н. э.). Век спустя письма из Амарны задокументируют их соперничество под оком фараона."
+ },
+ {
   "cle": "voisin_cappadoce-romaine",
   "fr": "Province romaine depuis 17 apr. J.-C., verrou oriental de l'empire face à l'Arménie le long de l'Euphrate. Deux légions y tenaient le limes : la XVᵉ Apollinaris à Satala et la XIIᵉ Fulminata à Mélitène. Césarée (Kayseri), au pied du mont Argée, en était la capitale.",
   "en": "Roman province from AD 17, the empire's eastern lock facing Armenia along the Euphrates. Two legions held the limes: the XV Apollinaris at Satala and the XII Fulminata at Melitene. Caesarea (Kayseri), at the foot of Mount Argaeus, was its capital.",
@@ -28,6 +52,24 @@
   "fr": "Royaume ou puissante confédération du haut Tchorokh et des hautes vallées d'Erzurum à Ardahan, gouverné par le roi Utupurshi. Menua puis Argishti Iᵉʳ menèrent campagne contre lui — la ville royale Zua fut brûlée — et vers 750 av. J.-C. Sarduri II acheva son partage : le sud annexé à l'Ourartou, le nord passant au Qulha.",
   "en": "Kingdom or powerful confederation of the upper Chorokh and the high valleys from Erzurum to Ardahan, ruled by King Utupurshi. Menua and then Argishti I campaigned against it — the royal city of Zua was burned — and around 750 BC Sarduri II completed its partition: the south annexed to Urartu, the north passing to Qulha.",
   "ru": "Царство или мощная конфедерация верхнего Чороха и высокогорных долин от Эрзурума до Ардагана под властью царя Утупурши. Менуа, а затем Аргишти I ходили на него походами — царский город Зуа был сожжён — и около 750 г. до н. э. Сардури II завершил его раздел: юг отошёл к Урарту, север — к Кулхе."
+ },
+ {
+  "cle": "voisin_etruscans-and-ligurians",
+  "fr": "Au nord de Rome, l'Étrurie forme vers 323 av. J.-C. une confédération déclinante de cités — Volterra, Orvieto —, sa façade padane étant déjà passée aux Celtes ; la Ligurie voisine reste aux tribus ligures. Les colonies grecques de Corse ont disparu depuis la bataille d'Alalia (v. 540 av. J.-C.).",
+  "en": "North of Rome, Etruria around 323 BC was a declining confederation of cities — Volterra, Orvieto — its Po valley fringe having already passed to the Celts; neighbouring Liguria remained with the Ligurian tribes. The Greek colonies of Corsica had been gone since the battle of Alalia (c. 540 BC).",
+  "ru": "К северу от Рима Этрурия около 323 г. до н. э. была приходящей в упадок конфедерацией городов — Вольтерра, Орвието, — её паданская окраина уже отошла кельтам; соседняя Лигурия оставалась за лигурийскими племенами. Греческие колонии Корсики исчезли со времён битвы при Алалии (ок. 540 г. до н. э.)."
+ },
+ {
+  "cle": "voisin_kingdom-of-judah",
+  "fr": "Après la destruction du royaume d'Israël par l'Assyrie (722 av. J.-C., la Samarie devenue province de Samerina), Juda subsiste seul autour de Jérusalem. Vassalisé après la campagne de Sennachérib (701), il survit jusqu'à sa chute face à Babylone en 586 av. J.-C.",
+  "en": "After Assyria destroyed the kingdom of Israel (722 BC, Samaria becoming the province of Samerina), Judah survived alone around Jerusalem. A vassal after Sennacherib's campaign (701), it endured until its fall to Babylon in 586 BC.",
+  "ru": "После уничтожения Ассирией Израильского царства (722 г. до н. э., Самария стала провинцией Самерина) Иудея уцелела одна вокруг Иерусалима. Ставшая вассалом после похода Синаххериба (701), она продержалась до падения под ударами Вавилона в 586 г. до н. э."
+ },
+ {
+  "cle": "voisin_kingdoms-of-israel-and-judah",
+  "fr": "Le royaume unifié attribué à David et Salomon s'est scindé vers 930 av. J.-C. en deux royaumes : Israël au nord (Samarie), plus vaste et plus riche, et Juda au sud (Jérusalem). La stèle de Tel Dan atteste la « maison de David ». Israël tombera face à l'Assyrie en 722 av. J.-C.",
+  "en": "The united monarchy attributed to David and Solomon split around 930 BC into two kingdoms: Israel in the north (Samaria), larger and richer, and Judah in the south (Jerusalem). The Tel Dan stele attests the \"House of David\". Israel would fall to Assyria in 722 BC.",
+  "ru": "Единое царство, приписываемое Давиду и Соломону, около 930 г. до н. э. распалось на два: Израиль на севере (Самария), более обширный и богатый, и Иудею на юге (Иерусалим). Стела из Тель-Дана свидетельствует о «доме Давида». Израиль падёт под ударами Ассирии в 722 г. до н. э."
  },
  {
   "cle": "voisin_kizzuwatna",
@@ -94,6 +136,18 @@
   "fr": "Fondé vers 281 av. J.-C. par Mithridate Iᵉʳ Ktistès, il atteint son apogée sous Mithridate VI Eupator, maître de la mer Noire et grand adversaire de Rome (trois guerres mithridatiques, 88-63 av. J.-C.). Pompée le démantèle en 63 av. J.-C.",
   "en": "Founded around 281 BC by Mithridates I Ktistes, it peaked under Mithridates VI Eupator, master of the Black Sea and Rome's great adversary (three Mithridatic wars, 88-63 BC). Pompey dismantled it in 63 BC.",
   "ru": "Основанное около 281 г. до н.э. Митридатом I Ктистом, царство достигло расцвета при Митридате VI Евпаторе, владыке Чёрного моря и великом противнике Рима (три Митридатовы войны, 88-63 гг. до н.э.). Помпей упразднил его в 63 г. до н.э."
+ },
+ {
+  "cle": "voisin_samnites",
+  "fr": "La Ligue samnite — Pentri, Caudins, Hirpins — domine l'Apennin central et affronte Rome dans la deuxième guerre samnite (326-304 av. J.-C.), en pleine époque d'Alexandre. Les Sabins voisins, encore formellement indépendants, ne seront soumis qu'en 290 av. J.-C.",
+  "en": "The Samnite League — Pentri, Caudini, Hirpini — dominated the central Apennines and was fighting Rome in the Second Samnite War (326-304 BC), in the very age of Alexander. The neighbouring Sabines, still formally independent, would only be subdued in 290 BC.",
+  "ru": "Самнитская лига — пентры, кавдины, гирпины — господствовала в центральных Апеннинах и вела с Римом Вторую самнитскую войну (326-304 гг. до н. э.), в самую эпоху Александра. Соседние сабиняне, ещё формально независимые, будут покорены лишь в 290 г. до н. э."
+ },
+ {
+  "cle": "voisin_sutean-and-amorite-pastoralists",
+  "fr": "La steppe syro-arabique est parcourue vers 1500 av. J.-C. par des pasteurs sémitiques, Sutéens et Amorrites tardifs, attestés dans les archives d'Amarna et de Babylonie. Les Araméens n'apparaîtront dans les sources qu'à partir de Tiglath-phalazar Iᵉʳ (v. 1110 av. J.-C.).",
+  "en": "Around 1500 BC the Syro-Arabian steppe was roamed by Semitic pastoralists, Suteans and late Amorites, attested in the Amarna and Babylonian archives. The Arameans would only appear in the sources from Tiglath-pileser I onwards (c. 1110 BC).",
+  "ru": "Около 1500 г. до н. э. по сирийско-аравийской степи кочевали семитские скотоводы — сутии и поздние амореи, засвидетельствованные в архивах Амарны и Вавилонии. Арамеи появятся в источниках лишь начиная с Тиглатпаласара I (ок. 1110 г. до н. э.)."
  },
  {
   "cle": "voisin_emirat-de-tbilissi",
