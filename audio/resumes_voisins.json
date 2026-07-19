@@ -54,6 +54,18 @@
   "ru": "Римская провинция с 17 г. н.э., восточный замок империи напротив Армении вдоль Евфрата. Лимес держали два легиона: XV Аполлинарис в Сатале и XII Фульмината в Мелитене. Столицей была Кесария (Кайсери) у подножия горы Аргей."
  },
  {
+  "cle": "voisin_chalcolithique-armenien-areni-sioni",
+  "fr": "L'âge du cuivre du plateau : métallurgie naissante et sites de la culture de Sioni. La grotte d'Areni-1 (Vayots Dzor) a livré la plus vieille cave à vin du monde (~4100 av. J.-C.) et le plus ancien soulier de cuir connu — témoins d'une société déjà complexe.",
+  "en": "The highland's Copper Age: nascent metallurgy and sites of the Sioni culture. The Areni-1 cave (Vayots Dzor) yielded the world's oldest winery (~4100 BC) and the oldest known leather shoe — evidence of an already complex society.",
+  "ru": "Медный век нагорья: зарождающаяся металлургия и памятники культуры Сиони. Пещера Арени-1 (Вайоц-Дзор) дала древнейшую винодельню мира (~4100 г. до н.э.) и древнейший известный кожаный башмак — свидетельства уже сложного общества."
+ },
+ {
+  "cle": "voisin_chasseurs-cueilleurs-du-plateau-armenien",
+  "fr": "À la fin de la dernière glaciation, des groupes épipaléolithiques occupent les grottes du plateau — gorges du Hrazdan (Lernagog) et vallée de l'Araxe. L'obsidienne des volcans (Arteni, Gutansar) sert déjà aux outils et s'échange à des centaines de kilomètres.",
+  "en": "At the end of the last Ice Age, Epipalaeolithic groups occupied the caves of the highland — the Hrazdan gorges (Lernagog) and the Araxes valley. Obsidian from the volcanoes (Arteni, Gutansar) was already used for tools and traded hundreds of kilometres away.",
+  "ru": "В конце последнего оледенения эпипалеолитические группы занимали пещеры нагорья — ущелья Раздана (Лернагог) и долину Аракса. Обсидиан вулканов (Артени, Гутансар) уже служил для орудий и обменивался за сотни километров."
+ },
+ {
   "cle": "voisin_colchide",
   "fr": "Pays du mythe de la Toison d'or et de Médée, dans le bassin du Rioni (Phase). Colonisée par les Grecs de Milet (Phasis, Dioscurias), vassalisée par Mithridate VI vers 110 av. J.-C., elle passe ensuite dans l'orbite romaine puis devient la Lazique.",
   "en": "Land of the Golden Fleece myth and of Medea, in the Rioni (Phasis) basin. Colonized by Milesian Greeks (Phasis, Dioscurias), made a vassal by Mithridates VI around 110 BC, it later passed into the Roman orbit and became Lazica.",
@@ -144,6 +156,12 @@
   "ru": "Мозаика царств (Табал, Мелид, Куммух, Каркемиш, Хамат...) — наследников Хеттской империи после её падения около 1180 г. до н.э., смешивавших лувийские (иероглифические) и арамейские традиции. Ассирия аннексировала почти все их между 740 и 708 гг. до н.э."
  },
  {
+  "cle": "voisin_neolithique-armenien-aratashen-aknashen",
+  "fr": "Villages agricoles de la vallée de l'Araxe (Aratashen, Aknashen-Khatunarkh) : maisons circulaires en brique crue, céramique, canaux d'irrigation précoces. L'économie associe céréales, élevage et outillage d'obsidienne d'une qualité remarquable.",
+  "en": "Farming villages of the Araxes valley (Aratashen, Aknashen-Khatunarkh): circular mudbrick houses, pottery, early irrigation channels. The economy combined cereals, herding and obsidian toolmaking of remarkable quality.",
+  "ru": "Земледельческие деревни долины Аракса (Араташен, Акнашен-Хатунарх): круглые сырцовые дома, керамика, ранние оросительные каналы. Хозяйство сочетало зерновые, скотоводство и обсидиановые орудия замечательного качества."
+ },
+ {
   "cle": "voisin_osroene",
   "fr": "Royaume d'Édesse (Şanlıurfa) fondé vers 134 av. J.-C. par la dynastie arabe des Abgarides, État tampon entre Rome et la Parthie. Selon la légende chrétienne, son roi Abgar V aurait correspondu avec Jésus. Annexé sous Caracalla (213/214), avec un résidu dynastique jusque vers 242.",
   "en": "Kingdom of Edessa (Şanlıurfa) founded around 134 BC by the Arab Abgarid dynasty, a buffer state between Rome and Parthia. According to Christian legend, its king Abgar V corresponded with Jesus. Annexed under Caracalla (213/214), with a dynastic remnant until around 242.",
@@ -166,6 +184,12 @@
   "fr": "Après l'abolition de la monarchie arsacide (428), l'Arménie orientale est gouvernée par des marzpans sassanides depuis Dvin. La révolte de Vardan Mamikonian culmine à Avarayr (451) ; le traité de Nvarsak (484) garantit la liberté du christianisme et l'autonomie des nakharars (Elishé, Ghazar Parpetsi).",
   "en": "After the abolition of the Arsacid monarchy (428), eastern Armenia was governed by Sasanian marzpans from Dvin. Vardan Mamikonian's revolt culminated at Avarayr (451); the treaty of Nvarsak (484) guaranteed freedom of Christianity and the autonomy of the nakharars (Elishe, Ghazar Parpetsi).",
   "ru": "После упразднения аршакидской монархии (428) Восточная Армения управлялась сасанидскими марзпанами из Двина. Восстание Вардана Мамиконяна достигло кульминации при Аварайре (451); Нварсакский договор (484) гарантировал свободу христианства и автономию нахараров (Елише, Газар Парпеци)."
+ },
+ {
+  "cle": "voisin_premiers-villages-du-plateau-armenien",
+  "fr": "La néolithisation gagne le plateau : premiers habitats sédentaires, orge et blé engrain cultivés, chèvres et moutons domestiqués. L'obsidienne du plateau circule jusqu'en Mésopotamie — signe de réseaux d'échange déjà structurés.",
+  "en": "Neolithization reached the highland: first sedentary settlements, barley and einkorn wheat cultivated, goats and sheep domesticated. Highland obsidian circulated as far as Mesopotamia — a sign of already structured exchange networks.",
+  "ru": "Неолитизация достигла нагорья: первые оседлые поселения, возделываемые ячмень и однозернянка, одомашненные козы и овцы. Обсидиан нагорья доходил до Месопотамии — признак уже сложившихся сетей обмена."
  },
  {
   "cle": "voisin_principaute-orontide-armenie",
