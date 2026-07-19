@@ -204,6 +204,12 @@
   "ru": "К северу от Рима Этрурия около 323 г. до н. э. была приходящей в упадок конфедерацией городов — Вольтерра, Орвието, — её паданская окраина уже отошла кельтам; соседняя Лигурия оставалась за лигурийскими племенами. Греческие колонии Корсики исчезли со времён битвы при Алалии (ок. 540 г. до н. э.)."
  },
  {
+  "cle": "voisin_georgie-apogee-thamar",
+  "fr": "Sous la reine Thamar (1184-1213), la Géorgie est la première puissance du Caucase : victoires de Shamkor (1195) et Basiani (1202), Kars prise (1206/1208), Shirvan vassal, et les généraux arméniens Zakaré et Ivané libèrent Ani et le nord du plateau. L'empire de Trébizonde (1204) est fondé sous son égide.",
+  "en": "Under Queen Tamar (1184-1213), Georgia was the leading power of the Caucasus: victories at Shamkor (1195) and Basian (1202), Kars taken (1206/1208), Shirvan a vassal, and the Armenian generals Zakare and Ivane liberated Ani and the northern plateau. The Empire of Trebizond (1204) was founded under her aegis.",
+  "ru": "При царице Тамаре (1184-1213) Грузия была первой державой Кавказа: победы при Шамхоре (1195) и Басиани (1202), взятие Карса (1206/1208), вассальный Ширван, а армянские полководцы Закаре и Иване освободили Ани и север нагорья. Трапезундская империя (1204) была основана под её эгидой."
+ },
+ {
   "cle": "voisin_haut-karabagh-districts-occupes",
   "fr": "Après le cessez-le-feu de Bichkek (mai 1994), les forces arméniennes contrôlent le Haut-Karabagh et sept districts adjacents (~13 % de l'Azerbaïdjan), vidés de leur population azérie ; des centaines de milliers de déplacés des deux côtés. Ni la république autoproclamée ni le statu quo ne seront reconnus — le groupe de Minsk négocie sans issue jusqu'en 2020.",
   "en": "After the Bishkek ceasefire (May 1994), Armenian forces controlled Nagorno-Karabakh and seven adjacent districts (~13% of Azerbaijan), emptied of their Azeri population; hundreds of thousands displaced on both sides. Neither the self-proclaimed republic nor the status quo was recognized — the Minsk Group negotiated without result until 2020.",
@@ -382,6 +388,12 @@
   "fr": "La Ligue samnite — Pentri, Caudins, Hirpins — domine l'Apennin central et affronte Rome dans la deuxième guerre samnite (326-304 av. J.-C.), en pleine époque d'Alexandre. Les Sabins voisins, encore formellement indépendants, ne seront soumis qu'en 290 av. J.-C.",
   "en": "The Samnite League — Pentri, Caudini, Hirpini — dominated the central Apennines and was fighting Rome in the Second Samnite War (326-304 BC), in the very age of Alexander. The neighbouring Sabines, still formally independent, would only be subdued in 290 BC.",
   "ru": "Самнитская лига — пентры, кавдины, гирпины — господствовала в центральных Апеннинах и вела с Римом Вторую самнитскую войну (326-304 гг. до н. э.), в самую эпоху Александра. Соседние сабиняне, ещё формально независимые, будут покорены лишь в 290 г. до н. э."
+ },
+ {
+  "cle": "voisin_sultanat-de-roum",
+  "fr": "Fondé après Manzikert (1071) par une branche seldjoukide, établi à Konya (Iconium), il absorbe les Danishmendides (1178) et domine l'Anatolie centrale. Voisin nord du royaume arménien de Cilicie, il atteint son apogée au XIIIᵉ siècle avant Köse Dağ (1243), qui le vassalise aux Mongols.",
+  "en": "Founded after Manzikert (1071) by a Seljuk branch, established at Konya (Iconium), it absorbed the Danishmendids (1178) and dominated central Anatolia. Northern neighbour of the Armenian kingdom of Cilicia, it peaked in the 13th century before Köse Dağ (1243) made it a Mongol vassal.",
+  "ru": "Основанный после Манцикерта (1071) сельджукской ветвью, обосновавшийся в Конье (Иконии), он поглотил Данишмендидов (1178) и господствовал в центральной Анатолии. Северный сосед армянского Киликийского царства, он достиг расцвета в XIII веке до Кёсе-дага (1243), сделавшего его вассалом монголов."
  },
  {
   "cle": "voisin_sutean-and-amorite-pastoralists",
