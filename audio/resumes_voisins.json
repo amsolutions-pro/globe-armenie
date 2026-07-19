@@ -6,6 +6,12 @@
   "ru": "Парфянское вассальное царство вокруг Арбелы (Эрбиль), между Большим и Малым Забом. Его царский дом, включая царицу Елену и царя Изата II, принял иудаизм в I веке — их гробницы находятся в Иерусалиме. Горная Кордуэна отделяла его от Армении."
  },
  {
+  "cle": "voisin_armenie-byzantine",
+  "fr": "Part occidentale issue du partage de 387 entre Rome et la Perse — environ un cinquième du pays, autour de Théodosiopolis (Karin/Erzurum). Justinien la réorganise en quatre provinces (Arménie I-IV, 536) et y limite le droit des nakharars ; Maurice l'agrandit en 591 jusqu'au Hrazdan.",
+  "en": "The western share of the 387 partition between Rome and Persia — about a fifth of the country, around Theodosiopolis (Karin/Erzurum). Justinian reorganized it into four provinces (Armenia I-IV, 536) and curtailed nakharar rights; Maurice enlarged it in 591 up to the Hrazdan.",
+  "ru": "Западная часть раздела 387 г. между Римом и Персией — около пятой части страны, вокруг Феодосиополя (Карин/Эрзурум). Юстиниан реорганизовал её в четыре провинции (Армения I-IV, 536 г.), ограничив права нахараров; Маврикий расширил её в 591 г. до Раздана."
+ },
+ {
   "cle": "voisin_armina-satrapie-d-armenie",
   "fr": "Première mention du nom : « Armina » dans l'inscription de Behistun de Darius Iᵉʳ (~520 av. J.-C.). Satrapie achéménide du haut plateau, elle verse un tribut de chevaux et d'argent (Hérodote III.93) ; Xénophon la traverse en 401-400 (Anabase IV) et décrit ses villages semi-enterrés et son vin d'orge.",
   "en": "First mention of the name: \"Armina\" in Darius I's Behistun inscription (~520 BC). An Achaemenid satrapy of the highland, it paid tribute in horses and silver (Herodotus III.93); Xenophon crossed it in 401-400 (Anabasis IV), describing its semi-underground villages and barley wine.",
@@ -28,6 +34,12 @@
   "fr": "Vers 700 av. J.-C., l'essentiel des anciens États néo-hittites et araméens est devenu provinces assyriennes : Karkemish (717), Melid (712), Kummuh (708) et Hamath (720) sont administrées par des gouverneurs. Seuls le Tabal et le Hilakku, sur les plateaux du nord-ouest, échappent encore à l'empire. Les traditions louvites et araméennes persistent sous domination.",
   "en": "By 700 BC most of the former Neo-Hittite and Aramean states had become Assyrian provinces: Carchemish (717), Melid (712), Kummuh (708) and Hamath (720) were run by governors. Only Tabal and Hilakku, on the north-western plateaus, still escaped the empire. Luwian and Aramean traditions persisted under its rule.",
   "ru": "К 700 г. до н. э. большинство бывших новохеттских и арамейских государств стало ассирийскими провинциями: Каркемишем (717), Мелидом (712), Куммухом (708) и Хаматом (720) управляли наместники. Лишь Табал и Хилакку на северо-западных плоскогорьях ещё оставались вне империи. Лувийские и арамейские традиции сохранялись под её властью."
+ },
+ {
+  "cle": "voisin_atropatene-atrpatakan",
+  "fr": "Satrapie que garda Atropatès après la mort d'Alexandre (323 av. J.-C.) — son nom, Atrpatakan en arménien, est à l'origine du mot « Azerbaïdjan ». Centrée sur Ganzak, au sud-est du lac d'Ourmia, elle fut vassale des Parthes puis liée aux Sassanides, voisine méridionale constante de l'Arménie (Strabon XI.13).",
+  "en": "The satrapy Atropates kept after Alexander's death (323 BC) — its name, Atrpatakan in Armenian, is the origin of the word \"Azerbaijan\". Centred on Ganzak, south-east of Lake Urmia, it was a Parthian vassal then tied to the Sasanians, Armenia's constant southern neighbour (Strabo XI.13).",
+  "ru": "Сатрапия, которую Атропат сохранил после смерти Александра (323 г. до н.э.) — её имя, по-армянски Атрпатакан, дало слово «Азербайджан». С центром в Ганзаке, к юго-востоку от озера Урмия, она была вассалом парфян, затем связана с Сасанидами — постоянный южный сосед Армении (Страбон XI.13)."
  },
  {
   "cle": "voisin_canaanite-city-states-egyptian-sphere",
@@ -82,6 +94,12 @@
   "fr": "Au nord de Rome, l'Étrurie forme vers 323 av. J.-C. une confédération déclinante de cités — Volterra, Orvieto —, sa façade padane étant déjà passée aux Celtes ; la Ligurie voisine reste aux tribus ligures. Les colonies grecques de Corse ont disparu depuis la bataille d'Alalia (v. 540 av. J.-C.).",
   "en": "North of Rome, Etruria around 323 BC was a declining confederation of cities — Volterra, Orvieto — its Po valley fringe having already passed to the Celts; neighbouring Liguria remained with the Ligurian tribes. The Greek colonies of Corsica had been gone since the battle of Alalia (c. 540 BC).",
   "ru": "К северу от Рима Этрурия около 323 г. до н. э. была приходящей в упадок конфедерацией городов — Вольтерра, Орвието, — её паданская окраина уже отошла кельтам; соседняя Лигурия оставалась за лигурийскими племенами. Греческие колонии Корсики исчезли со времён битвы при Алалии (ок. 540 г. до н. э.)."
+ },
+ {
+  "cle": "voisin_iberie-du-caucase-kartli",
+  "fr": "Royaume géorgien de la Koura, capitale Mtskheta, christianisé vers 326 par sainte Nino — deuxième État chrétien après l'Arménie. Disputé entre Rome puis Byzance et la Perse, il passe sous contrôle sassanide (marzpanat après 580). C'est le noyau de la future Géorgie (Kartli).",
+  "en": "Georgian kingdom on the Kura, capital Mtskheta, Christianized around 326 by Saint Nino — the second Christian state after Armenia. Disputed between Rome, then Byzantium, and Persia, it came under Sasanian control (marzpanate after 580). It is the core of future Georgia (Kartli).",
+  "ru": "Грузинское царство на Куре со столицей Мцхета, христианизированное около 326 г. святой Нино — второе христианское государство после Армении. Оспариваемое Римом, затем Византией и Персией, оно перешло под сасанидский контроль (марзпанство после 580 г.). Это ядро будущей Грузии (Картли)."
  },
  {
   "cle": "voisin_kingdom-of-judah",
@@ -142,6 +160,12 @@
   "fr": "Sous Menua (v. 810-785 av. J.-C.), l'Ourartou devient une puissance régionale : canal de Van (~72 km, toujours en service), temple d'Aznavurtepe, forteresse de Menuakhinili sur l'Araxe. Son fils Argishti Iᵉʳ conquerra la plaine d'Erevan et fondera Erebouni (782).",
   "en": "Under Menua (c. 810-785 BC), Urartu became a regional power: the Van canal (~72 km, still in use), the Aznavurtepe temple, the fortress of Menuakhinili on the Araxes. His son Argishti I would conquer the Yerevan plain and found Erebuni (782).",
   "ru": "При Менуа (ок. 810-785 гг. до н.э.) Урарту стало региональной державой: Ванский канал (~72 км, действует до сих пор), храм Азнавуртепе, крепость Менуахинили на Араксе. Его сын Аргишти I завоюет Ереванскую равнину и оснуёт Эребуни (782)."
+ },
+ {
+  "cle": "voisin_persarmenie-marzpanat",
+  "fr": "Après l'abolition de la monarchie arsacide (428), l'Arménie orientale est gouvernée par des marzpans sassanides depuis Dvin. La révolte de Vardan Mamikonian culmine à Avarayr (451) ; le traité de Nvarsak (484) garantit la liberté du christianisme et l'autonomie des nakharars (Elishé, Ghazar Parpetsi).",
+  "en": "After the abolition of the Arsacid monarchy (428), eastern Armenia was governed by Sasanian marzpans from Dvin. Vardan Mamikonian's revolt culminated at Avarayr (451); the treaty of Nvarsak (484) guaranteed freedom of Christianity and the autonomy of the nakharars (Elishe, Ghazar Parpetsi).",
+  "ru": "После упразднения аршакидской монархии (428) Восточная Армения управлялась сасанидскими марзпанами из Двина. Восстание Вардана Мамиконяна достигло кульминации при Аварайре (451); Нварсакский договор (484) гарантировал свободу христианства и автономию нахараров (Елише, Газар Парпеци)."
  },
  {
   "cle": "voisin_principaute-orontide-armenie",
