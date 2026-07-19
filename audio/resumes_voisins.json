@@ -18,6 +18,24 @@
   "ru": "Западная часть раздела 387 г. между Римом и Персией — около пятой части страны, вокруг Феодосиополя (Карин/Эрзурум). Юстиниан реорганизовал её в четыре провинции (Армения I-IV, 536 г.), ограничив права нахараров; Маврикий расширил её в 591 г. до Раздана."
  },
  {
+  "cle": "voisin_armenie-occidentale-ottomane",
+  "fr": "Après Tchaldiran (1514) et la paix d'Amasya (1555), l'essentiel du plateau passe sous domination ottomane — les « six vilayets » de l'Est anatolien. Les Arméniens, « millet » chrétien, gardent Église, écoles et artisanat, entre autonomie communautaire et sujétion fiscale, jusqu'aux crises du XIXᵉ siècle.",
+  "en": "After Chaldiran (1514) and the peace of Amasya (1555), most of the highland came under Ottoman rule — the \"six vilayets\" of eastern Anatolia. The Armenians, a Christian \"millet\", kept their Church, schools and crafts, between communal autonomy and fiscal subjection, until the crises of the 19th century.",
+  "ru": "После Чалдырана (1514) и Амасийского мира (1555) большая часть нагорья перешла под османское владычество — «шесть вилайетов» Восточной Анатолии. Армяне, христианский «миллет», сохранили Церковь, школы и ремёсла, между общинной автономией и податной зависимостью, до кризисов XIX века."
+ },
+ {
+  "cle": "voisin_armenie-orientale-russe-khanats",
+  "fr": "Par le traité de Turkmentchaï (10 février 1828), la Perse qadjare cède à la Russie les khanats d'Erevan et du Nakhitchevan — l'Arménie orientale devient l'« oblast arménien ». Des dizaines de milliers d'Arméniens de Perse et d'Empire ottoman y sont rapatriés : le noyau de l'Arménie moderne.",
+  "en": "By the treaty of Turkmenchay (10 February 1828), Qajar Persia ceded the khanates of Erivan and Nakhichevan to Russia — eastern Armenia became the \"Armenian oblast\". Tens of thousands of Armenians from Persia and the Ottoman Empire were repatriated there: the nucleus of modern Armenia.",
+  "ru": "По Туркманчайскому договору (10 февраля 1828 г.) каджарская Персия уступила России Эриванское и Нахичеванское ханства — Восточная Армения стала «Армянской областью». Десятки тысяч армян из Персии и Османской империи были переселены туда: ядро современной Армении."
+ },
+ {
+  "cle": "voisin_armenie-sous-l-ilkhanat",
+  "fr": "Le plateau arménien est intégré à l'Ilkhanat de Perse : recensements et fiscalité mongols, famines et confiscations, déclin des princes zakarides. Les monastères restent pourtant actifs — c'est l'époque du renouveau miniaturiste de Gladzor — avant l'anarchie qui suit la mort d'Abu Saïd (1335).",
+  "en": "The Armenian highland was absorbed into the Ilkhanate of Persia: Mongol censuses and taxation, famines and confiscations, decline of the Zakarid princes. Yet the monasteries remained active — the age of the Gladzor school of miniature — before the anarchy following Abu Said's death (1335).",
+  "ru": "Армянское нагорье было включено в Ильханат Персии: монгольские переписи и подати, голод и конфискации, упадок закарянских князей. Монастыри однако оставались деятельны — эпоха миниатюрной школы Гладзора — до анархии после смерти Абу Саида (1335)."
+ },
+ {
   "cle": "voisin_armina-satrapie-d-armenie",
   "fr": "Première mention du nom : « Armina » dans l'inscription de Behistun de Darius Iᵉʳ (~520 av. J.-C.). Satrapie achéménide du haut plateau, elle verse un tribut de chevaux et d'argent (Hérodote III.93) ; Xénophon la traverse en 401-400 (Anabase IV) et décrit ses villages semi-enterrés et son vin d'orge.",
   "en": "First mention of the name: \"Armina\" in Darius I's Behistun inscription (~520 BC). An Achaemenid satrapy of the highland, it paid tribute in horses and silver (Herodotus III.93); Xenophon crossed it in 401-400 (Anabasis IV), describing its semi-underground villages and barley wine.",
@@ -244,6 +262,12 @@
   "fr": "Ancêtre proto-colchidien de la Colchide classique, centré sur le bas Tchorokh et l'Adjarie, connu par les annales de Sarduri II qui prit sa ville royale Ildamusha vers 750 av. J.-C. Ravagé par les Cimmériens à la fin du VIIIᵉ siècle, son héritage se recompose ensuite dans la Colchide du Rioni.",
   "en": "Proto-Colchian ancestor of classical Colchis, centred on the lower Chorokh and Adjara, known from the annals of Sarduri II, who took its royal city Ildamusha around 750 BC. Ravaged by the Cimmerians at the end of the 8th century, its legacy later re-formed in the Colchis of the Rioni.",
   "ru": "Протоколхидский предшественник классической Колхиды с центром на нижнем Чорохе и в Аджарии, известный из анналов Сардури II, взявшего его царский город Илдамуша около 750 г. до н. э. Разорённый киммерийцами в конце VIII века, его наследие затем возродилось в Колхиде Риони."
+ },
+ {
+  "cle": "voisin_royaume-armenien-de-cilicie",
+  "fr": "Dernier État arménien souverain du Moyen Âge : affaibli par les raids mamelouks et l'effondrement de l'allié mongol, il perd ses ports puis Sis (1375). Le dernier roi, Léon V de Lusignan, meurt en exil à Paris (1393) — sa dalle est à Saint-Denis. Le titre passe aux rois de Chypre.",
+  "en": "The last sovereign Armenian state of the Middle Ages: weakened by Mamluk raids and the collapse of the Mongol ally, it lost its ports then Sis (1375). The last king, Leo V of Lusignan, died in exile in Paris (1393) — his slab lies in Saint-Denis. The title passed to the kings of Cyprus.",
+  "ru": "Последнее суверенное армянское государство Средневековья: ослабленное мамлюкскими набегами и крушением монгольского союзника, оно потеряло порты, затем Сис (1375). Последний царь, Левон V Лузиньян, умер в изгнании в Париже (1393) — его плита в Сен-Дени. Титул перешёл к королям Кипра."
  },
  {
   "cle": "voisin_royaume-bagratide-armenie",
