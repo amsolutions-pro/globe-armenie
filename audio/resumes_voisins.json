@@ -6,6 +6,12 @@
   "ru": "Парфянское вассальное царство вокруг Арбелы (Эрбиль), между Большим и Малым Забом. Его царский дом, включая царицу Елену и царя Изата II, принял иудаизм в I веке — их гробницы находятся в Иерусалиме. Горная Кордуэна отделяла его от Армении."
  },
  {
+  "cle": "voisin_armenie-arsacide-partagee-en-387",
+  "fr": "Le royaume arsacide chrétien (conversion vers 301, saint Grégoire l'Illuminateur) est partagé en 387 entre Rome et la Perse sassanide : environ un cinquième à l'ouest pour Rome, le reste — la Persarménie — sous suzeraineté perse avec un roi arsacide maintenu jusqu'en 428.",
+  "en": "The Christian Arsacid kingdom (conversion around 301, Saint Gregory the Illuminator) was partitioned in 387 between Rome and Sasanian Persia: about a fifth in the west for Rome, the rest — Persarmenia — under Persian suzerainty with an Arsacid king kept until 428.",
+  "ru": "Христианское Аршакидское царство (обращение около 301 г., святой Григорий Просветитель) было разделено в 387 г. между Римом и сасанидской Персией: около пятой части на западе — Риму, остальное — Персармения — под персидским сюзеренитетом с аршакидским царём до 428 г."
+ },
+ {
   "cle": "voisin_armenie-byzantine",
   "fr": "Part occidentale issue du partage de 387 entre Rome et la Perse — environ un cinquième du pays, autour de Théodosiopolis (Karin/Erzurum). Justinien la réorganise en quatre provinces (Arménie I-IV, 536) et y limite le droit des nakharars ; Maurice l'agrandit en 591 jusqu'au Hrazdan.",
   "en": "The western share of the 387 partition between Rome and Persia — about a fifth of the country, around Theodosiopolis (Karin/Erzurum). Justinian reorganized it into four provinces (Armenia I-IV, 536) and curtailed nakharar rights; Maurice enlarged it in 591 up to the Hrazdan.",
@@ -76,6 +82,18 @@
   "fr": "Royaume hellénistique indépendant de 163 av. J.-C. à 72 apr. J.-C., célèbre pour le sanctuaire funéraire d'Antiochos Iᵉʳ au sommet du Nemrut Dağı. Sa capitale Samosate, sur l'Euphrate, est aujourd'hui submergée par le lac du barrage Atatürk. Rome l'annexe définitivement sous Vespasien.",
   "en": "Hellenistic kingdom independent from 163 BC to AD 72, famed for the funerary sanctuary of Antiochus I atop Nemrut Dağı. Its capital Samosata, on the Euphrates, now lies beneath the Atatürk dam reservoir. Rome annexed it definitively under Vespasian.",
   "ru": "Эллинистическое царство, независимое со 163 г. до н.э. по 72 г. н.э., знаменитое погребальным святилищем Антиоха I на вершине Немрут-Дага. Его столица Самосата на Евфрате ныне скрыта водохранилищем плотины Ататюрка. Рим окончательно аннексировал его при Веспасиане."
+ },
+ {
+  "cle": "voisin_culture-kouro-araxe",
+  "fr": "Culture de l'âge du bronze ancien née sur le plateau et dans le bassin Koura-Araxe (~3500-2500 av. J.-C.), reconnaissable à sa céramique brunie noire et rouge. Elle s'étend du Caucase au Levant (culture Khirbet Kerak) — l'une des plus vastes expansions culturelles de son temps.",
+  "en": "Early Bronze Age culture born on the highland and in the Kura-Araxes basin (~3500-2500 BC), recognizable by its black-and-red burnished pottery. It spread from the Caucasus to the Levant (Khirbet Kerak culture) — one of the widest cultural expansions of its time.",
+  "ru": "Культура ранней бронзы, родившаяся на нагорье и в Куро-Араксском бассейне (~3500-2500 гг. до н.э.), узнаваемая по чёрно-красной лощёной керамике. Она распространилась от Кавказа до Леванта (культура Хирбет-Керак) — одна из широчайших культурных экспансий своего времени."
+ },
+ {
+  "cle": "voisin_cultures-trialeti-et-du-sevan",
+  "fr": "Âge du bronze moyen (~2000-1500 av. J.-C.) : aux villages succèdent des kourganes princiers spectaculaires (Trialeti, Karachamb, Lchashen) aux coupes d'or et d'argent, chars et armes d'apparat — l'émergence d'élites guerrières sur le plateau et autour du lac Sevan.",
+  "en": "Middle Bronze Age (~2000-1500 BC): villages gave way to spectacular princely kurgans (Trialeti, Karashamb, Lchashen) with gold and silver cups, chariots and ceremonial weapons — the rise of warrior elites on the highland and around Lake Sevan.",
+  "ru": "Средняя бронза (~2000-1500 гг. до н.э.): на смену деревням приходят впечатляющие княжеские курганы (Триалети, Карашамб, Лчашен) с золотыми и серебряными кубками, колесницами и парадным оружием — появление воинских элит на нагорье и вокруг озера Севан."
  },
  {
   "cle": "voisin_diauehi",
@@ -202,6 +220,12 @@
   "fr": "Ancêtre proto-colchidien de la Colchide classique, centré sur le bas Tchorokh et l'Adjarie, connu par les annales de Sarduri II qui prit sa ville royale Ildamusha vers 750 av. J.-C. Ravagé par les Cimmériens à la fin du VIIIᵉ siècle, son héritage se recompose ensuite dans la Colchide du Rioni.",
   "en": "Proto-Colchian ancestor of classical Colchis, centred on the lower Chorokh and Adjara, known from the annals of Sarduri II, who took its royal city Ildamusha around 750 BC. Ravaged by the Cimmerians at the end of the 8th century, its legacy later re-formed in the Colchis of the Rioni.",
   "ru": "Протоколхидский предшественник классической Колхиды с центром на нижнем Чорохе и в Аджарии, известный из анналов Сардури II, взявшего его царский город Илдамуша около 750 г. до н. э. Разорённый киммерийцами в конце VIII века, его наследие затем возродилось в Колхиде Риони."
+ },
+ {
+  "cle": "voisin_royaume-bagratide-armenie",
+  "fr": "Achot Iᵉʳ, couronné en 884/885 avec l'accord du calife et de Byzance, restaure la royauté arménienne après quatre siècles. Sous Achot III et Gagik Iᵉʳ, Ani « aux mille et une églises » devient capitale (961) — un âge d'or urbain et architectural jusqu'à l'annexion byzantine de 1045.",
+  "en": "Ashot I, crowned in 884/885 with the assent of the caliph and Byzantium, restored Armenian kingship after four centuries. Under Ashot III and Gagik I, Ani \"of the thousand and one churches\" became the capital (961) — an urban and architectural golden age until the Byzantine annexation of 1045.",
+  "ru": "Ашот I, коронованный в 884/885 г. с согласия халифа и Византии, восстановил армянское царство после четырёх веков. При Ашоте III и Гагике I Ани «тысячи и одной церкви» стал столицей (961) — городской и архитектурный золотой век до византийской аннексии 1045 г."
  },
  {
   "cle": "voisin_royaume-de-cappadoce",
