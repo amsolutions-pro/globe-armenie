@@ -1,0 +1,104 @@
+[
+ {
+  "cle": "voisin_adiabene",
+  "fr": "Royaume vassal parthe autour d'Arbèles (Erbil), entre le Grand et le Petit Zab. Sa maison royale, dont la reine Hélène et le roi Izatès II, se convertit au judaïsme au Iᵉʳ siècle — leurs tombeaux sont à Jérusalem. La Corduène montagneuse le séparait de l'Arménie.",
+  "en": "Parthian vassal kingdom around Arbela (Erbil), between the Great and Little Zab. Its royal house, including Queen Helena and King Izates II, converted to Judaism in the 1st century — their tombs are in Jerusalem. Mountainous Corduene separated it from Armenia.",
+  "ru": "Парфянское вассальное царство вокруг Арбелы (Эрбиль), между Большим и Малым Забом. Его царский дом, включая царицу Елену и царя Изата II, принял иудаизм в I веке — их гробницы находятся в Иерусалиме. Горная Кордуэна отделяла его от Армении."
+ },
+ {
+  "cle": "voisin_cappadoce-romaine",
+  "fr": "Province romaine depuis 17 apr. J.-C., verrou oriental de l'empire face à l'Arménie le long de l'Euphrate. Deux légions y tenaient le limes : la XVᵉ Apollinaris à Satala et la XIIᵉ Fulminata à Mélitène. Césarée (Kayseri), au pied du mont Argée, en était la capitale.",
+  "en": "Roman province from AD 17, the empire's eastern lock facing Armenia along the Euphrates. Two legions held the limes: the XV Apollinaris at Satala and the XII Fulminata at Melitene. Caesarea (Kayseri), at the foot of Mount Argaeus, was its capital.",
+  "ru": "Римская провинция с 17 г. н.э., восточный замок империи напротив Армении вдоль Евфрата. Лимес держали два легиона: XV Аполлинарис в Сатале и XII Фульмината в Мелитене. Столицей была Кесария (Кайсери) у подножия горы Аргей."
+ },
+ {
+  "cle": "voisin_colchide",
+  "fr": "Pays du mythe de la Toison d'or et de Médée, dans le bassin du Rioni (Phase). Colonisée par les Grecs de Milet (Phasis, Dioscurias), vassalisée par Mithridate VI vers 110 av. J.-C., elle passe ensuite dans l'orbite romaine puis devient la Lazique.",
+  "en": "Land of the Golden Fleece myth and of Medea, in the Rioni (Phasis) basin. Colonized by Milesian Greeks (Phasis, Dioscurias), made a vassal by Mithridates VI around 110 BC, it later passed into the Roman orbit and became Lazica.",
+  "ru": "Страна мифа о Золотом руне и Медеи, в бассейне Риони (Фасиса). Колонизированная греками из Милета (Фасис, Диоскурия), подчинённая Митридатом VI около 110 г. до н.э., она затем перешла в римскую орбиту и стала Лазикой."
+ },
+ {
+  "cle": "voisin_commagene",
+  "fr": "Royaume hellénistique indépendant de 163 av. J.-C. à 72 apr. J.-C., célèbre pour le sanctuaire funéraire d'Antiochos Iᵉʳ au sommet du Nemrut Dağı. Sa capitale Samosate, sur l'Euphrate, est aujourd'hui submergée par le lac du barrage Atatürk. Rome l'annexe définitivement sous Vespasien.",
+  "en": "Hellenistic kingdom independent from 163 BC to AD 72, famed for the funerary sanctuary of Antiochus I atop Nemrut Dağı. Its capital Samosata, on the Euphrates, now lies beneath the Atatürk dam reservoir. Rome annexed it definitively under Vespasian.",
+  "ru": "Эллинистическое царство, независимое со 163 г. до н.э. по 72 г. н.э., знаменитое погребальным святилищем Антиоха I на вершине Немрут-Дага. Его столица Самосата на Евфрате ныне скрыта водохранилищем плотины Ататюрка. Рим окончательно аннексировал его при Веспасиане."
+ },
+ {
+  "cle": "voisin_kizzuwatna",
+  "fr": "Royaume louvite et hourrite de Cilicie (plaine d'Adana), tour à tour indépendant et vassal hittite aux XVᵉ-XIVᵉ s. av. J.-C. Ses rituels et sa déesse Hebat ont profondément marqué la religion hittite. Absorbé par l'Empire hittite sous Šuppiluliuma Iᵉʳ.",
+  "en": "Luwian and Hurrian kingdom of Cilicia (Adana plain), alternately independent and a Hittite vassal in the 15th-14th c. BC. Its rituals and its goddess Hebat deeply shaped Hittite religion. Absorbed into the Hittite Empire under Šuppiluliuma I.",
+  "ru": "Лувийско-хурритское царство Киликии (Аданская равнина), попеременно независимое и вассальное хеттам в XV-XIV вв. до н.э. Его ритуалы и богиня Хебат глубоко повлияли на хеттскую религию. Поглощено Хеттской империей при Суппилулиуме I."
+ },
+ {
+  "cle": "voisin_lydie",
+  "fr": "Royaume d'Anatolie occidentale, fameux pour la richesse de Crésus et l'invention de la monnaie frappée en électrum. La bataille de l'Éclipse (585 av. J.-C.) fixe sa frontière orientale avec la Médie sur le fleuve Halys. Cyrus prend Sardes vers 546 av. J.-C.",
+  "en": "Kingdom of western Anatolia, famed for the wealth of Croesus and the invention of struck electrum coinage. The Battle of the Eclipse (585 BC) fixed its eastern border with Media on the river Halys. Cyrus took Sardis around 546 BC.",
+  "ru": "Царство Западной Анатолии, знаменитое богатством Креза и изобретением чеканной монеты из электрума. Битва при затмении (585 г. до н.э.) закрепила его восточную границу с Мидией по реке Галис. Кир взял Сарды около 546 г. до н.э."
+ },
+ {
+  "cle": "voisin_mitanni",
+  "fr": "Empire hourrite de Haute-Mésopotamie (XVIᵉ-XIVᵉ s. av. J.-C.), centré sur le bassin du Khabour avec Washukanni pour capitale. Grande puissance rivale de l'Égypte puis alliée par mariages royaux, il s'effondre sous les coups des Hittites (XIVᵉ s.) puis de l'Assyrie (XIIIᵉ s.).",
+  "en": "Hurrian empire of Upper Mesopotamia (16th-14th c. BC), centred on the Khabur basin with Washukanni as capital. A great power, rival then ally of Egypt through royal marriages, it collapsed under the blows of the Hittites (14th c.) and then Assyria (13th c.).",
+  "ru": "Хурритская империя Верхней Месопотамии (XVI-XIV вв. до н.э.) с центром в бассейне Хабура и столицей Вашуканни. Великая держава, соперница, а затем союзница Египта через царские браки, она рухнула под ударами хеттов (XIV в.), а затем Ассирии (XIII в.)."
+ },
+ {
+  "cle": "voisin_medie",
+  "fr": "Empire iranien qui domine le Proche-Orient après avoir abattu l'Assyrie (612 av. J.-C.) avec Babylone, puis absorbé l'Urartu vers 590. Sa capitale Ecbatane (Hamadan) passait pour avoir sept enceintes concentriques selon Hérodote. Cyrus le Grand le renverse vers 550 et fonde l'Empire perse.",
+  "en": "Iranian empire that dominated the Near East after crushing Assyria (612 BC) alongside Babylon, then absorbing Urartu around 590. Its capital Ecbatana (Hamadan) was said by Herodotus to have seven concentric walls. Cyrus the Great overthrew it around 550 and founded the Persian Empire.",
+  "ru": "Иранская империя, господствовавшая на Ближнем Востоке после разгрома Ассирии (612 г. до н.э.) вместе с Вавилоном и поглощения Урарту около 590 г. Её столица Экбатана (Хамадан), по Геродоту, имела семь концентрических стен. Кир Великий сверг её около 550 г. и основал Персидскую империю."
+ },
+ {
+  "cle": "voisin_neo-hittite-and-aramean-states",
+  "fr": "Mosaïque de royaumes (Tabal, Melid, Kummuh, Karkemish, Hamath...) héritiers de l'Empire hittite après sa chute vers 1180 av. J.-C., mêlant traditions louvites (hiéroglyphes) et araméennes. L'Assyrie les annexa presque tous entre 740 et 708 av. J.-C.",
+  "en": "A mosaic of kingdoms (Tabal, Melid, Kummuh, Carchemish, Hamath...) heirs to the Hittite Empire after its fall around 1180 BC, blending Luwian (hieroglyphic) and Aramean traditions. Assyria annexed nearly all of them between 740 and 708 BC.",
+  "ru": "Мозаика царств (Табал, Мелид, Куммух, Каркемиш, Хамат...) — наследников Хеттской империи после её падения около 1180 г. до н.э., смешивавших лувийские (иероглифические) и арамейские традиции. Ассирия аннексировала почти все их между 740 и 708 гг. до н.э."
+ },
+ {
+  "cle": "voisin_osroene",
+  "fr": "Royaume d'Édesse (Şanlıurfa) fondé vers 134 av. J.-C. par la dynastie arabe des Abgarides, État tampon entre Rome et la Parthie. Selon la légende chrétienne, son roi Abgar V aurait correspondu avec Jésus. Annexé sous Caracalla (213/214), avec un résidu dynastique jusque vers 242.",
+  "en": "Kingdom of Edessa (Şanlıurfa) founded around 134 BC by the Arab Abgarid dynasty, a buffer state between Rome and Parthia. According to Christian legend, its king Abgar V corresponded with Jesus. Annexed under Caracalla (213/214), with a dynastic remnant until around 242.",
+  "ru": "Царство Эдессы (Шанлыурфа), основанное около 134 г. до н.э. арабской династией Абгаридов, буферное государство между Римом и Парфией. По христианской легенде, его царь Абгар V переписывался с Иисусом. Аннексировано при Каракалле (213/214), династический остаток сохранялся примерно до 242 г."
+ },
+ {
+  "cle": "voisin_ourartou-apogee",
+  "fr": "Sous Argishti Iᵉʳ et Sarduri II (VIIIᵉ s. av. J.-C.), le royaume s'étend du Sevan à l'Ourmia et de l'Euphrate au Zab — principal rival de l'Assyrie. Sargon II lui porte un coup sévère en 714 (sac de Musasir). Il disparaît vers 590, absorbé par les Mèdes.",
+  "en": "Under Argishti I and Sarduri II (8th c. BC), the kingdom stretched from Sevan to Urmia and from the Euphrates to the Zab — Assyria's main rival. Sargon II dealt it a severe blow in 714 (sack of Musasir). It vanished around 590, absorbed by the Medes.",
+  "ru": "При Аргишти I и Сардури II (VIII в. до н.э.) царство простиралось от Севана до Урмии и от Евфрата до Заба — главный соперник Ассирии. Саргон II нанёс ему тяжёлый удар в 714 г. (разграбление Мусасира). Оно исчезло около 590 г., поглощённое мидийцами."
+ },
+ {
+  "cle": "voisin_ourartou-royaume-de-menua",
+  "fr": "Sous Menua (v. 810-785 av. J.-C.), l'Ourartou devient une puissance régionale : canal de Van (~72 km, toujours en service), temple d'Aznavurtepe, forteresse de Menuakhinili sur l'Araxe. Son fils Argishti Iᵉʳ conquerra la plaine d'Erevan et fondera Erebouni (782).",
+  "en": "Under Menua (c. 810-785 BC), Urartu became a regional power: the Van canal (~72 km, still in use), the Aznavurtepe temple, the fortress of Menuakhinili on the Araxes. His son Argishti I would conquer the Yerevan plain and found Erebuni (782).",
+  "ru": "При Менуа (ок. 810-785 гг. до н.э.) Урарту стало региональной державой: Ванский канал (~72 км, действует до сих пор), храм Азнавуртепе, крепость Менуахинили на Араксе. Его сын Аргишти I завоюет Ереванскую равнину и оснуёт Эребуни (782)."
+ },
+ {
+  "cle": "voisin_royaume-de-cappadoce",
+  "fr": "Royaume des Ariarathides issu de la satrapie perse, hellénisé, oscillant entre Pont, Séleucides et Rome. Sa capitale Mazaka (future Césarée) se trouvait au pied du volcan Argée. Rome en fit une province en 17 apr. J.-C. à la mort d'Archélaos.",
+  "en": "Kingdom of the Ariarathids, heir to the Persian satrapy, Hellenized, wavering between Pontus, the Seleucids and Rome. Its capital Mazaca (the future Caesarea) lay at the foot of the Argaeus volcano. Rome made it a province in AD 17 on the death of Archelaus.",
+  "ru": "Царство Ариаратидов, наследник персидской сатрапии, эллинизированное, колебавшееся между Понтом, Селевкидами и Римом. Его столица Мазака (будущая Кесария) лежала у подножия вулкана Аргей. Рим сделал его провинцией в 17 г. н.э. после смерти Архелая."
+ },
+ {
+  "cle": "voisin_royaume-du-pont",
+  "fr": "Fondé vers 281 av. J.-C. par Mithridate Iᵉʳ Ktistès, il atteint son apogée sous Mithridate VI Eupator, maître de la mer Noire et grand adversaire de Rome (trois guerres mithridatiques, 88-63 av. J.-C.). Pompée le démantèle en 63 av. J.-C.",
+  "en": "Founded around 281 BC by Mithridates I Ktistes, it peaked under Mithridates VI Eupator, master of the Black Sea and Rome's great adversary (three Mithridatic wars, 88-63 BC). Pompey dismantled it in 63 BC.",
+  "ru": "Основанное около 281 г. до н.э. Митридатом I Ктистом, царство достигло расцвета при Митридате VI Евпаторе, владыке Чёрного моря и великом противнике Рима (три Митридатовы войны, 88-63 гг. до н.э.). Помпей упразднил его в 63 г. до н.э."
+ },
+ {
+  "cle": "voisin_emirat-de-tbilissi",
+  "fr": "Émirat fondé vers 736 lors de la conquête arabe, réduit au XIᵉ siècle à la ville et à la moyenne Koura. Enclave musulmane entre royaumes géorgiens, il fut par moments gouverné par un conseil d'anciens. David IV le Reconstructeur prend la ville en 1122.",
+  "en": "Emirate founded around 736 during the Arab conquest, reduced by the 11th century to the city and the middle Kura. A Muslim enclave among Georgian kingdoms, it was at times governed by a council of elders. David IV the Builder took the city in 1122.",
+  "ru": "Эмират, основанный около 736 г. при арабском завоевании, к XI веку сведённый к городу и средней Куре. Мусульманский анклав среди грузинских царств, временами управлявшийся советом старейшин. Давид IV Строитель взял город в 1122 г."
+ },
+ {
+  "cle": "voisin_emirat-marwanide-diyar-bakr",
+  "fr": "Dynastie kurde (983-1085) régnant sur le Diyar Bakr depuis Mayyafariqin (Silvan) et Amida (Diyarbakır). Voisin méridional des royaumes arméniens, il tint Akhlat sur la rive nord-ouest du lac de Van. Vassalisé par les Seldjoukides après 1055, il tombe en 1085 quand Malik Shah confie la région à Fakhr al-Dawla ibn Jahir.",
+  "en": "Kurdish dynasty (983-1085) ruling Diyar Bakr from Mayyafariqin (Silvan) and Amida (Diyarbakır). Southern neighbour of the Armenian kingdoms, it held Akhlat on the north-west shore of Lake Van. A Seljuk vassal after 1055, it fell in 1085 when Malik Shah entrusted the region to Fakhr al-Dawla ibn Jahir.",
+  "ru": "Курдская династия (983-1085), правившая Диярбакром из Майяфарикина (Силван) и Амиды (Диярбакыр). Южный сосед армянских царств, она удерживала Ахлат на северо-западном берегу озера Ван. Вассал Сельджуков после 1055 г., пала в 1085 г., когда Малик-шах передал регион Фахр ад-Дауле ибн Джахиру."
+ },
+ {
+  "cle": "voisin_emirat-rawwadide-azerbaidjan",
+  "fr": "Dynastie kurde de Tabriz (~955-1071) dominant l'Azerbaïdjan iranien, de l'Araxe au bassin de l'Ourmia. Vassale des Seldjoukides après la prise de Tabriz par Toghril (1054), elle disparaît vers 1071.",
+  "en": "Kurdish dynasty of Tabriz (~955-1071) dominating Iranian Azerbaijan, from the Araxes to the Urmia basin. A Seljuk vassal after Toghril took Tabriz (1054), it vanished around 1071.",
+  "ru": "Курдская династия Тебриза (~955-1071), господствовавшая в Иранском Азербайджане от Аракса до бассейна Урмии. Вассал Сельджуков после взятия Тебриза Тогрулом (1054), исчезла около 1071 г."
+ }
+]
