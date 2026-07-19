@@ -24,6 +24,12 @@
   "ru": "На Берлинском конгрессе (1878) статья 61 обязала Порту провести реформы в армянских провинциях под надзором держав. Она так и не была исполнена: «армянский вопрос» вошёл в европейскую дипломатию, а положение провинций ухудшалось."
  },
  {
+  "cle": "voisin_armenie-occidentale-genocide",
+  "fr": "À partir d'avril 1915 (rafle des élites de Constantinople le 24), le gouvernement jeune-turc organise déportations et massacres systématiques : environ 1,5 million d'Arméniens périssent. Le plateau se vide de sa population millénaire — le génocide est documenté par les archives alliées, allemandes et ottomanes (Kévorkian, Dadrian, Morgenthau).",
+  "en": "From April 1915 (round-up of Constantinople's elites on the 24th), the Young Turk government organized systematic deportations and massacres: about 1.5 million Armenians perished. The highland was emptied of its millennia-old population — the genocide is documented by Allied, German and Ottoman archives (Kévorkian, Dadrian, Morgenthau).",
+  "ru": "С апреля 1915 г. (аресты элиты Константинополя 24-го) младотурецкое правительство организовало систематические депортации и резню: погибло около 1,5 миллиона армян. Нагорье опустело от своего тысячелетнего населения — геноцид задокументирован союзными, немецкими и османскими архивами (Кеворкян, Дадрян, Моргентау)."
+ },
+ {
   "cle": "voisin_armenie-occidentale-massacres-adana",
   "fr": "En avril 1909, dans le contexte de la contre-révolution ottomane, la ville d'Adana et la plaine cilicienne s'embrasent : 20 000 à 30 000 Arméniens sont tués en quelques semaines. Ni les enquêtes ni les procès qui suivent n'aboutissent à une justice réelle (Kévorkian, Der Matossian).",
   "en": "In April 1909, amid the Ottoman counter-revolution, the city of Adana and the Cilician plain went up in flames: 20,000 to 30,000 Armenians were killed within weeks. Neither the inquiries nor the trials that followed produced real justice (Kévorkian, Der Matossian).",
@@ -40,6 +46,12 @@
   "fr": "Après Tchaldiran (1514) et la paix d'Amasya (1555), l'essentiel du plateau passe sous domination ottomane — les « six vilayets » de l'Est anatolien. Les Arméniens, « millet » chrétien, gardent Église, écoles et artisanat, entre autonomie communautaire et sujétion fiscale, jusqu'aux crises du XIXᵉ siècle.",
   "en": "After Chaldiran (1514) and the peace of Amasya (1555), most of the highland came under Ottoman rule — the \"six vilayets\" of eastern Anatolia. The Armenians, a Christian \"millet\", kept their Church, schools and crafts, between communal autonomy and fiscal subjection, until the crises of the 19th century.",
   "ru": "После Чалдырана (1514) и Амасийского мира (1555) большая часть нагорья перешла под османское владычество — «шесть вилайетов» Восточной Анатолии. Армяне, христианский «миллет», сохранили Церковь, школы и ремёсла, между общинной автономией и податной зависимостью, до кризисов XIX века."
+ },
+ {
+  "cle": "voisin_armenie-occidentale-six-vilayets",
+  "fr": "Les six vilayets orientaux (Erzurum, Van, Bitlis, Diyarbekir, Kharpout, Sivas) concentrent la population arménienne ottomane. L'accord de réformes du 8 février 1914, arraché par la Russie avec deux inspecteurs européens, est enterré dès l'entrée en guerre de la Porte (novembre 1914).",
+  "en": "The six eastern vilayets (Erzurum, Van, Bitlis, Diyarbekir, Kharput, Sivas) held most of the Ottoman Armenian population. The reform agreement of 8 February 1914, wrested by Russia with two European inspectors, was buried as soon as the Porte entered the war (November 1914).",
+  "ru": "Шесть восточных вилайетов (Эрзурум, Ван, Битлис, Диярбекир, Харпут, Сивас) сосредоточивали османское армянское население. Соглашение о реформах от 8 февраля 1914 г., вырванное Россией с двумя европейскими инспекторами, было похоронено со вступлением Порты в войну (ноябрь 1914 г.)."
  },
  {
   "cle": "voisin_armenie-orientale-russe-khanats",
@@ -64,6 +76,12 @@
   "fr": "Première mention du nom : « Armina » dans l'inscription de Behistun de Darius Iᵉʳ (~520 av. J.-C.). Satrapie achéménide du haut plateau, elle verse un tribut de chevaux et d'argent (Hérodote III.93) ; Xénophon la traverse en 401-400 (Anabase IV) et décrit ses villages semi-enterrés et son vin d'orge.",
   "en": "First mention of the name: \"Armina\" in Darius I's Behistun inscription (~520 BC). An Achaemenid satrapy of the highland, it paid tribute in horses and silver (Herodotus III.93); Xenophon crossed it in 401-400 (Anabasis IV), describing its semi-underground villages and barley wine.",
   "ru": "Первое упоминание имени: «Армина» в Бехистунской надписи Дария I (~520 г. до н.э.). Ахеменидская сатрапия нагорья, платившая дань конями и серебром (Геродот III.93); Ксенофонт пересёк её в 401-400 гг. (Анабасис IV), описав полуподземные деревни и ячменное вино."
+ },
+ {
+  "cle": "voisin_artsakh-residuel",
+  "fr": "La guerre de l'automne 2020 (44 jours) rend à l'Azerbaïdjan les districts et une partie du Haut-Karabagh ; un contingent russe garde le corridor de Latchine. L'Artsakh résiduel, asphyxié par le blocus de 2023, est conquis en septembre 2023 : la quasi-totalité des ~100 000 Arméniens part en exode.",
+  "en": "The autumn 2020 war (44 days) returned the districts and part of Nagorno-Karabakh to Azerbaijan; a Russian contingent guarded the Lachin corridor. Residual Artsakh, strangled by the 2023 blockade, was conquered in September 2023: almost all of its ~100,000 Armenians fled in exodus.",
+  "ru": "Война осени 2020 г. (44 дня) вернула Азербайджану районы и часть Нагорного Карабаха; российский контингент охранял Лачинский коридор. Остаточный Арцах, задушенный блокадой 2023 г., был завоёван в сентябре 2023 г.: почти все ~100 000 армян ушли в исход."
  },
  {
   "cle": "voisin_arzawa-and-luwian-states",
@@ -186,6 +204,12 @@
   "ru": "К северу от Рима Этрурия около 323 г. до н. э. была приходящей в упадок конфедерацией городов — Вольтерра, Орвието, — её паданская окраина уже отошла кельтам; соседняя Лигурия оставалась за лигурийскими племенами. Греческие колонии Корсики исчезли со времён битвы при Алалии (ок. 540 г. до н. э.)."
  },
  {
+  "cle": "voisin_haut-karabagh-districts-occupes",
+  "fr": "Après le cessez-le-feu de Bichkek (mai 1994), les forces arméniennes contrôlent le Haut-Karabagh et sept districts adjacents (~13 % de l'Azerbaïdjan), vidés de leur population azérie ; des centaines de milliers de déplacés des deux côtés. Ni la république autoproclamée ni le statu quo ne seront reconnus — le groupe de Minsk négocie sans issue jusqu'en 2020.",
+  "en": "After the Bishkek ceasefire (May 1994), Armenian forces controlled Nagorno-Karabakh and seven adjacent districts (~13% of Azerbaijan), emptied of their Azeri population; hundreds of thousands displaced on both sides. Neither the self-proclaimed republic nor the status quo was recognized — the Minsk Group negotiated without result until 2020.",
+  "ru": "После бишкекского перемирия (май 1994 г.) армянские силы контролировали Нагорный Карабах и семь прилегающих районов (~13 % Азербайджана), покинутых азербайджанским населением; сотни тысяч перемещённых с обеих сторон. Ни самопровозглашённая республика, ни статус-кво не были признаны — Минская группа вела переговоры без результата до 2020 г."
+ },
+ {
   "cle": "voisin_iberie-du-caucase-kartli",
   "fr": "Royaume géorgien de la Koura, capitale Mtskheta, christianisé vers 326 par sainte Nino — deuxième État chrétien après l'Arménie. Disputé entre Rome puis Byzance et la Perse, il passe sous contrôle sassanide (marzpanat après 580). C'est le noyau de la future Géorgie (Kartli).",
   "en": "Georgian kingdom on the Kura, capital Mtskheta, Christianized around 326 by Saint Nino — the second Christian state after Armenia. Disputed between Rome, then Byzantium, and Persia, it came under Sasanian control (marzpanate after 580). It is the core of future Georgia (Kartli).",
@@ -238,6 +262,12 @@
   "fr": "Villages agricoles de la vallée de l'Araxe (Aratashen, Aknashen-Khatunarkh) : maisons circulaires en brique crue, céramique, canaux d'irrigation précoces. L'économie associe céréales, élevage et outillage d'obsidienne d'une qualité remarquable.",
   "en": "Farming villages of the Araxes valley (Aratashen, Aknashen-Khatunarkh): circular mudbrick houses, pottery, early irrigation channels. The economy combined cereals, herding and obsidian toolmaking of remarkable quality.",
   "ru": "Земледельческие деревни долины Аракса (Араташен, Акнашен-Хатунарх): круглые сырцовые дома, керамика, ранние оросительные каналы. Хозяйство сочетало зерновые, скотоводство и обсидиановые орудия замечательного качества."
+ },
+ {
+  "cle": "voisin_oblast-haut-karabagh-nkao",
+  "fr": "Le 7 juillet 1923, le Haut-Karabagh, peuplé à ~94 % d'Arméniens, est constitué en oblast autonome au sein de l'Azerbaïdjan soviétique — après la décision du bureau caucasien du parti (5 juillet 1921) de le rattacher à Bakou. Ce statut contesté nourrira le conflit de la fin du siècle.",
+  "en": "On 7 July 1923, Nagorno-Karabakh, ~94% Armenian, was constituted as an autonomous oblast within Soviet Azerbaijan — after the party's Caucasian bureau decision (5 July 1921) to attach it to Baku. This contested status would feed the conflict at the century's end.",
+  "ru": "7 июля 1923 г. Нагорный Карабах, ~94 % армянский, был образован как автономная область в составе советского Азербайджана — после решения Кавбюро партии (5 июля 1921 г.) присоединить его к Баку. Этот оспариваемый статус подпитает конфликт конца века."
  },
  {
   "cle": "voisin_osroene",
@@ -322,6 +352,18 @@
   "fr": "Après Gaugamèles (331 av. J.-C.), les satrapes orontides se font rois : le royaume couvre le haut plateau entier (bassin de Van, Syunik, Artsakh), avec Armavir puis Yervandashat pour capitales. La dynastie règne jusqu'à Artaxias Iᵉʳ, qui fonde la lignée artaxiade en 189 av. J.-C. (Khorenatsi, Strabon XI).",
   "en": "After Gaugamela (331 BC) the Orontid satraps made themselves kings: the kingdom covered the whole highland (Van basin, Syunik, Artsakh), with Armavir then Yervandashat as capitals. The dynasty reigned until Artaxias I founded the Artaxiad line in 189 BC (Khorenatsi, Strabo XI).",
   "ru": "После Гавгамел (331 г. до н.э.) ервандидские сатрапы стали царями: царство охватывало всё нагорье (бассейн Вана, Сюник, Арцах) со столицами Армавир, затем Ервандашат. Династия правила до Арташеса I, основавшего Арташесидскую линию в 189 г. до н.э. (Хоренаци, Страбон XI)."
+ },
+ {
+  "cle": "voisin_rss-armenie",
+  "fr": "Petite république soviétique (29 800 km²) mais foyer national : industrialisation, Erevan reconstruite selon le plan Tamanian, rapatriement de la diaspora (1946-1948), renouveau des sciences (Byurakan). Les revendications mémorielles resurgissent en 1965, au cinquantenaire du génocide.",
+  "en": "A small Soviet republic (29,800 km²) yet a national home: industrialization, Yerevan rebuilt to Tamanian's plan, repatriation of the diaspora (1946-1948), scientific renewal (Byurakan). Memorial claims resurfaced in 1965, on the genocide's fiftieth anniversary.",
+  "ru": "Маленькая советская республика (29 800 км²), но национальный очаг: индустриализация, Ереван, перестроенный по плану Таманяна, репатриация диаспоры (1946-1948), подъём науки (Бюракан). Мемориальные требования возродились в 1965 г., в пятидесятилетие геноцида."
+ },
+ {
+  "cle": "voisin_rss-armenie-plein-droit",
+  "fr": "La constitution soviétique de 1936 dissout la Fédération transcaucasienne : l'Arménie devient république fédérée de plein droit de l'URSS. La même année s'ouvre la Grande Terreur — l'intelligentsia arménienne (Tcharents, Bakounts) est décimée ; Aghassi Khandjian meurt en juillet 1936.",
+  "en": "The 1936 Soviet constitution dissolved the Transcaucasian Federation: Armenia became a full union republic of the USSR. The same year the Great Terror began — the Armenian intelligentsia (Charents, Bakunts) was decimated; Aghasi Khanjian died in July 1936.",
+  "ru": "Советская конституция 1936 г. распустила Закавказскую Федерацию: Армения стала полноправной союзной республикой СССР. В том же году началась Большая Террор — армянская интеллигенция (Чаренц, Бакунц) была уничтожена; Агаси Ханджян погиб в июле 1936 г."
  },
  {
   "cle": "voisin_samnites",
