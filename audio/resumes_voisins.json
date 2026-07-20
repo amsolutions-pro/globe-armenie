@@ -108,6 +108,12 @@
   "ru": "Сатрапия, которую Атропат сохранил после смерти Александра (323 г. до н.э.) — её имя, по-армянски Атрпатакан, дало слово «Азербайджан». С центром в Ганзаке, к юго-востоку от озера Урмия, она была вассалом парфян, затем связана с Сасанидами — постоянный южный сосед Армении (Страбон XI.13)."
  },
  {
+  "cle": "voisin_basse-koura-chirvan-bronze",
+  "fr": "Piémont sud-est du Grand Caucase, basse vallée de la Koura et façade caspienne du Chirvan. Au bronze moyen (~1900-1500 av. J.-C.) s'y déploie l'horizon des tumulus à céramique peinte (type Uzerlik-Tepe), faciès oriental de la mosaïque kourgane transcaucasienne, teinté d'un fond pastoral steppique venu de la Caspienne. Ce substrat annonce la culture de Khojaly-Gadabay du bronze récent (hypothèse).",
+  "en": "South-eastern foothills of the Greater Caucasus, the lower Kura valley and the Caspian front of Shirvan. In the Middle Bronze Age (~1900-1500 BC), the horizon of painted-ware kurgans (Uzerlik-Tepe type) spread here, the eastern facies of the Transcaucasian kurgan mosaic, tinged with a pastoral steppe background from the Caspian. This substrate heralds the Late Bronze Khojaly-Gadabay culture (hypothesis).",
+  "ru": "Юго-восточные предгорья Большого Кавказа, нижняя долина Куры и каспийский фронт Ширвана. В среднем бронзовом веке (~1900-1500 гг. до н.э.) здесь распространяется горизонт курганов с расписной керамикой (тип Узерлик-Тепе) — восточная фация закавказской курганной мозаики, с примесью пастушеского степного фона с Каспия. Этот субстрат предвещает позднебронзовую культуру Ходжалы-Гядабей (гипотеза)."
+ },
+ {
   "cle": "voisin_bassin-de-van-futur-nairi",
   "fr": "Le nom « Nairi » n'apparaît dans les sources assyriennes qu'avec Tukulti-Ninurta Iᵉʳ (~1240 av. J.-C., « 43 rois des pays de Nairi »). À -1500, la carte montre en rétroprojection assumée les tribus hourrites du bassin de Van qui formeront ces « pays de Nairi », puis le royaume d'Ourartou. Aucune frontière n'est attestée à cette date.",
   "en": "The name \"Nairi\" only appears in Assyrian sources with Tukulti-Ninurta I (~1240 BC, \"43 kings of the lands of Nairi\"). At 1500 BC the map shows, as an acknowledged retrojection, the Hurrian tribes of the Van basin that would form these \"lands of Nairi\", then the kingdom of Urartu. No border is attested at this date.",
@@ -166,6 +172,12 @@
   "fr": "Royaume hellénistique indépendant de 163 av. J.-C. à 72 apr. J.-C., célèbre pour le sanctuaire funéraire d'Antiochos Iᵉʳ au sommet du Nemrut Dağı. Sa capitale Samosate, sur l'Euphrate, est aujourd'hui submergée par le lac du barrage Atatürk. Rome l'annexe définitivement sous Vespasien.",
   "en": "Hellenistic kingdom independent from 163 BC to AD 72, famed for the funerary sanctuary of Antiochus I atop Nemrut Dağı. Its capital Samosata, on the Euphrates, now lies beneath the Atatürk dam reservoir. Rome annexed it definitively under Vespasian.",
   "ru": "Эллинистическое царство, независимое со 163 г. до н.э. по 72 г. н.э., знаменитое погребальным святилищем Антиоха I на вершине Немрут-Дага. Его столица Самосата на Евфрате ныне скрыта водохранилищем плотины Ататюрка. Рим окончательно аннексировал его при Веспасиане."
+ },
+ {
+  "cle": "voisin_culture-colchidienne-bronze",
+  "fr": "Province métallurgique du bassin du Rioni (Phase) et du littoral est-pontique, individualisée au bronze moyen (~1700-1500 av. J.-C.) : bronzes coulés (haches, faucilles), culture de basse plaine humide de la mer Noire. Faciès distinct de Trialeti-Vanadzor, elle préfigure le royaume de Colchide et se prolonge sans rupture jusqu'à Qulha (-800) puis la Colchide classique de la Toison d'or (-100).",
+  "en": "Metallurgical province of the Rioni (Phasis) basin and the eastern Pontic coast, individualized in the Middle Bronze Age (~1700-1500 BC): cast bronzes (axes, sickles), a culture of the humid Black Sea lowlands. Distinct from Trialeti-Vanadzor, it prefigures the kingdom of Colchis and continues unbroken to Qulha (-800) and the classical Colchis of the Golden Fleece (-100).",
+  "ru": "Металлургическая провинция бассейна Риони (Фасиса) и восточнопонтийского побережья, обособившаяся в среднем бронзовом веке (~1700-1500 гг. до н.э.): литая бронза (топоры, серпы), культура влажных низменностей Чёрного моря. Отличная от Триалети-Ванадзора, она предвосхищает Колхидское царство и без разрыва продолжается до Кулхи (-800), затем классической Колхиды Золотого руна (-100)."
  },
  {
   "cle": "voisin_culture-kouro-araxe",
