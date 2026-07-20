@@ -348,6 +348,12 @@
   "ru": "При Менуа (ок. 810-785 гг. до н.э.) Урарту стало региональной державой: Ванский канал (~72 км, действует до сих пор), храм Азнавуртепе, крепость Менуахинили на Араксе. Его сын Аргишти I завоюет Ереванскую равнину и оснуёт Эребуни (782)."
  },
  {
+  "cle": "voisin_pays-de-manna",
+  "fr": "Au sud-est du lac d'Ourmia (plaine de Miandoab et vallées du Zagros), la confédération des Mannéens se constitue vers -800, attestée par les annales assyriennes. Ses tribus, d'affinité nord-iranienne, contrôlent des plaines fertiles et deviennent au VIIᵉ siècle une puissance rivale de l'Ourartou et de l'Assyrie, avant d'être absorbées par les Mèdes.",
+  "en": "South-east of Lake Urmia (the Miandoab plain and Zagros valleys), the Mannaean confederation took shape around 800 BC, attested by the Assyrian annals. Its tribes, of North Iranian affinity, controlled fertile plains and became in the 7th century a power rivalling Urartu and Assyria, before being absorbed by the Medes.",
+  "ru": "К юго-востоку от озера Урмия (равнина Миандоаб и долины Загроса) конфедерация маннеев складывается около 800 г. до н.э., засвидетельствованная ассирийскими анналами. Её племена, северноиранского родства, контролировали плодородные равнины и в VII веке стали державой, соперничавшей с Урарту и Ассирией, прежде чем были поглощены мидийцами."
+ },
+ {
   "cle": "voisin_persarmenie-marzpanat",
   "fr": "Après l'abolition de la monarchie arsacide (428), l'Arménie orientale est gouvernée par des marzpans sassanides depuis Dvin. La révolte de Vardan Mamikonian culmine à Avarayr (451) ; le traité de Nvarsak (484) garantit la liberté du christianisme et l'autonomie des nakharars (Elishé, Ghazar Parpetsi).",
   "en": "After the abolition of the Arsacid monarchy (428), eastern Armenia was governed by Sasanian marzpans from Dvin. Vardan Mamikonian's revolt culminated at Avarayr (451); the treaty of Nvarsak (484) guaranteed freedom of Christianity and the autonomy of the nakharars (Elishe, Ghazar Parpetsi).",
@@ -454,5 +460,11 @@
   "fr": "La steppe syro-arabique est parcourue vers 1500 av. J.-C. par des pasteurs sémitiques, Sutéens et Amorrites tardifs, attestés dans les archives d'Amarna et de Babylonie. Les Araméens n'apparaîtront dans les sources qu'à partir de Tiglath-phalazar Iᵉʳ (v. 1110 av. J.-C.).",
   "en": "Around 1500 BC the Syro-Arabian steppe was roamed by Semitic pastoralists, Suteans and late Amorites, attested in the Amarna and Babylonian archives. The Arameans would only appear in the sources from Tiglath-pileser I onwards (c. 1110 BC).",
   "ru": "Около 1500 г. до н. э. по сирийско-аравийской степи кочевали семитские скотоводы — сутии и поздние амореи, засвидетельствованные в архивах Амарны и Вавилонии. Арамеи появятся в источниках лишь начиная с Тиглатпаласара I (ок. 1110 г. до н. э.)."
+ },
+ {
+  "cle": "voisin_tribus-proto-albaniennes",
+  "fr": "Sur la rive gauche de la basse Koura et de l'Alazani (futur Chirvan/Aghvank), des tribus caucasiennes de l'âge du fer occupent vers -800 les plaines de la rive nord. Il s'agit du substrat des vingt-six peuples que les auteurs antiques rattacheront à l'Albanie du Caucase — mais l'entité politique albanienne ne se formera qu'à l'époque hellénistique.",
+  "en": "On the left bank of the lower Kura and the Alazani (the future Shirvan/Aghvank), Caucasian Iron Age tribes occupied around 800 BC the plains of the northern bank. They form the substrate of the twenty-six peoples that ancient authors would attach to Caucasian Albania — but the Albanian political entity would only take shape in the Hellenistic era.",
+  "ru": "На левом берегу нижней Куры и Алазани (будущий Ширван/Агванк) кавказские племена железного века около 800 г. до н.э. занимают равнины северного берега. Они составляют субстрат двадцати шести народов, которых античные авторы отнесут к Кавказской Албании, — но албанское политическое образование сложится лишь в эллинистическую эпоху."
  }
 ]

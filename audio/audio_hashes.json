@@ -134,6 +134,7 @@
 "en/voisin_osroene": "ef8b6b61",
 "en/voisin_ourartou-apogee": "90657004",
 "en/voisin_ourartou-royaume-de-menua": "faff4840",
+"en/voisin_pays-de-manna": "022f1c52",
 "en/voisin_persarmenie-marzpanat": "d3ea53e2",
 "en/voisin_premiers-villages-du-plateau-armenien": "ac94ee0a",
 "en/voisin_principaute-orontide-armenie": "d08bf915",
@@ -152,6 +153,7 @@
 "en/voisin_samnites": "dab24d74",
 "en/voisin_sultanat-de-roum": "398e5e19",
 "en/voisin_sutean-and-amorite-pastoralists": "f2ed997e",
+"en/voisin_tribus-proto-albaniennes": "5c98c90f",
 "fr/periode_0": "9a016df8",
 "fr/periode_1": "2af52ad2",
 "fr/periode_2": "189078b7",
@@ -287,6 +289,7 @@
 "fr/voisin_osroene": "a2b2f5da",
 "fr/voisin_ourartou-apogee": "50f99c56",
 "fr/voisin_ourartou-royaume-de-menua": "ae89f499",
+"fr/voisin_pays-de-manna": "edca5de9",
 "fr/voisin_persarmenie-marzpanat": "646008d1",
 "fr/voisin_premiers-villages-du-plateau-armenien": "cab5f409",
 "fr/voisin_principaute-orontide-armenie": "8712437c",
@@ -305,6 +308,7 @@
 "fr/voisin_samnites": "a4708e48",
 "fr/voisin_sultanat-de-roum": "d77f2177",
 "fr/voisin_sutean-and-amorite-pastoralists": "ffa7671e",
+"fr/voisin_tribus-proto-albaniennes": "659d649e",
 "ru/periode_0": "5d4964d2",
 "ru/periode_1": "07c2f993",
 "ru/periode_2": "6c1da06c",
@@ -440,6 +444,7 @@
 "ru/voisin_osroene": "cdbe2976",
 "ru/voisin_ourartou-apogee": "44998128",
 "ru/voisin_ourartou-royaume-de-menua": "4d0aef86",
+"ru/voisin_pays-de-manna": "28fecb00",
 "ru/voisin_persarmenie-marzpanat": "25c629b5",
 "ru/voisin_premiers-villages-du-plateau-armenien": "39c0dbdf",
 "ru/voisin_principaute-orontide-armenie": "0ed68229",
@@ -457,5 +462,6 @@
 "ru/voisin_rss-armenie-plein-droit": "f31356ec",
 "ru/voisin_samnites": "a85be2d8",
 "ru/voisin_sultanat-de-roum": "7fc8f4b0",
-"ru/voisin_sutean-and-amorite-pastoralists": "5b79ca14"
+"ru/voisin_sutean-and-amorite-pastoralists": "5b79ca14",
+"ru/voisin_tribus-proto-albaniennes": "c2512d4c"
 }
