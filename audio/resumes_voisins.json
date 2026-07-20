@@ -234,6 +234,12 @@
   "ru": "При царице Тамаре (1184-1213) Грузия была первой державой Кавказа: победы при Шамхоре (1195) и Басиани (1202), взятие Карса (1206/1208), вассальный Ширван, а армянские полководцы Закаре и Иване освободили Ани и север нагорья. Трапезундская империя (1204) была основана под её эгидой."
  },
  {
+  "cle": "voisin_gilzanu",
+  "fr": "Sur la bordure nord-ouest du lac d'Ourmia, le pays de Gilzanu est mentionné par les Assyriens dès le IXᵉ siècle av. J.-C. (Obélisque Noir de Salmanazar III) comme fournisseur de tribut — chevaux, chameaux, métaux. Peuplé de populations proches du monde nord-iranien et hourrite, il forme une marche disputée entre l'Assyrie, l'Ourartou naissant et les futurs Mannéens, avant d'être absorbé par ces derniers.",
+  "en": "On the north-western shore of Lake Urmia, the land of Gilzanu is mentioned by the Assyrians from the 9th century BC (Black Obelisk of Shalmaneser III) as a tribute-payer — horses, camels, metals. Peopled by groups close to the North Iranian and Hurrian worlds, it formed a march disputed between Assyria, nascent Urartu and the future Mannaeans, before being absorbed by the latter.",
+  "ru": "На северо-западном берегу озера Урмия страна Гилзану упоминается ассирийцами с IX в. до н.э. (Чёрный обелиск Салманасара III) как данник — кони, верблюды, металлы. Населённая группами, близкими к северноиранскому и хурритскому миру, она была спорной окраиной между Ассирией, зарождающимся Урарту и будущими маннеями, прежде чем была поглощена последними."
+ },
+ {
   "cle": "voisin_haut-karabagh-districts-occupes",
   "fr": "Après le cessez-le-feu de Bichkek (mai 1994), les forces arméniennes contrôlent le Haut-Karabagh et sept districts adjacents (~13 % de l'Azerbaïdjan), vidés de leur population azérie ; des centaines de milliers de déplacés des deux côtés. Ni la république autoproclamée ni le statu quo ne seront reconnus — le groupe de Minsk négocie sans issue jusqu'en 2020.",
   "en": "After the Bishkek ceasefire (May 1994), Armenian forces controlled Nagorno-Karabakh and seven adjacent districts (~13% of Azerbaijan), emptied of their Azeri population; hundreds of thousands displaced on both sides. Neither the self-proclaimed republic nor the status quo was recognized — the Minsk Group negotiated without result until 2020.",
@@ -280,6 +286,18 @@
   "fr": "Royaume d'Anatolie occidentale, fameux pour la richesse de Crésus et l'invention de la monnaie frappée en électrum. La bataille de l'Éclipse (585 av. J.-C.) fixe sa frontière orientale avec la Médie sur le fleuve Halys. Cyrus prend Sardes vers 546 av. J.-C.",
   "en": "Kingdom of western Anatolia, famed for the wealth of Croesus and the invention of struck electrum coinage. The Battle of the Eclipse (585 BC) fixed its eastern border with Media on the river Halys. Cyrus took Sardis around 546 BC.",
   "ru": "Царство Западной Анатолии, знаменитое богатством Креза и изобретением чеканной монеты из электрума. Битва при затмении (585 г. до н.э.) закрепила его восточную границу с Мидией по реке Галис. Кир взял Сарды около 546 г. до н.э."
+ },
+ {
+  "cle": "voisin_marches-meridionales-ourartou",
+  "fr": "La plaine de Nakhitchevan et la rive sud de l'Araxe moyen forment vers -800 une marche méridionale que Menua d'Ourartou commence à soumettre, comme l'attestent ses inscriptions de la vallée de l'Araxe. Ces terres, peuplées de communautés locales du plateau sans royaume propre à cette date, seront pleinement intégrées à l'Ourartou sous Argishti Iᵉʳ.",
+  "en": "The plain of Nakhichevan and the southern bank of the middle Araxes formed, around 800 BC, a southern march that Menua of Urartu began to subdue, as attested by his inscriptions in the Araxes valley. These lands, peopled by local highland communities with no kingdom of their own at this date, would be fully integrated into Urartu under Argishti I.",
+  "ru": "Равнина Нахичевани и южный берег среднего Аракса образуют около 800 г. до н.э. южную окраину, которую Менуа Урартский начинает подчинять, о чём свидетельствуют его надписи в долине Аракса. Эти земли, населённые местными общинами нагорья без собственного царства на эту дату, будут полностью включены в Урарту при Аргишти I."
+ },
+ {
+  "cle": "voisin_marches-orientales-ararat",
+  "fr": "À l'est du plateau, le Syunik (Zanguezour) et les avant-monts du Karabagh sont occupés vers -800 par des communautés locales de l'âge du fer transcaucasien, sans État attesté ni ethnonyme conservé par les sources. Ces marches, contiguës à Etiouni et à l'Ourartou de Menua en expansion, appartiennent au cœur géographique qui deviendra l'Arménie orientale.",
+  "en": "East of the highland, Syunik (Zangezur) and the foothills of Karabakh were occupied around 800 BC by local communities of the Transcaucasian Iron Age, with no attested state or ethnonym preserved by the sources. These marches, adjoining Etiuni and the expanding Urartu of Menua, belong to the geographic core that would become eastern Armenia.",
+  "ru": "К востоку от нагорья Сюник (Зангезур) и предгорья Карабаха около 800 г. до н.э. заняты местными общинами закавказского железного века — без засвидетельствованного государства или сохранённого источниками этнонима. Эти окраины, примыкающие к Этиуни и расширяющемуся Урарту Менуа, принадлежат к географическому ядру, которое станет Восточной Арменией."
  },
  {
   "cle": "voisin_medie",
@@ -352,6 +370,12 @@
   "fr": "Les princes zakarides, généraux de la Géorgie de Thamar, avaient libéré le nord de l'Arménie (Ani, Lori, Kars) vers 1199-1211. Après l'invasion mongole (1236), ils gouvernent en vassaux de l'Ilkhanat, préservant monastères et scriptoria (Haghpat, Sanahin) sous une fiscalité écrasante.",
   "en": "The Zakarid princes, generals of Tamar's Georgia, had liberated northern Armenia (Ani, Lori, Kars) around 1199-1211. After the Mongol invasion (1236) they governed as vassals of the Ilkhanate, preserving monasteries and scriptoria (Haghpat, Sanahin) under crushing taxation.",
   "ru": "Закарянские князья, полководцы Грузии Тамары, освободили северную Армению (Ани, Лори, Карс) около 1199-1211 гг. После монгольского нашествия (1236) они правили как вассалы Ильханата, сохраняя монастыри и скриптории (Ахпат, Санаин) под гнётом податей."
+ },
+ {
+  "cle": "voisin_proto-iberie-kartli",
+  "fr": "Vers -800, la Kartlie centrale (autour de Mtskheta, sur la moyenne Koura) et la vallée de l'Alazani (future Kakhétie) sont peuplées de tribus kartvéliennes (proto-géorgiennes), héritières du complexe Colchide-Kartli. Il ne s'agit encore que de communautés villageoises sans État centralisé : le royaume d'Ibérie ne se formera qu'aux VIᵉ-IVᵉ siècles av. J.-C. La région est périphérique aux royaumes du Sud (Ourartou, Diauehi).",
+  "en": "Around 800 BC, central Kartli (near Mtskheta, on the middle Kura) and the Alazani valley (the future Kakheti) were peopled by Kartvelian (proto-Georgian) tribes, heirs to the Colchis-Kartli complex. These were still village communities without a centralized state: the kingdom of Iberia would only form in the 6th-4th centuries BC. The region lay on the periphery of the southern kingdoms (Urartu, Diauehi).",
+  "ru": "Около 800 г. до н.э. центральная Картли (у Мцхеты, на средней Куре) и долина Алазани (будущая Кахетия) населены картвельскими (протогрузинскими) племенами — наследниками колхидско-картлийского комплекса. Это ещё сельские общины без централизованного государства: Иберийское царство сложится лишь в VI-IV вв. до н.э. Область находится на периферии южных царств (Урарту, Диаухи)."
  },
  {
   "cle": "voisin_qulha-proto-colchide",
