@@ -366,6 +366,12 @@
   "ru": "К юго-востоку от озера Урмия (равнина Миандоаб и долины Загроса) конфедерация маннеев складывается около 800 г. до н.э., засвидетельствованная ассирийскими анналами. Её племена, северноиранского родства, контролировали плодородные равнины и в VII веке стали державой, соперничавшей с Урарту и Ассирией, прежде чем были поглощены мидийцами."
  },
  {
+  "cle": "voisin_pays-de-nairi",
+  "fr": "Substrat des confédérations tribales du haut-plateau autour du royaume de Menua : corridor du haut-Araxe (Erzurum, Pasinler, Horasan) et région de Mush, terres habitées non encore soumises à l'Ourartou. Les « pays de Nairi » sont attestés par les Assyriens du XIIIᵉ au IXᵉ siècle comme une mosaïque de principautés du haut-plateau, substrat direct de l'unification ourartéenne (Salvini, Zimansky, Diakonoff).",
+  "en": "The substrate of the tribal confederations of the high plateau around the kingdom of Menua: the upper-Araxes corridor (Erzurum, Pasinler, Horasan) and the region of Mush, inhabited lands not yet subdued by Urartu. The «Nairi lands» are attested by the Assyrians from the 13th to the 9th century BC as a mosaic of highland principalities, the direct substrate of Urartian unification (Salvini, Zimansky, Diakonoff).",
+  "ru": "Субстрат племенных союзов высокогорья вокруг царства Менуа: коридор верхнего Аракса (Эрзурум, Пасинлер, Хорасан) и область Муша — обитаемые земли, ещё не покорённые Урарту. «Страны Наири» засвидетельствованы ассирийцами с XIII по IX век до н.э. как мозаика высокогорных княжеств, прямой субстрат урартского объединения (Сальвини, Зимански, Дьяконов)."
+ },
+ {
   "cle": "voisin_persarmenie-marzpanat",
   "fr": "Après l'abolition de la monarchie arsacide (428), l'Arménie orientale est gouvernée par des marzpans sassanides depuis Dvin. La révolte de Vardan Mamikonian culmine à Avarayr (451) ; le traité de Nvarsak (484) garantit la liberté du christianisme et l'autonomie des nakharars (Elishé, Ghazar Parpetsi).",
   "en": "After the abolition of the Arsacid monarchy (428), eastern Armenia was governed by Sasanian marzpans from Dvin. Vardan Mamikonian's revolt culminated at Avarayr (451); the treaty of Nvarsak (484) guaranteed freedom of Christianity and the autonomy of the nakharars (Elishe, Ghazar Parpetsi).",
