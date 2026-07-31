@@ -638,8 +638,7 @@
  "Yaka": "Yakas",
  "Yeke": "Royaume yeke",
  "Barotse": "Barotseland",
- "Congo": "Royaume du Kongo",
- "Zaire": "Zaïre (RD Congo)",
+ "Zaire": "Zaïre",
  "Transvaal": "Transvaal",
  "Orange Free State": "État libre d'Orange",
  "Natal": "Natal",
@@ -1243,5 +1242,8 @@
  "Ural Oblast": "Oblast de l'Oural",
  "Kingdom of Kongo": "Royaume du Kongo",
  "Moyen-Congo": "Moyen-Congo",
- "Republic of Congo": "République du Congo"
+ "Republic of Congo": "République du Congo",
+ "Republic of the Congo (Léopoldville)": "République du Congo (Léopoldville)",
+ "Democratic Republic of the Congo": "République démocratique du Congo",
+ "United Kingdom of Great Britain and Northern Ireland": "Royaume-Uni de Grande-Bretagne et d'Irlande du Nord"
 }
