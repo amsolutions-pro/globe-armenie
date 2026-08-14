@@ -299,7 +299,6 @@
  "Magyars": "Magyars",
  "Bulgars": "Bulgares",
  "Volga Bulgars": "Bulgares de la Volga",
- "Bulgar Khanate": "Khanat bulgare",
  "Danube Bulgars": "Bulgares du Danube",
  "Khazars": "Khazars",
  "Sabirs": "Sabires",
@@ -1263,5 +1262,8 @@
  "Democratic Republic of the Congo": "République démocratique du Congo",
  "United Kingdom of Great Britain and Northern Ireland": "Royaume-Uni de Grande-Bretagne et d'Irlande du Nord",
  "North Vietnam": "Viêt Nam du Nord",
- "South Vietnam": "Viêt Nam du Sud"
+ "South Vietnam": "Viêt Nam du Sud",
+ "Bulgaria (Byzantine Theme)": "Bulgarie (thème byzantin)",
+ "Second Bulgarian Empire": "Second Empire bulgare",
+ "Bulgaria (Vidin, vassal)": "Bulgarie (Vidin, vassale)"
 }
